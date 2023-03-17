@@ -1,5 +1,7 @@
 # Mobile App Development
 
+# Tip
+> Hab mal paar Beispiele für uns alle erstellt. Einen fertigen PR, einen noch unfertigen (den hier) PR. Evtl ganz interessant für den ein oder anderen. Hab auch verboten das jemand direkt auf develop und master Änderrungen machen kann. Des können wir aber auch ändern falls es da zu große Probleme gibt. 
 ## Vorruassetzungen
 Node v16.15.0
 npm 8.5.5
