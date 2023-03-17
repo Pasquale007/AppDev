@@ -16,6 +16,7 @@ npm start
 ```
 Daraufhin öffnet sich in der Console ein QRCode.
 Es wird die App "expo" dem Testgerät (also dein Handy) benötigt um den QR Code zu lesen. Im AppStore oder Playstore installieren.
+Wenn man änderrungen macht, dann werden diese direkt in der App gespeichert.
 
 ### Backend
 Folgender Befehl muss im backend Order ausgeführt werden um das Backend zu starten:
