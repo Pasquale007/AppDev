@@ -1,0 +1,22 @@
+## Server
+
+## Backend
+
+## Frontend
+**/.expo
+**/node_modules
+frontend/dist/
+frontend/npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+frontend/web-build/
+
+# macOS
+frontend/.DS_Store
+
+# Temporary files created by Metro to check the health of the file watcher
+frontend/.metro-health-check*
