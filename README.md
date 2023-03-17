@@ -6,7 +6,7 @@ npm 8.5.5
 
 ## Beschreibung
 Diese App ist ein React-Nativ Projekt. Damit soll es möglich gemacht werden, Flüge zu klasifizieren und nach Kosten zu sortieren.
-
+Test
 ## Setup
 
 ### Frontend
