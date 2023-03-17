@@ -5,7 +5,7 @@ Node v16.15.0
 npm 8.5.5
 
 ## Ablauf
-Mein Gedanke wäre, wir pushen während den Sprints immer auf develop. Sobald dann alle Änderrungen vom Sprint drauf sind, machen wir dann einen PR von develop auf master (das ist die einzige Art, wie der master neuen Code bekommt). So haben wir auf dem master immer eine lauffähige Umgebung. Hab bei alten Projekten jetzt oft schon das Problem gehabt, dfass kurz vor knapp nochmal auf den master gepushed wurde. So haben wir das Problem nicht und haben immer mind. 1 Lauffähige Version ohne Probleme.  
+Mein Gedanke wäre, wir pushen während den Sprints immer auf develop. Sobald dann alle Änderrungen vom Sprint drauf sind, machen wir dann einen PR von develop auf master (das ist die einzige Art, wie der master neuen Code bekommt). So haben wir auf dem master immer eine lauffähige Umgebung. Hab bei alten Projekten jetzt oft schon das Problem gehabt, dfass kurz vor knapp nochmal auf den master gepushed wurde. So haben wir das Problem nicht und haben immer mind. 1 lauffähige Version ohne Probleme.  
 
 
 ## Beschreibung
