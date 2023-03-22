@@ -129,7 +129,7 @@ async function processDestination(origin: string, destination: string, outFromDa
     }
 
 
-    if(destination == "IBZ"){
+    if(destination == "BLQ"){
         console.log("AA")
     }
     for (let i = 0; i < outbound.length; i++) {
@@ -144,8 +144,8 @@ async function processDestination(origin: string, destination: string, outFromDa
                         outboundDate: new Date(outbound[i].day),
                         outboundPrice: outbound[i].price.value,
                         inboundDate: new Date(inbound[j].day),
-                        inboundPrice: inbound[i].price.value,
-                        totalPrice: outbound[i].price.value + inbound[i].price.value
+                        inboundPrice: inbound[j].price.value,
+                        totalPrice: outbound[i].price.value + inbound[j].price.value
                     })
                 }
             }
@@ -171,29 +171,38 @@ function getMonthsBetween(startDate: Date, endDate: Date): Array<Date> {
     return months;
 }
 
-async function getResult(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number){
+async function getResult(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number): Promise<Array<SimpleConnection>>{
     let allAvailableConnections: Array<SimpleConnection> = [];
     if(destination.length === 3){
-        //originDepatures = await getInformation(origin, destination, outFromDate, outToDate)
+        allAvailableConnections = await processDestination(origin, destination, outFromDate, outToDate, lengthMin, lengthMax)
     }else if(destination.length === 2){
         for (let i = 0; i < allRoutes.length; i++) {
             if(allRoutes[i].origin.iata == origin && allRoutes[i].destination.countryCode == destination){
                 let tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
                 allAvailableConnections = [...allAvailableConnections, ...tempResult]
+                continue
             }
         }
     }else{
-        //To all
+        //All destinations
+        for (let i = 0; i < allRoutes.length; i++) {
+            if(allRoutes[i].origin.iata == origin){
+                let tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
+                allAvailableConnections = [...allAvailableConnections, ...tempResult]
+                continue
+            }
+        }
     }
     allAvailableConnections.sort(function(a, b) {
         return a.totalPrice - b.totalPrice;
     })
     console.log(allAvailableConnections)
+    return allAvailableConnections;
 }
 
 ~(async () => {
     //await saveRoutes()
     await setRoutes()
-    await getResult("BER", "it", new Date("2023-03-31"), new Date("2023-04-15"), 4, 8)
+    await getResult("NUE", "All destinations", new Date("2023-03-31"), new Date("2023-04-15"), 4, 8)
 })();
 
