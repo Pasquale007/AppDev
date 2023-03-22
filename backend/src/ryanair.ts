@@ -129,9 +129,6 @@ async function processDestination(origin: string, destination: string, outFromDa
     }
 
 
-    if(destination == "BLQ"){
-        console.log("AA")
-    }
     for (let i = 0; i < outbound.length; i++) {
         if(new Date(outFromDate) <= new Date(outbound[i].day) && new Date(outToDate) >= new Date(outbound[i].day) && outbound[i].unavailable == false && outbound[i].soldOut == false){
             //Flight available
@@ -203,6 +200,6 @@ async function getResult(origin: string, destination: string, outFromDate: Date,
 ~(async () => {
     //await saveRoutes()
     await setRoutes()
-    await getResult("NUE", "All destinations", new Date("2023-03-31"), new Date("2023-04-15"), 4, 8)
+    await getResult("NUE", "All destinations", new Date("2023-05-16"), new Date("2023-06-15"), 6, 10)
 })();
 
