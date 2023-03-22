@@ -1,5 +1,3 @@
-console.log();
-
 export enum Provider {"Eurowings", "Ryanair"}
 
 export let airports: Airport[]
@@ -11,15 +9,15 @@ export interface Flight{
 }
 
 export interface Route{
-    originCode: string,
-    destinationCode: string,
+    origin: Airport,
+    destination: Airport,
     provider: Provider
 }
 
 export interface Airport{
     name: string,
     iata: string,
-    country: string
+    countryCode: string
 }
 
 export function getAirportByCode(code: string): Airport {
