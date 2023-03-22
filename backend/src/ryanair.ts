@@ -1,5 +1,5 @@
 import * as crypto from "crypto";
-import {Flight, Provider, Route} from "./items";
+import {Flight, Provider, Route, SimpleConnection} from "./items";
 import * as fs from "fs";
 import {all} from "axios";
 let airports = require('airport-codes');
@@ -52,6 +52,15 @@ async function getInformation(origin: string, destination: string, outFromDate: 
     return result;
 }
 
+async function getInformationMonth(origin: string, destination: string, firstOfMonthDate: Date): Promise<Array<JSON>>{
+    let client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
+    let date: string;
+    date = firstOfMonthDate.toISOString().split("T")[0]
+    let resp = await client.get(`https://www.ryanair.com/api/farfnd/3/oneWayFares/${origin}/${destination}/cheapestPerDay?market=en-gb&outboundMonthOfDate=${date}`);
+    return resp.body.outbound.fares;
+
+}
+
 async function getDestinationFromOrigin(origin: string, name: string, countryCode: string): Promise<boolean>{
     if(await codeAlreadyScraped(origin)){
         console.log(`Already scraped ${origin}`)
@@ -102,27 +111,89 @@ async function setRoutes(): Promise<void>{
     allRoutes = JSON.parse(jsonData);
 }
 
+async function processDestination(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number){
+    let result: Array<SimpleConnection> = [];
+    let monthsBetween = getMonthsBetween(outFromDate, outToDate);
+
+    let outbound: Array<JSON> = [];
+    for (let i = 0; i < monthsBetween.length; i++) {
+        let tempResult = await getInformationMonth(origin, destination, monthsBetween[i])
+        outbound = [...outbound, ...tempResult]
+    }
+
+
+    let inbound: Array<JSON> = [];
+    for (let i = 0; i < monthsBetween.length; i++) {
+        let tempResult = await getInformationMonth(destination, origin, monthsBetween[i])
+        inbound = [...inbound, ...tempResult]
+    }
+
+
+    if(destination == "IBZ"){
+        console.log("AA")
+    }
+    for (let i = 0; i < outbound.length; i++) {
+        if(new Date(outFromDate) <= new Date(outbound[i].day) && new Date(outToDate) >= new Date(outbound[i].day) && outbound[i].unavailable == false && outbound[i].soldOut == false){
+            //Flight available
+            //Searching for back flight
+            for (let j = i + lengthMin; j <= i + lengthMax; j++) {
+                if(inbound[j] && new Date(outToDate) >= new Date(inbound[j].day) && inbound[j].unavailable == false && inbound[j].soldOut == false){
+                    result.push({
+                        origin: origin,
+                        destination: destination,
+                        outboundDate: new Date(outbound[i].day),
+                        outboundPrice: outbound[i].price.value,
+                        inboundDate: new Date(inbound[j].day),
+                        inboundPrice: inbound[i].price.value,
+                        totalPrice: outbound[i].price.value + inbound[i].price.value
+                    })
+                }
+            }
+        }
+    }
+
+
+    return result;
+}
+
+function getMonthsBetween(startDate: Date, endDate: Date): Array<Date> {
+    const months: Date[] = [];
+
+    let currentDate = new Date(startDate);
+    currentDate.setDate(1);
+
+    while (currentDate < endDate) {
+        months.push(new Date(currentDate.getTime()));
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        currentDate.setDate(1);
+    }
+
+    return months;
+}
+
 async function getResult(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number){
-    let originDepatures: Array<Flight> = [];
+    let allAvailableConnections: Array<SimpleConnection> = [];
     if(destination.length === 3){
-        originDepatures = await getInformation(origin, destination, outFromDate, outToDate)
+        //originDepatures = await getInformation(origin, destination, outFromDate, outToDate)
     }else if(destination.length === 2){
         for (let i = 0; i < allRoutes.length; i++) {
             if(allRoutes[i].origin.iata == origin && allRoutes[i].destination.countryCode == destination){
-                let tempResult = await getInformation(origin, allRoutes[i].destination.iata, outFromDate, outToDate)
-                originDepatures = [...originDepatures, ...tempResult]
+                let tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
+                allAvailableConnections = [...allAvailableConnections, ...tempResult]
             }
         }
     }else{
         //To all
     }
-    console.log(originDepatures)
-    console.log(originDepatures.length)
+    allAvailableConnections.sort(function(a, b) {
+        return a.totalPrice - b.totalPrice;
+    })
+    console.log(allAvailableConnections)
 }
 
 ~(async () => {
     //await saveRoutes()
     await setRoutes()
-    await getResult("NUE", "es", new Date("2023-04-01"), new Date("2023-04-14"), 4, 8)
+    await getResult("BER", "it", new Date("2023-03-31"), new Date("2023-04-15"), 4, 8)
 })();
 

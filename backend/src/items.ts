@@ -1,6 +1,21 @@
 export enum Provider {"Eurowings", "Ryanair"}
 
 export let airports: Airport[]
+
+export interface Connection{
+    outbound: Flight,
+    inbound: Flight
+}
+
+export interface SimpleConnection{
+    origin: string,
+    destination: string,
+    outboundDate: Date,
+    outboundPrice: number,
+    inboundDate: Date,
+    inboundPrice: number,
+    totalPrice: number
+}
 export interface Flight{
     route: Route,
     startTime: string,
