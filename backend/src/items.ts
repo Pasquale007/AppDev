@@ -6,7 +6,7 @@ export let airports: Airport[]
 export interface Flight{
     route: Route,
     startTime: string,
-    duration: string,
+    endTime: string,
     priceEuro: number,
 }
 

@@ -1,6 +1,7 @@
 import * as crypto from "crypto";
-import {airports, Route, Provider} from "./items";
-const tlsClient = require("../tlsClient/tlsClientSimpleWrapper");
+import {Flight, Provider, Route} from "./items";
+
+const tlsClient = require("../tlsClient/tlsClient");
 
 
 let scrapedOrigins: string[] = [];
@@ -14,10 +15,32 @@ async function codeAlreadyScraped(code: string){
     return false;
 }
 
-async function getInformation(origin: string, destination: string, date: string, adult = 1, teen = 0){
-    let client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
-    let resp = await client.get("https://www.ryanair.com/api/booking/v4/de-de/availability?ADT=1&CHD=0&DateIn=&DateOut=2023-04-06&Destination=SUF&Disc=0&INF=0&Origin=NUE&TEEN=0&promoCode=&IncludeConnectingFlights=false&FlexDaysBeforeOut=2&FlexDaysOut=2&FlexDaysBeforeIn=2&FlexDaysIn=2&RoundTrip=false&ToUs=AGREED");
-    console.log(resp.status)
+async function getInformation(origin: string, destination: string, outFromDate: Date, outToDate: Date, tripLengthFrom: number, tripLengthTo: number): Promise<Array<Flight>>{
+    let client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false, proxy: "http://parateek:myPassword_country-bd@geo.iproyal.com:12321"})
+    const outFromDateString: string = outFromDate.toISOString().split("T")[0]
+    const outToDateString: string = outToDate.toISOString().split("T")[0]
+    console.log(outFromDateString)
+    if(destination == "Anywhere"){
+        destination = ""
+    }else{
+        destination = "&to=" + destination
+    }
+    let resp = await client.get(`https://www.ryanair.com/api/farfnd/3/roundTripFares?&departureAirportIataCode=${origin}&durationFrom=${tripLengthFrom}&durationTo=${tripLengthTo}&inboundDepartureDateFrom=2023-03-11&inboundDepartureDateTo=2024-03-30&language=en&limit=16&market=en-gb&offset=0&outboundDepartureDateFrom=${outFromDateString}&outboundDepartureDateTo=${outToDateString}&priceValueTo=150`);
+    resp = resp.body.fares
+    let result: Array<Flight> = [];
+    for (let i = 0; i < resp.length; i++) {
+        result.push({
+            route: {
+                originCode: resp[i].departureAirport.iataCode,
+                destinationCode: resp[i].arrivalAirport.iataCode,
+                provider: Provider.Ryanair
+            },
+            startTime: resp[i].departureDate,
+            endTime: resp[i].arrivalDate,
+            priceEuro: resp[i].price.value
+        })
+    }
+    return result
 }
 
 async function getDestinationFromOrigin(origin: string): Promise<boolean>{
@@ -43,9 +66,9 @@ async function getDestinationFromOrigin(origin: string): Promise<boolean>{
 }
 
 ~(async () => {
-    console.log(await codeAlreadyScraped("NUE"))
-    await getInformation("", "", "")
-    await getDestinationFromOrigin("NUE")
-    console.log(allRoutes)
+    //console.log(await codeAlreadyScraped("NUE"))
+    await getInformation("NUE", "Anywhere", new Date("2023-04-01"), new Date("2023-04-14"), 4, 8)
+    //await getDestinationFromOrigin("NUE")
+    //console.log(allRoutes)
 })();
 
