@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Install and build
+    - name: Install
       run: |
         cd frontend/
         npm install
     - name: Test
-      run: npm test
+      run: |
+        cd frontend/
+        npm test
