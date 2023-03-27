@@ -7,7 +7,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "test cloud": "jest"
+    "test_cloud": "jest"
   },
   "jest": {
     "preset": "jest-expo"
