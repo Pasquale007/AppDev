@@ -10,10 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Change directory to frontend
-      run: cd frontend/
     - name: Install and build
       run: |
+        cd frontend/
         npm install
         npm run build
     - name: Test
