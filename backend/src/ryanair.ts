@@ -168,13 +168,16 @@ function getMonthsBetween(startDate: Date, endDate: Date): Array<Date> {
     return months;
 }
 
-async function getResult(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number): Promise<Array<SimpleConnection>>{
+async function getResult(origin: string, destination: string, ignoredDestinations: string[], outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number): Promise<Array<SimpleConnection>>{
     let allAvailableConnections: Array<SimpleConnection> = [];
     if(destination.length === 3){
         allAvailableConnections = await processDestination(origin, destination, outFromDate, outToDate, lengthMin, lengthMax)
     }else if(destination.length === 2){
         for (let i = 0; i < allRoutes.length; i++) {
             if(allRoutes[i].origin.iata == origin && allRoutes[i].destination.countryCode == destination){
+                if(ignoredDestinations.includes(allRoutes[i].destination.iata)){
+                    continue
+                }
                 let tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
                 allAvailableConnections = [...allAvailableConnections, ...tempResult]
                 continue
@@ -184,6 +187,9 @@ async function getResult(origin: string, destination: string, outFromDate: Date,
         //All destinations
         for (let i = 0; i < allRoutes.length; i++) {
             if(allRoutes[i].origin.iata == origin){
+                if(ignoredDestinations.includes(allRoutes[i].destination.iata)){
+                    continue
+                }
                 let tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
                 allAvailableConnections = [...allAvailableConnections, ...tempResult]
                 continue
@@ -200,6 +206,6 @@ async function getResult(origin: string, destination: string, outFromDate: Date,
 ~(async () => {
     //await saveRoutes()
     await setRoutes()
-    await getResult("NUE", "All destinations", new Date("2023-05-16"), new Date("2023-06-15"), 6, 10)
+    await getResult("NUE", "All destinations", ["BLQ", "VCE", "BNX"], new Date("2023-05-09"), new Date("2023-05-18"), 3, 6)
 })();
 
