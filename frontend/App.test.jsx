@@ -1,6 +1,8 @@
 import * as React from 'react';
-import renderer from 'react-test-renderer';
 import App from './App';
+import renderer from 'react-test-renderer';
+
+jest.useFakeTimers()
 
 describe('App', () => {
   it(`App renders correctly`, () => {
