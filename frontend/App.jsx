@@ -13,6 +13,8 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray',
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
@@ -27,12 +29,7 @@ export default function App() {
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-        })}
-        tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'gray',
-        }}
-      >
+        })} >
         <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
         <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
       </Tab.Navigator>
