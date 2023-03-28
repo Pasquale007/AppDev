@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './pages/HomePage/HomePage';
 import AlertPage from './pages/AlertPage/AlertPage';
 import { Ionicons } from '@expo/vector-icons';
+import messaging from '@react-native-firebase/messaging';
 
 const Tab = createBottomTabNavigator();
 export default function App() {
+  /*
+  // Code for iOS request permissions
+    async function requestUserPermission() {
+      const authStatus = await messaging().requestPermission();
+      const enabled =
+        authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+        authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+    
+      if (enabled) {
+        console.log('Authorization status:', authStatus);
+      }
+    }
+    */
+
+  useEffect(() => {
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+      Alert.alert('A new FCM message arrived!')
+      console.log(JSON.stringify(remoteMessage))
+    });
+    return unsubscribe;
+  }, []);
 
   return (
     <NavigationContainer>
@@ -25,8 +47,6 @@ export default function App() {
             } else if (route.name === 'Alerts') {
               iconName = focused ? 'alert-circle' : 'alert-circle-outline';
             }
-
-            // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })} >

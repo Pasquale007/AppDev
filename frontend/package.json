@@ -32,6 +32,8 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
+    "@react-native-firebase/app": "^17.4.0",
+    "@react-native-firebase/messaging": "^17.4.0",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@testing-library/react": "^14.0.0",
     "expo": "~48.0.9",
