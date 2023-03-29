@@ -5,7 +5,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './pages/HomePage/HomePage';
 import AlertPage from './pages/AlertPage/AlertPage';
 import { Ionicons } from '@expo/vector-icons';
-import messaging from '@react-native-firebase/messaging';
 
 const Tab = createBottomTabNavigator();
 export default function App() {
