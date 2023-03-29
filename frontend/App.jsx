@@ -9,27 +9,6 @@ import messaging from '@react-native-firebase/messaging';
 
 const Tab = createBottomTabNavigator();
 export default function App() {
-  /*
-  // Code for iOS request permissions
-    async function requestUserPermission() {
-      const authStatus = await messaging().requestPermission();
-      const enabled =
-        authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
-        authStatus === messaging.AuthorizationStatus.PROVISIONAL;
-    
-      if (enabled) {
-        console.log('Authorization status:', authStatus);
-      }
-    }
-    */
-
-  useEffect(() => {
-    const unsubscribe = messaging().onMessage(async remoteMessage => {
-      Alert.alert('A new FCM message arrived!')
-      console.log(JSON.stringify(remoteMessage))
-    });
-    return unsubscribe;
-  }, []);
 
   return (
     <NavigationContainer>
