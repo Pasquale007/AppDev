@@ -13,6 +13,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          headerShown: false,
           activeTintColor: 'tomato',
           inactiveTintColor: 'gray',
           tabBarIcon: ({ focused, color, size }) => {
