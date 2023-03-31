@@ -105,16 +105,16 @@ async function saveRoutes(): Promise<void>{
     await fs.writeFileSync('../data.json', jsonData);
 }
 
-async function setRoutes(): Promise<void>{
+export async function setRoutes(): Promise<Route[]>{
     const jsonData = fs.readFileSync('../data.json', 'utf-8'); // Read the contents of 'data.json' as a string
 
     allRoutes = JSON.parse(jsonData);
+    return allRoutes;
 }
 
 async function processDestination(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number){
     let result: Array<SimpleConnection> = [];
     let monthsBetween = getMonthsBetween(outFromDate, outToDate);
-
     let outbound: Array<JSON> = [];
     for (let i = 0; i < monthsBetween.length; i++) {
         let tempResult = await getInformationMonth(origin, destination, monthsBetween[i])
@@ -168,11 +168,13 @@ function getMonthsBetween(startDate: Date, endDate: Date): Array<Date> {
     return months;
 }
 
-async function getResult(origin: string, destination: string, ignoredDestinations: string[], outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number): Promise<Array<SimpleConnection>>{
+export async function getResult(routes: Route[], origin: string, destination: string, ignoredDestinations: string[], outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number): Promise<Array<SimpleConnection>>{
+    allRoutes = routes;
     let allAvailableConnections: Array<SimpleConnection> = [];
     if(destination.length === 3){
         allAvailableConnections = await processDestination(origin, destination, outFromDate, outToDate, lengthMin, lengthMax)
     }else if(destination.length === 2){
+        destination = destination.toLowerCase();
         for (let i = 0; i < allRoutes.length; i++) {
             if(allRoutes[i].origin.iata == origin && allRoutes[i].destination.countryCode == destination){
                 if(ignoredDestinations.includes(allRoutes[i].destination.iata)){
@@ -203,9 +205,8 @@ async function getResult(origin: string, destination: string, ignoredDestination
     return allAvailableConnections;
 }
 
-~(async () => {
+/*~(async () => {
     //await saveRoutes()
-    await setRoutes()
-    await getResult("NUE", "All destinations", ["BLQ", "VCE", "BNX"], new Date("2023-05-09"), new Date("2023-05-18"), 3, 6)
-})();
+    await getResult(routestemp, "NUE", "All destinations", [], new Date("2023-04-09"), new Date("2023-05-18"), 1, 14)
+})();*/
 
