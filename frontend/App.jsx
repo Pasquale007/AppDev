@@ -5,9 +5,19 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './pages/HomePage/HomePage';
 import AlertPage from './pages/AlertPage/AlertPage';
 import { Ionicons } from '@expo/vector-icons';
+import {useFonts} from "expo-font";
 
 const Tab = createBottomTabNavigator();
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    RubikBold: require("./assets/fonts/Rubik-Bold.ttf"),
+    RubikSemiBold: require("./assets/fonts/Rubik-SemiBold.ttf"),
+    RubikMedium: require("./assets/fonts/Rubik-Medium.ttf"),
+    RubikRegular: require("./assets/fonts/Rubik-Regular.ttf"),
+  });
+
+  if (!fontsLoaded) return null;
 
   return (
     <NavigationContainer>
