@@ -5,9 +5,9 @@ import { View, Text } from 'react-native';
 export default function SettingsItem({ label, content, icon }) {
     return (
         <View style={styles.main}>
-            <Text style={styles.label}>{label}</Text>
+            <Text style={[styles.label]}>{label}</Text>
             <View style={styles.flex}>
-                <Ionicons name={icon} size={40} color={"black"} style={{ marginLeft: 10 }} testID='ion-icon'/>
+                <Ionicons name={icon} size={40} color={"black"} style={{ marginLeft: 10 }} testID='ion-icon' />
                 {content}
             </View>
         </View>

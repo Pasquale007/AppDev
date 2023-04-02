@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 10,
         borderTopLeftRadius: 10,
         width: "auto",
-        paddingRight: 5
+        paddingRight: 5,
     },
     seachText: {
         fontFamily: FONT.bold,
