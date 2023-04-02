@@ -24,13 +24,13 @@ export default function HomePage() {
             source={image}
             resizeMode="cover">
 
-            <View style={styles.main}>
+            <View style={styles.main} >
                 <Text style={styles.seachText}>Suche</Text>
 
                 <DropDown data={data} title={"Von"} icon="aircraft-take-off" />
                 <DropDown data={data} title={"Nach"} icon="aircraft-landing" />
 
-                <MySelect left={"Flexible Reisedaten"} right={"Flexible Reisedaten"} style={styles.center} />
+                <MySelect left={"Flexible Reisedaten"} right={"Flexible Reisedaten"} style={{ alignSelf: 'center' }} />
                 <SettingsItem
                     label="Verfügbarer Reisezeitraum"
                     icon='calendar-outline'

@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         margin: "5%",
         marginTop: "30%",
         height: '70%',
-        color: COLORS.background
+        color: COLORS.background,
     },
     button: {
         borderRadius: 10,
