@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.searchButtonColor,
         display: 'flex',
         flexDirection: 'row',
-        justifyContenet: 'space-between',
+        justifyContenet: 'center',
         borderRadius: 20
     },
     text: {
