@@ -7,7 +7,7 @@ export default function SettingsItem({ label, content, icon }) {
         <View style={styles.main}>
             <Text style={styles.label}>{label}</Text>
             <View style={styles.flex}>
-                <Ionicons name={icon} size={40} color={"balck"} style={{ marginLeft: 10 }} />
+                <Ionicons name={icon} size={40} color={"black"} style={{ marginLeft: 10 }} testID='ion-icon'/>
                 {content}
             </View>
         </View>

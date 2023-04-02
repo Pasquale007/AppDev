@@ -33,6 +33,7 @@ export default function SelectDate() {
             {(editStart || editEnd) && <DateTimePicker
                 value={startDate}
                 onChange={onDateSelected}
+                testID='datePicker'
             />}
             <View style={styles.flex}>
                 <Display value={startDate} title={"Von"} onClick={() => setStartEdit(true)} />

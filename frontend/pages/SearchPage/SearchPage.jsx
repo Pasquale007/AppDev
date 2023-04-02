@@ -7,7 +7,6 @@ import SettingsItem from '../../components/SettingsItem/SettingsItem';
 import SelectDuration from '../../components/SelectDuration/SelectDuration';
 import SelectDate from '../../components/SelectDate/SelectDate';
 import MySelect from '../../components/Select/Select';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 
 export default function HomePage() {
