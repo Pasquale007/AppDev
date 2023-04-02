@@ -19,6 +19,7 @@ export default function SelectDuration({ setValues }) {
     return (
         <View style={styles.row}>
             <TextInput
+                placeholder="00"
                 maxLength={maxLengthInput}
                 keyboardType='numeric'
                 style={styles.input}
@@ -27,6 +28,7 @@ export default function SelectDuration({ setValues }) {
             <Text style={styles.text}>bis</Text>
 
             <TextInput
+                placeholder="12"
                 maxLength={maxLengthInput}
                 keyboardType='numeric'
                 style={styles.input}

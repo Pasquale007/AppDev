@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, FlatList, TextInput } from 'react-native';
 import { COLORS, FONT, SIZES } from '../../constants/theme';
-import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
 export default function DropDown({ data, title, icon }) {
@@ -46,6 +45,7 @@ export default function DropDown({ data, title, icon }) {
 
         return (
             <TouchableOpacity
+                testID={`item-${item.id}`}
                 style={{
                     flexDirection: 'row',
                     alignItems: 'center',
@@ -60,16 +60,17 @@ export default function DropDown({ data, title, icon }) {
     };
 
     return (
-        <TouchableOpacity style={{ backgroundColor: COLORS.searchFieldColor, borderRadius: 10, padding: 2, flexDirection: 'row', alignItems: 'center' }} onPress={handleToggleModal}>
+        <TouchableOpacity testID='touchable' style={{ backgroundColor: COLORS.searchFieldColor, borderRadius: 10, padding: 2, flexDirection: 'row', alignItems: 'center' }} onPress={handleToggleModal}>
             <Entypo name={icon} size={30} color={COLORS.background} style={{ marginRight: 8 }} />
             <View>
                 <Text>{title}</Text>
                 <Text style={{ fontFamily: FONT.medium, fontSize: SIZES.medium, color: COLORS.textBlack }}>{selectedItem ? selectedItem.name : 'Select item'}</Text>
             </View>
-            <Modal visible={isModalVisible} animationType="slide">
+            <Modal visible={isModalVisible} animationType="slide" testID='modal'>
                 <View style={{ flex: 1, backgroundColor: COLORS.background }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', padding: 8 }}>
                         <TextInput
+                            testID='search-input'
                             placeholder="Search"
                             value={searchText}
                             onChangeText={handleFilter}
