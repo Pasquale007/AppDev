@@ -49,7 +49,9 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-    }
+        alignItems: 'center',
+        marginVertical: 20,
+    },
 });
 
 export default styles;

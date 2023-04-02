@@ -1,7 +1,5 @@
 import { StyleSheet } from "react-native";
 import { COLORS, FONT, SIZES } from "../../constants/theme";
-
-
 const styles = StyleSheet.create({
     input: {
         borderRadius: 10,
@@ -17,14 +15,16 @@ const styles = StyleSheet.create({
     },
     text: {
         fontFamily: FONT.bold,
-        fontSize: SIZES.large
+        fontSize: SIZES.xLarge,
+        alignSelf: 'center'
     },
     row: {
         display: 'flex',
         flexDirection: "row",
         textAlign: 'center',
         justifyContent: 'space-evenly',
-        fontSize: SIZES.large
+        fontSize: SIZES.large,
+        alignItems: 'baseline' // add this line
     }
 });
 

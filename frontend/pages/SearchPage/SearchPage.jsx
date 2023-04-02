@@ -9,7 +9,7 @@ import SelectDate from '../../components/SelectDate/SelectDate';
 import MySelect from '../../components/Select/Select';
 import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 
-export default function HomePage() {
+export default function SearchPage() {
     const [startAndEndTime, setStartAndEndTime] = React.useState();
     const [value, setValue] = React.useState("");
     const [data, setData] = React.useState([
@@ -28,8 +28,9 @@ export default function HomePage() {
 
                 <DropDown data={data} title={"Von"} icon="aircraft-take-off" />
                 <DropDown data={data} title={"Nach"} icon="aircraft-landing" />
-
-                <MySelect left={"Flexible Reisedaten"} right={"Flexible Reisedaten"} style={{ alignSelf: 'center' }} />
+                <View style={styles.center}>
+                    <MySelect left={"Flexible Reisedaten"} right={"Flexible Reisedaten"} style={{ alignSelf: 'center' }} />
+                </View>
                 <SettingsItem
                     label="Verfügbarer Reisezeitraum"
                     icon='calendar-outline'
