@@ -7,8 +7,7 @@ describe('SettingsItem', () => {
     it('should render the label and content', () => {
         const label = 'Label';
         const content = <Text>Content</Text>;
-        const icon = 'ion-icon';
-        const { getByText } = render(<SettingsItem label={label} content={content} icon={icon} />);
+        const { getByText } = render(<SettingsItem label={label} content={content} icon={"notifications"} />);
         expect(getByText(label)).toBeDefined();
         expect(getByText('Content')).toBeDefined();
     });
@@ -16,8 +15,7 @@ describe('SettingsItem', () => {
     it('should render the icon', () => {
         const label = 'Label';
         const content = <Text>Content</Text>;
-        const icon = 'ion-icon';
-        const { getByTestId } = render(<SettingsItem label={label} content={content} icon={icon} />);
+        const { getByTestId } = render(<SettingsItem label={label} content={content} icon={"notifications"} />);
         expect(getByTestId('ion-icon')).toBeDefined();
     });
 });
