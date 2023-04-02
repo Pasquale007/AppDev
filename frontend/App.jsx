@@ -1,11 +1,13 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './pages/HomePage/HomePage';
 import AlertPage from './pages/AlertPage/AlertPage';
 import { Ionicons } from '@expo/vector-icons';
-import {useFonts} from "expo-font";
+import { useFonts } from "expo-font";
+
+import styles from './App.style.js';
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -20,12 +22,13 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <NavigationContainer>
+    <NavigationContainer style={styles.background}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           headerShown: false,
           activeTintColor: 'tomato',
           inactiveTintColor: 'gray',
+
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
@@ -44,13 +47,4 @@ export default function App() {
       </Tab.Navigator>
     </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+};
