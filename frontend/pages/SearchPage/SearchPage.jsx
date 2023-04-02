@@ -19,41 +19,42 @@ export default function SearchPage() {
     ]);
 
     return (
-        <ImageBackground
-            source={image}
-            resizeMode="cover">
+        <View>
+            <ImageBackground
+                source={image}
+                resizeMode="cover">
 
-            <View style={styles.main} >
-                <Text style={styles.seachText}>Suche</Text>
+                <View style={styles.main} >
+                    <Text style={styles.seachText}>Suche</Text>
 
-                <DropDown data={data} title={"Von"} icon="aircraft-take-off" />
-                <DropDown data={data} title={"Nach"} icon="aircraft-landing" />
-                <View style={styles.center}>
-                    <MySelect left={"Flexible Reisedaten"} right={"Flexible Reisedaten"} style={{ alignSelf: 'center' }} />
+                    <DropDown data={data} title={"Von"} icon="aircraft-take-off" />
+                    <DropDown data={data} title={"Nach"} icon="aircraft-landing" />
+                    <View style={styles.center}>
+                        <MySelect left={"Flexible Reisedaten"} right={"Flexible Reisedaten"} style={{ alignSelf: 'center' }} />
+                    </View>
+                    <SettingsItem
+                        label="Verfügbarer Reisezeitraum"
+                        icon='calendar-outline'
+                        content={
+                            <View>
+                                <SelectDate />
+                            </View>}
+                    />
+                    <SettingsItem
+                        label="Reisedauer"
+                        icon='timer-outline'
+                        content={
+                            <View>
+                                <SelectDuration setValues={setStartAndEndTime} />
+                            </View>}
+                    />
                 </View>
-                <SettingsItem
-                    label="Verfügbarer Reisezeitraum"
-                    icon='calendar-outline'
-                    content={
-                        <View>
-                            <SelectDate />
-                        </View>}
-                />
-                <SettingsItem
-                    label="Reisedauer"
-                    icon='timer-outline'
-                    content={
-                        <View>
-                            <SelectDuration setValues={setStartAndEndTime} />
-                        </View>}
-                />
-                <Button
-                    text={"Suche"}
-                    onClick={(e) => console.log(e)}
-                />
-
-            </View>
-        </ImageBackground>
+            </ImageBackground>
+            <Button
+                text={"Suche"}
+                onClick={(e) => console.log(e)}
+            />
+        </View>
     );
 
 
