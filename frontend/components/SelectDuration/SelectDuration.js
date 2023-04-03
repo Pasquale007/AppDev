@@ -3,12 +3,19 @@ import styles from '../SelectDuration/SelectDuration.style';
 import * as React from 'react';
 
 const maxLengthInput = 2;
-export default function SelectDuration({ setValues }) {
+export default function SelectDuration({ onSelect }) {
     const [start, setStart] = React.useState();
     const [end, setEnd] = React.useState();
 
+
     React.useEffect(() => {
-        setValues(
+        if (start && end && parseInt(start) > parseInt(end)) {
+            setEnd((parseInt(start) + 1).toString());
+        }
+    }, [start, end]);
+
+    React.useEffect(() => {
+        onSelect(
             {
                 'start': start,
                 'end': end
@@ -32,6 +39,7 @@ export default function SelectDuration({ setValues }) {
                 maxLength={maxLengthInput}
                 keyboardType='numeric'
                 style={styles.input}
+                value={end}
                 onChangeText={setEnd}
             />
             <Text style={styles.text}>Tagen</Text>

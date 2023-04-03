@@ -1,5 +1,5 @@
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../SelectDate/SelectDate.style';
 
@@ -12,28 +12,49 @@ function Display({ value, title, onClick }) {
     );
 }
 
-export default function SelectDate() {
+export default function SelectDate({ onSelect }) {
     const [startDate, setStartDate] = useState(new Date(Date.now()));
     const [endDate, setEndDate] = useState(new Date(Date.now()));
     const [editStart, setStartEdit] = useState(false);
     const [editEnd, setEndEdit] = useState(false);
 
+    useEffect(() => {
+        if (startDate > endDate) {
+            setEndDate(startDate);
+        }
+        if (!startDate || !endDate) {
+            return;
+        }
+        onSelect({
+            'from': startDate,
+            'until': endDate
+        })
+    }, [endDate, startDate]);
+
     const onDateSelected = (_event, value) => {
         if (editStart) {
             setStartDate(value);
-            setStartEdit(false);
         } else if (endDate) {
             setEndDate(value);
-            setEndEdit(false);
         }
+        setStartEdit(false);
+        setEndEdit(false);
     }
 
     return (
         <View>
-            {(editStart || editEnd) && <DateTimePicker
+            {editStart && <DateTimePicker
                 value={startDate}
                 onChange={onDateSelected}
-                testID='datePicker'
+                minimumDate={new Date(Date.now())}
+                testID='datePicker1'
+            />}
+
+            {editEnd && <DateTimePicker
+                value={endDate}
+                onChange={onDateSelected}
+                minimumDate={(new Date(Date.now()) < startDate) ? startDate : new Date(Date.now())}
+                testID='datePicker2'
             />}
             <View style={styles.flex}>
                 <Display value={startDate} title={"Von"} onClick={() => setStartEdit(true)} />

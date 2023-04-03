@@ -4,12 +4,13 @@ import SelectDate from './SelectDate';
 
 describe('SelectDate', () => {
     it('should show date pickers when user taps on Display components', () => {
-        const { getByText, getByTestId } = render(<SelectDate />);
+        const onSelect = jest.fn();
+        const { getByText, getByTestId } = render(<SelectDate onSelect={onSelect} />);
 
         fireEvent.press(getByText('Von'));
-        expect(getByTestId('datePicker')).not.toBeNull();
+        expect(getByTestId('datePicker1')).not.toBeNull();
 
         fireEvent.press(getByText('Bis'));
-        expect(getByTestId('datePicker')).not.toBeNull();
+        expect(getByTestId('datePicker2')).not.toBeNull();
     });
 });

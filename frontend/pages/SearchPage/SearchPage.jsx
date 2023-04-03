@@ -10,8 +10,17 @@ import MySelect from '../../components/Select/Select';
 import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 
 export default function SearchPage() {
-    const [startAndEndTime, setStartAndEndTime] = React.useState();
-    const [value, setValue] = React.useState("");
+    const [startAirport, setStartAirport] = React.useState();
+    const [endAirport, setEndAirport] = React.useState();
+    const [startAndEndDays, setStartAndEndDays] = React.useState({
+        'start': 0,
+        'end': 0
+    });
+    const [dateSpan, setDateSpan] = React.useState({
+        'from': new Date(Date.now()),
+        'until': new Date(Date.now())
+    });
+
     const [data, setData] = React.useState([
         { id: '1', name: 'Alpha' },
         { id: '2', name: 'Beta' },
@@ -27,8 +36,8 @@ export default function SearchPage() {
                 <View style={styles.main} >
                     <Text style={styles.seachText}>Suche</Text>
 
-                    <DropDown data={data} title={"Von"} icon="aircraft-take-off" />
-                    <DropDown data={data} title={"Nach"} icon="aircraft-landing" />
+                    <DropDown data={data} title={"Von"} icon="aircraft-take-off" onSelect={setStartAirport} />
+                    <DropDown data={data} title={"Nach"} icon="aircraft-landing" onSelect={setEndAirport} />
                     <View style={styles.center}>
                         <MySelect left={"Flexible Reisedaten"} right={"Flexible Reisedaten"} style={{ alignSelf: 'center' }} />
                     </View>
@@ -37,7 +46,7 @@ export default function SearchPage() {
                         icon='calendar-outline'
                         content={
                             <View>
-                                <SelectDate />
+                                <SelectDate onSelect={setDateSpan} />
                             </View>}
                     />
                     <SettingsItem
@@ -45,7 +54,7 @@ export default function SearchPage() {
                         icon='timer-outline'
                         content={
                             <View>
-                                <SelectDuration setValues={setStartAndEndTime} />
+                                <SelectDuration onSelect={setStartAndEndDays} />
                             </View>}
                     />
                 </View>
