@@ -20,3 +20,6 @@ frontend/.DS_Store
 
 # Temporary files created by Metro to check the health of the file watcher
 frontend/.metro-health-check*
+
+# dev
+**/.idea
