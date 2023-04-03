@@ -38,14 +38,6 @@ export default function SelectDate() {
             <View style={styles.flex}>
                 <Display value={startDate} title={"Von"} onClick={() => setStartEdit(true)} />
                 <Display value={endDate} title={"Bis"} onClick={() => setEndEdit(true)} />
-                {/*nicht schön, aber felxGrow funktioniert nicht */}
-                <View />
-                <View />
-                <View />
-                <View />
-                <View />
-                <View />
-                <View />
             </View>
         </View>
     );

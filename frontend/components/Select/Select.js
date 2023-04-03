@@ -1,32 +1,41 @@
 import React, { useState } from "react";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 import styles from "./Select.styles";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 export default function MySelect({ left, right }) {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const handlePress = () => {
+    const handlePress = (number) => {
+        if (number === activeIndex) {
+            return;
+        }
         setActiveIndex(activeIndex === 0 ? 1 : 0);
     };
     return (
-        <TouchableOpacity style={styles.flex} onPress={handlePress}>
-            <Text
-                style={[
-                    styles.text,
-                    activeIndex === 0 ? styles.active : styles.passive,
-                ]}
+        <View style={styles.flex}>
+            <TouchableWithoutFeedback
+                onPress={() => handlePress(0)}
             >
-                {left}
-            </Text>
-            <Text
-                style={[
-                    styles.text,
-                    activeIndex === 1 ? styles.active : styles.passive,
-                ]}
+                <Text
+                    style={[
+                        styles.text,
+                        activeIndex === 0 ? styles.active : styles.passive,
+                    ]}>
+                    {left}
+                </Text>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+                onPress={() => handlePress(1)}
             >
-                {right}
-            </Text>
-        </TouchableOpacity>
+                <Text
+                    style={[
+                        styles.text,
+                        activeIndex === 1 ? styles.active : styles.passive,
+                    ]}>
+                    {right}
+                </Text>
+            </TouchableWithoutFeedback>
+        </View >
     );
 }

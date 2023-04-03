@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
+        textAlign: 'center'
     },
     text: {
         fontFamily: FONT.bold,
