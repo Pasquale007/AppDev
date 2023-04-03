@@ -27,4 +27,4 @@ jobs:
     - name: Linter
       run: |
         cd frontend/
-        npm run linter
+        npm run lint
