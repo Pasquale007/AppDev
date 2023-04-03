@@ -16,8 +16,8 @@ const COLORS = {
   safeSearchAlertIcon: "#000000",
   safeSearchAlertBackground: "#D9D9D9",
 
-  searchFieldColor: "#D9D9D9",
-  searchFieldTagColor: "#292639",
+  searchFieldColor: "rgba(217,217,217, 0.8)",
+  searchFieldTagColor: "rgba(41,38,57,0.2)",
   searchButtonColor: "#292639",
 };
   
