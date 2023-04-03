@@ -53,7 +53,7 @@ export default function DropDown({ data, title, icon }) {
                     backgroundColor: isSelected ? COLORS.cardColor : COLORS.background,
                 }}
                 onPress={() => handleSelectItem(item)}>
-                <Text style={{ flex: 1, color: isSelected ? COLORS.textWhite : COLORS.textBlack, fontFamily: FONT.medium, fontSize: SIZES.medium }}>{item.name}</Text>
+                <Text style={{ flex: 1, color: isSelected ? COLORS.textWhite : COLORS.textWhite, fontFamily: FONT.medium, fontSize: SIZES.medium }}>{item.name}</Text>
                 {isSelected && <Text style={{ color: COLORS.textWhite }}>✓</Text>}
             </TouchableOpacity>
         );
