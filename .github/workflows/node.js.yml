@@ -24,3 +24,7 @@ jobs:
       run: |
         cd frontend/
         npm run test_cloud
+    - name: Linter
+      run: |
+        cd frontend/
+        npm run linter
