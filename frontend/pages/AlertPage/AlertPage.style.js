@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
     alertContainer:{
         flex: 1,
         marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-        paddingHorizontal: 16,
+        paddingHorizontal: SIZES.medium,
         marginTop: 30,
-        paddingBottom: 16,
+        paddingBottom: SIZES.medium,
     },
     
     alertHeadline: {

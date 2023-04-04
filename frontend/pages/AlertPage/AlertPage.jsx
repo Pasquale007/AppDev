@@ -63,7 +63,7 @@ export default function AlertPage() {
     },
     {
         date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ", arrival: "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR" },
+        locations: { departure: "ZZZZZZZZZZ ZZZZZZZZZZZZZ ZZZZZZ", arrival: "RRRRRRRRRRRRRRR RRRRRRRRRR RRRRRRRR" },
         maxPrice: 1000000.5667
     }]
 
@@ -87,7 +87,7 @@ export default function AlertPage() {
                     {!hasAlerts ?
                         <View style={styles.noAlertsContainer}>
                             <Ionicons style={styles.alertIcon} size={100} name="notifications" testID="" />
-                            <Text style={styles.noAlertsText}>
+                            <Text style={styles.noAlertsText} testID="noAlertsText">
                                 Keine Alerts vorhanden
                             </Text>
                         </View>
@@ -101,6 +101,7 @@ export default function AlertPage() {
                                     index={index}
                                     closeCard={closeCard}
                                     cardArr={card}
+                                    testID="alertCard"
                                 />
                             ))}
                         </View>
