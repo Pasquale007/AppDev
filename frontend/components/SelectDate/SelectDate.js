@@ -2,6 +2,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../SelectDate/SelectDate.style';
+import React from 'react';
 
 function Display({ value, title, onClick }) {
     return (

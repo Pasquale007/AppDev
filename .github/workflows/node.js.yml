@@ -1,11 +1,12 @@
-name: Node.js CI
+name: Frontend Continuous Integration
 on:
   push:
     branches: [ "master", "develop" ]
   pull_request:
     branches: [ "master", "develop" ]
+
 jobs:
-  build:
+  build-frontend:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,11 +17,15 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install
+    - name: Install Dependencies
       run: |
         cd frontend/
         npm install
-    - name: Test
+    - name: Run Tests
       run: |
         cd frontend/
         npm run test_cloud
+    - name: Run Linter
+      run: |
+        cd frontend/
+        npm run lint
