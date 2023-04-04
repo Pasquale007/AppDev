@@ -37,7 +37,7 @@ export default function SelectDate({ onSelect }) {
                     onClose={() => setCalendarVisible(false)}
                 />
             }
-            <TouchableOpacity style={styles.flex} onPress={() => setCalendarVisible(true)}>
+            <TouchableOpacity style={styles.flex} onPress={() => setCalendarVisible(true)} testID='clickable'>
                 <Display value={new Date(range.start)} title={"Von"} />
                 <Display value={new Date(range.end)} title={"Bis"} />
             </TouchableOpacity>

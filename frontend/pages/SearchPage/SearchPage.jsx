@@ -27,13 +27,6 @@ export default function SearchPage() {
         { id: '3', name: 'Gamma' },
     ]);
 
-
-    React.useEffect(() => {
-        console.log(dateSpan)
-        console.log(startAirport)
-        console.log(endAirport)
-        console.log(duration)
-    }, [dateSpan, duration, endAirport, startAirport])
     return (
         <View>
             <ImageBackground

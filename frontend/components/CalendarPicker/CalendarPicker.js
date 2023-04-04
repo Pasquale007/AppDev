@@ -22,9 +22,10 @@ export default function CalendarPicker({ visible, onSelect, onClose }) {
 
   return (
     <Modal visible={visible} transparent={true}>
-      <View style={styles.container}>
+      <View style={styles.container} testID='modal'>
         <View style={styles.content}>
           <Calendar
+            testID='calendar'
             minDate={new Date(Date.now())}
             onChange={handleSelect}
           />
