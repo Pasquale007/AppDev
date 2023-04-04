@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../SelectDate/SelectDate.style';
 import CalendarPicker from '../CalendarPicker/CalendarPicker';
 
+
 function Display({ value, title, onClick }) {
     return (
         <View onPress={onClick}>

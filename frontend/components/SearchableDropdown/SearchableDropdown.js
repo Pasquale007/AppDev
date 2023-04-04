@@ -87,4 +87,4 @@ export default function DropDown({ data, title, icon, onSelect }) {
             </Modal>
         </TouchableOpacity>
     );
-};
+}
