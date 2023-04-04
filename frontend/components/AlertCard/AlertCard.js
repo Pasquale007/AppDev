@@ -24,22 +24,28 @@ function AlertCard({ date, locations, maxPrice, index, closeCard, cardArr }) {
                 renderRightActions={renderRightActions}
                 onSwipeableOpen={() => closeCard(index)}
                 ref={(ref) => (cardArr[index] = ref)}
+                testID="alertCard"
             >
-            {/*numberOfLines={1} adjustsFontSizeToFit={true}*/}
                 <View style={styles.alertCard}>
                     <View style={styles.leftSide}>
-                        <Text style={styles.dateText}>
+                        <Text style={styles.dateText} testID="date">
                             {date.start} - {date.end}
                         </Text>
-                        <Text style={styles.departureText} numberOfLines={1} ellipsizeMode='tail'>
+                        <Text style={styles.departureText} numberOfLines={1} ellipsizeMode='tail'
+                            testID="departureText"
+                        >
                             {locations.departure}
                         </Text>
-                        <Text style={styles.arrivalText} numberOfLines={1} ellipsizeMode='tail'>
+                        <Text style={styles.arrivalText} numberOfLines={1} ellipsizeMode='tail'
+                            testID="arrivalText"
+                        >
                             {locations.arrival}
                         </Text>
                     </View>
                     <View style={styles.rightSide}>
-                        <Text style={styles.maxPriceText} numberOfLines={1} adjustsFontSizeToFit={true}>
+                        <Text style={styles.maxPriceText} numberOfLines={1} adjustsFontSizeToFit={true}
+                            testID="priceText"
+                        >
                             {maxPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" })}
                         </Text>
                         <View style={styles.toggleButtonContainer}>
@@ -53,6 +59,7 @@ function AlertCard({ date, locations, maxPrice, index, closeCard, cardArr }) {
                                 changeValueImmediately={true}
                                 renderActiveText={false}
                                 renderInActiveText={false}
+                                testID="switchButton"
                             />
                         </View>
                     </View>
