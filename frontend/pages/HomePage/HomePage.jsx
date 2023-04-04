@@ -1,13 +1,19 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
-import styles from './HomePage.style';
+import SearchPage from '../SearchPage/SearchPage';
+import { createStackNavigator } from '@react-navigation/stack';
+import { COLORS } from '../../constants/theme';
 
+const Stack = createStackNavigator();
 
-export default function HomePage(){
+export default function HomePage() {
 
-    return(
-        <View>
-            <Text style={styles.homeText}>Home Page!</Text>
-        </View>
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false,
+                backgroundColor: COLORS.background,
+            }}>
+            <Stack.Screen name="Search" component={SearchPage} />
+        </Stack.Navigator>
     );
 }
