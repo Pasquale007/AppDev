@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import styles from "./AlertPage.style";
 import { Ionicons } from '@expo/vector-icons';
 import AlertCard from '../../components/AlertCard/AlertCard';
-import { GestureHandlerRootView, ScrollView, Swipeable } from 'react-native-gesture-handler';
+import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler';
 
 export default function AlertPage() {
     const [hasAlerts, setHasAlerts] = useState(true);
@@ -93,7 +93,7 @@ export default function AlertPage() {
                         </View>
                         : <View style={styles.alertCardContainer}>
                             {testArr.map((alert, index) => (
-                                <AlertCard 
+                                <AlertCard
                                     key={index}
                                     date={alert.date}
                                     locations={alert.locations}
