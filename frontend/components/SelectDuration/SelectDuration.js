@@ -10,7 +10,7 @@ export default function SelectDuration({ onSelect }) {
 
     React.useEffect(() => {
         if (start && end && parseInt(start) > parseInt(end)) {
-            setEnd((parseInt(start) + 1).toString());
+            setEnd((parseInt(start)).toString());
         }
     }, [start, end]);
 

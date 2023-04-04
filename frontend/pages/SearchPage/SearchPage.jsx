@@ -12,7 +12,7 @@ import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 export default function SearchPage() {
     const [startAirport, setStartAirport] = React.useState();
     const [endAirport, setEndAirport] = React.useState();
-    const [startAndEndDays, setStartAndEndDays] = React.useState({
+    const [duration, setDuration] = React.useState({
         'start': 0,
         'end': 0
     });
@@ -27,6 +27,13 @@ export default function SearchPage() {
         { id: '3', name: 'Gamma' },
     ]);
 
+
+    React.useEffect(() => {
+        console.log(dateSpan)
+        console.log(startAirport)
+        console.log(endAirport)
+        console.log(duration)
+    }, [dateSpan, duration, endAirport, startAirport])
     return (
         <View>
             <ImageBackground
@@ -54,7 +61,7 @@ export default function SearchPage() {
                         icon='timer-outline'
                         content={
                             <View>
-                                <SelectDuration onSelect={setStartAndEndDays} />
+                                <SelectDuration onSelect={setDuration} />
                             </View>}
                     />
                 </View>

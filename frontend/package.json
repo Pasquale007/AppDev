@@ -48,6 +48,7 @@
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
     "react-native": "0.71.4",
+    "react-native-calendar-range-picker": "^1.5.3",
     "react-native-custom-switch": "^1.0.7",
     "react-native-gesture-handler": "~2.9.0",
     "react-native-reanimated": "^3.0.2",
