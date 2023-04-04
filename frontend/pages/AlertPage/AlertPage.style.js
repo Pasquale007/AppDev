@@ -1,12 +1,10 @@
 import { StyleSheet } from "react-native";
-import { Platform, StatusBar } from "react-native";
 
 import { COLORS, FONT, SIZES } from "../../constants/theme";
 
 const styles = StyleSheet.create({
     alertContainer:{
         flex: 1,
-        marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         paddingHorizontal: SIZES.medium,
         marginTop: 30,
         paddingBottom: SIZES.medium,
