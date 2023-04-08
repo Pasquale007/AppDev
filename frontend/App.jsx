@@ -8,7 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useFonts } from "expo-font";
 
 import { COLORS } from './constants/theme';
-import Splash from './app/splash';
+import Splash from './pages/Splash/splash'
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -51,7 +51,7 @@ export default function App() {
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}>
-        <Splash />
+      <Splash />
       <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
       <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
     </Tab.Navigator>
