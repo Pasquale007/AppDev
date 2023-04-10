@@ -1,20 +1,31 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-name: Node.js CI
+name: Frontend Continuous Integration
 on:
   push:
     branches: [ "master", "develop" ]
   pull_request:
     branches: [ "master", "develop" ]
+
 jobs:
-  build:
+  build-frontend:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
     - uses: actions/checkout@v2
-    - name: Install
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Dependencies
       run: |
         cd frontend/
         npm install
-    - name: Test
+    - name: Run Tests
       run: |
         cd frontend/
         npm run test_cloud
+    - name: Run Linter
+      run: |
+        cd frontend/
+        npm run lint
