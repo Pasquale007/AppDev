@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     active: {
-        padding: 5,
+        padding: 6,
         backgroundColor: COLORS.searchFieldColor,
         borderRadius: 20
     },
