@@ -4,7 +4,7 @@ import { COLORS, FONT, SIZES } from "../../constants/theme";
 
 const styles = StyleSheet.create({
     flex: {
-        width: "80%",
+        width: "83%",
         backgroundColor: COLORS.searchButtonColor,
         display: 'flex',
         flexDirection: 'row',
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
     text: {
-        width: 141,
+        width: '80%',
         fontFamily: FONT.semiBold,
         fontSize: SIZES.medium,
         textAlign: 'center',
