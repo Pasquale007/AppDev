@@ -3,7 +3,6 @@ import styles from "./AlertCard.style";
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Switch } from 'react-native-switch';
 import { Swipeable } from 'react-native-gesture-handler';
-
 import { COLORS } from "../../constants/theme";
 import { Ionicons } from '@expo/vector-icons';
 

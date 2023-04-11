@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: 'flex-start',
         gap: 20,
-        fontSize: SIZES.large
+        fontSize: SIZES.large,
     },
     element1: {
         flexGrow: 1
