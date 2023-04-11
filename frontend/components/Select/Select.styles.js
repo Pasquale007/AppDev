@@ -4,7 +4,7 @@ import { COLORS, FONT, SIZES } from "../../constants/theme";
 const styles = StyleSheet.create({
     flex: {
         height: 40,
-        width: "80%",
+        width: "90%",
         backgroundColor: COLORS.searchButtonColor,
         display: 'flex',
         flexDirection: 'row',

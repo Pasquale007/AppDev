@@ -14,6 +14,7 @@ export default function MySelect({ left, right }) {
                 onPress={onPress}
             >
                 <Text
+                    numberOfLines={1} adjustsFontSizeToFit={true}
                     style={[
                         styles.text,
                         activeIndex === index ? styles.active : styles.passive,
