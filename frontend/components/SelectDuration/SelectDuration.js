@@ -34,7 +34,7 @@ export default function SelectDuration({ setValues }) {
                 style={styles.input}
                 onChangeText={setEnd}
             />
-            <Text style={styles.text}>Tagen</Text>
+            <Text style={styles.text} adjustsFontSizeToFit={true} numberOfLines={1}>Tagen</Text>
         </View>
     );
 }

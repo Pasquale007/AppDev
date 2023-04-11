@@ -55,6 +55,6 @@ export default function App() {
         <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
         <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
       </Tab.Navigator>
-    </NavigationContainer >
+    </NavigationContainer>
   );
 };
