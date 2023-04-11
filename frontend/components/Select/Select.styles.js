@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLORS, FONT, SIZES } from "../../constants/theme";
+import { COLORS, FONT } from "../../constants/theme";
 
 const styles = StyleSheet.create({
     flex: {
@@ -12,14 +12,17 @@ const styles = StyleSheet.create({
         borderRadius: 20,
     },
     clickElement: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         height: '100%',
     },
     text: {
         fontFamily: FONT.semiBold,
-        fontSize: SIZES.small,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        verticalAlign: 'middle',
         padding: 5,
 
     },
