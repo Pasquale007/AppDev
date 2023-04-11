@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import * as React from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './pages/HomePage/HomePage';
@@ -8,7 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useFonts } from "expo-font";
 
 import { COLORS } from './constants/theme';
-import Splash from './pages/Splash/splash'
+import Splash from "./pages/Splash/Splash";
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -29,10 +29,10 @@ export default function App() {
     },
   };
 
-  return (
-    <><Splash /><NavigationContainer>
+  const {isLoading, setIsLoading} = React.useState<Boolean>(true);
 
-      <Tab.Navigator
+  return  isLoading ? <Splash setIsLoading={setIsLoading}/> : <NavigationContainer> 
+    <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarHideOnKeyboard: true,
           headerShown: false,
@@ -55,7 +55,6 @@ export default function App() {
 
         <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
         <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
-      </Tab.Navigator>
-    </NavigationContainer></>
-  );
+      </Tab.Navigator> 
+      </NavigationContainer>   
 };
