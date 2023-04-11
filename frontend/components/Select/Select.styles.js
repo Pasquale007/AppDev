@@ -1,30 +1,37 @@
 import { StyleSheet } from "react-native";
 import { COLORS, FONT, SIZES } from "../../constants/theme";
 
-
 const styles = StyleSheet.create({
     flex: {
-        width: "83%",
+        height: 40,
+        width: "80%",
         backgroundColor: COLORS.searchButtonColor,
         display: 'flex',
         flexDirection: 'row',
-        justifyContenet: 'center',
-        borderRadius: 20
+        justifyContent: 'space-between',
+        borderRadius: 20,
+    },
+    clickElement: {
+        height: '100%',
     },
     text: {
-        width: '80%',
         fontFamily: FONT.semiBold,
-        fontSize: SIZES.medium,
-        textAlign: 'center',
+        fontSize: SIZES.small,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: 5,
+
     },
     active: {
-        padding: 6,
+        height: '100%',
         backgroundColor: COLORS.searchFieldColor,
-        borderRadius: 20
+        borderRadius: 20,
     },
     passive: {
-        padding: 5,
+        height: '100%',
         color: COLORS.textWhite,
+        borderRadius: 20,
     }
 
 });
