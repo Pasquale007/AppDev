@@ -31,7 +31,7 @@ export default function App() {
 
   const {isLoading, setIsLoading} = React.useState<Boolean>(true);
 
-  return  isLoading ? <Splash setIsLoading={setIsLoading}/> : <NavigationContainer> 
+  return  isLoading ? <Splash setIsLoading={setIsLoading}/> : <NavigationContainer theme={MyTheme}> 
     <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarHideOnKeyboard: true,
