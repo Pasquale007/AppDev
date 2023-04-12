@@ -1,77 +1,46 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, SafeAreaView } from "react-native";
 import styles from "./AlertPage.style";
 import { Ionicons } from '@expo/vector-icons';
 import AlertCard from '../../components/AlertCard/AlertCard';
 import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler';
+import { firebase } from '../../firebase/config';
+import DeviceInfo from "react-native-device-info";
 
 export default function AlertPage() {
-    const [hasAlerts, setHasAlerts] = useState(true);
+    const [alerts, setAlerts] = useState([]);
 
     let card = [];
     let prevOpenedCard;
 
-    const testArr = [{
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "Nürnberg", arrival: "London" },
-        maxPrice: 150
-    },
-    {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "Gelsenkirchen", arrival: "Amsterdam" },
-        maxPrice: 150
-    },
-    {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "Rom", arrival: "Neapel" },
-        maxPrice: 150
-    },
-    {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "Berlin", arrival: "Prag" },
-        maxPrice: 150
-    },
-    {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "Leipzig", arrival: "Hamburg" },
-        maxPrice: 150
-    },
-    {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "Frankfurt", arrival: "Mallorca" },
-        maxPrice: 150
-    },
-    {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "München", arrival: "Paris" },
-        maxPrice: 150
-    },
-    {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ", arrival: "Paris" },
-        maxPrice: 150
-    },
-    {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ", arrival: "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR" },
-        maxPrice: 150
-    },
-    {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ", arrival: "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR" },
-        maxPrice: 15000
-    },
-    {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "ZZZZZZZZZZ ZZZZZZZZZZZZZ ZZZZZZ", arrival: "RRRRRRRRRRRRRRR RRRRRRRRRR RRRRRRRR" },
-        maxPrice: 1000000.5667
-    }]
+    const deviceId = DeviceInfo.getUniqueId();
+    const alertRef = firebase.firestore().collection("alerts");
 
-    const closeCard = (index) => {
-        if (prevOpenedCard && prevOpenedCard !== card[index]) {
+    useEffect(() => {
+        alertRef.onSnapshot(querySnapshot => {
+            const newAlerts = [];
+            querySnapshot.forEach((doc) => {
+                const alert = doc.data();
+                alert.id = doc.id;
+                newAlerts.push(alert);
+            });
+            setAlerts(newAlerts);
+        },
+            error => {
+                console.log(error);
+            }
+        )
+    }, []);
+
+    const handleActiveChange = (isActive, id) => {
+        alertRef.doc(id).update({isActive});
+    }
+
+    const closeCard = (id) => {
+        if (prevOpenedCard && prevOpenedCard !== card[id]) {
             prevOpenedCard.close();
         }
-        prevOpenedCard = card[index];
+        prevOpenedCard = card[id];
     }
 
     return (
@@ -82,9 +51,9 @@ export default function AlertPage() {
             >
                 <SafeAreaView style={styles.alertContainer}>
                     <Text style={styles.alertHeadline}>
-                        Meine Alerts
+                        Meine Alerts {deviceId}
                     </Text>
-                    {!hasAlerts ?
+                    {alerts.length === 0 ?
                         <View style={styles.noAlertsContainer}>
                             <Ionicons style={styles.alertIcon} size={100} name="notifications" testID="" />
                             <Text style={styles.noAlertsText} testID="noAlertsText">
@@ -92,15 +61,17 @@ export default function AlertPage() {
                             </Text>
                         </View>
                         : <View style={styles.alertCardContainer}>
-                            {testArr.map((alert, index) => (
+                            {alerts.map((alert) => (
                                 <AlertCard
-                                    key={index}
-                                    date={alert.date}
-                                    locations={alert.locations}
+                                    key={alert.id}
+                                    id={alert.id}
+                                    date={{start: alert.startDate, end: alert.endDate}}
+                                    locations={{departure: alert.departure, arrival: alert.arrival}}
                                     maxPrice={alert.maxPrice}
-                                    index={index}
                                     closeCard={closeCard}
                                     cardArr={card}
+                                    isActive={alert.isActive}
+                                    setIsActive={handleActiveChange}
                                     testID="alertCard"
                                 />
                             ))}

@@ -6,8 +6,10 @@ import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
 import { Ionicons } from '@expo/vector-icons';
 
-function AlertCard({ date, locations, maxPrice, index, closeCard, cardArr }) {
-    const [isEnabled, setIsEnabled] = useState(true);
+function AlertCard({ date, locations, maxPrice, closeCard, cardArr, isActive, setIsActive, id }) {
+    /*isEnabled, because by using isActive as a value for the Switch, it won`t change the value so smooth
+    in the UI*/
+    const [isEnabled, setIsEnabled] = useState(isActive);
 
     const renderRightActions = () => {
         return (
@@ -16,13 +18,18 @@ function AlertCard({ date, locations, maxPrice, index, closeCard, cardArr }) {
             </TouchableOpacity>
         );
     };
+    
+    const handleToggleChange = () => {
+        setIsEnabled(!isEnabled);
+        setIsActive(!isActive, id);
+    }
 
     return (
         <View style={styles.container}>
             <Swipeable
                 renderRightActions={renderRightActions}
-                onSwipeableOpen={() => closeCard(index)}
-                ref={(ref) => (cardArr[index] = ref)}
+                onSwipeableOpen={() => closeCard(id)}
+                ref={(ref) => (cardArr[id] = ref)}
                 testID="alertCard"
             >
                 <View style={styles.alertCard}>
@@ -50,7 +57,7 @@ function AlertCard({ date, locations, maxPrice, index, closeCard, cardArr }) {
                         <View style={styles.toggleButtonContainer}>
                             <Switch
                                 value={isEnabled}
-                                onValueChange={() => setIsEnabled(!isEnabled)}
+                                onValueChange={() => handleToggleChange()}
                                 circleSize={20}
                                 circleBorderWidth={0}
                                 backgroundActive={COLORS.switchActive}
