@@ -42,7 +42,7 @@ export default function SelectDuration({ onSelect }) {
                 value={end}
                 onChangeText={setEnd}
             />
-            <Text style={styles.text}>Tagen</Text>
+            <Text style={styles.text} adjustsFontSizeToFit={true} numberOfLines={1}>Tagen</Text>
         </View>
     );
 }

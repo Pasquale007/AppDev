@@ -1,16 +1,28 @@
 import { StyleSheet } from "react-native";
 
 import { COLORS, FONT, SIZES } from "../../constants/theme";
+import { Dimensions } from 'react-native'
 
 const styles = StyleSheet.create({
+    flex: {
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: Dimensions.get('window').width,
+    },
+    double: {
+        flexGrow: 2
+    },
     main: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         margin: "5%",
         marginTop: "30%",
-        height: '70%',
         color: COLORS.background,
+        height: Dimensions.get('window').height * 0.6,
+
     },
     button: {
         borderRadius: 10,
