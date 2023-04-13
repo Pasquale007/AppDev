@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: SIZES.medium,
         marginTop: 30,
         paddingBottom: SIZES.medium,
+        minHeight: "100%",
     },
     
     alertHeadline: {

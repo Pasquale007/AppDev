@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./AlertCard.style";
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, AppState } from 'react-native';
 import { Switch } from 'react-native-switch';
 import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
 
-function AlertCard({ date, locations, maxPrice, closeCard, cardArr, isActive, setIsActive, id }) {
+function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, isActive, setIsActive, id }) {
     /*isEnabled, because by using isActive as a value for the Switch, it won`t change the value so smooth
     in the UI*/
     const [isEnabled, setIsEnabled] = useState(isActive);
 
     const renderRightActions = () => {
         return (
-            <TouchableOpacity style={styles.deleteButton}>
+            <TouchableOpacity style={styles.deleteButton} onPress={() => onDelete(id)}>
                 <Ionicons style={styles.trashIcon} size={30} name="trash" />
             </TouchableOpacity>
         );
     };
-    
+
     const handleToggleChange = () => {
         setIsEnabled(!isEnabled);
         setIsActive(!isActive, id);
@@ -57,7 +58,7 @@ function AlertCard({ date, locations, maxPrice, closeCard, cardArr, isActive, se
                         <View style={styles.toggleButtonContainer}>
                             <Switch
                                 value={isEnabled}
-                                onValueChange={() => handleToggleChange()}
+                                onValueChange={handleToggleChange}
                                 circleSize={20}
                                 circleBorderWidth={0}
                                 backgroundActive={COLORS.switchActive}

@@ -5,35 +5,76 @@ import { Ionicons } from '@expo/vector-icons';
 import AlertCard from '../../components/AlertCard/AlertCard';
 import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler';
 import { firebase } from '../../firebase/config';
-import DeviceInfo from "react-native-device-info";
+import Toast, { ErrorToast } from "react-native-toast-message";
+import * as SecureStore from 'expo-secure-store';
+import "react-native-get-random-values";
+import { v4 as uuidv4 } from "uuid";
+
+
+import { COLORS, FONT, SIZES } from "../../constants/theme";
 
 export default function AlertPage() {
     const [alerts, setAlerts] = useState([]);
+    const [uuid, setUuid] = useState("");
 
     let card = [];
     let prevOpenedCard;
 
-    const deviceId = DeviceInfo.getUniqueId();
     const alertRef = firebase.firestore().collection("alerts");
 
-    useEffect(() => {
-        alertRef.onSnapshot(querySnapshot => {
-            const newAlerts = [];
-            querySnapshot.forEach((doc) => {
-                const alert = doc.data();
-                alert.id = doc.id;
-                newAlerts.push(alert);
-            });
-            setAlerts(newAlerts);
-        },
-            error => {
-                console.log(error);
-            }
+    const toastConfig = {
+        error: (props) => (
+            <ErrorToast
+                {...props}
+                style={{ backgroundColor: "#08060E", borderLeftColor: COLORS.switchInactive }}
+                text1Style={{
+                    fontSize: SIZES.medium,
+                    fontFamily: FONT.semiBold,
+                    color: COLORS.textWhite,
+                }}
+            />
         )
+    };
+
+    useEffect(() => {
+        const getUUID = async () => {
+            let storedUuid = await SecureStore.getItemAsync("uuid");
+            if (!storedUuid) {
+                storedUuid = uuidv4();
+                await SecureStore.setItemAsync("uuid", storedUuid);
+            }
+            setUuid(storedUuid);
+        }
+        getUUID();
     }, []);
 
+    useEffect(() => {
+        let unsubscribe;
+
+        if (uuid) {
+            alertRef.where("deviceId", "==", uuid).onSnapshot(querySnapshot => {
+                const newAlerts = [];
+                querySnapshot.forEach((doc) => {
+                    const alert = doc.data();
+                    alert.id = doc.id;
+                    newAlerts.push(alert);
+                });
+                setAlerts(newAlerts);
+            },
+                error => {
+                    console.log(error);
+                }
+            )
+        }
+
+        //Cleanup
+        return() => {
+            unsubscribe && unsubscribe();
+        }
+    }, [uuid]);
+
     const handleActiveChange = (isActive, id) => {
-        alertRef.doc(id).update({isActive});
+        alertRef.doc(id).update({ isActive });
     }
 
     const closeCard = (id) => {
@@ -43,6 +84,28 @@ export default function AlertPage() {
         prevOpenedCard = card[id];
     }
 
+    const deleteCard = (id) => {
+        const db = firebase.firestore();
+        const batch = db.batch();
+        batch.delete(alertRef.doc(id));
+        batch.commit().then(() => {
+            console.log("Alert erfolgreich gelöscht!");
+        }).catch((error) => {
+            Toast.show({
+                type: "error",
+                text1: `Fehler beim Löschen des Alerts: ${error}`,
+                visibilityTime: 1500,
+                autoHide: true,
+            });
+        });
+    }
+
+    /*const deleteCard = async (id) => {
+        const sourceAlertRef = alertRef.doc(id);
+        const sourceAlert = await sourceAlertRef.get();
+        await alertRef.add(sourceAlert.data());
+    }*/
+
     return (
         <GestureHandlerRootView>
             <ScrollView
@@ -51,7 +114,7 @@ export default function AlertPage() {
             >
                 <SafeAreaView style={styles.alertContainer}>
                     <Text style={styles.alertHeadline}>
-                        Meine Alerts {deviceId}
+                        Meine Alerts
                     </Text>
                     {alerts.length === 0 ?
                         <View style={styles.noAlertsContainer}>
@@ -65,10 +128,11 @@ export default function AlertPage() {
                                 <AlertCard
                                     key={alert.id}
                                     id={alert.id}
-                                    date={{start: alert.startDate, end: alert.endDate}}
-                                    locations={{departure: alert.departure, arrival: alert.arrival}}
+                                    date={{ start: alert.startDate, end: alert.endDate }}
+                                    locations={{ departure: alert.departure, arrival: alert.arrival }}
                                     maxPrice={alert.maxPrice}
                                     closeCard={closeCard}
+                                    onDelete={deleteCard}
                                     cardArr={card}
                                     isActive={alert.isActive}
                                     setIsActive={handleActiveChange}
@@ -79,6 +143,7 @@ export default function AlertPage() {
                     }
                 </SafeAreaView>
             </ScrollView>
+            <Toast config={toastConfig} />
         </GestureHandlerRootView>
     );
 }
