@@ -48,7 +48,7 @@ jobs:
       - name: Run Tests
         run: |
           cd backend/
-          npm run test
+          npm run test_cloud
       - name: Run Linter
         run: |
           cd backend/
