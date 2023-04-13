@@ -3,6 +3,12 @@ import { StyleSheet } from "react-native";
 import { COLORS, FONT, SIZES } from "../../constants/theme";
 
 const styles = StyleSheet.create({
+    flex: {
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+    },
     main: {
         display: 'flex',
         flexDirection: 'column',
