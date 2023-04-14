@@ -1,3 +1,4 @@
+import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import styles from './SettingsItem.style';
 import { View, Text } from 'react-native';
