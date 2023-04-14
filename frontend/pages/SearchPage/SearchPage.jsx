@@ -9,6 +9,9 @@ import SelectDate from '../../components/SelectDate/SelectDate';
 import MySelect from '../../components/Select/Select';
 import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 import { ScrollView } from 'react-native-gesture-handler';
+import axios from 'axios';
+
+const BASE_ENDPOINT = 'http://localhost:3000';
 
 export default function SearchPage() {
     const [flexible, setFlexible] = React.useState(false);
@@ -78,12 +81,23 @@ export default function SearchPage() {
                 </ImageBackground>
                 <Button
                     text={"Suche"}
-                    onClick={() => console.log({
-                        'startAirport': startAirport,
-                        'endAirport': endAirport,
-                        'duration': duration,
-                        'dateSpan': dateSpan
-                    })}
+                    onClick={() => {
+                        const data = {
+                            'startAirport': startAirport,
+                            'endAirport': endAirport,
+                            'duration': duration,
+                            'dateSpan': dateSpan
+                        }
+                        axios.post(`${BASE_ENDPOINT}`, data)
+                            .then(response => {
+                                //here we need to open the result panel
+                                console.log(response);
+                            }).catch(err => {
+                                //here we have an error -> show the user?
+                                console.log(err);
+                            });
+                    }
+                    }
                 />
             </ScrollView>
 
