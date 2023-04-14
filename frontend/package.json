@@ -48,7 +48,7 @@
     "eslint": "^8.37.0",
     "expo": "~48.0.9",
     "expo-status-bar": "~1.4.4",
-    "lottie-react-native": "5.1.4",
+    "lottie-react-native": "^5.1.4",
     "react": "18.2.0",
     "react-native": "0.71.6",
     "react-native-custom-switch": "^1.0.7",
