@@ -21,7 +21,7 @@ export default function CalendarPicker({ visible, onSelect, onClose }) {
   };
 
   return (
-    <Modal visible={visible} transparent={true}>
+    <Modal visible={visible} >
       <View style={styles.container} testID='modal'>
         <View style={styles.content}>
           <Calendar

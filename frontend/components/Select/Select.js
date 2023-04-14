@@ -7,10 +7,10 @@ export default function MySelect({ left, right, onClick }) {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const handlePress = (number) => {
-        onClick();
         if (number === activeIndex) {
             return;
         }
+        onClick();
         setActiveIndex(activeIndex === 0 ? 1 : 0);
     };
     return (
