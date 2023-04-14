@@ -7,7 +7,6 @@ import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler
 import { firebase } from '../../firebase/config';
 import Toast, { ErrorToast } from "react-native-toast-message";
 import * as SecureStore from 'expo-secure-store';
-import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 
 
@@ -37,7 +36,7 @@ export default function AlertPage() {
     };
 
     useEffect(() => {
-        const getUUID = async () => {
+       const getUUID = async () => {
             let storedUuid = await SecureStore.getItemAsync("uuid");
             if (!storedUuid) {
                 storedUuid = uuidv4();

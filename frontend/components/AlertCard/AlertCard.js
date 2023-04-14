@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from "./AlertCard.style";
 import { Text, View, TouchableOpacity, AppState } from 'react-native';
 import { Switch } from 'react-native-switch';
 import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
 import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from "@react-navigation/native";
+import Animated, { Layout, LightSpeedOutLeft } from "react-native-reanimated";
 
 function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, isActive, setIsActive, id }) {
     /*isEnabled, because by using isActive as a value for the Switch, it won`t change the value so smooth
@@ -26,7 +26,7 @@ function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, is
     }
 
     return (
-        <View style={styles.container}>
+        <Animated.View style={styles.container} exiting={LightSpeedOutLeft} layout={Layout}>
             <Swipeable
                 renderRightActions={renderRightActions}
                 onSwipeableOpen={() => closeCard(id)}
@@ -73,7 +73,7 @@ function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, is
                 </View>
             </Swipeable>
             <View style={styles.cardBackground} />
-        </View>
+        </Animated.View>
     )
 }
 
