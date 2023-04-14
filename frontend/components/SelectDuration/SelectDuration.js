@@ -24,13 +24,11 @@ export default function SelectDuration({ onSelect }) {
     }, [start, end])
 
     const handleStartChangeText = (text) => {
-        // Use a regular expression to remove any non-numeric characters
         const numericInput = text.replace(/[^0-9]/g, '');
         setStart(numericInput);
     }
 
     const handleEndChangeText = (text) => {
-        // Use a regular expression to remove any non-numeric characters
         const numericInput = text.replace(/[^0-9]/g, '');
         setEnd(numericInput);
     }
@@ -43,6 +41,7 @@ export default function SelectDuration({ onSelect }) {
                 maxLength={maxLengthInput}
                 keyboardType='numeric'
                 style={styles.input}
+                value={start}
                 onChangeText={handleStartChangeText}
             />
             <Text style={styles.text}>bis</Text>
