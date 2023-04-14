@@ -4,19 +4,20 @@ import LottieView  from "lottie-react-native";
 import { SetStateAction } from "react";
 import Lottie from "lottie-react-native";
 
-interface SplashProps{
-  setIsLoading: React.Dispatch<SetStateAction<boolean>>;
-}
 
-export default function Splash({setIsLoading}:SplashProps):JSX.Element{
+export default function Splash({setIsLoading}){
+  
+React.useEffect(()=>{
+  setTimeout(setIsLoading, 3000)
+},[])
+
    return(
      //<View style={{flex: 1, alignItems: 'center', margin: 0}}>
    <LottieView 
    source={require("../../assets/splashscreen/splashscreen.json")}
    autoPlay={true}
-    loop={false}
+    loop={true}
   resizeMode="cover"
-  onAnimationFinish={() => setIsLoading(false)}
   />
  // </View>
  )
@@ -24,7 +25,7 @@ export default function Splash({setIsLoading}:SplashProps):JSX.Element{
 
 
 /**
-export default function Animation({setIsLoading}:SplashProps):JSX.Element {
+export default function Animation({setIsLoading}) {
     
   return (
   <Lottie source={require('../../assets/splashscreen/splashscreen.json')} autoPlay loop={false} />
