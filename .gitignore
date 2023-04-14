@@ -15,6 +15,7 @@ frontend/npm-debug.*
 *.orig.*
 frontend/web-build/
 .env
+.env.local
 
 # macOS
 frontend/.DS_Store
