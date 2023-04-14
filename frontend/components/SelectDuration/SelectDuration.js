@@ -23,6 +23,19 @@ export default function SelectDuration({ onSelect }) {
         )
     }, [start, end])
 
+    const handleStartChangeText = (text) => {
+        // Use a regular expression to remove any non-numeric characters
+        const numericInput = text.replace(/[^0-9]/g, '');
+        setStart(numericInput);
+    }
+
+    const handleEndChangeText = (text) => {
+        // Use a regular expression to remove any non-numeric characters
+        const numericInput = text.replace(/[^0-9]/g, '');
+        setEnd(numericInput);
+    }
+
+
     return (
         <View style={styles.row}>
             <TextInput
@@ -30,7 +43,7 @@ export default function SelectDuration({ onSelect }) {
                 maxLength={maxLengthInput}
                 keyboardType='numeric'
                 style={styles.input}
-                onChangeText={setStart}
+                onChangeText={handleStartChangeText}
             />
             <Text style={styles.text}>bis</Text>
 
@@ -40,7 +53,7 @@ export default function SelectDuration({ onSelect }) {
                 keyboardType='numeric'
                 style={styles.input}
                 value={end}
-                onChangeText={setEnd}
+                onChangeText={handleEndChangeText}
             />
             <Text style={styles.text} adjustsFontSizeToFit={true} numberOfLines={1}>Tagen</Text>
         </View>

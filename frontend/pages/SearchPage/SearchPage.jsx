@@ -76,16 +76,17 @@ export default function SearchPage() {
                         </View>
                     </View>
                 </ImageBackground>
+                <Button
+                    text={"Suche"}
+                    onClick={() => console.log({
+                        'startAirport': startAirport,
+                        'endAirport': endAirport,
+                        'duration': duration,
+                        'dateSpan': dateSpan
+                    })}
+                />
             </ScrollView>
-            <Button
-                text={"Suche"}
-                onClick={() => console.log({
-                    'startAirport': startAirport,
-                    'endAirport': endAirport,
-                    'duration': duration,
-                    'dateSpan': dateSpan
-                })}
-            />
+
         </View>
     );
 }
