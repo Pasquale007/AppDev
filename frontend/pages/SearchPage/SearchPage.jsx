@@ -61,7 +61,10 @@ export default function SearchPage() {
                                     </View>}
                             />
                         </View>
-                        {flexible &&
+
+                        <View
+                            style={(!flexible) && styles.disabled}
+                        >
                             <SettingsItem
                                 label="Reisedauer"
                                 icon='timer-outline'
@@ -70,7 +73,7 @@ export default function SearchPage() {
                                         <SelectDuration onSelect={setDuration} />
                                     </View>}
                             />
-                        }
+                        </View>
                     </View>
                 </ImageBackground>
             </ScrollView>

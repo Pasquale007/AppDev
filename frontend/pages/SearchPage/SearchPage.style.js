@@ -11,8 +11,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         height: Dimensions.get('window').width,
     },
-    double: {
-        flexGrow: 2
+    disabled: {
+        opacity: 0,
+        pointerEvents: 'none',
     },
     main: {
         display: 'flex',
