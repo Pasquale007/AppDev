@@ -18,6 +18,7 @@ const COLORS = {
 
   searchFieldColor: "rgba(217,217,217, 0.8)",
   backgroundOpacity: "rgba(15,13,30, 0.3)",
+  backgroundOpacityHight: "rgba(15,13,30, 0.7)",
   searchFieldTagColor: "rgba(41,38,57,0.2)",
   searchButtonColor: "#292639",
 };
