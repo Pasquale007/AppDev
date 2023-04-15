@@ -27,7 +27,7 @@ export default function FlightResultPage() {
             start: {
                 airport: 'Nürnberg',
                 date: '12.12.2000',
-                time: '06:34',
+                time: '06:35',
             },
             destination: {
                 airport: 'Berlin',
@@ -39,7 +39,7 @@ export default function FlightResultPage() {
             start: {
                 airport: 'Nürnberg',
                 date: '12.12.2000',
-                time: '06:34',
+                time: '07:10',
             },
             destination: {
                 airport: 'Berlin',
