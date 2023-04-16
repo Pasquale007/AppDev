@@ -36,7 +36,7 @@ export default function AlertPage() {
     };
 
     useEffect(() => {
-       const getUUID = async () => {
+        const getUUID = async () => {
             let storedUuid = await SecureStore.getItemAsync("uuid");
             if (!storedUuid) {
                 storedUuid = uuidv4();
@@ -51,7 +51,7 @@ export default function AlertPage() {
         let unsubscribe;
 
         if (uuid) {
-            alertRef.where("deviceId", "==", uuid).onSnapshot(querySnapshot => {
+            unsubscribe = alertRef.where("deviceId", "==", uuid).onSnapshot(querySnapshot => {
                 const newAlerts = [];
                 querySnapshot.forEach((doc) => {
                     const alert = doc.data();
@@ -67,7 +67,7 @@ export default function AlertPage() {
         }
 
         //Cleanup
-        return() => {
+        return () => {
             unsubscribe && unsubscribe();
         }
     }, [uuid]);
