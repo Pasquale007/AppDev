@@ -88,14 +88,7 @@ export default function SearchPage() {
                             'duration': duration,
                             'dateSpan': dateSpan
                         }
-                        axios.post(`${BASE_ENDPOINT}`, data)
-                            .then(response => {
-                                //here we need to open the result panel
-                                console.log(response);
-                            }).catch(err => {
-                                //here we have an error -> show the user?
-                                console.log(err);
-                            });
+                        console.log(data);
                     }
                     }
                 />
