@@ -26,7 +26,7 @@ export default function CalendarPicker({ visible, onSelect, onClose }) {
         <View style={styles.content}>
           <Calendar
             testID='calendar'
-            minDate={new Date(Date.now())}
+            disabledBeforeToday
             onChange={handleSelect}
           />
         </View>
