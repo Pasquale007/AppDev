@@ -3,10 +3,9 @@ import styles from '../SelectDuration/SelectDuration.style';
 import * as React from 'react';
 
 const maxLengthInput = 2;
-export default function SelectDuration({ onSelect }) {
+export default function SelectDuration({ onSelect, defaultValue }) {
     const [start, setStart] = React.useState();
     const [end, setEnd] = React.useState();
-
 
     const checkValid = () => {
         if (start && end && parseInt(start) > parseInt(end)) {

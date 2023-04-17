@@ -29,12 +29,6 @@ export default function SearchPage() {
         { id: '3', name: 'Gamma' },
     ];
 
-    React.useEffect(() => {
-        if (!flexible) {
-            setDuration(undefined);
-        }
-    }, [flexible]);
-
     const showToast = (title, message) => {
         Alert.alert(title, message);
     }
@@ -73,7 +67,7 @@ export default function SearchPage() {
                                 icon='timer-outline'
                                 content={
                                     <View>
-                                        <SelectDuration onSelect={setDuration} />
+                                        <SelectDuration onSelect={setDuration} defaultValue={duration} />
                                     </View>}
                             />
                         </View>
@@ -98,7 +92,7 @@ export default function SearchPage() {
                         const data = {
                             'startAirport': startAirport,
                             'endAirport': endAirport,
-                            'duration': duration,
+                            'duration': flexible ? duration : undefined,
                             'dateSpan': dateSpan
                         }
                         console.log(data);
