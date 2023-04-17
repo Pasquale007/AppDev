@@ -1,4 +1,4 @@
-const phrases = ["Auf der Suche nach dem perfekten Flug? Bei uns gibt es keine Turbulenzen - nur unschlagbare Preise!",
+export default phrases = ["Auf der Suche nach dem perfekten Flug? Bei uns gibt es keine Turbulenzen - nur unschlagbare Preise!",
 "Flugvergleich ist wie Dating: Es gibt viele Optionen, aber nur wenige, die wirklich perfekt passen. Wir helfen Ihnen dabei, den besten Flug zu finden.",
 "Unsere Flugvergleichsapp ist so einfach zu bedienen, dass sogar ein Vogel damit fliegen könnte. Aber wir empfehlen trotzdem, dass Sie den Flug selbst übernehmen.",
 "Willkommen an Bord! Bitte schnallen Sie sich an und machen Sie es sich bequem. Oder machen Sie es sich unbequem und geben Sie uns etwas zu lachen!",
@@ -33,4 +33,5 @@ const phrases = ["Auf der Suche nach dem perfekten Flug? Bei uns gibt es keine T
 "Willkommen an Bord! Wir können Ihnen keinen roten Teppich ausrollen, aber wir haben eine Notrutsche, die im Notfall funktionieren könnte.",
 "Unsere Besatzung heute besteht aus Experten, die darauf trainiert sind, Ihre Panikattacken in den Griff zu bekommen - oder zumindest zu versuchen, Ihnen ein Lächeln ins Gesicht zu zaubern, bevor es zu spät ist.",
 "Falls Sie sich fragen, warum der Himmel blau ist, fragen Sie bitte nicht den Piloten. Er hat zu viele Abstürze erlebt, um noch an solchen Fragen interessiert zu sein.",
-"Wir möchten uns bei Ihnen bedanken, dass Sie uns heute ausgewählt haben, um Ihren Adrenalinspiegel auf ein neues Niveau zu bringen."];
+"Wir möchten uns bei Ihnen bedanken, dass Sie uns heute ausgewählt haben, um Ihren Adrenalinspiegel auf ein neues Niveau zu bringen."
+];
