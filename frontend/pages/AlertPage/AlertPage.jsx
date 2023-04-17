@@ -8,13 +8,15 @@ import { firebase } from '../../firebase/config';
 import Toast, { ErrorToast } from "react-native-toast-message";
 import * as SecureStore from 'expo-secure-store';
 import { v4 as uuidv4 } from "uuid";
+import { getAlerts } from '../../firebaseQueries';
 
 
 import { COLORS, FONT, SIZES } from "../../constants/theme";
 
 export default function AlertPage() {
-    const [alerts, setAlerts] = useState([]);
+    //const [alerts, setAlerts] = useState([]);
     const [uuid, setUuid] = useState("");
+    const alerts = getAlerts(uuid);
 
     let card = [];
     let prevOpenedCard;
@@ -46,31 +48,6 @@ export default function AlertPage() {
         }
         getUUID();
     }, []);
-
-    useEffect(() => {
-        let unsubscribe;
-
-        if (uuid) {
-            unsubscribe = alertRef.where("deviceId", "==", uuid).onSnapshot(querySnapshot => {
-                const newAlerts = [];
-                querySnapshot.forEach((doc) => {
-                    const alert = doc.data();
-                    alert.id = doc.id;
-                    newAlerts.push(alert);
-                });
-                setAlerts(newAlerts);
-            },
-                error => {
-                    console.log(error);
-                }
-            )
-        }
-
-        //Cleanup
-        return () => {
-            unsubscribe && unsubscribe();
-        }
-    }, [uuid]);
 
     const handleActiveChange = (isActive, id) => {
         alertRef.doc(id).update({ isActive });
