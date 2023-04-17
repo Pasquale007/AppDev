@@ -60,7 +60,16 @@ export default function DropDown({ data, title, icon }) {
     };
 
     return (
-        <TouchableOpacity testID='touchable' style={{ backgroundColor: COLORS.searchFieldColor, borderRadius: 10, padding: 2, flexDirection: 'row', alignItems: 'center' }} onPress={handleToggleModal}>
+        <TouchableOpacity testID='touchable'
+            style={{
+                backgroundColor: COLORS.searchFieldColor,
+                borderRadius: 10,
+                padding: 2,
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginBottom: "5%",
+
+            }} onPress={handleToggleModal}>
             <Entypo name={icon} size={30} color={COLORS.background} style={{ marginRight: 8 }} />
             <View>
                 <Text>{title}</Text>

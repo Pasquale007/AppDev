@@ -6,36 +6,37 @@ import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 export default function MySelect({ left, right }) {
     const [activeIndex, setActiveIndex] = useState(0);
 
+    function Element({ text, onPress, index }) {
+
+        return (
+            <TouchableWithoutFeedback
+                style={styles.clickElement}
+                onPress={onPress}
+            >
+                <Text
+                    numberOfLines={1} adjustsFontSizeToFit={true}
+                    style={[
+                        styles.text,
+                        activeIndex === index ? styles.active : styles.passive,
+                    ]}>
+                    {text}
+                </Text>
+            </TouchableWithoutFeedback>
+        );
+    }
+
+
     const handlePress = (number) => {
         if (number === activeIndex) {
             return;
         }
         setActiveIndex(activeIndex === 0 ? 1 : 0);
     };
+
     return (
         <View style={styles.flex}>
-            <TouchableWithoutFeedback
-                onPress={() => handlePress(0)}
-            >
-                <Text
-                    style={[
-                        styles.text,
-                        activeIndex === 0 ? styles.active : styles.passive,
-                    ]}>
-                    {left}
-                </Text>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback
-                onPress={() => handlePress(1)}
-            >
-                <Text
-                    style={[
-                        styles.text,
-                        activeIndex === 1 ? styles.active : styles.passive,
-                    ]}>
-                    {right}
-                </Text>
-            </TouchableWithoutFeedback>
-        </View >
+            <Element text={left} onPress={() => handlePress(0)} index={0} />
+            <Element text={right} onPress={() => handlePress(1)} index={1} />
+        </View>
     );
 }
