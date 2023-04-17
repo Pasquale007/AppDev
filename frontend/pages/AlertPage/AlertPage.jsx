@@ -6,11 +6,11 @@ import AlertCard from '../../components/AlertCard/AlertCard';
 import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler';
 import * as SecureStore from 'expo-secure-store';
 import { v4 as uuidv4 } from "uuid";
-import { getAlerts, deleteAlert, updateAlertActive } from '../../firebaseQueries';
+import { getAlerts, deleteAlert, updateAlertActive } from '../../firebaseQueries/firebaseQueries';
 
 export default function AlertPage() {
     const [uuid, setUuid] = useState("");
-    const alerts = getAlerts(uuid);
+    const [alerts, setAlerts] = useState([]);
 
     let card = [];
     let prevOpenedCard;
@@ -26,6 +26,19 @@ export default function AlertPage() {
         }
         getUUID();
     }, []);
+
+    useEffect(() => {
+        let unsubscribe;
+
+        if(uuid){
+            unsubscribe = getAlerts(uuid, setAlerts);
+        }
+
+        //Cleanup
+        return () => {
+            unsubscribe && unsubscribe();
+        };
+    }, [uuid]);
 
     const handleActiveChange = (isActive, id) => {
         updateAlertActive(isActive, id);
