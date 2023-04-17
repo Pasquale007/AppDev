@@ -1,4 +1,4 @@
-export default phrases = ["Auf der Suche nach dem perfekten Flug? Bei uns gibt es keine Turbulenzen - nur unschlagbare Preise!",
+export const phrases = ["Auf der Suche nach dem perfekten Flug? Bei uns gibt es keine Turbulenzen - nur unschlagbare Preise!",
 "Flugvergleich ist wie Dating: Es gibt viele Optionen, aber nur wenige, die wirklich perfekt passen. Wir helfen Ihnen dabei, den besten Flug zu finden.",
 "Unsere Flugvergleichsapp ist so einfach zu bedienen, dass sogar ein Vogel damit fliegen könnte. Aber wir empfehlen trotzdem, dass Sie den Flug selbst übernehmen.",
 "Willkommen an Bord! Bitte schnallen Sie sich an und machen Sie es sich bequem. Oder machen Sie es sich unbequem und geben Sie uns etwas zu lachen!",
