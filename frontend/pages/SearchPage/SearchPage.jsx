@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, ImageBackground } from 'react-native';
+import { View, Text, ImageBackground, Alert } from 'react-native';
 import styles from './SearchPage.style';
 import image from '../../assets/images/background.jpg';
 import Button from '../../components/Button/Button';
@@ -8,6 +8,7 @@ import SelectDuration from '../../components/SelectDuration/SelectDuration';
 import SelectDate from '../../components/SelectDate/SelectDate';
 import MySelect from '../../components/Select/Select';
 import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
+import Toast from 'react-native-toast-message';
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default function SearchPage() {
@@ -35,6 +36,9 @@ export default function SearchPage() {
         }
     }, [flexible]);
 
+    const showToast = (title, message) => {
+        Alert.alert(title, message);
+    }
     return (
         <View style={styles.flex}>
             <ScrollView >
@@ -79,6 +83,17 @@ export default function SearchPage() {
                 <Button
                     text={"Suche"}
                     onClick={() => {
+                        if (flexible) {
+                            if (!duration) {
+                                showToast("Fehler", "Die Reisedauer muss definiert sein.");
+                                return;
+                            }
+                            const durationInDays = parseInt(duration.end) - parseInt(duration.start)
+                            const spanInDays = new Date(dateSpan.until) - new Date(dateSpan.from)
+                            if (durationInDays > spanInDays) {
+                                showToast("Fehler", "Die Reisedauer darf nicht länger sein als der Reisezeitraum.")
+                            }
+                        }
                         const data = {
                             'startAirport': startAirport,
                             'endAirport': endAirport,
