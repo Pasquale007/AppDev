@@ -83,14 +83,18 @@ export default function SearchPage() {
                     text={"Suche"}
                     onClick={() => {
                         if (flexible) {
+                            console.log(duration)
                             if (!duration) {
                                 showToast("Fehler", "Die Reisedauer muss definiert sein.");
                                 return;
                             }
                             const durationInDays = parseInt(duration.end) - parseInt(duration.start)
-                            const spanInDays = new Date(dateSpan.until) - new Date(dateSpan.from)
-                            if (durationInDays > spanInDays) {
+                            const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));;
+                            console.log(parseInt(duration.start))
+                            console.log(spanInDays)
+                            if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays) {
                                 showToast("Fehler", "Die Reisedauer darf nicht länger sein als der Reisezeitraum.")
+                                return;
                             }
                         }
                         const data = {
