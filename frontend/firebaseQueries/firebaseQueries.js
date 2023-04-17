@@ -20,19 +20,6 @@ export function getAlerts(uuid, setAlerts) {
             });
 }
 
-export function pest(){
-    const test = firebase.firestore().collection("alerts");
-}
-
-export function maybeGetUsersInState(state) {
-    let query = firebase.firestore().collection('users');
-  
-    if (state) {
-      query = query.where('state', '==', state);
-    }
-  
-    return query.get();
-  }
 
 export function deleteAlert(id) {
     const db = firebase.firestore();
