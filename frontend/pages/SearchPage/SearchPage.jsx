@@ -89,7 +89,7 @@ export default function SearchPage() {
                                 return;
                             }
                             const durationInDays = parseInt(duration.end) - parseInt(duration.start)
-                            const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));;
+                            const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));
                             console.log(parseInt(duration.start))
                             console.log(spanInDays)
                             if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays) {
