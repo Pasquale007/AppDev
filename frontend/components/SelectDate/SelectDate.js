@@ -32,7 +32,6 @@ export default function SelectDate({ onSelect }) {
         <View>
             {calendarVisible &&
                 <CalendarPicker
-                    minDate={new Date()}
                     visible={calendarVisible}
                     onSelect={(range) => select(range)}
                     onClose={() => setCalendarVisible(false)}

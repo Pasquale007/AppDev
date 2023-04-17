@@ -8,11 +8,11 @@ export default function SelectDuration({ onSelect }) {
     const [end, setEnd] = React.useState();
 
 
-    React.useEffect(() => {
+    const checkValid = () => {
         if (start && end && parseInt(start) > parseInt(end)) {
             setEnd((parseInt(start)).toString());
         }
-    }, [start, end]);
+    };
 
     React.useEffect(() => {
         onSelect(
@@ -51,6 +51,7 @@ export default function SelectDuration({ onSelect }) {
                 maxLength={maxLengthInput}
                 keyboardType='numeric'
                 style={styles.input}
+                onEndEditing={() => checkValid()}
                 value={end}
                 onChangeText={handleEndChangeText}
             />
