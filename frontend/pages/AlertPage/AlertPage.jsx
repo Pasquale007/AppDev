@@ -4,38 +4,16 @@ import styles from "./AlertPage.style";
 import { Ionicons } from '@expo/vector-icons';
 import AlertCard from '../../components/AlertCard/AlertCard';
 import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler';
-import { firebase } from '../../firebase/config';
-import Toast, { ErrorToast } from "react-native-toast-message";
 import * as SecureStore from 'expo-secure-store';
 import { v4 as uuidv4 } from "uuid";
-import { getAlerts } from '../../firebaseQueries';
-
-
-import { COLORS, FONT, SIZES } from "../../constants/theme";
+import { getAlerts, deleteAlert, updateAlertActive } from '../../firebaseQueries';
 
 export default function AlertPage() {
-    //const [alerts, setAlerts] = useState([]);
     const [uuid, setUuid] = useState("");
     const alerts = getAlerts(uuid);
 
     let card = [];
     let prevOpenedCard;
-
-    const alertRef = firebase.firestore().collection("alerts");
-
-    const toastConfig = {
-        error: (props) => (
-            <ErrorToast
-                {...props}
-                style={{ backgroundColor: "#08060E", borderLeftColor: COLORS.switchInactive }}
-                text1Style={{
-                    fontSize: SIZES.medium,
-                    fontFamily: FONT.semiBold,
-                    color: COLORS.textWhite,
-                }}
-            />
-        )
-    };
 
     useEffect(() => {
         const getUUID = async () => {
@@ -50,7 +28,7 @@ export default function AlertPage() {
     }, []);
 
     const handleActiveChange = (isActive, id) => {
-        alertRef.doc(id).update({ isActive });
+        updateAlertActive(isActive, id);
     }
 
     const closeCard = (id) => {
@@ -61,19 +39,7 @@ export default function AlertPage() {
     }
 
     const deleteCard = (id) => {
-        const db = firebase.firestore();
-        const batch = db.batch();
-        batch.delete(alertRef.doc(id));
-        batch.commit().then(() => {
-            console.log("Alert erfolgreich gelöscht!");
-        }).catch((error) => {
-            Toast.show({
-                type: "error",
-                text1: `Fehler beim Löschen des Alerts: ${error}`,
-                visibilityTime: 1500,
-                autoHide: true,
-            });
-        });
+        deleteAlert(id);
     }
 
     /*const deleteCard = async (id) => {
@@ -119,7 +85,6 @@ export default function AlertPage() {
                     }
                 </SafeAreaView>
             </ScrollView>
-            <Toast config={toastConfig} />
         </GestureHandlerRootView>
     );
 }
