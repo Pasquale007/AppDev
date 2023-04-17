@@ -9,6 +9,7 @@ import SelectDate from '../../components/SelectDate/SelectDate';
 import MySelect from '../../components/Select/Select';
 import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 export default function SearchPage() {
     const [startAndEndTime, setStartAndEndTime] = React.useState();
@@ -18,7 +19,7 @@ export default function SearchPage() {
         { id: '2', name: 'Beta' },
         { id: '3', name: 'Gamma' },
     ]);
-
+    const navigation = useNavigation();
     return (
         <View style={styles.flex}>
             <ScrollView>
@@ -54,7 +55,10 @@ export default function SearchPage() {
                 </ImageBackground>
                 <Button
                     text={"Suche"}
-                    onClick={(e) => console.log(e)}
+                    onClick={(e) => {
+                        console.log(e);
+                        navigation.navigate('FlightResultPage');
+                        }}
                 />
             </ScrollView>
         </View>

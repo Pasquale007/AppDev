@@ -1,16 +1,18 @@
 import { Ionicons } from '@expo/vector-icons';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ImageBackground, View } from "react-native";
 import image from '../../assets/images/background.jpg';
 import styles from './FlightResultPage.styles';
 import { COLORS } from '../../constants/theme';
 import FlightResult from '../../components/FlightResult/FlightResult';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function FlightResultPage() {
+    const navigation = useNavigation();
 
-    const [trips, setTrips] = React.useState([
+    const [trips, setTrips] = useState([
         {
             start: {
                 airport: 'Nürnberg',
@@ -49,6 +51,10 @@ export default function FlightResultPage() {
         }
     ]);
 
+    useEffect(() => {
+
+    }, []);
+
     return (
         <View>
             <ImageBackground
@@ -61,6 +67,7 @@ export default function FlightResultPage() {
                             size={40}
                             color={COLORS.textWhite}
                             style={styles.icon}
+                            onPress={() => navigation.goBack()}
                         />
                         <View style={styles.topBar}>
                             <Ionicons
@@ -101,9 +108,6 @@ export default function FlightResultPage() {
                             })}
                         </ScrollView>
                     </View>
-
-
-
                 </View>
             </ImageBackground>
         </View>
