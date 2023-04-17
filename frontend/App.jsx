@@ -31,10 +31,10 @@ export default function App() {
   };
 
 
-  return ( isLoading
-  ? <Splash setIsLoading={() => setIsLoading(false)}/> 
-  : <NavigationContainer theme={MyTheme}> 
-    <Tab.Navigator
+  return (isLoading
+    ? <Splash setIsLoading={() => setIsLoading(false)} />
+    : <NavigationContainer theme={MyTheme}>
+      <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarHideOnKeyboard: true,
           headerShown: false,
