@@ -3,7 +3,7 @@ import styles from '../SelectDuration/SelectDuration.style';
 import * as React from 'react';
 
 const maxLengthInput = 2;
-export default function SelectDuration({ onSelect, defaultValue }) {
+export default function SelectDuration({ onSelect }) {
     const [start, setStart] = React.useState();
     const [end, setEnd] = React.useState();
 

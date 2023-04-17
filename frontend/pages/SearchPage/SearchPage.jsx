@@ -67,7 +67,7 @@ export default function SearchPage() {
                                 icon='timer-outline'
                                 content={
                                     <View>
-                                        <SelectDuration onSelect={setDuration} defaultValue={duration} />
+                                        <SelectDuration onSelect={setDuration}/>
                                     </View>}
                             />
                         </View>
