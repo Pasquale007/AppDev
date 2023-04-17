@@ -9,9 +9,6 @@ import SelectDate from '../../components/SelectDate/SelectDate';
 import MySelect from '../../components/Select/Select';
 import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 import { ScrollView } from 'react-native-gesture-handler';
-import axios from 'axios';
-
-const BASE_ENDPOINT = 'http://localhost:3000';
 
 export default function SearchPage() {
     const [flexible, setFlexible] = React.useState(false);
