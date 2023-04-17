@@ -8,7 +8,6 @@ import SelectDuration from '../../components/SelectDuration/SelectDuration';
 import SelectDate from '../../components/SelectDate/SelectDate';
 import MySelect from '../../components/Select/Select';
 import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
-import Toast from 'react-native-toast-message';
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default function SearchPage() {
