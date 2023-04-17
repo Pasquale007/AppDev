@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Modal, FlatList, TextInput } from 'react-
 import { COLORS, FONT, SIZES } from '../../constants/theme';
 import { Entypo } from '@expo/vector-icons';
 
-export default function DropDown({ data, title, icon }) {
+export default function DropDown({ data, title, icon, onSelect }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedItems, setSelectedItems] = useState([]);
     const [filteredData, setFilteredData] = useState(data);
@@ -15,6 +15,7 @@ export default function DropDown({ data, title, icon }) {
     };
 
     const handleSelectItem = (item) => {
+        onSelect(item)
         const index = selectedItems.findIndex((selectedItem) => selectedItem.id === item.id);
 
         if (index > -1) {

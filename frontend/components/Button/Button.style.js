@@ -4,6 +4,8 @@ import { COLORS, FONT, SIZES } from "../../constants/theme";
 
 const styles = StyleSheet.create({
     button: {
+        marginLeft: SIZES.medium,
+        marginRight: SIZES.medium,
         paddingTop: 10,
         paddingBottom: 10,
         borderRadius: 10,
