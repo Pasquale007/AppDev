@@ -3,10 +3,10 @@ import * as crypto from "crypto";
 const tlsClient = require("../tlsClient/tlsClient");
 
 async function getInformation(origin: string, destination: string, date: string, adult = 1, teen = 0){
-    let client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
-    let resp = await client.get("https://www.eurowings.com/de/buchen/fluege/flugsuche.html?isReward=false&source=web&destination=PMI&origins=BER&origin=BER&fromdate=2023-04-10&triptype=oneway&adults=1&children=0&infants=0&lng=de-DE")
+    const client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
+    const resp = await client.get("https://www.eurowings.com/de/buchen/fluege/flugsuche.html?isReward=false&source=web&destination=PMI&origins=BER&origin=BER&fromdate=2023-04-10&triptype=oneway&adults=1&children=0&infants=0&lng=de-DE")
     console.log(resp)
-    let resp1 = await client.get("https://www.eurowings.com/de/buchen/fluege/flugsuche/flug-buchen/select.booking.json", {
+    const resp1 = await client.get("https://www.eurowings.com/de/buchen/fluege/flugsuche/flug-buchen/select.booking.json", {
         headers: {
             "accept": "application/json, text/plain, */*",
             "x-csrf-token": "{a426b214e173c06f2548f4b5e9792ce67ed555b1499bda8856adb6305408af4e056f6cb294bfcc23b464107d9c5d61b145d3c88d99dcd76a2c0d3c21bcd3a1171714da241ed6ec3a8949978936f633a89b2089b7b4ff716fb5fe19a3659dafaa}",
@@ -16,7 +16,7 @@ async function getInformation(origin: string, destination: string, date: string,
     })
     console.log(resp1)
     while(1){
-        let resp2 = await client.post("https://www.eurowings.com/de/buchen/fluege/flugsuche/flug-buchen/select.booking.json?action=QUERY_FLIGHT_DATA", {
+        const resp2 = await client.post("https://www.eurowings.com/de/buchen/fluege/flugsuche/flug-buchen/select.booking.json?action=QUERY_FLIGHT_DATA", {
             data: {
                 "_payload": {
                     "_type": "UPDATE_COMPONENT",
