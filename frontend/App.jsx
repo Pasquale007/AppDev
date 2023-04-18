@@ -6,6 +6,7 @@ import HomeScreen from './pages/HomePage/HomePage';
 import AlertPage from './pages/AlertPage/AlertPage';
 import { Ionicons } from '@expo/vector-icons';
 import { useFonts } from "expo-font";
+import { StatusBar } from 'react-native';
 
 import { COLORS } from './constants/theme';
 
@@ -32,6 +33,10 @@ export default function App() {
     <NavigationContainer
       theme={MyTheme}
     >
+      <StatusBar 
+        backgroundColor={COLORS.background}
+        barStyle={"light-content"}
+      />
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarHideOnKeyboard: true,
