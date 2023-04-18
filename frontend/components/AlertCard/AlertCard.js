@@ -14,7 +14,7 @@ function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, is
 
     const renderRightActions = () => {
         return (
-            <TouchableOpacity style={styles.deleteButton} onPress={() => onDelete(id)}>
+            <TouchableOpacity style={styles.deleteButton} onPress={() => onDelete(id)} testID="deleteButton">
                 <Ionicons style={styles.trashIcon} size={30} name="trash" />
             </TouchableOpacity>
         );
