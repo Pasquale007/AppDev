@@ -9,6 +9,7 @@ import SelectDate from '../../components/SelectDate/SelectDate';
 import MySelect from '../../components/Select/Select';
 import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 export default function SearchPage() {
     const [flexible, setFlexible] = React.useState(false);
@@ -31,7 +32,9 @@ export default function SearchPage() {
 
     const showToast = (title, message) => {
         Alert.alert(title, message);
-    }
+    };
+
+    const navigation = useNavigation();
     return (
         <View style={styles.flex}>
             <ScrollView >
@@ -67,7 +70,7 @@ export default function SearchPage() {
                                 icon='timer-outline'
                                 content={
                                     <View>
-                                        <SelectDuration onSelect={setDuration}/>
+                                        <SelectDuration onSelect={setDuration} />
                                     </View>}
                             />
                         </View>
@@ -77,30 +80,30 @@ export default function SearchPage() {
                     text={"Suche"}
                     onClick={() => {
                         if (flexible) {
-                            console.log(duration)
-                            if (!duration) {
-                                showToast("Fehler", "Die Reisedauer muss definiert sein.");
-                                return;
+                            {
+                                if (!duration) {
+                                    showToast("Fehler", "Die Reisedauer muss definiert sein.");
+                                    return;
+                                }
+                                const durationInDays = parseInt(duration.end) - parseInt(duration.start)
+                                const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));
+                                if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays) {
+                                    showToast("Fehler", "Die Reisedauer darf nicht länger sein als der Reisezeitraum.")
+                                    return;
+                                }
                             }
-                            const durationInDays = parseInt(duration.end) - parseInt(duration.start)
-                            const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));
-                            if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays) {
-                                showToast("Fehler", "Die Reisedauer darf nicht länger sein als der Reisezeitraum.")
-                                return;
+                            const data = {
+                                'startAirport': startAirport,
+                                'endAirport': endAirport,
+                                'duration': flexible ? duration : undefined,
+                                'dateSpan': dateSpan
                             }
+                            console.log(data);
                         }
-                        const data = {
-                            'startAirport': startAirport,
-                            'endAirport': endAirport,
-                            'duration': flexible ? duration : undefined,
-                            'dateSpan': dateSpan
-                        }
-                        console.log(data);
-                    }
-                    }
+                        navigation.navigate('FlightResultPage');
+                    }}
                 />
             </ScrollView>
-
         </View>
     );
 }
