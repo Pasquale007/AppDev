@@ -34,7 +34,6 @@ function Info({ direction, airport, date, time }) {
 
 export default function FlightResult({ start, destination }) {
 
-
     return (
         <View style={styles.main}>
             <View style={styles.flex}>
@@ -48,7 +47,7 @@ export default function FlightResult({ start, destination }) {
                 </Image>
                 <Info direction={"right"} airport={destination.airport} date={destination.date} time={destination.time} />
             </View>
-            <Text style={styles.costs}> ab 12,90</Text>
+            <Text style={styles.costs}>ab 12,90</Text>
         </View>
     );
 

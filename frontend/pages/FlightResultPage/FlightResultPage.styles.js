@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     header: {
         display: 'flex',
         flexDirection: 'row',
+        marginRight: "5%",
     },
     content: {
         margin: "5%",

@@ -77,7 +77,6 @@ export default function FlightResultPage() {
                                 style={styles.iconWithoutBackground}
                             />
                         </View>
-
                     </View>
                     <View
                         style={styles.main}

@@ -81,7 +81,6 @@ export default function SearchPage() {
                     onClick={() => {
                         if (flexible) {
                             {
-                                console.log(duration)
                                 if (!duration) {
                                     showToast("Fehler", "Die Reisedauer muss definiert sein.");
                                     return;
@@ -105,7 +104,6 @@ export default function SearchPage() {
                     }}
                 />
             </ScrollView>
-
         </View>
     );
 }
