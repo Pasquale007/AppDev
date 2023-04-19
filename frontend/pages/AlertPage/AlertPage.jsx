@@ -55,12 +55,6 @@ export default function AlertPage() {
         deleteAlert(id);
     }
 
-    /*const deleteCard = async (id) => {
-        const sourceAlertRef = alertRef.doc(id);
-        const sourceAlert = await sourceAlertRef.get();
-        await alertRef.add(sourceAlert.data());
-    }*/
-
     return (
         <GestureHandlerRootView>
             <ScrollView

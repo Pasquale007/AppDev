@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from "./AlertCard.style";
-import { Text, View, TouchableOpacity, AppState } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { Switch } from 'react-native-switch';
 import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
@@ -8,9 +8,6 @@ import { Ionicons } from '@expo/vector-icons';
 import Animated, { Layout, LightSpeedOutLeft } from "react-native-reanimated";
 
 function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, isActive, setIsActive, id }) {
-    /*isEnabled, because by using isActive as a value for the Switch, it won`t change the value so smooth
-    in the UI*/
-    const [isEnabled, setIsEnabled] = useState(isActive);
 
     const renderRightActions = () => {
         return (
@@ -21,7 +18,6 @@ function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, is
     };
 
     const handleToggleChange = () => {
-        setIsEnabled(!isEnabled);
         setIsActive(!isActive, id);
     }
 
@@ -57,7 +53,7 @@ function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, is
                         </Text>
                         <View style={styles.toggleButtonContainer}>
                             <Switch
-                                value={isEnabled}
+                                value={isActive}
                                 onValueChange={handleToggleChange}
                                 circleSize={20}
                                 circleBorderWidth={0}

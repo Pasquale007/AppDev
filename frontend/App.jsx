@@ -39,6 +39,7 @@ export default function App() {
       />
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          tabBarStyle: {borderTopWidth: 0},
           tabBarHideOnKeyboard: true,
           headerShown: false,
           tabBarActiveTintColor: COLORS.navIconActive,
