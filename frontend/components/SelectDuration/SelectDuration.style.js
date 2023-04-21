@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         justifyContent: 'space-evenly',
         fontSize: SIZES.large,
-        alignItems: 'baseline' // add this line
+        alignItems: 'baseline'
     }
 });
 
