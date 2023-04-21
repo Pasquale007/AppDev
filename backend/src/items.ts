@@ -41,6 +41,7 @@ export function getAirportByCode(code: string): Airport {
             return airports[i];
         }
     }
+    throw Error;
 }
 
 export function getAirportByName(name: string): Airport {
@@ -49,6 +50,7 @@ export function getAirportByName(name: string): Airport {
             return airports[i];
         }
     }
+    throw Error;
 }
 
 ~(async () => {
@@ -58,7 +60,7 @@ export function getAirportByName(name: string): Airport {
         airports.push({
             name: airportsJson[itemIndex].name,
             iata: airportsJson[itemIndex].iata,
-            country: airportsJson[itemIndex].country
+            countryCode: airportsJson[itemIndex].country
         })
     }
 })();
