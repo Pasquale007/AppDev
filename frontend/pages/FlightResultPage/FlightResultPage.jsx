@@ -84,7 +84,6 @@ export default function FlightResultPage({ route }) {
                     >
                         <ScrollView>
                             {trips.map(trip => {
-                                console.log(trip)
                                 return (
                                     <FlightResult
                                         key={trip.start.time}

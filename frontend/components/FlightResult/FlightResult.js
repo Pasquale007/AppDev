@@ -37,7 +37,6 @@ export default function FlightResult({ start, destination }) {
     return (
         <View style={styles.main}>
             <View style={styles.flex}>
-                {console.log(start)}
                 <Info direction={"left"} airport={start.airport} date={start.date} time={start.time} />
                 <Image
                     resizeMode='contain'

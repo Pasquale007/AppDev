@@ -98,7 +98,6 @@ export default function SearchPage() {
                                 'duration': flexible ? duration : undefined,
                                 'dateSpan': dateSpan
                             }
-                            console.log(data);
                         }
                         navigation.navigate('FlightResultPage', { data: data });
                     }}
