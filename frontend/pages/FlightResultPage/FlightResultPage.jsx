@@ -10,7 +10,12 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export default function FlightResultPage({ route }) {
-    const { data } = route.params;
+    /*Data from the other page*/
+    const { startAirport, endAirport, duration, dateSpan } = route.params.data;
+    const fromDate = new Date(dateSpan.from);
+    const untilDate = new Date(dateSpan.until);
+
+
     const navigation = useNavigation();
 
     const [trips, setTrips] = useState([

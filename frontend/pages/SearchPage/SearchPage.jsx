@@ -92,14 +92,18 @@ export default function SearchPage() {
                                     return;
                                 }
                             }
-                            const data = {
+                        }
+                        navigation.navigate('FlightResultPage', {
+                            data: {
                                 'startAirport': startAirport,
                                 'endAirport': endAirport,
                                 'duration': flexible ? duration : undefined,
-                                'dateSpan': dateSpan
+                                'dateSpan': {
+                                    from: dateSpan.from.toISOString(),
+                                    until: dateSpan.until.toISOString(),
+                                }
                             }
-                        }
-                        navigation.navigate('FlightResultPage', { data: data });
+                        });
                     }}
                 />
             </ScrollView>
