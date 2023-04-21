@@ -54,6 +54,7 @@ export function getAirportByName(name: string): Airport | undefined {
 }
 
 ~(async () => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const airportsJson = require('airport-codes').toJSON()
     airports = [];
     for (const itemIndex in airportsJson) {

@@ -75,8 +75,8 @@ export async function setRoutes(): Promise<Route[]>{
 }
 
 async function processDestination(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number){
-    let result: Array<SimpleConnection> = [];
-    let monthsBetween = getMonthsBetween(outFromDate, outToDate);
+    const result: Array<SimpleConnection> = [];
+    const monthsBetween = getMonthsBetween(outFromDate, outToDate);
     let outbound: Array<any> = [];
     for (let i = 0; i < monthsBetween.length; i++) {
         const tempResult = await getInformationMonth(origin, destination, monthsBetween[i])
