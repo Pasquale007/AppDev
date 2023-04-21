@@ -100,7 +100,7 @@ export default function SearchPage() {
                             }
                             console.log(data);
                         }
-                        navigation.navigate('FlightResultPage');
+                        navigation.navigate('FlightResultPage', { data: data });
                     }}
                 />
             </ScrollView>

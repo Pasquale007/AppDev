@@ -9,7 +9,8 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function FlightResultPage() {
+export default function FlightResultPage({ route }) {
+    const { data } = route.params;
     const navigation = useNavigation();
 
     const [trips, setTrips] = useState([
