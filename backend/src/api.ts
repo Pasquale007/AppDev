@@ -1,3 +1,4 @@
+// @ts-ignore
 import express, { Request, Response } from 'express';
 import {getResult, setRoutes} from "./ryanair";
 import {Route} from "./items";
@@ -37,6 +38,7 @@ app.get('/getFlights', async (req: Request, res: Response) => {
 
 
   if(queryParams.ignoredDestinations.length != 0){
+    // @ts-ignore
     queryParams.ignoredDestinations = JSON.parse(queryParams.ignoredDestinations)
   }
 
