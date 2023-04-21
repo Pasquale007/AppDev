@@ -90,7 +90,8 @@ async function processDestination(origin: string, destination: string, outFromDa
         let tempResult = await getInformationMonth(destination, origin, monthsBetween[i])
         inbound = [...inbound, ...tempResult]
     }
-
+    lengthMin = (+lengthMin)
+    lengthMax = (+lengthMax)
 
     for (let i = 0; i < outbound.length; i++) {
         if(new Date(outFromDate) <= new Date(outbound[i].day) && new Date(outToDate) >= new Date(outbound[i].day) && outbound[i].unavailable == false && outbound[i].soldOut == false){
