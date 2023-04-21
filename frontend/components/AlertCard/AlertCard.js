@@ -1,28 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from "./AlertCard.style";
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Switch } from 'react-native-switch';
 import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
 import { Ionicons } from '@expo/vector-icons';
+import Animated, { Layout, LightSpeedOutLeft } from "react-native-reanimated";
 
-function AlertCard({ date, locations, maxPrice, index, closeCard, cardArr }) {
-    const [isEnabled, setIsEnabled] = useState(true);
+function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, isActive, setIsActive, id }) {
 
     const renderRightActions = () => {
         return (
-            <TouchableOpacity style={styles.deleteButton}>
+            <TouchableOpacity style={styles.deleteButton} onPress={() => onDelete(id)} testID="deleteButton">
                 <Ionicons style={styles.trashIcon} size={30} name="trash" />
             </TouchableOpacity>
         );
     };
 
+    const handleToggleChange = () => {
+        setIsActive(!isActive, id);
+    }
+
     return (
-        <View style={styles.container}>
+        <Animated.View style={styles.container} exiting={LightSpeedOutLeft} layout={Layout}>
             <Swipeable
                 renderRightActions={renderRightActions}
-                onSwipeableOpen={() => closeCard(index)}
-                ref={(ref) => (cardArr[index] = ref)}
+                onSwipeableOpen={() => closeCard(id)}
+                ref={(ref) => (cardArr[id] = ref)}
                 testID="alertCard"
             >
                 <View style={styles.alertCard}>
@@ -49,8 +53,8 @@ function AlertCard({ date, locations, maxPrice, index, closeCard, cardArr }) {
                         </Text>
                         <View style={styles.toggleButtonContainer}>
                             <Switch
-                                value={isEnabled}
-                                onValueChange={() => setIsEnabled(!isEnabled)}
+                                value={isActive}
+                                onValueChange={handleToggleChange}
                                 circleSize={20}
                                 circleBorderWidth={0}
                                 backgroundActive={COLORS.switchActive}
@@ -65,7 +69,7 @@ function AlertCard({ date, locations, maxPrice, index, closeCard, cardArr }) {
                 </View>
             </Swipeable>
             <View style={styles.cardBackground} />
-        </View>
+        </Animated.View>
     )
 }
 
