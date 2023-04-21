@@ -23,7 +23,7 @@ app.get('/getFlights', async (req: any, res: Response) => {
     queryParams = {
       origin: req.query.origin as string,
       destination: req.query.destination,
-      ignoredDestinations: req.query.ignoredDestinations ?? [],
+      ignoredDestinations: req.query.ignoredDestinations.split(",") ?? [],
       outFromDate: new Date(req.query.outFromDate),
       outToDate: new Date(req.query.outToDate),
       lengthMin: req.query.lengthMin ?? 0,
@@ -34,12 +34,6 @@ app.get('/getFlights', async (req: any, res: Response) => {
     await res.status(500).send("Something went wrong!")
     return
   }
-
-  
-  if (queryParams.ignoredDestinations.length != 0) {
-    queryParams.ignoredDestinations = JSON.parse(queryParams.ignoredDestinations)
-  }
-
 
   if (queryParams.origin.length != 3) {
     await res.status(501).send("Length of origin not 3 characters. (No IATA-Code)")
