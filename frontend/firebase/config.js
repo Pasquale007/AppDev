@@ -2,6 +2,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 
 const firebaseConfig = {
+    //eslint-disable-next-line no-undef
     apiKey: process.env.FIREBASE_API_KEY, 
     authDomain: "flexi-flight.firebaseapp.com",
     projectId: "flexi-flight",
