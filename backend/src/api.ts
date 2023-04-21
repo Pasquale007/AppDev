@@ -1,10 +1,6 @@
 import express, { Request, Response } from 'express';
-import {sign} from "crypto";
-import {constants} from "os";
-import priority = module
-import {getResult, setRoutes} from "./ryanair";
-import {Route} from "./items";
-import {all} from "axios";
+import { getResult, setRoutes } from "./ryanair";
+import { Route } from "./items";
 
 let allRoutes: Route[] = [];
 
@@ -21,35 +17,29 @@ interface QueryParams {
   lengthMax: number;
 }
 
-app.get('/getFlights', async (req: Request, res: Response) => {
+app.get('/getFlights', async (req: any, res: Response) => {
   let queryParams: QueryParams
-  try{
+  try {
     queryParams = {
       origin: req.query.origin as string,
       destination: req.query.destination,
-      ignoredDestinations: req.query.ignoredDestinations ?? [],
+      ignoredDestinations: req.query.ignoredDestinations.split(",") ?? [],
       outFromDate: new Date(req.query.outFromDate),
       outToDate: new Date(req.query.outToDate),
       lengthMin: req.query.lengthMin ?? 0,
       lengthMax: req.query.lengthMax ?? 30,
     };
-  }catch (e) {
+  } catch (e) {
     console.log(e)
     await res.status(500).send("Something went wrong!")
     return
   }
 
-
-  if(queryParams.ignoredDestinations.length != 0){
-    queryParams.ignoredDestinations = JSON.parse(queryParams.ignoredDestinations)
-  }
-
-
-  if(queryParams.origin.length != 3){
+  if (queryParams.origin.length != 3) {
     await res.status(501).send("Length of origin not 3 characters. (No IATA-Code)")
     return
   }
-  if(queryParams.destination.length != 3 && queryParams.destination != "All destinations"){
+  if (queryParams.destination.length != 3 && queryParams.destination != "All destinations") {
     await res.status(501).send("Length of destination not 3 characters. (No IATA-Code)")
     return
   }

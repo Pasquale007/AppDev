@@ -1,4 +1,4 @@
-name: Frontend Continuous Integration
+name: Full Continuous Integration
 on:
   push:
     branches: [ "master", "develop" ]
@@ -12,20 +12,44 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install Dependencies
-      run: |
-        cd frontend/
-        npm install
-    - name: Run Tests
-      run: |
-        cd frontend/
-        npm run test_cloud
-    - name: Run Linter
-      run: |
-        cd frontend/
-        npm run lint
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Dependencies
+        run: |
+          cd frontend/
+          npm install
+      - name: Run Tests
+        run: |
+          cd frontend/
+          npm run test_cloud
+      - name: Run Linter
+        run: |
+          cd frontend/
+          npm run lint
+
+  build-backend:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Dependencies
+        run: |
+          cd backend/
+          npm install
+      - name: Run Tests
+        run: |
+          cd backend/
+          npm run test_cloud
+      - name: Run Linter
+        run: |
+          cd backend/
+          npm run lint
