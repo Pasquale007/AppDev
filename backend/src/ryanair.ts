@@ -1,6 +1,7 @@
 import * as crypto from "crypto";
 import {Provider, Route, SimpleConnection} from "./items";
 import * as fs from "fs";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const tlsClient = require("../tlsClient/tlsClient");
 
 
