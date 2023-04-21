@@ -36,6 +36,7 @@ export default function App() {
     : <NavigationContainer theme={MyTheme}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          tabBarStyle: {borderTopWidth: 0},
           tabBarHideOnKeyboard: true,
           headerShown: false,
           tabBarActiveTintColor: COLORS.navIconActive,
@@ -60,4 +61,4 @@ export default function App() {
       </Tab.Navigator>
     </NavigationContainer>
   );
-}
+};
