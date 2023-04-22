@@ -10,8 +10,11 @@ import MySelect from '../../components/Select/Select';
 import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import flightData from '../../data/flightData.json';
 
 export default function SearchPage() {
+    const origins = flightData.map(dataset => dataset.origin);
+    const [destinations, setDestinations] = React.useState([]);
     const [flexible, setFlexible] = React.useState(false);
     const [startAirport, setStartAirport] = React.useState();
     const [endAirport, setEndAirport] = React.useState();
@@ -24,11 +27,14 @@ export default function SearchPage() {
         'until': new Date(Date.now())
     });
 
-    const data = [
-        { id: '1', name: 'Alpha' },
-        { id: '2', name: 'Beta' },
-        { id: '3', name: 'Gamma' },
-    ];
+    React.useEffect(() => {
+        console.log(startAirport)
+        const dataset = flightData
+            .filter(dataset => dataset.origin.name === startAirport?.name)
+            .flatMap(dataset => dataset.destinations.map(dest => dest));
+        console.log(dataset)
+        setDestinations(dataset);
+    }, [startAirport]);
 
     const showToast = (title, message) => {
         Alert.alert(title, message);
@@ -44,8 +50,8 @@ export default function SearchPage() {
                 >
                     <View style={styles.main} >
                         <Text style={styles.seachText}>Suche</Text>
-                        <DropDown data={data} title={"Von"} icon="aircraft-take-off" onSelect={setStartAirport} />
-                        <DropDown data={data} title={"Nach"} icon="aircraft-landing" onSelect={setEndAirport} />
+                        <DropDown data={origins} title={"Von"} icon="aircraft-take-off" onSelect={setStartAirport} />
+                        <DropDown data={destinations} title={"Nach"} icon="aircraft-landing" onSelect={setEndAirport} />
                         <View style={styles.center}>
                             <MySelect left={"Flexible Reisedaten"} right={"Genaue Reisedaten"} style={{ alignSelf: 'center' }} onClick={() => { setFlexible(!flexible) }} />
                         </View>

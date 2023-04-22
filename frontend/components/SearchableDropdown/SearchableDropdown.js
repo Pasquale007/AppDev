@@ -14,6 +14,10 @@ export default function DropDown({ data, title, icon, onSelect }) {
         setIsModalVisible(!isModalVisible);
     };
 
+    React.useEffect(() => {
+        setFilteredData(data);
+    }, [data]);
+
     const handleSelectItem = (item) => {
         onSelect(item)
         const index = selectedItems.findIndex((selectedItem) => selectedItem.id === item.id);
