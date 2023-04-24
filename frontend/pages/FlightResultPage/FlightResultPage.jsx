@@ -9,7 +9,13 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function FlightResultPage() {
+export default function FlightResultPage({ route }) {
+    /*Data from the other page*/
+    const { startAirport, endAirport, duration, dateSpan } = route.params.data;
+    const fromDate = new Date(dateSpan.from);
+    const untilDate = new Date(dateSpan.until);
+
+
     const navigation = useNavigation();
 
     const [trips, setTrips] = useState([
@@ -83,7 +89,6 @@ export default function FlightResultPage() {
                     >
                         <ScrollView>
                             {trips.map(trip => {
-                                console.log(trip)
                                 return (
                                     <FlightResult
                                         key={trip.start.time}
