@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, FlatList, TextInput } from 'react-native';
 import { COLORS, FONT, SIZES } from '../../constants/theme';
 import { Entypo } from '@expo/vector-icons';
@@ -93,7 +93,7 @@ export default function DropDown({ data, title, icon, onSelect }) {
                             <Text style={{ color: COLORS.navIconActive, fontFamily: FONT.medium, fontSize: SIZES.medium }}>Close</Text>
                         </TouchableOpacity>
                     </View>
-                    <FlatList data={filteredData} renderItem={renderListItem} keyExtractor={(item) => { item.iata.toString() }} />
+                    <FlatList data={filteredData} renderItem={renderListItem} keyExtractor={(item) => { item.iata }} />
                 </View>
             </Modal>
         </TouchableOpacity>
