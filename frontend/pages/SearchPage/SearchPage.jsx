@@ -28,11 +28,9 @@ export default function SearchPage() {
     });
 
     React.useEffect(() => {
-        console.log(startAirport)
         const dataset = flightData
             .filter(dataset => dataset.origin.name === startAirport?.name)
             .flatMap(dataset => dataset.destinations.map(dest => dest));
-        console.log(dataset)
         setDestinations(dataset);
     }, [startAirport]);
 
