@@ -93,7 +93,7 @@ export default function DropDown({ data, title, icon, onSelect }) {
                             <Text style={{ color: COLORS.navIconActive, fontFamily: FONT.medium, fontSize: SIZES.medium }}>Close</Text>
                         </TouchableOpacity>
                     </View>
-                    <FlatList data={filteredData} renderItem={renderListItem} keyExtractor={(item) => { item.iata }} />
+                    <FlatList data={filteredData} renderItem={renderListItem} keyExtractor={(item) => item.iata} />
                 </View>
             </Modal>
         </TouchableOpacity>
