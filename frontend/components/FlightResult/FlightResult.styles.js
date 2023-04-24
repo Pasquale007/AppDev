@@ -17,7 +17,17 @@ const styles = StyleSheet.create({
     },
     city: {
         fontFamily: FONT.bold,
-        fontSize: SIZES.large,
+        fontSize: SIZES.xLarge,
+        color: COLORS.textWhite,
+    },
+    text: {
+        fontFamily: FONT.bold,
+        fontSize: SIZES.medium,
+        color: COLORS.textWhite,
+    },
+    textSmall: {
+        fontFamily: FONT.bold,
+        fontSize: SIZES.small,
         color: COLORS.textWhite,
     },
     date: {
@@ -26,7 +36,7 @@ const styles = StyleSheet.create({
         color: COLORS.textWhite,
     },
     right: {
-        textAlign: 'right'
+        textAlign: 'right',
     },
     costs: {
         color: COLORS.textWhite,
