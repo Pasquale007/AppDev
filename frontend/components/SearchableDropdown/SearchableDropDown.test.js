@@ -1,13 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import DropDown from './SearchableDropdown';
-
+import flightData from '../../data/flightData.json'
 describe('DropDown', () => {
-    const data = [
-        { id: '1', name: 'Item 1' },
-        { id: '2', name: 'Item 2' },
-        { id: '3', name: 'Item 3' },
-    ];
+    const data = flightData;
 
     it('should render title and default selected item', () => {
         const title = 'Select an item';
