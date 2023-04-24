@@ -29,6 +29,7 @@ export default function AlertPage() {
 
     useEffect(() => {
         let unsubscribe;
+        console.log(uuid);
 
         if (uuid) {
             unsubscribe = getAlerts(uuid, setAlerts);
