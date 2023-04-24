@@ -33,6 +33,23 @@ const styles = StyleSheet.create({
         marginTop: SIZES.xSmall,
         display: "flex",
         gap: SIZES.xSmall,
+    },
+
+    button: {
+        backgroundColor: COLORS.saveButtonBackground,
+        borderRadius: SIZES.small,
+        marginTop: SIZES.small,
+        paddingHorizontal: 5,
+        paddingVertical: SIZES.small,
+        display: "flex",
+        justifyContent: "center",
+    },
+
+    buttonText: {
+        color: COLORS.textWhite,
+        fontFamily: FONT.semiBold,
+        fontSize: SIZES.large,
+        textAlign: "center",
     }
 
 });
