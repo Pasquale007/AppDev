@@ -3,22 +3,39 @@ import React, { useEffect, useState } from 'react';
 import { ImageBackground, TouchableOpacity, View } from "react-native";
 import image from '../../assets/images/background.jpg';
 import styles from './FlightResultPage.styles';
-import { COLORS } from '../../constants/theme';
+import { COLORS, SIZES, FONT } from '../../constants/theme';
 import FlightResult from '../../components/FlightResult/FlightResult';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import CreateAlertModal from '../../components/CreateAlertModal/CreateAlertModal';
+import ToastContainer from '../../components/ToastContainer/ToastContainer';
+import Toast from 'react-native-toast-message';
 
 
 export default function FlightResultPage({ route }) {
-    /*Data from the other page*/
-    const { startAirport, endAirport, duration, dateSpan } = route.params.data;
     const [createAlertModalIsVisible, setCreateAlertModalIsVisible] = useState(false);
-    const fromDate = new Date(dateSpan.from);
-    const untilDate = new Date(dateSpan.until);
-
+    const [successMsg, setSuccessMsg] = useState("");
+    const [errorMsg, setErrorMsg] = useState("");
 
     const navigation = useNavigation();
+
+    useEffect(() => {
+        if(successMsg){
+            Toast.show({
+                type: "success",
+                text1: successMsg,
+            })
+            setSuccessMsg("");
+        }
+
+        if(errorMsg){
+            Toast.show({
+                type: "error",
+                text1: errorMsg,
+            })
+            setErrorMsg("");
+        }
+    }, [successMsg, errorMsg]);
 
     const [trips, setTrips] = useState([
         {
@@ -58,10 +75,6 @@ export default function FlightResultPage({ route }) {
             }
         }
     ]);
-
-    useEffect(() => {
-
-    }, []);
 
     return (
         <View>
@@ -120,9 +133,12 @@ export default function FlightResultPage({ route }) {
                         isVisible={createAlertModalIsVisible}
                         onBackdropPress={() => setCreateAlertModalIsVisible(false)}
                         data={route.params.data}
+                        onSuccess={(msg) => setSuccessMsg(msg)}
+                        onError={(msg) => setErrorMsg(msg)}
                     />
                 </View>
             </ImageBackground>
+            <ToastContainer />
         </View>
     );
 }

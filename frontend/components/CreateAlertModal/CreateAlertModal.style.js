@@ -35,6 +35,10 @@ const styles = StyleSheet.create({
         gap: SIZES.xSmall,
     },
 
+    icon: {
+        color: COLORS.textWhite,
+    },  
+
     button: {
         backgroundColor: COLORS.saveButtonBackground,
         borderRadius: SIZES.small,

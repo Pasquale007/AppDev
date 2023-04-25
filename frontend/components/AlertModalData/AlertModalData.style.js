@@ -8,6 +8,13 @@ const styles = StyleSheet.create({
         gap: 1,
     },
 
+    head: {
+        display: "flex",
+        flexDirection: "row",
+        gap: 5,
+        alignItems: "center",
+    },  
+
     headline: {
         color: COLORS.textWhite,
         fontFamily: FONT.semiBold,
@@ -18,6 +25,7 @@ const styles = StyleSheet.create({
         color: COLORS.textWhite,
         fontFamily: FONT.regular,
         fontSize: SIZES.small,
+        marginLeft: 21,
     },
 
 });
