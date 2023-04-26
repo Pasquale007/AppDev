@@ -29,10 +29,10 @@ const styles = StyleSheet.create({
         color: COLORS.textWhite,
     },
     textSmall: {
-        fontFamily: FONT.bold,
-        fontSize: SIZES.xsmall,
+        fontFamily: FONT.medium,
+        fontSize: SIZES.xSmall,
         color: COLORS.textWhite,
-        padding: 4,
+        padding: 2,
         alignItems: 'center',
     },
     date: {

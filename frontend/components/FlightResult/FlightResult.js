@@ -95,8 +95,8 @@ export default function FlightResult({ data }) {
                 iataCode={data.origin}
                 date={data.outboundDate}
             />
-            <View style={{ backgroundColor: COLORS.background, height: 25, marginTop: 10 }}>
-                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingVertical: 0 }}>
+            <View style={{ backgroundColor: COLORS.background, height: 18, marginTop: 13}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={[styles.textSmall, { transform: [{ translateX: -110 }] }]}>Zusammen ab</Text>
                     <View style={{ position: 'absolute', left: '50%', transform: [{ translateX: -50 }] }}>
                         <Text style={styles.costs}>{data.totalPrice} €</Text>
