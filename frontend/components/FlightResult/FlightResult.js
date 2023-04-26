@@ -4,14 +4,15 @@ import styles from './FlightResult.styles';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../../constants/theme';
 import flightData from '../../data/flightData.json';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function Info({ direction, iataCode, date }) {
     const [cityName, setCityName] = useState("");
+
     useEffect(() => {
         const airport = flightData.find(airport => airport.origin.iata === iataCode);
         setCityName(airport.origin.name)
     }, []);
-
 
     function getDate() {
         const searchedDay = new Date(date);
@@ -33,10 +34,10 @@ function Info({ direction, iataCode, date }) {
     }
 
     return (
-        <View style={(direction === 'right' && styles.right)}>
-            <View style={[(direction === 'right' ? { flexDirection: 'row-reverse', justifyContent: 'flex-end' } : { justifyContent: 'flex-start', flexDirection: 'row' }), { display: 'flex', alignItems: 'center' }]}>
-                <Ionicons name={"airplane"} color={COLORS.textWhite} size={20} style={[{ marginRight: 10 }, styles.city, (direction === 'right' && styles.right)]} />
-                <Text
+        <View style={[(direction === 'right' && styles.right), { padding: '5%' }]}>
+            <View style={[direction === "left" ? ({ justifyContent: 'flex-start', flexDirection: 'row' }) : ({ justifyContent: 'flex-end', flexDirection: 'row' }), { display: 'flex', alignItems: 'center' }]}>
+                {direction === "left" && <Ionicons name={"airplane"} color={COLORS.textWhite} size={10} style={[{ marginRight: 10 }, styles.city, (direction === 'right' && styles.right)]} />
+                }<Text
                     style={[styles.text, (direction === 'right' && styles.right), { marginRight: 10 }]}
                     numberOfLines={1}
                     adjustsFontSizeToFit={true}
@@ -46,6 +47,8 @@ function Info({ direction, iataCode, date }) {
                         : "Hinflug"
                     }
                 </Text>
+                {direction === "right" && <Ionicons name={"airplane"} color={COLORS.textWhite} size={10} style={[{ transform: [{ rotate: '180deg' }] }, styles.city, (direction === 'right' && styles.right)]} />
+                }
             </View>
             <Text
                 style={[styles.city, (direction === 'right' && styles.right)]}
@@ -67,14 +70,23 @@ function Info({ direction, iataCode, date }) {
 
 export default function FlightResult({ data }) {
 
+    const pressed = () => {
+        console.log("Umleitung/ Öffnen des Browsers initialisieren")
+    }
+
     return (
-        <View style={styles.main}>
+        <View style={styles.root}>
             <Info direction={"left"} iataCode={data.origin} date={data.outboundDate} />
-            <View style={{ backgroundColor: COLORS.background, display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
-                <Text style={[styles.textSmall, { marginLeft: 30 }]}>Zusammen ab</Text>
+            <View>
+                <Text style={[styles.textSmall, { marginLeft: 30 }, { backgroundColor: COLORS.background, alignItems: 'center' }]}>Zusammen ab</Text>
                 <Text style={styles.costs}>{data.totalPrice} €</Text>
             </View>
-            <Info direction={"right"} iataCode={data.destination} date={data.inboundDate} />
+            <View>
+                <Info direction={"right"} iataCode={data.destination} date={data.inboundDate} />
+                <TouchableOpacity onPress={pressed}>
+                    <Text style={styles.button}>Jetzt buchen</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 
