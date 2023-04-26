@@ -30,14 +30,24 @@ function Info({ direction, iataCode, date }) {
 
         const formattedSearchedDay = dd + '.' + mm + '.' + yyyy + " " + time;
         return formattedSearchedDay;
-
     }
 
     return (
-        <View style={[(direction === 'right' && styles.right), { padding: '5%' }]}>
-            <View style={[direction === "left" ? ({ justifyContent: 'flex-start', flexDirection: 'row' }) : ({ justifyContent: 'flex-end', flexDirection: 'row' }), { display: 'flex', alignItems: 'center' }]}>
-                {direction === "left" && <Ionicons name={"airplane"} color={COLORS.textWhite} size={10} style={[{ marginRight: 10 }, styles.city, (direction === 'right' && styles.right)]} />
-                }<Text
+        <View style={[(direction === 'right' ? styles.right : { paddingBottom: 2 }), { padding: '5%' }]}>
+            <View
+                style={[
+                    direction === "left"
+                        ? ({ justifyContent: 'flex-start' })
+                        : ({ justifyContent: 'flex-end' }),
+                    { display: 'flex', flexDirection: 'row', alignItems: 'center' }]}>
+                {direction === "left" &&
+                    <Ionicons
+                        name={"airplane"}
+                        color={COLORS.textWhite}
+                        size={13}
+                        style={[{ marginRight: 10 }, (direction === 'right' && styles.right)]}
+                    />}
+                <Text
                     style={[styles.text, (direction === 'right' && styles.right), { marginRight: 10 }]}
                     numberOfLines={1}
                     adjustsFontSizeToFit={true}
@@ -47,8 +57,12 @@ function Info({ direction, iataCode, date }) {
                         : "Hinflug"
                     }
                 </Text>
-                {direction === "right" && <Ionicons name={"airplane"} color={COLORS.textWhite} size={10} style={[{ transform: [{ rotate: '180deg' }] }, styles.city, (direction === 'right' && styles.right)]} />
-                }
+                {direction === "right" &&
+                    <Ionicons
+                        name={"airplane"}
+                        color={COLORS.textWhite}
+                        size={13}
+                        style={[{ transform: [{ rotate: '180deg' }] }, (direction === 'right' && styles.right)]} />}
             </View>
             <Text
                 style={[styles.city, (direction === 'right' && styles.right)]}
@@ -76,16 +90,30 @@ export default function FlightResult({ data }) {
 
     return (
         <View style={styles.root}>
-            <Info direction={"left"} iataCode={data.origin} date={data.outboundDate} />
-            <View>
-                <Text style={[styles.textSmall, { marginLeft: 30 }, { backgroundColor: COLORS.background, alignItems: 'center' }]}>Zusammen ab</Text>
-                <Text style={styles.costs}>{data.totalPrice} €</Text>
+            <Info
+                direction={"left"}
+                iataCode={data.origin}
+                date={data.outboundDate}
+            />
+            <View style={{ backgroundColor: COLORS.background, height: 25, marginTop: 10 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingVertical: 0 }}>
+                    <Text style={[styles.textSmall, { transform: [{ translateX: -110 }] }]}>Zusammen ab</Text>
+                    <View style={{ position: 'absolute', left: '50%', transform: [{ translateX: -50 }] }}>
+                        <Text style={styles.costs}>{data.totalPrice} €</Text>
+                    </View>
+                </View>
             </View>
-            <View>
-                <Info direction={"right"} iataCode={data.destination} date={data.inboundDate} />
+
+            <View style={{ flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between' }}>
                 <TouchableOpacity onPress={pressed}>
                     <Text style={styles.button}>Jetzt buchen</Text>
                 </TouchableOpacity>
+                <Info
+                    direction={"right"}
+                    iataCode={data.destination}
+                    date={data.inboundDate}
+                />
+
             </View>
         </View>
     );

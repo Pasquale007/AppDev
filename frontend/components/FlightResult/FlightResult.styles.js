@@ -20,18 +20,20 @@ const styles = StyleSheet.create({
     },
     city: {
         fontFamily: FONT.bold,
-        fontSize: SIZES.xLarge,
+        fontSize: SIZES.large,
         color: COLORS.textWhite,
     },
     text: {
         fontFamily: FONT.bold,
-        fontSize: SIZES.medium,
+        fontSize: SIZES.small,
         color: COLORS.textWhite,
     },
     textSmall: {
         fontFamily: FONT.bold,
-        fontSize: SIZES.small,
+        fontSize: SIZES.xsmall,
         color: COLORS.textWhite,
+        padding: 4,
+        alignItems: 'center',
     },
     date: {
         fontFamily: FONT.medium,
@@ -40,12 +42,15 @@ const styles = StyleSheet.create({
     },
     right: {
         textAlign: 'right',
+        paddingTop: 2,
     },
     costs: {
         color: COLORS.textWhite,
-        fontSize: SIZES.xxLarge,
+        fontSize: SIZES.xLarge,
         fontFamily: FONT.bold,
-        backgroundColor: COLORS.background
+        backgroundColor: COLORS.background,
+        padding: 10,
+        borderRadius: 20,
     },
     button: {
         fontSize: SIZES.medium,
@@ -55,7 +60,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderTopRightRadius: 10,
         borderBottomLeftRadius: 10,
-        width: '40%'
+        minWidth: '40%',
     }
 
 });
