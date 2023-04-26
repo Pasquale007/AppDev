@@ -1,26 +1,24 @@
-import { render } from '@testing-library/react-native';
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react-native';
 import FlightResult from './FlightResult';
 
-const start = {
-    airport: 'Airport A',
-    date: '2023-05-02',
-    time: '10:00'
-};
-
-const destination = {
-    airport: 'Airport B',
-    date: '2023-05-01',
-    time: '12:00'
-};
 describe('FlightResult component', () => {
-    test('renders Info components with correct props', () => {
-        const { getByText } = render(<FlightResult start={start} destination={destination} />);
-        expect(getByText(start.airport)).toBeTruthy();
-        expect(getByText(start.date)).toBeTruthy();
-        expect(getByText(start.time)).toBeTruthy();
-        expect(getByText(destination.airport)).toBeTruthy();
-        expect(getByText(destination.date)).toBeTruthy();
-        expect(getByText(destination.time)).toBeTruthy();
-    });
-});
+  const data ={
+    origin: "NUE",
+    destination: "BNX",
+    outboundDate: "2023-05-02T00:00:00.000Z",
+    outboundPrice: 19.95,
+    inboundDate: "2023-05-13T00:00:00.000Z",
+    inboundPrice: 16.99,
+    totalPrice: 36.94
+};
 
+  test('renders the flight information correctly', () => {
+    const { getByText } = render(<FlightResult data={data} />);
+    expect(getByText('Hinflug')).toBeTruthy();
+    expect(getByText('Rückflug')).toBeTruthy();
+    expect(getByText('Zusammen ab')).toBeTruthy();
+    expect(getByText('36.94 €')).toBeTruthy();
+    expect(getByText('Jetzt buchen')).toBeTruthy();
+  });
+});
