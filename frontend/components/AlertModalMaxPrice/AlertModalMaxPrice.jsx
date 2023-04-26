@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import styles from './AlertModalMaxPrice.style';
 import { Text, TextInput, View } from 'react-native';
 
-import { COLORS, FONT, SIZES } from "../../constants/theme";
+import { COLORS } from "../../constants/theme";
 
 function AlertModalMaxPrice({ headline, placeholder, setMaxPrice, icon }) {
     const [price, setPrice] = useState();
-
 
     const handleMaxPriceChange = (text) => {
         const numericInput = text.replace(/[^0-9,]/g, '');
@@ -18,7 +17,7 @@ function AlertModalMaxPrice({ headline, placeholder, setMaxPrice, icon }) {
         <View style={styles.container}>
             <View style={styles.head}>
                 {icon && icon}
-                <Text style={styles.headline}>{headline}</Text>
+                <Text style={styles.headline} testID="maxPriceHeadline">{headline}</Text>
             </View>
             <View style={styles.priceInputContainer}>
                 <TextInput
@@ -28,8 +27,9 @@ function AlertModalMaxPrice({ headline, placeholder, setMaxPrice, icon }) {
                     placeholder={placeholder}
                     placeholderTextColor={COLORS.textBlack}
                     keyboardType="numeric"
+                    testID="maxPriceInput"
                 />
-                <Text style={styles.priceCurrency}>€</Text>
+                <Text style={styles.priceCurrency} testID="maxPriceCurrency">€</Text>
             </View>
         </View>
     )

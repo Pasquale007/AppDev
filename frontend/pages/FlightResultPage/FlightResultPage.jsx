@@ -3,14 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { ImageBackground, TouchableOpacity, View } from "react-native";
 import image from '../../assets/images/background.jpg';
 import styles from './FlightResultPage.styles';
-import { COLORS, SIZES, FONT } from '../../constants/theme';
+import { COLORS } from '../../constants/theme';
 import FlightResult from '../../components/FlightResult/FlightResult';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import CreateAlertModal from '../../components/CreateAlertModal/CreateAlertModal';
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
 import Toast from 'react-native-toast-message';
-
 
 export default function FlightResultPage({ route }) {
     const [createAlertModalIsVisible, setCreateAlertModalIsVisible] = useState(false);

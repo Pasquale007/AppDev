@@ -29,6 +29,9 @@
       "jsx",
       "json",
       "node"
+    ],
+    "setupFilesAfterEnv": [
+      "./setup.js"
     ]
   },
   "dependencies": {
@@ -37,6 +40,7 @@
     "@expo/vector-icons": "^13.0.0",
     "@expo/webpack-config": "^18.0.1",
     "@mui/material": "^5.11.15",
+    "@peculiar/webcrypto": "^1.4.3",
     "@react-native-community/datetimepicker": "^6.7.3",
     "@react-native-firebase/app": "^17.4.0",
     "@react-native-firebase/messaging": "^17.4.0",

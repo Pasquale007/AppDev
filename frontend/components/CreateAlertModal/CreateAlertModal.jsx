@@ -6,9 +6,8 @@ import { Entypo, Ionicons } from '@expo/vector-icons';
 import AlertModalData from '../AlertModalData/AlertModalData';
 import { TouchableOpacity } from 'react-native';
 import AlertModalMaxPrice from '../AlertModalMaxPrice/AlertModalMaxPrice';
-import * as SecureStore from 'expo-secure-store';
-import { v4 as uuidv4 } from "uuid";
 import { safeAlert } from '../../firebaseQueries/firebaseQueries';
+import { getUUID } from '../../auth/uuid';
 
 function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError }) {
     const [uuid, setUuid] = useState("");
@@ -17,19 +16,28 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
     const untilDate = new Date(dateSpan.until);
     const fromDateFormatted = `${fromDate.getDate().toString().padStart(2, '0')}.${(fromDate.getMonth() + 1).toString().padStart(2, '0')}.${fromDate.getFullYear().toString()}`;
     const untilDateFormatted = `${untilDate.getDate().toString().padStart(2, '0')}.${(untilDate.getMonth() + 1).toString().padStart(2, '0')}.${untilDate.getFullYear().toString()}`;
+    const [durationString, setDurationString] = useState("");
     const [maxPrice, setMaxPrice] = useState(0);
 
     useEffect(() => {
-        const getUUID = async () => {
-            let storedUuid = await SecureStore.getItemAsync("uuid");
-            if (!storedUuid) {
-                storedUuid = uuidv4();
-                await SecureStore.setItemAsync("uuid", storedUuid);
-            }
-            setUuid(storedUuid);
+        const queryUUID = async () => {
+            setUuid(await getUUID());
         }
-        getUUID();
+        queryUUID();
+        buildDurationString();
     }, []);
+
+    const buildDurationString = () => {
+        if(duration && duration.start && duration.end){
+            const dayOrDays = +duration.end === 1 ? "Tag" : "Tage";
+
+            if((+duration.start) - +duration.end === 0){
+                setDurationString(`${duration.start} ${dayOrDays}`);
+                return;
+            }
+            setDurationString(`${duration.start} - ${duration.end} ${dayOrDays}`);
+        }
+    }
 
     const saveAlertHandler = () => {
         const maxPossiblePrice = 1000000;
@@ -48,6 +56,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
         }
 
         if (uuid) {
+            console.log(uuid);
             const alert = {
                 startDate: fromDateFormatted,
                 endDate: untilDateFormatted,
@@ -64,7 +73,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             safeAlert(alert).then(() => {
                 onSuccess("Alert erfolgreich gespeichert!");
             }).catch((error) => {
-                onerror("Fehler beim Speichern des Alerts!");
+                onError("Fehler beim Speichern des Alerts!");
             })
             setMaxPrice(0);
         }
@@ -81,19 +90,21 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             <View style={styles.container}>
                 <ScrollView>
                     <View style={styles.headContainer}>
-                        <Text style={styles.headline}>Alert hinzufügen</Text>
-                        <TouchableOpacity onPress={onBackdropPress}>
-                            <Ionicons style={styles.closeIcon} size={30} name="close-circle-outline" testID="" />
+                        <Text style={styles.headline} testID="headline">Alert hinzufügen</Text>
+                        <TouchableOpacity onPress={onBackdropPress} testID="closeBtn">
+                            <Ionicons style={styles.closeIcon} size={30} name="close-circle-outline" />
                         </TouchableOpacity>
                     </View>
                     <View style={styles.contentContainer}>
                         <View style={styles.dataContainer}>
                             <AlertModalData headline="Reisezeitraum" data={`${fromDateFormatted} - ${untilDateFormatted}`}
-                                icon={<Ionicons style={styles.icon} size={16} name="calendar-outline" testID="" />}
+                                icon={<Ionicons style={styles.icon} size={16} name="calendar-outline" />}
                             />
-                            <AlertModalData headline="Reisedauer" data={`${duration.start} - ${duration.end} Tage`}
-                                icon={<Ionicons style={styles.icon} size={16} name="timer-outline" testID="" />}
-                            />
+                            {duration && duration.start && duration.end &&
+                                <AlertModalData headline="Reisedauer" data={durationString}
+                                    icon={<Ionicons style={styles.icon} size={16} name="timer-outline" />}
+                                />
+                            }
                             <AlertModalData headline="Von" data={startAirport.name}
                                 icon={<Entypo style={styles.icon} name={"aircraft-take-off"} size={16} />}
                             />
@@ -109,7 +120,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
                             />
                         </View>
                         <View style={styles.buttonContainer}>
-                            <TouchableOpacity style={styles.button} onPress={saveAlertHandler}>
+                            <TouchableOpacity style={styles.button} onPress={saveAlertHandler} testID="saveBtn">
                                 <Text style={styles.buttonText}>Speichern</Text>
                             </TouchableOpacity>
                         </View>

@@ -8,10 +8,10 @@ function AlertModalData({ headline, data, icon }) {
       {headline &&
         <View style={styles.head}>
           {icon && icon}
-          <Text style={styles.headline}>{headline}</Text>
+          <Text style={styles.headline} testID="dataHeadline">{headline}</Text>
         </View>
       }
-      {data && <Text style={styles.data}>{data}</Text>}
+      {data && <Text style={styles.data} testID="dataText">{data}</Text>}
     </View>
   )
 }
