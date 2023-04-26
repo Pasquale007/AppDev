@@ -14,10 +14,13 @@ export default function DropDown({ data, title, icon, onSelect }) {
         setIsModalVisible(!isModalVisible);
     };
 
+    React.useEffect(() => {
+        setFilteredData(data);
+    }, [data]);
+
     const handleSelectItem = (item) => {
         onSelect(item)
-        const index = selectedItems.findIndex((selectedItem) => selectedItem.id === item.id);
-
+        const index = selectedItems.findIndex((selectedItem) => selectedItem.iata === item.iata);
         if (index > -1) {
             const newSelectedItems = [...selectedItems];
             newSelectedItems.splice(index, 1);
@@ -42,11 +45,11 @@ export default function DropDown({ data, title, icon, onSelect }) {
     };
 
     const renderListItem = ({ item }) => {
-        const isSelected = selectedItems.some((selectedItem) => selectedItem.id === item.id);
+        const isSelected = selectedItems.some((selectedItem) => selectedItem.iata === item.iata);
 
         return (
             <TouchableOpacity
-                testID={`item-${item.id}`}
+                testID={`item-${item.iata}`}
                 style={{
                     flexDirection: 'row',
                     alignItems: 'center',
@@ -90,8 +93,7 @@ export default function DropDown({ data, title, icon, onSelect }) {
                             <Text style={{ color: COLORS.navIconActive, fontFamily: FONT.medium, fontSize: SIZES.medium }}>Close</Text>
                         </TouchableOpacity>
                     </View>
-
-                    <FlatList data={filteredData} renderItem={renderListItem} keyExtractor={(item) => item.id} />
+                    <FlatList data={filteredData} renderItem={renderListItem} keyExtractor={(item) => item.iata} />
                 </View>
             </Modal>
         </TouchableOpacity>
