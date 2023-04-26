@@ -31,7 +31,6 @@ export default function AlertPage() {
         let unsubscribe;
 
         if (uuid) {
-            console.log(uuid)
             unsubscribe = getAlerts(uuid, setAlerts);
         }
 
