@@ -33,6 +33,7 @@ export default function SearchPage() {
             .filter(dataset => dataset.origin.name === startAirport?.name)
             .flatMap(dataset => dataset.destinations.map(dest => dest));
         setDestinations(dataset);
+        setEndAirport(undefined);
     }, [startAirport]);
 
     const navigation = useNavigation();
@@ -43,10 +44,10 @@ export default function SearchPage() {
                     source={image}
                     resizeMode="cover"
                 >
-                    <View style={styles.main} >
+                    <View style={styles.main}>
                         <Text style={styles.seachText}>Suche</Text>
                         <DropDown data={origins} title={"Von"} icon="aircraft-take-off" onSelect={setStartAirport} />
-                        <DropDown data={destinations} title={"Nach"} icon="aircraft-landing" onSelect={setEndAirport} />
+                        <DropDown data={destinations} title={"Nach"} icon="aircraft-landing" onSelect={setEndAirport}/>
                         <View style={styles.center}>
                             <MySelect left={"Flexible Reisedaten"} right={"Genaue Reisedaten"} style={{ alignSelf: 'center' }} onClick={() => { setFlexible(!flexible) }} />
                         </View>
