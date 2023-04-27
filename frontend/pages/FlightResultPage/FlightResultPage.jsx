@@ -20,41 +20,23 @@ export default function FlightResultPage({ route }) {
 
     const [trips, setTrips] = useState([
         {
-            start: {
-                airport: 'Nürnberg',
-                date: '12.12.2000',
-                time: '06:34',
-            },
-            destination: {
-                airport: 'Berlin',
-                date: '12.12.2000',
-                time: '12:34',
-            }
+            origin: "NUE",
+            destination: "BNX",
+            outboundDate: "2023-05-02T00:00:00.000Z",
+            outboundPrice: "19,95",
+            inboundDate: "2023-05-13T00:00:00.000Z",
+            inboundPrice: "16,99",
+            totalPrice: "36,94"
         },
         {
-            start: {
-                airport: 'Nürnberg',
-                date: '12.12.2000',
-                time: '06:35',
-            },
-            destination: {
-                airport: 'Berlin',
-                date: '12.12.2000',
-                time: '12:34',
-            }
+            origin: "NUE",
+            destination: "BNX",
+            outboundDate: "2023-05-03T00:00:00.000Z",
+            outboundPrice: "19,95",
+            inboundDate: "2023-05-13T00:00:00.000Z",
+            inboundPrice: "16,99",
+            totalPrice: "361,94"
         },
-        {
-            start: {
-                airport: 'Nürnberg',
-                date: '12.12.2000',
-                time: '07:10',
-            },
-            destination: {
-                airport: 'Berlin',
-                date: '12.12.2000',
-                time: '12:34',
-            }
-        }
     ]);
 
     useEffect(() => {
@@ -91,21 +73,8 @@ export default function FlightResultPage({ route }) {
                             {trips.map(trip => {
                                 return (
                                     <FlightResult
-                                        key={trip.start.time}
-                                        start={
-                                            {
-                                                airport: trip.start.airport,
-                                                date: trip.start.date,
-                                                time: trip.start.time,
-                                            }
-                                        }
-                                        destination={
-                                            {
-                                                airport: trip.destination.airport,
-                                                date: trip.destination.date,
-                                                time: trip.destination.time,
-                                            }
-                                        }
+                                        key={trip.outboundDate + trip.origin}
+                                        data={trip}
 
                                     />
                                 )
