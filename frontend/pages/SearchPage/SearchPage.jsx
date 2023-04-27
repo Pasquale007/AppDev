@@ -43,7 +43,7 @@ export default function SearchPage() {
     const navigation = useNavigation();
     return (
         <View style={styles.flex}>
-            <ScrollView >
+            <ScrollView keyboardShouldPersistTaps="handled">
                 <ImageBackground
                     source={image}
                     resizeMode="cover"

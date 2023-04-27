@@ -40,7 +40,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
     }
 
     const saveAlertHandler = () => {
-        const maxPossiblePrice = 1000000;
+        const maxPossiblePrice = 10;
 
         if (!maxPrice) {
             onError("Der Preis darf nicht leer sein!");
@@ -88,7 +88,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             backdropTransitionOutTiming={0}
         >
             <View style={styles.container}>
-                <ScrollView>
+                <ScrollView keyboardShouldPersistTaps="handled">
                     <View style={styles.headContainer}>
                         <Text style={styles.headline} testID="headline">Alert hinzufügen</Text>
                         <TouchableOpacity onPress={onBackdropPress} testID="closeBtn">
