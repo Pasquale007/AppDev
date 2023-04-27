@@ -11,9 +11,9 @@ import { getUUID } from '../../auth/uuid';
 
 function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError }) {
     const [uuid, setUuid] = useState("");
-    const { startAirport, endAirport, duration, dateSpan } = data;
-    const fromDate = new Date(dateSpan.from);
-    const untilDate = new Date(dateSpan.until);
+    const { origin, endAirport, lengthMin, lengthMax, outFromDate, outToDate } = data;
+    const fromDate = new Date(outFromDate);
+    const untilDate = new Date(outToDate);
     const fromDateFormatted = `${fromDate.getDate().toString().padStart(2, '0')}.${(fromDate.getMonth() + 1).toString().padStart(2, '0')}.${fromDate.getFullYear().toString()}`;
     const untilDateFormatted = `${untilDate.getDate().toString().padStart(2, '0')}.${(untilDate.getMonth() + 1).toString().padStart(2, '0')}.${untilDate.getFullYear().toString()}`;
     const [durationString, setDurationString] = useState("");
@@ -28,14 +28,14 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
     }, []);
 
     const buildDurationString = () => {
-        if(duration?.start && duration?.end){
-            const dayOrDays = +duration.end === 1 ? "Tag" : "Tage";
+        if (lengthMin && lengthMax) {
+            const dayOrDays = +lengthMax === 1 ? "Tag" : "Tage";
 
-            if(parseInt(duration.start) - parseInt(duration.end) === 0){
-                setDurationString(`${duration.start} ${dayOrDays}`);
+            if (parseInt(lengthMin) - parseInt(lengthMax) === 0) {
+                setDurationString(`${lengthMin} ${dayOrDays}`);
                 return;
             }
-            setDurationString(`${duration.start} - ${duration.end} ${dayOrDays}`);
+            setDurationString(`${lengthMin} - ${lengthMax} ${dayOrDays}`);
         }
     }
 
@@ -60,9 +60,9 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             const alert = {
                 startDate: fromDateFormatted,
                 endDate: untilDateFormatted,
-                startDuration: duration?.start || "",
-                endDuration: duration?.end || "",
-                departure: startAirport.name,
+                startDuration: lengthMin || "",
+                endDuration: lengthMax || "",
+                departure: origin.name,
                 arrival: endAirport?.name || "Europa",
                 maxPrice: maxPrice,
                 deviceId: uuid,
@@ -100,12 +100,12 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
                             <AlertModalData headline="Reisezeitraum" data={`${fromDateFormatted} - ${untilDateFormatted}`}
                                 icon={<Ionicons style={styles.icon} size={16} name="calendar-outline" />}
                             />
-                            {duration?.start && duration?.end &&
+                            {lengthMin && lengthMax &&
                                 <AlertModalData headline="Reisedauer" data={durationString}
                                     icon={<Ionicons style={styles.icon} size={16} name="timer-outline" />}
                                 />
                             }
-                            <AlertModalData headline="Von" data={startAirport.name}
+                            <AlertModalData headline="Von" data={origin.name}
                                 icon={<Entypo style={styles.icon} name={"aircraft-take-off"} size={16} />}
                             />
                             <AlertModalData headline="Nach" data={endAirport?.name ? endAirport.name : "Europa"}

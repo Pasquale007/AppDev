@@ -25,7 +25,7 @@ export default function FlightResultPage({ route }) {
     const navigation = useNavigation();
 
     useEffect(() => {
-        if(successMsg){
+        if (successMsg) {
             Toast.show({
                 type: "success",
                 text1: successMsg,
@@ -33,7 +33,7 @@ export default function FlightResultPage({ route }) {
             setSuccessMsg("");
         }
 
-        if(errorMsg){
+        if (errorMsg) {
             Toast.show({
                 type: "error",
                 text1: errorMsg,
@@ -64,6 +64,7 @@ export default function FlightResultPage({ route }) {
     ]);
 
     useEffect(() => {
+        console.log(route.params.data)
         fetchData(route.params.data);
     }, []);
 
@@ -107,7 +108,7 @@ export default function FlightResultPage({ route }) {
                             })}
                         </ScrollView>
                     </View>
-                    <CreateAlertModal 
+                    <CreateAlertModal
                         isVisible={createAlertModalIsVisible}
                         onBackdropPress={() => setCreateAlertModalIsVisible(false)}
                         data={route.params.data}

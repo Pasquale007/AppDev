@@ -48,7 +48,7 @@ export default function SearchPage() {
                     <View style={styles.main}>
                         <Text style={styles.seachText}>Suche</Text>
                         <DropDown data={origins} title={"Von"} icon="aircraft-take-off" onSelect={setStartAirport} />
-                        <DropDown data={destinations} title={"Nach"} icon="aircraft-landing" onSelect={setEndAirport}/>
+                        <DropDown data={destinations} title={"Nach"} icon="aircraft-landing" onSelect={setEndAirport} />
                         <View style={styles.center}>
                             <MySelect left={"Flexible Reisedaten"} right={"Genaue Reisedaten"} style={{ alignSelf: 'center' }} onClick={() => { setFlexible(!flexible) }} />
                         </View>
@@ -91,33 +91,31 @@ export default function SearchPage() {
                         }
 
                         if (flexible) {
-                            {
-                                if (!duration.start || !duration.end) {
-                                    Toast.show({
-                                        type: "error",
-                                        text1: "Die Reisedauer muss definiert sein.",
-                                    });
-                                    return;
-                                }
-                                const durationInDays = parseInt(duration.end) - parseInt(duration.start)
-                                const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));
-                                if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays) {
-                                    Toast.show({
-                                        type: "error",
-                                        text1: "Die Reisedauer darf nicht länger sein als der Reisezeitraum.",
-                                    });
-                                    return;
-                                }
+                            if (!duration.start || !duration.end) {
+                                Toast.show({
+                                    type: "error",
+                                    text1: "Die Reisedauer muss definiert sein.",
+                                });
+                                return;
+                            }
+                            const durationInDays = parseInt(duration.end) - parseInt(duration.start)
+                            const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));
+                            if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays) {
+                                Toast.show({
+                                    type: "error",
+                                    text1: "Die Reisedauer darf nicht länger sein als der Reisezeitraum.",
+                                });
+                                return;
                             }
                         }
-
+                        console.log(dateSpan)
                         navigation.navigate('FlightResultPage', {
                             data: {
-                                'startAirport': startAirport.iata,
+                                'origin': startAirport,
                                 'destination': endAirport?.iata ? endAirport.iata : "All destinations",
                                 'ignoredDestinations': '',
-                                'outFromDate': dateSpan.from.toISOString().split('T')[0],
-                                'outToDate': dateSpan.until.toISOString().split('T')[0],
+                                'outFromDate': dateSpan?.from?.toISOString().split('T')[0],
+                                'outToDate': dateSpan?.until?.toISOString().split('T')[0],
                                 'duration': flexible ? duration : undefined,
                                 'lengthMin': duration.start ? duration.start : 1,
                                 'lengthMax': duration.end ? duration.end : 1
