@@ -11,6 +11,8 @@ import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import flightData from '../../data/flightData.json';
+import ToastContainer from '../../components/ToastContainer/ToastContainer';
+import Toast from 'react-native-toast-message';
 
 export default function SearchPage() {
     const origins = flightData.map(dataset => dataset.origin);
@@ -41,7 +43,7 @@ export default function SearchPage() {
     const navigation = useNavigation();
     return (
         <View style={styles.flex}>
-            <ScrollView >
+            <ScrollView keyboardShouldPersistTaps="handled">
                 <ImageBackground
                     source={image}
                     resizeMode="cover"
@@ -83,6 +85,14 @@ export default function SearchPage() {
                 <Button
                     text={"Suche"}
                     onClick={() => {
+                        if (!startAirport) {
+                            Toast.show({
+                                type: "error",
+                                text1: "Keinen Startflughafen ausgewählt!",
+                            });
+                            return;
+                        }
+
                         if (flexible) {
                             {
                                 if (!duration) {
@@ -97,6 +107,7 @@ export default function SearchPage() {
                                 }
                             }
                         }
+
                         navigation.navigate('FlightResultPage', {
                             data: {
                                 'startAirport': startAirport,
@@ -111,6 +122,7 @@ export default function SearchPage() {
                     }}
                 />
             </ScrollView>
+            <ToastContainer />
         </View>
     );
 }

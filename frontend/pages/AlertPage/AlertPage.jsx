@@ -4,9 +4,8 @@ import styles from "./AlertPage.style";
 import { Ionicons } from '@expo/vector-icons';
 import AlertCard from '../../components/AlertCard/AlertCard';
 import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler';
-import * as SecureStore from 'expo-secure-store';
-import { v4 as uuidv4 } from "uuid";
 import { getAlerts, deleteAlert, updateAlertActive } from '../../firebaseQueries/firebaseQueries';
+import { getUUID } from '../../auth/uuid';
 
 export default function AlertPage() {
     const [uuid, setUuid] = useState("");
@@ -15,20 +14,16 @@ export default function AlertPage() {
     let card = [];
     let prevOpenedCard;
 
-    useEffect(() => {
-        const getUUID = async () => {
-            let storedUuid = await SecureStore.getItemAsync("uuid");
-            if (!storedUuid) {
-                storedUuid = uuidv4();
-                await SecureStore.setItemAsync("uuid", storedUuid);
-            }
-            setUuid(storedUuid);
+    useEffect(() => {    
+        const queryUUID = async () => {
+            setUuid(await getUUID());
         }
-        getUUID();
+        queryUUID();
     }, []);
 
     useEffect(() => {
         let unsubscribe;
+        console.log(uuid);
 
         if (uuid) {
             unsubscribe = getAlerts(uuid, setAlerts);

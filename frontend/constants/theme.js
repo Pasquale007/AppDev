@@ -15,6 +15,7 @@ const COLORS = {
 
   safeSearchAlertIcon: "#000000",
   safeSearchAlertBackground: "#D9D9D9",
+  saveButtonBackground: "#4CAF50",
 
   searchFieldColor: "rgba(217,217,217, 0.8)",
   backgroundOpacity: "rgba(15,13,30, 0.3)",
