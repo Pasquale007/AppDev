@@ -102,9 +102,9 @@ async function processDestination(origin: string, destination: string, outFromDa
                     result.push({
                         origin: origin,
                         destination: destination,
-                        outboundDate: new Date(outbound[i].day),
+                        outboundDate: new Date(outbound[i].departureDate),
                         outboundPrice: outbound[i].price.value,
-                        inboundDate: new Date(inbound[j].day),
+                        inboundDate: new Date(inbound[j].departureDate),
                         inboundPrice: inbound[j].price.value,
                         totalPrice: outbound[i].price.value + inbound[j].price.value
                     })
@@ -112,7 +112,6 @@ async function processDestination(origin: string, destination: string, outFromDa
             }
         }
     }
-
 
     return result;
 }
@@ -163,7 +162,7 @@ export async function getResult(routes: Route[], origin: string, destination: st
     allAvailableConnections.sort(function(a, b) {
         return a.totalPrice - b.totalPrice;
     })
-    console.log(allAvailableConnections)
+    //console.log(allAvailableConnections)
     return allAvailableConnections;
 }
 
