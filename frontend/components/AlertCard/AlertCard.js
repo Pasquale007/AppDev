@@ -37,12 +37,12 @@ function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, is
                         <Text style={styles.departureText} numberOfLines={1} ellipsizeMode='tail'
                             testID="departureText"
                         >
-                            {locations.departure}
+                            {locations.origin}
                         </Text>
                         <Text style={styles.arrivalText} numberOfLines={1} ellipsizeMode='tail'
                             testID="arrivalText"
                         >
-                            {locations.arrival}
+                            {locations.destination}
                         </Text>
                     </View>
                     <View style={styles.rightSide}>
