@@ -1,6 +1,7 @@
 import * as React from 'react';
 import App from './App';
 import renderer from 'react-test-renderer';
+import { act } from 'react-test-renderer';
 
 jest.useFakeTimers()
 jest.mock('expo-font', () => ({
@@ -10,8 +11,9 @@ jest.mock('expo-font', () => ({
 
 describe('App', () => {
   it(`App renders correctly`, () => {
-    const component = renderer.create(<App />).toJSON();
-    expect(component).toBeDefined();
+    act(() => {
+      const component = renderer.create(<App />).toJSON();
+      expect(component).toBeDefined();
+    });
   });
-
 });

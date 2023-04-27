@@ -1,12 +1,11 @@
 import * as crypto from "crypto";
-import {Flight, Provider, Route, SimpleConnection} from "./items";
+import {Provider, Route, SimpleConnection} from "./items";
 import * as fs from "fs";
-import {all} from "axios";
-let airports = require('airport-codes');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const tlsClient = require("../tlsClient/tlsClient");
 
 
-let scrapedOrigins: string[] = [];
+const scrapedOrigins: string[] = [];
 let allRoutes: Route[] = [];
 async function codeAlreadyScraped(code: string){
     for (let i = 0; i < scrapedOrigins.length; i++) {
@@ -17,46 +16,10 @@ async function codeAlreadyScraped(code: string){
     return false;
 }
 
-async function getInformation(origin: string, destination: string, outFromDate: Date, outToDate: Date): Promise<Array<Flight>>{
-    let client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
-    const outFromDateString: string = outFromDate.toISOString().split("T")[0]
-    const outToDateString: string = outToDate.toISOString().split("T")[0]
-    if(destination == "Anywhere"){
-        destination = ""
-    }else{
-        destination = "&arrivalAirportIataCode=" + destination
-    }
-    let resp = await client.get(`https://www.ryanair.com/api/farfnd/3/oneWayFares?&departureAirportIataCode=${origin}&language=en&limit=16&market=en-gb&offset=0&outboundDepartureDateFrom=${outFromDateString}&outboundDepartureDateTo=${outToDateString}&priceValueTo=150${destination}`);
-    resp = resp.body.fares;
-    let result: Array<Flight> = [];
-    for (let i = 0; i < resp.length; i++) {
-        result.push({
-            route: {
-                origin: {
-                    name: resp[i].outbound.departureAirport.name,
-                    iata: resp[i].outbound.departureAirport.iataCode,
-                    country: resp[i].outbound.departureAirport.countryName
-                },
-                destination: {
-                    name: resp[i].outbound.arrivalAirport.name,
-                    iata: resp[i].outbound.arrivalAirport.iataCode,
-                    country: resp[i].outbound.arrivalAirport.countryName
-                },
-                provider: Provider.Ryanair
-            },
-            startTime: resp[i].outbound.departureDate,
-            endTime: resp[i].outbound.arrivalDate,
-            priceEuro: resp[i].summary.price.value
-        });
-    }
-    return result;
-}
-
 async function getInformationMonth(origin: string, destination: string, firstOfMonthDate: Date): Promise<Array<JSON>>{
-    let client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
-    let date: string;
-    date = firstOfMonthDate.toISOString().split("T")[0]
-    let resp = await client.get(`https://www.ryanair.com/api/farfnd/3/oneWayFares/${origin}/${destination}/cheapestPerDay?market=en-gb&outboundMonthOfDate=${date}`);
+    const client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
+    const date: string = firstOfMonthDate.toISOString().split("T")[0]
+    const resp = await client.get(`https://www.ryanair.com/api/farfnd/3/oneWayFares/${origin}/${destination}/cheapestPerDay?market=en-gb&outboundMonthOfDate=${date}`);
     return resp.body.outbound.fares;
 
 }
@@ -68,10 +31,10 @@ async function getDestinationFromOrigin(origin: string, name: string, countryCod
     }
     scrapedOrigins.push(origin)
     console.log(`Origin ${origin}`)
-    let client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
-    let resp = await client.get(`https://www.ryanair.com/api/views/locate/searchWidget/routes/de/airport/${origin}`)
+    const client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
+    const resp = await client.get(`https://www.ryanair.com/api/views/locate/searchWidget/routes/de/airport/${origin}`)
     for (let i = 0; i < resp.body.length; i++) {
-        let destinationCode = resp.body[i].arrivalAirport.code;
+        const destinationCode = resp.body[i].arrivalAirport.code;
         try{
             allRoutes.push({
                 origin: {
@@ -113,21 +76,22 @@ export async function setRoutes(): Promise<Route[]>{
 }
 
 async function processDestination(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number){
-    let result: Array<SimpleConnection> = [];
-    let monthsBetween = getMonthsBetween(outFromDate, outToDate);
-    let outbound: Array<JSON> = [];
+    const result: Array<SimpleConnection> = [];
+    const monthsBetween = getMonthsBetween(outFromDate, outToDate);
+    let outbound: Array<any> = [];
     for (let i = 0; i < monthsBetween.length; i++) {
-        let tempResult = await getInformationMonth(origin, destination, monthsBetween[i])
+        const tempResult = await getInformationMonth(origin, destination, monthsBetween[i])
         outbound = [...outbound, ...tempResult]
     }
 
 
-    let inbound: Array<JSON> = [];
+    let inbound: Array<any> = [];
     for (let i = 0; i < monthsBetween.length; i++) {
-        let tempResult = await getInformationMonth(destination, origin, monthsBetween[i])
+        const tempResult = await getInformationMonth(destination, origin, monthsBetween[i])
         inbound = [...inbound, ...tempResult]
     }
-
+    lengthMin = (+lengthMin)
+    lengthMax = (+lengthMax)
 
     for (let i = 0; i < outbound.length; i++) {
         if(new Date(outFromDate) <= new Date(outbound[i].day) && new Date(outToDate) >= new Date(outbound[i].day) && outbound[i].unavailable == false && outbound[i].soldOut == false){
@@ -156,7 +120,7 @@ async function processDestination(origin: string, destination: string, outFromDa
 function getMonthsBetween(startDate: Date, endDate: Date): Array<Date> {
     const months: Date[] = [];
 
-    let currentDate = new Date(startDate);
+    const currentDate = new Date(startDate);
     currentDate.setDate(1);
 
     while (currentDate < endDate) {
@@ -180,9 +144,8 @@ export async function getResult(routes: Route[], origin: string, destination: st
                 if(ignoredDestinations.includes(allRoutes[i].destination.iata)){
                     continue
                 }
-                let tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
+                const tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
                 allAvailableConnections = [...allAvailableConnections, ...tempResult]
-                continue
             }
         }
     }else{
@@ -192,9 +155,8 @@ export async function getResult(routes: Route[], origin: string, destination: st
                 if(ignoredDestinations.includes(allRoutes[i].destination.iata)){
                     continue
                 }
-                let tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
+                const tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
                 allAvailableConnections = [...allAvailableConnections, ...tempResult]
-                continue
             }
         }
     }

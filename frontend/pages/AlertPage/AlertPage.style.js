@@ -2,13 +2,14 @@ import { StyleSheet } from "react-native";
 import { COLORS, FONT, SIZES } from "../../constants/theme";
 
 const styles = StyleSheet.create({
-    alertContainer:{
+    alertContainer: {
         flex: 1,
         paddingHorizontal: SIZES.medium,
         marginTop: 30,
         paddingBottom: SIZES.medium,
+        minHeight: "100%",
     },
-    
+
     alertHeadline: {
         fontFamily: FONT.bold,
         fontSize: SIZES.xLarge,
