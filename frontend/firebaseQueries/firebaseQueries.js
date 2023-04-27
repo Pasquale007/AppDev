@@ -2,6 +2,18 @@ import { firebase } from '../firebase/config';
 
 const alertRef = firebase.firestore().collection("alerts");
 
+export async function safeAlert(alert) {
+    console.log(alert);
+    
+    return await alertRef.add(alert).then((docRef) => {
+        console.log("Alert erstellt mit der ID: ", docRef.id);
+    })
+    .catch((error) => {
+        console.log("Fehler beim Speichern des Alerts: ", error);
+        throw error;
+    });
+}   
+
 export function getAlerts(uuid, setAlerts) {
     let alerts = [];
 

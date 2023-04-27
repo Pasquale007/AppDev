@@ -6,10 +6,12 @@ import HomeScreen from './pages/HomePage/HomePage';
 import AlertPage from './pages/AlertPage/AlertPage';
 import { Ionicons } from '@expo/vector-icons';
 import { useFonts } from "expo-font";
+import { polyfillWebCrypto } from "expo-standard-web-crypto";
 
 import { COLORS } from './constants/theme';
 import Splash from './pages/Splash/Splash';
 
+polyfillWebCrypto();
 const Tab = createBottomTabNavigator();
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
