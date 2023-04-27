@@ -60,10 +60,10 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             const alert = {
                 startDate: fromDateFormatted,
                 endDate: untilDateFormatted,
-                startDuration: duration?.start,
-                endDuration: duration?.end,
-                departure: startAirport?.name,
-                arrival: endAirport?.name,
+                startDuration: duration?.start || "",
+                endDuration: duration?.end || "",
+                departure: startAirport.name,
+                arrival: endAirport?.name || "Europa",
                 maxPrice: maxPrice,
                 deviceId: uuid,
                 isActive: true
@@ -108,7 +108,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
                             <AlertModalData headline="Von" data={startAirport.name}
                                 icon={<Entypo style={styles.icon} name={"aircraft-take-off"} size={16} />}
                             />
-                            <AlertModalData headline="Nach" data={endAirport.name}
+                            <AlertModalData headline="Nach" data={endAirport?.name ? endAirport.name : "Europa"}
                                 icon={<Entypo style={styles.icon} name={"aircraft-landing"} size={16} />}
                             />
                             <AlertModalData headline="Rückflug inbegriffen"

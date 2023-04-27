@@ -93,14 +93,6 @@ export default function SearchPage() {
                             return;
                         }
 
-                        if (!endAirport) {
-                            Toast.show({
-                                type: "error",
-                                text1: "Keinen Endflughafen ausgewählt!",
-                            });
-                            return;
-                        }
-
                         if (flexible) {
                             {
                                 if (!duration) {

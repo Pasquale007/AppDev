@@ -25,7 +25,6 @@ function AlertModalMaxPrice({ headline, placeholder, setMaxPrice, icon }) {
                     onChangeText={handleMaxPriceChange}
                     style={styles.priceInput}
                     placeholder={placeholder}
-                    placeholderTextColor={COLORS.textBlack}
                     keyboardType="numeric"
                     testID="maxPriceInput"
                 />
