@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     },
     right: {
         textAlign: 'right',
-        paddingTop: 2,
+        paddingTop: 1,
     },
     costs: {
         color: COLORS.textWhite,
@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
         fontFamily: FONT.medium,
         backgroundColor: COLORS.background,
         padding: 10,
-        borderTopRightRadius: 10,
-        borderBottomLeftRadius: 10,
+        borderTopRightRadius: 20,
+        borderBottomLeftRadius: 20,
         minWidth: '40%',
     }
 

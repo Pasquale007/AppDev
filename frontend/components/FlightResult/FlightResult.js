@@ -33,7 +33,7 @@ function Info({ direction, iataCode, date }) {
     }
 
     return (
-        <View style={[(direction === 'right' ? styles.right : { paddingBottom: 2 }), { padding: '5%' }]}>
+        <View style={[(direction === 'right' ? styles.right : { paddingBottom: 2 }), { padding: '5%', paddingTop: '3%' }]}>
             <View
                 style={[
                     direction === "left"
@@ -48,7 +48,7 @@ function Info({ direction, iataCode, date }) {
                         style={[{ marginRight: 10 }, (direction === 'right' && styles.right)]}
                     />}
                 <Text
-                    style={[styles.text, (direction === 'right' && styles.right), { marginRight: 10 }]}
+                    style={[styles.text, (direction === 'right' && styles.right), { marginRight: 10, paddingTop: 4}]}
                     numberOfLines={1}
                     adjustsFontSizeToFit={true}
                 >
@@ -95,7 +95,7 @@ export default function FlightResult({ data }) {
                 iataCode={data.origin}
                 date={data.outboundDate}
             />
-            <View style={{ backgroundColor: COLORS.background, height: 18, marginTop: 13}}>
+            <View style={{ backgroundColor: COLORS.background, height: 18, marginTop: 13 }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={[styles.textSmall, { transform: [{ translateX: -110 }] }]}>Zusammen ab</Text>
                     <View style={{ position: 'absolute', left: '50%', transform: [{ translateX: -50 }] }}>

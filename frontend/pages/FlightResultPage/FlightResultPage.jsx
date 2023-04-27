@@ -17,19 +17,19 @@ export default function FlightResultPage() {
             origin: "NUE",
             destination: "BNX",
             outboundDate: "2023-05-02T00:00:00.000Z",
-            outboundPrice: 19.95,
+            outboundPrice: "19,95",
             inboundDate: "2023-05-13T00:00:00.000Z",
-            inboundPrice: 16.99,
-            totalPrice: 36.94
+            inboundPrice: "16,99",
+            totalPrice: "36,94"
         },
         {
             origin: "NUE",
             destination: "BNX",
             outboundDate: "2023-05-03T00:00:00.000Z",
-            outboundPrice: 19.95,
+            outboundPrice: "19,95",
             inboundDate: "2023-05-13T00:00:00.000Z",
-            inboundPrice: 16.99,
-            totalPrice: 36.94
+            inboundPrice: "16,99",
+            totalPrice: "361,94"
         },
     ]);
 
