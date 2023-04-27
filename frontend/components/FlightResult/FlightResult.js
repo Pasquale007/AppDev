@@ -113,7 +113,6 @@ export default function FlightResult({ data }) {
                     iataCode={data.destination}
                     date={data.inboundDate}
                 />
-
             </View>
         </View>
     );
