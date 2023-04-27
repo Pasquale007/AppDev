@@ -40,7 +40,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
     }
 
     const saveAlertHandler = () => {
-        const maxPossiblePrice = 10;
+        const maxPossiblePrice = 10000;
 
         if (!maxPrice) {
             onError("Der Preis darf nicht leer sein!");
