@@ -28,10 +28,10 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
     }, []);
 
     const buildDurationString = () => {
-        if(duration && duration.start && duration.end){
+        if(duration?.start && duration?.end){
             const dayOrDays = +duration.end === 1 ? "Tag" : "Tage";
 
-            if((+duration.start) - +duration.end === 0){
+            if(parseInt(duration.start) - parseInt(duration.end) === 0){
                 setDurationString(`${duration.start} ${dayOrDays}`);
                 return;
             }
@@ -60,10 +60,10 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             const alert = {
                 startDate: fromDateFormatted,
                 endDate: untilDateFormatted,
-                startDuration: duration.start,
-                endDuration: duration.end,
-                departure: startAirport.name,
-                arrival: endAirport.name,
+                startDuration: duration?.start,
+                endDuration: duration?.end,
+                departure: startAirport?.name,
+                arrival: endAirport?.name,
                 maxPrice: maxPrice,
                 deviceId: uuid,
                 isActive: true
@@ -100,7 +100,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
                             <AlertModalData headline="Reisezeitraum" data={`${fromDateFormatted} - ${untilDateFormatted}`}
                                 icon={<Ionicons style={styles.icon} size={16} name="calendar-outline" />}
                             />
-                            {duration && duration.start && duration.end &&
+                            {duration?.start && duration?.end &&
                                 <AlertModalData headline="Reisedauer" data={durationString}
                                     icon={<Ionicons style={styles.icon} size={16} name="timer-outline" />}
                                 />
