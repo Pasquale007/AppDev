@@ -34,10 +34,6 @@ export default function SearchPage() {
         setDestinations(dataset);
     }, [startAirport]);
 
-    const showToast = (title, message) => {
-        Alert.alert(title, message);
-    };
-
     const navigation = useNavigation();
     return (
         <View style={styles.flex}>
@@ -86,13 +82,19 @@ export default function SearchPage() {
                         if (flexible) {
                             {
                                 if (!duration) {
-                                    showToast("Fehler", "Die Reisedauer muss definiert sein.");
+                                    Toast.show({
+                                        type: "error",
+                                        text1: "Die Reisedauer muss definiert sein.",
+                                    });
                                     return;
                                 }
                                 const durationInDays = parseInt(duration.end) - parseInt(duration.start)
                                 const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));
                                 if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays) {
-                                    showToast("Fehler", "Die Reisedauer darf nicht länger sein als der Reisezeitraum.")
+                                    Toast.show({
+                                        type: "error",
+                                        text1: "Die Reisedauer darf nicht länger sein als der Reisezeitraum.",
+                                    });
                                     return;
                                 }
                             }
