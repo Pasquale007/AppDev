@@ -7,14 +7,14 @@ import { COLORS } from '../../constants/theme';
 import FlightResult from '../../components/FlightResult/FlightResult';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import { fetchData } from '../../axios';
 
 
 export default function FlightResultPage({ route }) {
     /*Data from the other page*/
-    const { startAirport, endAirport, duration, dateSpan } = route.params.data;
-    const fromDate = new Date(dateSpan.from);
-    const untilDate = new Date(dateSpan.until);
-
+    const { origin, destination, ignoredDestinations, lengthMin, lengthMax, outFromDate, outToDate } = route.params.data;
+    const fromDate = new Date(outFromDate);
+    const untilDate = new Date(outToDate);
 
     const navigation = useNavigation();
 
@@ -40,7 +40,7 @@ export default function FlightResultPage({ route }) {
     ]);
 
     useEffect(() => {
-
+        fetchData(route.params.data);
     }, []);
 
     return (

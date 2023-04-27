@@ -19,6 +19,7 @@ export default function DropDown({ data, title, icon, onSelect }) {
     }, [data]);
 
     const handleSelectItem = (item) => {
+        console.log(item)
         onSelect(item)
         const index = selectedItems.findIndex((selectedItem) => selectedItem.iata === item.iata);
         if (index > -1) {

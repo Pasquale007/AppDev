@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, ImageBackground, Alert } from 'react-native';
+import { View, Text, ImageBackground } from 'react-native';
 import styles from './SearchPage.style';
 import image from '../../assets/images/background.jpg';
 import Button from '../../components/Button/Button';
@@ -11,6 +11,7 @@ import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import flightData from '../../data/flightData.json';
+import Toast from 'react-native-toast-message';
 
 export default function SearchPage() {
     const origins = flightData.map(dataset => dataset.origin);
@@ -50,7 +51,7 @@ export default function SearchPage() {
                             <MySelect left={"Flexible Reisedaten"} right={"Genaue Reisedaten"} style={{ alignSelf: 'center' }} onClick={() => { setFlexible(!flexible) }} />
                         </View>
                         <View
-                            style={(!flexible) && styles.double}
+                            style={(flexible) && styles.double}
                         >
                             <SettingsItem
                                 label="Verfügbarer Reisezeitraum"
@@ -63,7 +64,7 @@ export default function SearchPage() {
                         </View>
 
                         <View
-                            style={(!flexible) && styles.disabled}
+                            style={(flexible) && styles.disabled}
                         >
                             <SettingsItem
                                 label="Reisedauer"
@@ -79,9 +80,9 @@ export default function SearchPage() {
                 <Button
                     text={"Suche"}
                     onClick={() => {
-                        if (flexible) {
+                        if (!flexible) {
                             {
-                                if (!duration) {
+                                if (!duration.start || !duration.end) {
                                     Toast.show({
                                         type: "error",
                                         text1: "Die Reisedauer muss definiert sein.",
@@ -101,13 +102,14 @@ export default function SearchPage() {
                         }
                         navigation.navigate('FlightResultPage', {
                             data: {
-                                'startAirport': startAirport,
-                                'endAirport': endAirport,
+                                'startAirport': startAirport.iata,
+                                'destination': endAirport?.iata ? endAirport.iata : "All destinations",
+                                'ignoredDestinations': '',
+                                'outFromDate': dateSpan.from.toISOString().split('T')[0],
+                                'outToDate': dateSpan.until.toISOString().split('T')[0],
                                 'duration': flexible ? duration : undefined,
-                                'dateSpan': {
-                                    from: dateSpan.from.toISOString(),
-                                    until: dateSpan.until.toISOString(),
-                                }
+                                'lengthMin': duration.start ? duration.start : 1,
+                                'lengthMax': duration.end ? duration.end : 1
                             }
                         });
                     }}
