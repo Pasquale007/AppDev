@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
-import { ImageBackground, TouchableOpacity, View } from "react-native";
+import { ImageBackground, SafeAreaView, TouchableOpacity, View } from "react-native";
 import image from '../../assets/images/background.jpg';
 import styles from './FlightResultPage.styles';
 import { COLORS } from '../../constants/theme';
@@ -49,10 +49,11 @@ export default function FlightResultPage({ route }) {
     }, []);
 
     return (
-        <View>
+        <SafeAreaView>
             <ImageBackground
                 source={image}
-                resizeMode="cover">
+                resizeMode="cover"
+                style={{ height: '100%' }}>
                 <View style={styles.content}>
                     <View style={styles.header}>
                         <Ionicons
@@ -73,24 +74,19 @@ export default function FlightResultPage({ route }) {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View
-                        style={styles.main}
-                    >
-                        {trips.length == 0 ?
-                            <EmptyFlights />
-                            : <ScrollView>
-
-                                {trips.map(trip => {
-                                    return (
-                                        <FlightResult
-                                            key={trip.outboundDate + trip.origin + trip.inboundDate + trip.destination}
-                                            data={trip}
-
-                                        />
-                                    )
-                                })}
-                            </ScrollView>}
-                    </View>
+                    {trips.length == 0 ?
+                        <EmptyFlights />
+                        : <ScrollView
+                            showsVerticalScrollIndicator={false}>
+                            {trips.map(trip => {
+                                return (
+                                    <FlightResult
+                                        key={trip.outboundDate + trip.origin + trip.inboundDate + trip.destination}
+                                        data={trip}
+                                    />
+                                )
+                            })}
+                        </ScrollView>}
                     <CreateAlertModal
                         isVisible={createAlertModalIsVisible}
                         onBackdropPress={() => setCreateAlertModalIsVisible(false)}
@@ -99,8 +95,8 @@ export default function FlightResultPage({ route }) {
                         onError={(msg) => setErrorMsg(msg)}
                     />
                 </View>
+                <ToastContainer />
             </ImageBackground>
-            <ToastContainer/>
-        </View>
+        </SafeAreaView>
     );
 }
