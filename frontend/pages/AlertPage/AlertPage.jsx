@@ -73,7 +73,7 @@ export default function AlertPage() {
                                     key={alert.id}
                                     id={alert.id}
                                     date={{ start: alert.startDate, end: alert.endDate }}
-                                    locations={{ departure: alert.departure, arrival: alert.arrival }}
+                                    locations={{ origin: alert.origin, destination: alert.destination }}
                                     maxPrice={alert.maxPrice}
                                     closeCard={closeCard}
                                     onDelete={deleteCard}

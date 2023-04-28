@@ -11,7 +11,7 @@ import { getUUID } from '../../auth/uuid';
 
 function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError }) {
     const [uuid, setUuid] = useState("");
-    const { origin, endAirport, lengthMin, lengthMax, outFromDate, outToDate } = data;
+    const { origin, destination, lengthMin, lengthMax, outFromDate, outToDate } = data;
     const fromDate = new Date(outFromDate);
     const untilDate = new Date(outToDate);
     const fromDateFormatted = `${fromDate.getDate().toString().padStart(2, '0')}.${(fromDate.getMonth() + 1).toString().padStart(2, '0')}.${fromDate.getFullYear().toString()}`;
@@ -60,19 +60,24 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             const alert = {
                 startDate: fromDateFormatted,
                 endDate: untilDateFormatted,
-                startDuration: lengthMin || "",
-                endDuration: lengthMax || "",
-                departure: origin.name,
-                arrival: endAirport?.name || "Europa",
+                minLength: parseInt(lengthMin) || null,
+                maxLength: parseInt(lengthMax) || null,
+                origin: origin.name,
+                originIATA: origin.iata,
+                destination: destination.name || "Europa",
+                destinationIATA: destination.iata || "All destinations",
+                //maxPrice is already parsed as Float
                 maxPrice: maxPrice,
                 deviceId: uuid,
                 isActive: true
             };
+            console.log(alert)
             onBackdropPress();
             //Safes Alert in Firebase Firestore
             safeAlert(alert).then(() => {
                 onSuccess("Alert erfolgreich gespeichert!");
             }).catch((error) => {
+                console.log(error)
                 onError("Fehler beim Speichern des Alerts!");
             })
             setMaxPrice(0);
@@ -108,7 +113,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
                             <AlertModalData headline="Von" data={origin.name}
                                 icon={<Entypo style={styles.icon} name={"aircraft-take-off"} size={16} />}
                             />
-                            <AlertModalData headline="Nach" data={endAirport?.name ? endAirport.name : "Europa"}
+                            <AlertModalData headline="Nach" data={destination?.name || "Europa"}
                                 icon={<Entypo style={styles.icon} name={"aircraft-landing"} size={16} />}
                             />
                             <AlertModalData headline="Rückflug inbegriffen"

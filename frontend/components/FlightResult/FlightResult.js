@@ -14,6 +14,10 @@ function Info({ direction, iataCode, date }) {
         setCityName(airport.origin.name)
     }, []);
 
+    const pressed = () => {
+        console.log("Umleitung/ Öffnen des Browsers initialisieren")
+    }
+
     function getDate() {
         const searchedDay = new Date(date);
         const time = searchedDay.toLocaleTimeString().substring(0, 5);
@@ -33,7 +37,7 @@ function Info({ direction, iataCode, date }) {
     }
 
     return (
-        <View style={[(direction === 'right' ? styles.right : { paddingBottom: 2 }), { padding: '5%', paddingTop: '3%' }]}>
+        <View style={[(direction === 'right' ? styles.right : { paddingBottom: 2 }), { padding: '5%', paddingTop: '3%', width: '100%' }]}>
             <View
                 style={[
                     direction === "left"
@@ -78,15 +82,18 @@ function Info({ direction, iataCode, date }) {
             >
                 {getDate()}
             </Text>
+            {direction === "right" &&
+                <TouchableOpacity onPress={pressed}>
+                    <Text style={styles.button}>Jetzt buchen</Text>
+                </TouchableOpacity>
+            }
         </View>
     );
 }
 
 export default function FlightResult({ data }) {
 
-    const pressed = () => {
-        console.log("Umleitung/ Öffnen des Browsers initialisieren")
-    }
+
 
     return (
         <View style={styles.root}>
@@ -104,10 +111,8 @@ export default function FlightResult({ data }) {
                 </View>
             </View>
 
-            <View style={{ flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between' }}>
-                <TouchableOpacity onPress={pressed}>
-                    <Text style={styles.button}>Jetzt buchen</Text>
-                </TouchableOpacity>
+            <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between' }}>
+
                 <Info
                     direction={"right"}
                     iataCode={data.destination}
