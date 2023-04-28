@@ -89,7 +89,7 @@ export default function FlightResultPage({ route }) {
                                 {trips.map(trip => {
                                     return (
                                         <FlightResult
-                                            key={trip.outboundDate + trip.origin}
+                                            key={trip.outboundDate + trip.origin+  trip.inboundDate + trip.destination}
                                             data={trip}
 
                                         />
