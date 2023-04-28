@@ -28,7 +28,10 @@ export default function SelectDuration({ onSelect }) {
     }
 
     const handleEndChangeText = (text) => {
-        const numericInput = text.replace(/[^0-9]/g, '');
+        let numericInput = text.replace(/[^0-9]/g, '');
+        if (parseInt(numericInput) > 15) {
+            numericInput = '15';
+        }
         setEnd(numericInput);
     }
 
@@ -46,7 +49,7 @@ export default function SelectDuration({ onSelect }) {
             <Text style={styles.text}>bis</Text>
 
             <TextInput
-                placeholder="12"
+                placeholder="15"
                 maxLength={maxLengthInput}
                 keyboardType='numeric'
                 style={styles.input}
