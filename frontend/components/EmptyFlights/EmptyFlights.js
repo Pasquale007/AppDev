@@ -6,7 +6,6 @@ import styles from './EmptyFlights.styles';
 
 export default function EmptyFlights() {
 
-
     return (
         <View style={styles.main}>
             <View>
@@ -17,7 +16,7 @@ export default function EmptyFlights() {
                 </View>
             </View>
             <Text style={styles.text}>
-                Für deine Suche wurden leider Keine Flüge gefunden. Setzte doch einen Alert um über Änderrungen informiert zu werden
+                Für deine Suche wurden leider Keine Flüge gefunden. Setzte doch einen Alert um über Änderrungen informiert zu werden.
             </Text>
         </View>
     );
