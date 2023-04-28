@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
-import { ImageBackground, TouchableOpacity, View } from "react-native";
+import { ImageBackground, SafeAreaView, TouchableOpacity, View } from "react-native";
 import image from '../../assets/images/background.jpg';
 import styles from './FlightResultPage.styles';
 import { COLORS } from '../../constants/theme';
@@ -10,16 +10,17 @@ import { useNavigation } from '@react-navigation/native';
 import CreateAlertModal from '../../components/CreateAlertModal/CreateAlertModal';
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
 import Toast from 'react-native-toast-message';
+import { fetchData } from '../../axios';
+import EmptyFlights from '../../components/EmptyFlights/EmptyFlights';
 
 export default function FlightResultPage({ route }) {
     const [createAlertModalIsVisible, setCreateAlertModalIsVisible] = useState(false);
     const [successMsg, setSuccessMsg] = useState("");
     const [errorMsg, setErrorMsg] = useState("");
-
     const navigation = useNavigation();
 
     useEffect(() => {
-        if(successMsg){
+        if (successMsg) {
             Toast.show({
                 type: "success",
                 text1: successMsg,
@@ -27,7 +28,7 @@ export default function FlightResultPage({ route }) {
             setSuccessMsg("");
         }
 
-        if(errorMsg){
+        if (errorMsg) {
             Toast.show({
                 type: "error",
                 text1: errorMsg,
@@ -36,32 +37,23 @@ export default function FlightResultPage({ route }) {
         }
     }, [successMsg, errorMsg]);
 
-    const [trips, setTrips] = useState([
-        {
-            origin: "NUE",
-            destination: "BNX",
-            outboundDate: "2023-05-02T00:00:00.000Z",
-            outboundPrice: "19,95",
-            inboundDate: "2023-05-13T00:00:00.000Z",
-            inboundPrice: "16,99",
-            totalPrice: "36,94"
-        },
-        {
-            origin: "NUE",
-            destination: "BNX",
-            outboundDate: "2023-05-03T00:00:00.000Z",
-            outboundPrice: "19,95",
-            inboundDate: "2023-05-13T00:00:00.000Z",
-            inboundPrice: "16,99",
-            totalPrice: "361,94"
-        },
-    ]);
+    const [trips, setTrips] = useState([]);
+
+    useEffect(() => {
+        async function setData() {
+            const response = await fetchData(route.params.data);
+            console.log(response)
+            setTrips(response);
+        }
+        setData();
+    }, []);
 
     return (
-        <View>
+        <SafeAreaView>
             <ImageBackground
                 source={image}
-                resizeMode="cover">
+                resizeMode="cover"
+                style={{ height: '100%' }}>
                 <View style={styles.content}>
                     <View style={styles.header}>
                         <Ionicons
@@ -82,22 +74,20 @@ export default function FlightResultPage({ route }) {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View
-                        style={styles.main}
-                    >
-                        <ScrollView>
+                    {trips.length == 0 ?
+                        <EmptyFlights />
+                        : <ScrollView
+                            showsVerticalScrollIndicator={false}>
                             {trips.map(trip => {
                                 return (
                                     <FlightResult
-                                        key={trip.outboundDate + trip.origin}
+                                        key={trip.outboundDate + trip.origin + trip.inboundDate + trip.destination}
                                         data={trip}
-
                                     />
                                 )
                             })}
-                        </ScrollView>
-                    </View>
-                    <CreateAlertModal 
+                        </ScrollView>}
+                    <CreateAlertModal
                         isVisible={createAlertModalIsVisible}
                         onBackdropPress={() => setCreateAlertModalIsVisible(false)}
                         data={route.params.data}
@@ -105,8 +95,8 @@ export default function FlightResultPage({ route }) {
                         onError={(msg) => setErrorMsg(msg)}
                     />
                 </View>
+                <ToastContainer />
             </ImageBackground>
-            <ToastContainer/>
-        </View>
+        </SafeAreaView>
     );
 }
