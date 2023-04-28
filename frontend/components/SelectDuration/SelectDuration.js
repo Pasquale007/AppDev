@@ -39,7 +39,7 @@ export default function SelectDuration({ onSelect }) {
     return (
         <View style={styles.row}>
             <TextInput
-                placeholder="00"
+                placeholder="01"
                 maxLength={maxLengthInput}
                 keyboardType='numeric'
                 style={styles.input}
