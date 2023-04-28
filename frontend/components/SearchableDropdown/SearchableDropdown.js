@@ -16,11 +16,23 @@ export default function DropDown({ data, title, icon, onSelect }) {
 
     React.useEffect(() => {
         setFilteredData(data);
+        if (title === "Nach") {
+            setSelectedItems([]);
+            setSelectedItem(null);
+        }
     }, [data]);
 
     const handleSelectItem = (item) => {
         onSelect(item)
-        console.log(item);
+        console.log(item)
+        if (selectedItem === item) {
+            setSelectedItems([]);
+            setSelectedItem(null);
+            handleToggleModal();
+            onSelect(undefined)
+            return;
+        }
+        onSelect(item)
         const index = selectedItems.findIndex((selectedItem) => selectedItem.iata === item.iata);
         if (index > -1) {
             const newSelectedItems = [...selectedItems];
@@ -78,7 +90,7 @@ export default function DropDown({ data, title, icon, onSelect }) {
             <Entypo name={icon} size={30} color={COLORS.background} style={{ marginRight: 8 }} />
             <View>
                 <Text>{title}</Text>
-                <Text style={{ fontFamily: FONT.medium, fontSize: SIZES.medium, color: COLORS.textBlack }}>{selectedItem ? selectedItem.name : 'Select item'}</Text>
+                <Text style={{ fontFamily: FONT.medium, fontSize: SIZES.medium, color: COLORS.textBlack }}>{selectedItem ? selectedItem.name : 'Europa'}</Text>
             </View>
             <Modal visible={isModalVisible} animationType="slide" testID='modal'>
                 <View style={{ flex: 1, backgroundColor: COLORS.background }}>

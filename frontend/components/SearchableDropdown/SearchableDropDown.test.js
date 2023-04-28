@@ -9,7 +9,7 @@ describe('DropDown', () => {
         const title = 'Select an item';
         const { getByText } = render(<DropDown title={title} data={data} icon="aircraft-take-off" />);
         expect(getByText(title)).toBeDefined();
-        expect(getByText('Select item')).toBeDefined();
+        expect(getByText('Europa')).toBeDefined();
     });
 
     it('should open the modal on press', () => {
