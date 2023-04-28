@@ -13,7 +13,6 @@ import Toast from 'react-native-toast-message';
 import { fetchData } from '../../axios';
 import EmptyFlights from '../../components/EmptyFlights/EmptyFlights';
 
-
 export default function FlightResultPage({ route }) {
     const [createAlertModalIsVisible, setCreateAlertModalIsVisible] = useState(false);
     const [successMsg, setSuccessMsg] = useState("");
@@ -89,7 +88,7 @@ export default function FlightResultPage({ route }) {
                                 {trips.map(trip => {
                                     return (
                                         <FlightResult
-                                            key={trip.outboundDate + trip.origin+  trip.inboundDate + trip.destination}
+                                            key={trip.outboundDate + trip.origin + trip.inboundDate + trip.destination}
                                             data={trip}
 
                                         />
