@@ -30,7 +30,7 @@ export async function getActiveItems(): Promise<Object[]> {
 export async function setAlreadyAlerted(alert: Alert): Promise<boolean>{
     let db = firebase.firestore();
 
-    await db.collection("users").doc(alert.id).update({alreadyAlerted: alert.alreadyAlerted});
+    await db.collection("alerts").doc(alert.id).update({alreadyAlerted: alert.alreadyAlerted});
 
     return true
 }

@@ -162,7 +162,11 @@ export async function getResult(routes: Route[], origin: string, destination: st
     allAvailableConnections.sort(function(a, b) {
         return a.totalPrice - b.totalPrice;
     })
-    //console.log(allAvailableConnections)
+    if(allAvailableConnections.length !== 0){
+        const lowestPrice = allAvailableConnections[0].totalPrice;
+        const cutIndex = allAvailableConnections.findIndex(conn => conn.totalPrice >= lowestPrice * 10);
+        allAvailableConnections = allAvailableConnections.slice(0, cutIndex !== -1 ? cutIndex + 1 : allAvailableConnections.length);
+    }
     return allAvailableConnections;
 }
 

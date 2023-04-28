@@ -35,6 +35,10 @@ async function parseAlerts(){
             startDate: new Date(Date.parse(`${item.startDate.split(".")[2]}-${item.startDate.split(".")[1]}-${item.startDate.split(".")[0]}`)),
             endDate: new Date(Date.parse(`${item.endDate.split(".")[2]}-${item.endDate.split(".")[1]}-${item.endDate.split(".")[0]}`))
         };
+        if(!parsedItem.maxLength){
+            continue
+        }
+        console.log(parsedItem)
         /*const parsedItem: Alert = {
             id: "43b4ij3b54i3jb5345b3",
             isActive: true,
@@ -58,9 +62,12 @@ async function parseAlerts(){
                         return;
                     }
                 }else{
+                    console.log("Into Firebase")
                     await setAlreadyAlerted(response)
                 }
-            }
+            },
+        (error) => {
+        }
         )
 
     }
