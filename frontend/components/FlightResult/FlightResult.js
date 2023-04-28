@@ -99,7 +99,7 @@ export default function FlightResult({ data }) {
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={[styles.textSmall, { transform: [{ translateX: -110 }] }]}>Zusammen ab</Text>
                     <View style={{ position: 'absolute', left: '50%', transform: [{ translateX: -50 }] }}>
-                        <Text style={styles.costs}>{(Math.round(data.totalPrice * 100) / 100).toString().replace('.', ',').toLocaleString("de-DE",{style: "currency", currency: "EUR"})}</Text>
+                        <Text style={styles.costs}>{(Math.round(data.totalPrice * 100) / 100).toLocaleString("de-DE", { style: "currency", currency: "EUR" })}</Text>
                     </View>
                 </View>
             </View>
