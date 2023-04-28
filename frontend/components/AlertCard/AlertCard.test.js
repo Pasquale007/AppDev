@@ -20,10 +20,12 @@ describe("AlertCard", () => {
         setIsActive: setIsActiveMock,
     };
 
-    it("should render date", () => {
+    it("should render date and duration", () => {
         const { getByTestId } = render(<AlertCard {...data}/>);
         const date = getByTestId("date");
+        const duration = getByTestId("duration");
         expect(date).toBeDefined();
+        expect(duration).toBeDefined();
     });
 
     it("should render departure location text", () => {
