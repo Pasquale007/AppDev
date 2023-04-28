@@ -90,7 +90,7 @@ export default function SearchPage() {
                             return;
                         }
 
-                        if (flexible) {
+                        if (!flexible) {
                             if (!duration.start || !duration.end) {
                                 Toast.show({
                                     type: "error",
