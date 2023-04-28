@@ -106,7 +106,7 @@ export default function FlightResultPage({ route }) {
                     />
                 </View>
             </ImageBackground>
-            <ToastContainer />
+            <ToastContainer/>
         </View>
     );
 }
