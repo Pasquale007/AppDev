@@ -111,7 +111,7 @@ export default function SearchPage() {
                         navigation.navigate('FlightResultPage', {
                             data: {
                                 'origin': startAirport,
-                                'destination': endAirport?.iata || "All destinations",
+                                'destination': endAirport || { name: "Europa", iata: 'All destinations' },
                                 'ignoredDestinations': '',
                                 'outFromDate': dateSpan?.from?.toISOString().split('T')[0],
                                 'outToDate': dateSpan?.until?.toISOString().split('T')[0],

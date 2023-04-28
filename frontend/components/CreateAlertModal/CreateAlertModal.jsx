@@ -12,6 +12,7 @@ import { getUUID } from '../../auth/uuid';
 function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError }) {
     const [uuid, setUuid] = useState("");
     const { origin, destination, lengthMin, lengthMax, outFromDate, outToDate } = data;
+    console.log(data);
     const fromDate = new Date(outFromDate);
     const untilDate = new Date(outToDate);
     const fromDateFormatted = `${fromDate.getDate().toString().padStart(2, '0')}.${(fromDate.getMonth() + 1).toString().padStart(2, '0')}.${fromDate.getFullYear().toString()}`;
@@ -64,8 +65,8 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
                 maxLength: parseInt(lengthMax) || null,
                 origin: origin.name,
                 originIATA: origin.iata,
-                destination: destination.name || "Europa",
-                destinationIATA: destination.iata || "All destinations",
+                destination: destination.name,
+                destinationIATA: destination.iata,
                 //maxPrice is already parsed as Float
                 maxPrice: maxPrice,
                 deviceId: uuid,
