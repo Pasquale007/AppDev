@@ -17,6 +17,21 @@ export interface Alert {
     alreadyAlerted?: AlreadyAlerted
 }
 
+export interface FirebaseAlert {
+    id: string,
+    isActive: boolean,
+    origin: string,
+    originIATA: string,
+    destination: string,
+    destinationIATA: string,
+    startDate: string,
+    endDate: string,
+    minLength: number,
+    maxLength: number,
+    maxPrice: number,
+    alreadyAlerted?: AlreadyAlerted
+}
+
 interface AlreadyAlerted {
     originIATA: string,
     outboundDate: Date,
@@ -29,7 +44,8 @@ async function parseAlerts(){
     let allRoutes: Route[] = [];
     allRoutes = await setRoutes()
     const firebaseDataset = await getActiveItems();
-    for(const item of firebaseDataset){
+    let item: FirebaseAlert;
+    for(item of firebaseDataset){
         const parsedItem: Alert = {
             ...item,
             startDate: new Date(Date.parse(`${item.startDate.split(".")[2]}-${item.startDate.split(".")[1]}-${item.startDate.split(".")[0]}`)),
