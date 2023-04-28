@@ -8,10 +8,12 @@ describe('CreateAlertModal', () => {
     const onSuccess = jest.fn();
 
     const data = {
-        startAirport: { name: 'München' },
-        endAirport: { name: 'Berlin' },
-        dateSpan: { from: '2023-05-01', until: '2023-05-05' },
-        duration: { start: 2, end: 5 },
+        origin: { name: 'München' },
+        destination: { name: 'Berlin' },
+        outFromDate: '2023-05-01',
+        outToDate: '2023-05-05',
+        lengthMin: 2,
+        lengthMax: 5,
         onBackdropPress: onBackdropPress,
         onError: onError,
         onSuccess: onSuccess,

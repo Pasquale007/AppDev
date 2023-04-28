@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
         marginTop: '8%',
         backgroundColor: COLORS.cardColor,
         borderRadius: 20,
+
     },
     flex: {
         display: 'flex',
@@ -41,8 +42,11 @@ const styles = StyleSheet.create({
         color: COLORS.textWhite,
     },
     right: {
+        paddingBottom: 0,
+        paddingLeft: 0,
         textAlign: 'right',
         paddingTop: 1,
+
     },
     costs: {
         color: COLORS.textWhite,
@@ -60,7 +64,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
-        minWidth: '40%',
+        textAlign: 'center',
+        width: 150,
     }
 
 });
