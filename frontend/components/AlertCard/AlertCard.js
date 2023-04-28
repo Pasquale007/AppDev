@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./AlertCard.style";
-import { Text, View, TouchableOpacity, Image } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { Switch } from 'react-native-switch';
 import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
