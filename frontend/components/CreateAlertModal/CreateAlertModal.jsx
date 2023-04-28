@@ -60,10 +60,13 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             const alert = {
                 startDate: fromDateFormatted,
                 endDate: untilDateFormatted,
-                startDuration: duration?.start || "",
-                endDuration: duration?.end || "",
-                departure: startAirport.name,
-                arrival: endAirport?.name || "Europa",
+                minLength: parseInt(duration?.start) || undefined,
+                maxLength: parseInt(duration?.end) || undefined,
+                origin: startAirport.name,
+                originIATA: startAirport.iata,
+                destination: endAirport?.name || "Europa",
+                destinationIATA: endAirport?.iata || "All destinations",
+                //maxPrice is already parsed as Float
                 maxPrice: maxPrice,
                 deviceId: uuid,
                 isActive: true
