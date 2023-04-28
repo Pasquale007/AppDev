@@ -111,12 +111,12 @@ export default function SearchPage() {
                         navigation.navigate('FlightResultPage', {
                             data: {
                                 'origin': startAirport,
-                                'destination': endAirport?.iata ? endAirport.iata : "All destinations",
+                                'destination': endAirport?.iata || "All destinations",
                                 'ignoredDestinations': '',
                                 'outFromDate': dateSpan?.from?.toISOString().split('T')[0],
                                 'outToDate': dateSpan?.until?.toISOString().split('T')[0],
-                                'lengthMin': duration.start ? duration.start : 1,
-                                'lengthMax': duration.end ? duration.end : 1
+                                'lengthMin': duration?.start || 1,
+                                'lengthMax': duration?.end || 1
                             }
                         });
                     }}
