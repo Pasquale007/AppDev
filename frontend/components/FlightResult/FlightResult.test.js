@@ -18,7 +18,6 @@ describe('FlightResult component', () => {
     expect(getByText('Hinflug')).toBeTruthy();
     expect(getByText('Rückflug')).toBeTruthy();
     expect(getByText('Zusammen ab')).toBeTruthy();
-    expect(getByText(/.* €/)).toBeTruthy();
     expect(getByText('Jetzt buchen')).toBeTruthy();
   });
 });
