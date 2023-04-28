@@ -115,8 +115,8 @@ export default function SearchPage() {
                                 'ignoredDestinations': '',
                                 'outFromDate': dateSpan?.from?.toISOString().split('T')[0],
                                 'outToDate': dateSpan?.until?.toISOString().split('T')[0],
-                                'lengthMin': duration?.start || 1,
-                                'lengthMax': duration?.end || 1
+                                'lengthMin': duration?.start || undefined,
+                                'lengthMax': duration?.end || undefined
                             }
                         });
                     }}
