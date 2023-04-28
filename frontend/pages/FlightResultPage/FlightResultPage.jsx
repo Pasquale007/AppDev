@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
-import { ImageBackground, Text, TouchableOpacity, View } from "react-native";
+import { ImageBackground, TouchableOpacity, View } from "react-native";
 import image from '../../assets/images/background.jpg';
 import styles from './FlightResultPage.styles';
 import { COLORS } from '../../constants/theme';
@@ -11,6 +11,7 @@ import CreateAlertModal from '../../components/CreateAlertModal/CreateAlertModal
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
 import Toast from 'react-native-toast-message';
 import { fetchData } from '../../axios';
+import EmptyFlights from '../../components/EmptyFlights/EmptyFlights';
 
 
 export default function FlightResultPage({ route }) {
@@ -82,7 +83,7 @@ export default function FlightResultPage({ route }) {
                         style={styles.main}
                     >
                         {trips.length == 0 ?
-                            <View><Text>Keine Daten verfügbar</Text></View>
+                            <EmptyFlights />
                             : <ScrollView>
 
                                 {trips.map(trip => {
