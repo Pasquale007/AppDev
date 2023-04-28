@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
-import { ImageBackground, TouchableOpacity, View } from "react-native";
+import { ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import image from '../../assets/images/background.jpg';
 import styles from './FlightResultPage.styles';
 import { COLORS } from '../../constants/theme';
@@ -18,9 +18,9 @@ export default function FlightResultPage({ route }) {
     const [successMsg, setSuccessMsg] = useState("");
     const [errorMsg, setErrorMsg] = useState("");
     /*Data from the other page*/
-    const { origin, destination, ignoredDestinations, lengthMin, lengthMax, outFromDate, outToDate } = route.params.data;
-    const fromDate = new Date(outFromDate);
-    const untilDate = new Date(outToDate);
+    //const { origin, destination, ignoredDestinations, lengthMin, lengthMax, outFromDate, outToDate } = route.params.data;
+    //const fromDate = new Date(outFromDate);
+    //const untilDate = new Date(outToDate);
 
     const navigation = useNavigation();
 
@@ -81,17 +81,20 @@ export default function FlightResultPage({ route }) {
                     <View
                         style={styles.main}
                     >
-                        <ScrollView>
-                            {trips.map(trip => {
-                                return (
-                                    <FlightResult
-                                        key={trip.outboundDate + trip.origin}
-                                        data={trip}
+                        {trips.length == 0 ?
+                            <View><Text>Keine Daten verfügbar</Text></View>
+                            : <ScrollView>
 
-                                    />
-                                )
-                            })}
-                        </ScrollView>
+                                {trips.map(trip => {
+                                    return (
+                                        <FlightResult
+                                            key={trip.outboundDate + trip.origin}
+                                            data={trip}
+
+                                        />
+                                    )
+                                })}
+                            </ScrollView>}
                     </View>
                     <CreateAlertModal
                         isVisible={createAlertModalIsVisible}
