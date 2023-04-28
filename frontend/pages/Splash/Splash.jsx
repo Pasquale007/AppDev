@@ -1,5 +1,6 @@
 import * as React from "react";
-import { View } from "react-native";
+import LottieView from "lottie-react-native";
+import GIF from "../../assets/splashscreen/splashscreen.json";
 
 export default function Splash({ setIsLoading }) {
 
@@ -8,6 +9,11 @@ export default function Splash({ setIsLoading }) {
   }, [])
 
   return (
-    <View></View>
+    <LottieView
+      source={GIF}
+      autoPlay={true}
+      loop={true}
+      resizeMode="cover"
+    />
   )
 }
