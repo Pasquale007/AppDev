@@ -42,30 +42,15 @@ export default function FlightResultPage({ route }) {
         }
     }, [successMsg, errorMsg]);
 
-    const [trips, setTrips] = useState([
-        {
-            origin: "NUE",
-            destination: "BNX",
-            outboundDate: "2023-05-02T00:00:00.000Z",
-            outboundPrice: "19,95",
-            inboundDate: "2023-05-13T00:00:00.000Z",
-            inboundPrice: "16,99",
-            totalPrice: "36,94"
-        },
-        {
-            origin: "NUE",
-            destination: "BNX",
-            outboundDate: "2023-05-03T00:00:00.000Z",
-            outboundPrice: "19,95",
-            inboundDate: "2023-05-13T00:00:00.000Z",
-            inboundPrice: "16,99",
-            totalPrice: "361,94"
-        },
-    ]);
+    const [trips, setTrips] = useState([]);
 
     useEffect(() => {
-        console.log(route.params.data)
-        fetchData(route.params.data);
+        async function setData() {
+            const response = await fetchData(route.params.data);
+            console.log(response)
+            setTrips(response);
+        }
+        setData();
     }, []);
 
     return (

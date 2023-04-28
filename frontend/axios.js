@@ -2,16 +2,11 @@ import axios from 'axios';
 
 export const axiosInstance = axios.create({
     baseURL: 'http://116.203.81.70:3000',
-    timeout: 5000
+    timeout: 10000
 });
 
-export const fetchData = (params) => {
-    console.log("start")
-    axiosInstance.get("/getFlights", { params }
-    ).then(response => {
-        console.log("asdf")
-    }).catch(err => {
-        console.log("fdsa")
-    })
+export const fetchData = async (params) => {
+    const response = await axiosInstance.get(`/getFlights?origin=${params.origin.iata}&destination=${params.destination}&ignoredDestinations=${params.ignoredDestinations}&outFromDate=${params.outFromDate}&outToDate=${params.outToDate}&lengthMin=${params.lengthMin}&lengthMax=${params.lengthMax}`);
+    return response.data;
 }
 

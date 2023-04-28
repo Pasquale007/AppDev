@@ -48,7 +48,7 @@ function Info({ direction, iataCode, date }) {
                         style={[{ marginRight: 10 }, (direction === 'right' && styles.right)]}
                     />}
                 <Text
-                    style={[styles.text, (direction === 'right' && styles.right), { marginRight: 10, paddingTop: 4}]}
+                    style={[styles.text, (direction === 'right' && styles.right), { marginRight: 10, paddingTop: 4 }]}
                     numberOfLines={1}
                     adjustsFontSizeToFit={true}
                 >
@@ -99,7 +99,7 @@ export default function FlightResult({ data }) {
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={[styles.textSmall, { transform: [{ translateX: -110 }] }]}>Zusammen ab</Text>
                     <View style={{ position: 'absolute', left: '50%', transform: [{ translateX: -50 }] }}>
-                        <Text style={styles.costs}>{data.totalPrice} €</Text>
+                        <Text style={styles.costs}>{(Math.round(data.totalPrice * 100) / 100).toString().replace('.', ',')} €</Text>
                     </View>
                 </View>
             </View>

@@ -108,7 +108,6 @@ export default function SearchPage() {
                                 return;
                             }
                         }
-                        console.log(dateSpan)
                         navigation.navigate('FlightResultPage', {
                             data: {
                                 'origin': startAirport,
@@ -116,7 +115,6 @@ export default function SearchPage() {
                                 'ignoredDestinations': '',
                                 'outFromDate': dateSpan?.from?.toISOString().split('T')[0],
                                 'outToDate': dateSpan?.until?.toISOString().split('T')[0],
-                                'duration': flexible ? duration : undefined,
                                 'lengthMin': duration.start ? duration.start : 1,
                                 'lengthMax': duration.end ? duration.end : 1
                             }
