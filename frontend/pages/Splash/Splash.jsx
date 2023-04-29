@@ -1,14 +1,40 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Animated } from 'react-native';
 import Video from 'react-native-video';
 import Videofile from '../../assets/splashscreen/splash.mp4';
 
-export default function Splash({setIsLoading}){
-  state = {
-    opacity: new Animated.Value(1),
-  };
- 
+export default function Splash({ setIsLoading }) {
+  const [opacity, setOpacity] = useState(new Animated.Value(1));
 
+  const handleLoad = () => {
+    Animated.timing(opacity, {
+      toValue: 0,
+      duration: 2000,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  useEffect(() => {
+    const videoTimer = setTimeout(() => {
+      handleLoad();
+      setTimeout(() => setIsLoading(false), 2000);
+    }, 1000);
+    return () => clearTimeout(videoTimer);
+  }, []);
+
+  return (
+    <Animated.View style={[styles.container, { opacity }]}>
+      <Video
+        source={Videofile}
+        style={styles.videoBackground}
+        muted={true}
+        resizeMode='cover'
+        onLoad={handleLoad}
+        onEnd={() => setIsLoading(false)}
+      />
+    </Animated.View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -24,33 +50,3 @@ const styles = StyleSheet.create({
     right: 0,
   },
 });
-
-
-
-  React.useEffect(()=>{
-    setTimeout(setIsLoading, 2000)
-  },[])
-
-  componentDidMount() {
-    Animated.timing(this.state.opacity, {
-      toValue: 0,
-      duration: 2000, // Anzeigedauer des Videos in Millisekunden
-      useNativeDriver: true,
-    }).start();
-  }
-
-  render() {
-    return (
-      <Animated.View style={[styles.container, { opacity: this.state.opacity }]}>
-        
-        <Video
-          source={Videofile}
-          style={styles.videoBackground}
-          muted={true}
-          resizeMode='cover'
-        />
-      </Animated.View>
-    );
-  }
-}
-}
