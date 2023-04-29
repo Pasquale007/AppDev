@@ -1,34 +1,56 @@
-import * as React from "react";
-import { View } from "react-native";
-import LottieView  from "lottie-react-native";
-import { SetStateAction } from "react";
-import Lottie from "lottie-react-native";
-
+import React, { Component } from 'react';
+import { View, StyleSheet, Animated } from 'react-native';
+import Video from 'react-native-video';
+import Videofile from '../../assets/splashscreen/splash.mp4';
 
 export default function Splash({setIsLoading}){
-  
-React.useEffect(()=>{
-  setTimeout(setIsLoading, 3000)
-},[])
-
-   return(
-     //<View style={{flex: 1, alignItems: 'center', margin: 0}}>
-   <LottieView 
-   source={require("../../assets/splashscreen/Splashscreen-new.json")}
-   autoPlay={true}
-    loop={true}
-  resizeMode="contain"
-  />
- // </View>
- )
-   }
+  state = {
+    opacity: new Animated.Value(1),
+  };
+ 
 
 
-/**
-export default function Animation({setIsLoading}) {
-    
-  return (
-  <Lottie source={require('../../assets/splashscreen/splashscreen.json')} autoPlay loop={false} />
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  videoBackground: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
+});
+
+
+
+  React.useEffect(()=>{
+    setTimeout(setIsLoading, 2000)
+  },[])
+
+  componentDidMount() {
+    Animated.timing(this.state.opacity, {
+      toValue: 0,
+      duration: 2000, // Anzeigedauer des Videos in Millisekunden
+      useNativeDriver: true,
+    }).start();
+  }
+
+  render() {
+    return (
+      <Animated.View style={[styles.container, { opacity: this.state.opacity }]}>
+        
+        <Video
+          source={Videofile}
+          style={styles.videoBackground}
+          muted={true}
+          resizeMode='cover'
+        />
+      </Animated.View>
     );
   }
-**/
+}
+}
