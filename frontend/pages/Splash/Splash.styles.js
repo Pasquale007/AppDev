@@ -1,13 +1,18 @@
+
 import { StyleSheet } from "react-native";
 
-import { COLORS } from "../../constants/theme";
-
 const styles = StyleSheet.create({
-    main: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        color: COLORS.background,
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    backgroundVideo: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
     },
 });
 
