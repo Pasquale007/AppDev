@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./AlertCard.style";
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Switch } from 'react-native-switch';
@@ -6,8 +6,26 @@ import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { Layout, LightSpeedOutLeft } from "react-native-reanimated";
+import AlertsArrow from '../AlertsArrow/AlertsArrow';
 
-function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, isActive, setIsActive, id }) {
+function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, cardArr, isActive, setIsActive, id }) {
+    const [durationString, setDurationString] = useState("");
+
+    useEffect(() => {
+        buildDurationString();
+    }, []);
+
+    const buildDurationString = () => {
+        if (duration?.start && duration?.end) {
+            const dayOrDays = +duration.end === 1 ? "Tag" : "Tage";
+
+            if (parseInt(duration.start) - parseInt(duration.end) === 0) {
+                setDurationString(`${duration.start} ${dayOrDays}`);
+                return;
+            }
+            setDurationString(`${duration.start} - ${duration.end} ${dayOrDays}`);
+        }
+    }
 
     const renderRightActions = () => {
         return (
@@ -34,16 +52,28 @@ function AlertCard({ date, locations, maxPrice, closeCard, onDelete, cardArr, is
                         <Text style={styles.dateText} testID="date">
                             {date.start} - {date.end}
                         </Text>
-                        <Text style={styles.departureText} numberOfLines={1} ellipsizeMode='tail'
-                            testID="departureText"
-                        >
-                            {locations.origin}
-                        </Text>
-                        <Text style={styles.arrivalText} numberOfLines={1} ellipsizeMode='tail'
-                            testID="arrivalText"
-                        >
-                            {locations.destination}
-                        </Text>
+                        {durationString != "" &&
+                            <Text style={[styles.dateText, styles.minLineHeight]} testID="duration">
+                                {durationString}
+                            </Text>
+                        }
+                        <View style={styles.locationsContainer}>
+                            <View style={styles.arrowContainer}>
+                                <AlertsArrow />
+                            </View>
+                            <View style={styles.locations}>
+                                <Text style={styles.departureText} numberOfLines={1} ellipsizeMode='tail'
+                                    testID="departureText"
+                                >
+                                    {locations.origin}
+                                </Text>
+                                <Text style={styles.arrivalText} numberOfLines={1} ellipsizeMode='tail'
+                                    testID="arrivalText"
+                                >
+                                    {locations.destination}
+                                </Text>
+                            </View>
+                        </View>
                     </View>
                     <View style={styles.rightSide}>
                         <Text style={styles.maxPriceText} numberOfLines={1} adjustsFontSizeToFit={true}

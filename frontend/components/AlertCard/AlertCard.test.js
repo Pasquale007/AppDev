@@ -10,6 +10,7 @@ describe("AlertCard", () => {
     const data = {
         date: { start: "18.08.2023", end: "12.12.2023" },
         locations: { departure: "Nürnberg", arrival: "Rom" },
+        duration: {start: 7, end: 7},
         maxPrice: 1000000.5667,
         index: 1,
         cardArr: [],
@@ -20,10 +21,12 @@ describe("AlertCard", () => {
         setIsActive: setIsActiveMock,
     };
 
-    it("should render date", () => {
+    it("should render date and duration", () => {
         const { getByTestId } = render(<AlertCard {...data}/>);
         const date = getByTestId("date");
+        const duration = getByTestId("duration");
         expect(date).toBeDefined();
+        expect(duration).toBeDefined();
     });
 
     it("should render departure location text", () => {
