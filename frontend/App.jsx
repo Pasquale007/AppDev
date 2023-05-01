@@ -34,6 +34,7 @@ export default function App() {
   async function registerForPushNotificationsAsync() {
     let token;
 
+    //Configuring Notification on Android
     if (Platform.OS === 'android') {
       await Notifications.setNotificationChannelAsync('default', {
         name: 'default',
@@ -43,9 +44,11 @@ export default function App() {
       });
     }
 
+    //Notifications cant be send on emulators, so we have to check if it is a real device
     if (Device.isDevice) {
       const { status: existingStatus } = await Notifications.getPermissionsAsync();
       let finalStatus = existingStatus;
+      //Ask user for permission to send notifications to them
       if (existingStatus !== 'granted') {
         const { status } = await Notifications.requestPermissionsAsync();
         finalStatus = status;
