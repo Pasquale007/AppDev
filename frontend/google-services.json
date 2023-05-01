@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "899670161103",
+    "project_id": "flexi-flight",
+    "storage_bucket": "flexi-flight.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899670161103:android:3e26ec025f0eecdb5529ba",
+        "android_client_info": {
+          "package_name": "com.pthurow.frontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899670161103-55r8bmu8cb22sb2c8795nle65sv1rptc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pthurow.frontend",
+            "certificate_hash": "542c0621db571976ecea43a954ac29be56999280"
+          }
+        },
+        {
+          "client_id": "899670161103-8daa90tugpe77ft6kr28m93utnndh62v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pthurow.frontend",
+            "certificate_hash": "4b0afe1dabb4dd174deb829b8346cafa00879a84"
+          }
+        },
+        {
+          "client_id": "899670161103-jgopc20lhbklkuoc3g7a956m1ju7lc8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe060CqRPDtVhnqwBhW27yU7yW4-p_Jgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899670161103-jgopc20lhbklkuoc3g7a956m1ju7lc8c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "899670161103-otstvp7kfk4nmlli2ahve0vgsiohibrs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.reactnativefirebase"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

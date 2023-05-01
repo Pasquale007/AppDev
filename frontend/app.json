@@ -7,7 +7,7 @@
     "icon": "",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splashscreen/Launch-ScreenwithLogoanimated-new.png",
+      "image": "./assets/splashscreen/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#0F0D1E"
     },
@@ -18,17 +18,27 @@
       "supportsTablet": true
     },
     "android": {
-      "permissions": ["WRITE_EXTERNAL_STORAGE", "READ_EXTERNAL_STORAGE"],
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE"
+      ],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/splashscreen/splash.png",
         "backgroundColor": "#0F0D1E"
-      }
+      },
+      "package": "com.pthurow.frontend"
     },
     "plugins": [
       "@react-native-firebase/app"
     ],
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9359b28e-2ffb-4084-8dc1-6d7bbbee352f"
+      }
     }
   }
 }
