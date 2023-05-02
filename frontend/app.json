@@ -1,12 +1,15 @@
 {
   "expo": {
-    "name": "frontend",
+    "name": "Flexi Flight",
     "slug": "frontend",
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "com.pthurow.frontend",
     "icon": "",
     "userInterfaceStyle": "light",
+    "notification": {
+      "icon": "./assets/splashscreen/splashscreen.png"
+    },
     "splash": {
       "image": "./assets/splashscreen/splashscreen.png",
       "resizeMode": "contain",
