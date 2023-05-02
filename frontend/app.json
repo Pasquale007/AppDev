@@ -8,7 +8,7 @@
     "icon": "",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splashscreen/splash.png",
+      "image": "./assets/splashscreen/splashscreen.png",
       "resizeMode": "contain",
       "backgroundColor": "#0F0D1E"
     },
@@ -25,7 +25,7 @@
         "READ_EXTERNAL_STORAGE"
       ],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/splashscreen/splash.png",
+        "foregroundImage": "./assets/splashscreen/splashscreen.png",
         "backgroundColor": "#0F0D1E"
       },
       "package": "com.pthurow.frontend"

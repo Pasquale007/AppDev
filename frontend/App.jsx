@@ -10,7 +10,7 @@ import { polyfillWebCrypto } from "expo-standard-web-crypto";
 import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import { COLORS } from './constants/theme';
-import Splash from './pages/Splash/Splash';
+import Splash from './pages/SplashPage/Splash';
 import { Platform } from 'react-native';
 
 polyfillWebCrypto();
