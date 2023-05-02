@@ -9,7 +9,7 @@ import { useFonts } from "expo-font";
 import { polyfillWebCrypto } from "expo-standard-web-crypto";
 
 import { COLORS } from './constants/theme';
-import Splash from './pages/Splash/Splash';
+import Splash from './pages/SplashPage/Splash';
 
 polyfillWebCrypto();
 const Tab = createBottomTabNavigator();
@@ -38,7 +38,7 @@ export default function App() {
     : <NavigationContainer theme={MyTheme}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
-          tabBarStyle: {borderTopWidth: 0},
+          tabBarStyle: { borderTopWidth: 0 },
           tabBarHideOnKeyboard: true,
           headerShown: false,
           tabBarActiveTintColor: COLORS.navIconActive,
