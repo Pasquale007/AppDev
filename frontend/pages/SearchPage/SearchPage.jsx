@@ -13,6 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import flightData from '../../data/flightData.json';
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
 import Toast from 'react-native-toast-message';
+import { sendPushNotification } from '../../pushNotification/pushNotification';
 
 export default function SearchPage() {
     const origins = flightData.map(dataset => dataset.origin);
@@ -81,7 +82,8 @@ export default function SearchPage() {
                 </ImageBackground>
                 <Button
                     text={"Suche"}
-                    onClick={() => {
+                    onClick={async () => {
+                        //await sendPushNotification('ExponentPushToken[Ef5M2qFl2bYdnWJG_LfS9m]');
                         if (!startAirport) {
                             Toast.show({
                                 type: "error",
@@ -115,8 +117,8 @@ export default function SearchPage() {
                                 'ignoredDestinations': '',
                                 'outFromDate': dateSpan?.from?.toISOString().split('T')[0],
                                 'outToDate': dateSpan?.until?.toISOString().split('T')[0],
-                                'lengthMin': duration?.start || undefined,
-                                'lengthMax': duration?.end || undefined
+                                'lengthMin': !flexible ? duration?.start : undefined,
+                                'lengthMax': !flexible ? duration?.end : undefined
                             }
                         });
                     }}

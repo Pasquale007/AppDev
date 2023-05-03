@@ -1,11 +1,15 @@
 {
   "expo": {
-    "name": "frontend",
+    "name": "Flexi Flight",
     "slug": "frontend",
     "version": "1.0.0",
     "orientation": "portrait",
+    "scheme": "com.pthurow.frontend",
     "icon": "",
     "userInterfaceStyle": "light",
+    "notification": {
+      "icon": "./assets/splashscreen/splashscreen.png"
+    },
     "splash": {
       "image": "./assets/splashscreen/splashscreen.png",
       "resizeMode": "contain",
@@ -18,17 +22,27 @@
       "supportsTablet": true
     },
     "android": {
-      "permissions": ["WRITE_EXTERNAL_STORAGE", "READ_EXTERNAL_STORAGE"],
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/splashscreen/splashscreen.png",
         "backgroundColor": "#0F0D1E"
-      }
+      },
+      "package": "com.pthurow.frontend"
     },
     "plugins": [
       "@react-native-firebase/app"
     ],
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9359b28e-2ffb-4084-8dc1-6d7bbbee352f"
+      }
     }
   }
 }
