@@ -83,7 +83,7 @@ export default function SearchPage() {
                 <Button
                     text={"Suche"}
                     onClick={async () => {
-                        await sendPushNotification('ExponentPushToken[Ef5M2qFl2bYdnWJG_LfS9m]');
+                        //await sendPushNotification('ExponentPushToken[Ef5M2qFl2bYdnWJG_LfS9m]');
                         if (!startAirport) {
                             Toast.show({
                                 type: "error",
@@ -117,8 +117,8 @@ export default function SearchPage() {
                                 'ignoredDestinations': '',
                                 'outFromDate': dateSpan?.from?.toISOString().split('T')[0],
                                 'outToDate': dateSpan?.until?.toISOString().split('T')[0],
-                                'lengthMin': duration?.start || undefined,
-                                'lengthMax': duration?.end || undefined
+                                'lengthMin': !flexible ? duration?.start : undefined,
+                                'lengthMax': !flexible ? duration?.end : undefined
                             }
                         });
                     }}

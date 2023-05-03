@@ -14,11 +14,11 @@ export async function safeAlert(alert) {
     });
 }   
 
-export function getAlerts(uuid, setAlerts) {
+export function getAlerts(deviceToken, setAlerts) {
     let alerts = [];
 
     return alertRef
-        .where("deviceId", "==", uuid)
+        .where("deviceId", "==", deviceToken)
         .onSnapshot(
             (querySnapshot) => {
                 const newAlerts = [];
