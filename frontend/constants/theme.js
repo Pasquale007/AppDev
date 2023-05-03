@@ -15,27 +15,29 @@ const COLORS = {
 
   safeSearchAlertIcon: "#000000",
   safeSearchAlertBackground: "#D9D9D9",
+  saveButtonBackground: "#4CAF50",
 
   searchFieldColor: "rgba(217,217,217, 0.8)",
+  backgroundOpacity: "rgba(15,13,30, 0.3)",
+  backgroundOpacityHight: "rgba(15,13,30, 0.7)",
   searchFieldTagColor: "rgba(41,38,57,0.2)",
   searchButtonColor: "#292639",
 };
-  
-  const FONT = {
-    regular: "RubikRegular",
-    medium: "RubikMedium",
-    semiBold: "RubikSemiBold",
-    bold: "RubikBold",
-  };
-  
-  const SIZES = {
-    xSmall: 10,
-    small: 12,
-    medium: 16,
-    large: 20,
-    xLarge: 24,
-    xxLarge: 32,
-  };
-  
-  export { COLORS, FONT, SIZES, };
-  
+
+const FONT = {
+  regular: "RubikRegular",
+  medium: "RubikMedium",
+  semiBold: "RubikSemiBold",
+  bold: "RubikBold",
+};
+
+const SIZES = {
+  xSmall: 10,
+  small: 12,
+  medium: 16,
+  large: 20,
+  xLarge: 24,
+  xxLarge: 32,
+};
+
+export { COLORS, FONT, SIZES, };

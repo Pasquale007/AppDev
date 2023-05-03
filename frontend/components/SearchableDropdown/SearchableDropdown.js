@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Modal, FlatList, TextInput } from 'react-
 import { COLORS, FONT, SIZES } from '../../constants/theme';
 import { Entypo } from '@expo/vector-icons';
 
-export default function DropDown({ data, title, icon }) {
+export default function DropDown({ data, title, icon, onSelect }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedItems, setSelectedItems] = useState([]);
     const [filteredData, setFilteredData] = useState(data);
@@ -14,9 +14,26 @@ export default function DropDown({ data, title, icon }) {
         setIsModalVisible(!isModalVisible);
     };
 
-    const handleSelectItem = (item) => {
-        const index = selectedItems.findIndex((selectedItem) => selectedItem.id === item.id);
+    React.useEffect(() => {
+        setFilteredData(data);
+        if (title === "Nach") {
+            setSelectedItems([]);
+            setSelectedItem(null);
+        }
+    }, [data]);
 
+    const handleSelectItem = (item) => {
+        onSelect(item)
+        console.log(item)
+        if (selectedItem === item) {
+            setSelectedItems([]);
+            setSelectedItem(null);
+            handleToggleModal();
+            onSelect(undefined)
+            return;
+        }
+        onSelect(item)
+        const index = selectedItems.findIndex((selectedItem) => selectedItem.iata === item.iata);
         if (index > -1) {
             const newSelectedItems = [...selectedItems];
             newSelectedItems.splice(index, 1);
@@ -41,11 +58,11 @@ export default function DropDown({ data, title, icon }) {
     };
 
     const renderListItem = ({ item }) => {
-        const isSelected = selectedItems.some((selectedItem) => selectedItem.id === item.id);
+        const isSelected = selectedItems.some((selectedItem) => selectedItem.iata === item.iata);
 
         return (
             <TouchableOpacity
-                testID={`item-${item.id}`}
+                testID={`item-${item.iata}`}
                 style={{
                     flexDirection: 'row',
                     alignItems: 'center',
@@ -60,11 +77,20 @@ export default function DropDown({ data, title, icon }) {
     };
 
     return (
-        <TouchableOpacity testID='touchable' style={{ backgroundColor: COLORS.searchFieldColor, borderRadius: 10, padding: 2, flexDirection: 'row', alignItems: 'center' }} onPress={handleToggleModal}>
+        <TouchableOpacity testID='touchable'
+            style={{
+                backgroundColor: COLORS.searchFieldColor,
+                borderRadius: 10,
+                padding: 2,
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginBottom: "5%",
+
+            }} onPress={handleToggleModal}>
             <Entypo name={icon} size={30} color={COLORS.background} style={{ marginRight: 8 }} />
             <View>
                 <Text>{title}</Text>
-                <Text style={{ fontFamily: FONT.medium, fontSize: SIZES.medium, color: COLORS.textBlack }}>{selectedItem ? selectedItem.name : 'Select item'}</Text>
+                <Text style={{ fontFamily: FONT.medium, fontSize: SIZES.medium, color: COLORS.textBlack }}>{selectedItem ? selectedItem.name : 'Europa'}</Text>
             </View>
             <Modal visible={isModalVisible} animationType="slide" testID='modal'>
                 <View style={{ flex: 1, backgroundColor: COLORS.background }}>
@@ -80,8 +106,7 @@ export default function DropDown({ data, title, icon }) {
                             <Text style={{ color: COLORS.navIconActive, fontFamily: FONT.medium, fontSize: SIZES.medium }}>Close</Text>
                         </TouchableOpacity>
                     </View>
-
-                    <FlatList data={filteredData} renderItem={renderListItem} keyExtractor={(item) => item.id} />
+                    <FlatList data={filteredData} renderItem={renderListItem} keyExtractor={(item) => item.iata} />
                 </View>
             </Modal>
         </TouchableOpacity>

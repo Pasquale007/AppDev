@@ -1,45 +1,46 @@
-import DateTimePicker from '@react-native-community/datetimepicker';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../SelectDate/SelectDate.style';
-import React from 'react';
+import CalendarPicker from '../CalendarPicker/CalendarPicker';
+
 
 function Display({ value, title, onClick }) {
     return (
-        <TouchableOpacity onPress={onClick}>
+        <View onPress={onClick}>
             <Text>{title}</Text>
             <Text style={styles.date}>{value?.toLocaleString('default', { day: '2-digit', month: 'short' })}</Text>
-        </TouchableOpacity>
+        </View>
     );
 }
 
-export default function SelectDate() {
-    const [startDate, setStartDate] = useState(new Date(Date.now()));
-    const [endDate, setEndDate] = useState(new Date(Date.now()));
-    const [editStart, setStartEdit] = useState(false);
-    const [editEnd, setEndEdit] = useState(false);
+export default function SelectDate({ onSelect }) {
+    const [range, setRange] = useState({
+        'start': new Date(Date.now()),
+        'end': new Date(Date.now()),
+    });
+    const [calendarVisible, setCalendarVisible] = useState(false);
 
-    const onDateSelected = (_event, value) => {
-        if (editStart) {
-            setStartDate(value);
-            setStartEdit(false);
-        } else if (endDate) {
-            setEndDate(value);
-            setEndEdit(false);
-        }
+    const select = (range) => {
+        setRange(range)
+        onSelect({
+            'from': new Date(range.start),
+            'until': new Date(range.end),
+        });
+
     }
-
     return (
         <View>
-            {(editStart || editEnd) && <DateTimePicker
-                value={startDate}
-                onChange={onDateSelected}
-                testID='datePicker'
-            />}
-            <View style={styles.flex}>
-                <Display value={startDate} title={"Von"} onClick={() => setStartEdit(true)} />
-                <Display value={endDate} title={"Bis"} onClick={() => setEndEdit(true)} />
-            </View>
+            {calendarVisible &&
+                <CalendarPicker
+                    visible={calendarVisible}
+                    onSelect={(range) => select(range)}
+                    onClose={() => setCalendarVisible(false)}
+                />
+            }
+            <TouchableOpacity style={styles.flex} onPress={() => setCalendarVisible(true)} testID='clickable'>
+                <Display value={new Date(range.start)} title={"Von"} />
+                <Display value={new Date(range.end)} title={"Bis"} />
+            </TouchableOpacity>
         </View>
     );
 }

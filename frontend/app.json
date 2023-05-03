@@ -7,7 +7,7 @@
     "icon": "",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splashscreen/splashscreen.png",
       "resizeMode": "contain",
       "backgroundColor": "#0F0D1E"
     },
@@ -18,8 +18,9 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": ["WRITE_EXTERNAL_STORAGE", "READ_EXTERNAL_STORAGE"],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/splashscreen/splashscreen.png",
         "backgroundColor": "#0F0D1E"
       }
     },

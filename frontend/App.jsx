@@ -1,16 +1,20 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useState } from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './pages/HomePage/HomePage';
 import AlertPage from './pages/AlertPage/AlertPage';
 import { Ionicons } from '@expo/vector-icons';
 import { useFonts } from "expo-font";
+import { polyfillWebCrypto } from "expo-standard-web-crypto";
 
 import { COLORS } from './constants/theme';
+import Splash from './pages/SplashPage/Splash';
 
+polyfillWebCrypto();
 const Tab = createBottomTabNavigator();
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
 
   const [fontsLoaded] = useFonts({
     RubikBold: require("./assets/fonts/Rubik-Bold.ttf"),
@@ -28,12 +32,13 @@ export default function App() {
     },
   };
 
-  return (
-    <NavigationContainer
-      theme={MyTheme}
-    >
+
+  return (isLoading
+    ? <Splash setIsLoading={() => setIsLoading(false)} />
+    : <NavigationContainer theme={MyTheme}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          tabBarStyle: { borderTopWidth: 0 },
           tabBarHideOnKeyboard: true,
           headerShown: false,
           tabBarActiveTintColor: COLORS.navIconActive,
@@ -51,10 +56,11 @@ export default function App() {
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-        })} >
+        })}>
+
         <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
         <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
       </Tab.Navigator>
-    </NavigationContainer >
+    </NavigationContainer>
   );
-};
+}
