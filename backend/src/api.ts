@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express, { Response } from 'express';
 import { getResult, setRoutes } from "./ryanair";
 import { Route } from "./items";
 

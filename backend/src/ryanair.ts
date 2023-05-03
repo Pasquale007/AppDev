@@ -61,7 +61,7 @@ async function getDestinationFromOrigin(origin: string, name: string, countryCod
     return true;
 }
 
-async function saveRoutes(): Promise<void>{
+export default async function saveRoutes(): Promise<void> {
     await getDestinationFromOrigin("NUE", "Nuremberg", "de")
     const jsonData = JSON.stringify(allRoutes, null, 2); // Convert JSON object to a string with 2 space indentation
 
@@ -78,13 +78,14 @@ export async function setRoutes(): Promise<Route[]>{
 async function processDestination(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number){
     const result: Array<SimpleConnection> = [];
     const monthsBetween = getMonthsBetween(outFromDate, outToDate);
+    //eslint-disable-next-line
     let outbound: Array<any> = [];
     for (let i = 0; i < monthsBetween.length; i++) {
         const tempResult = await getInformationMonth(origin, destination, monthsBetween[i])
         outbound = [...outbound, ...tempResult]
     }
 
-
+    //eslint-disable-next-line
     let inbound: Array<any> = [];
     for (let i = 0; i < monthsBetween.length; i++) {
         const tempResult = await getInformationMonth(destination, origin, monthsBetween[i])

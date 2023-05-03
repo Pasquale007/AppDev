@@ -20,7 +20,7 @@ const firestore = firebase.firestore();
 export async function getActiveItems(): Promise<Object[]> {
     const itemsRef = firestore.collection('alerts');
     const querySnapshot = await itemsRef.where('isActive', '==', true).get();
-    let activeItems: Object[] = [];
+    const activeItems: Object[] = [];
     querySnapshot.forEach((doc) => {
         activeItems.push({ id: doc.id, ...doc.data() });
     });
@@ -28,7 +28,7 @@ export async function getActiveItems(): Promise<Object[]> {
 }
 
 export async function setAlreadyAlerted(alert: Alert): Promise<boolean>{
-    let db = firebase.firestore();
+    const db = firebase.firestore();
 
     await db.collection("alerts").doc(alert.id).update({alreadyAlerted: alert.alreadyAlerted});
 
