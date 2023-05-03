@@ -16,6 +16,7 @@ interface QueryParams {
   lengthMin: number;
   lengthMax: number;
 }
+// @ts-ignore
 
 app.get('/getFlights', async (req: any, res: Response) => {
   let queryParams: QueryParams

@@ -41,8 +41,7 @@ interface AlreadyAlerted {
 }
 
 async function parseAlerts(){
-    let allRoutes: Route[];
-    allRoutes = await setRoutes()
+    const allRoutes: Route[] = await setRoutes();
     const firebaseDataset = await getActiveItems();
     let item: FirebaseAlert;
     for(item of firebaseDataset){
