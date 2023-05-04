@@ -15,7 +15,7 @@ function Info({ direction, iataCode, date }) {
     }, []);
 
     const pressed = () => {
-        console.log("Umleitung/ Öffnen des Browsers initialisieren")
+        console.log("Umleitung / Öffnen des Browsers initialisieren")
     }
 
     function getDate() {
