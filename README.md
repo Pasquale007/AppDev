@@ -28,7 +28,7 @@ Folgender Befehl muss im backend Order ausgeführt werden um das Backend zu star
 ```
 
 ### APK erstellen (Android)
-<b>!Sollte es zu einem Authentifizierungsproblem kommen, so sollte versucht werden, die "projectId" aus der app.json-Datei zu löschen!</b>
+> Wichtig: Sollte es zu einem Authentifizierungsproblem kommen, so sollte versucht werden, die "projectId" aus der app.json-Datei zu löschen
 
 Um eine APK dieser App für Android zu erstellen, muss folgendes getan werden:
 
@@ -49,7 +49,7 @@ npx expo install @react-native-masked-view/masked-view
 ```
 npm install -g eas-cli
 ```
-3. Expo-Account auf <a href="https://expo.dev/" target="_blank">expo.dev</a> erstellen, falls noch nicht vorhanden. Gegebenenfalls werden wir auf einen gemeinsamen Account umsteigen.
+3. Expo-Account auf <a href="https://expo.dev/" target="_blank">expo.dev</a> erstellen, falls noch nicht vorhanden.
 
 4. Im Terminal mit dem Expo-Account anmelden
 ```
