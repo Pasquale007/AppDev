@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Flexi Flight",
-    "slug": "frontend",
+    "slug": "flexi-flight",
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "com.pthurow.frontend",
@@ -41,8 +41,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "9359b28e-2ffb-4084-8dc1-6d7bbbee352f"
+        "projectId": "c5287f58-26cb-41b8-b6cc-426b8dfd784c"
       }
-    }
+    },
+    "owner": "bababoys"
   }
 }
