@@ -13,7 +13,6 @@ import { useNavigation } from '@react-navigation/native';
 import flightData from '../../data/flightData.json';
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
 import Toast from 'react-native-toast-message';
-import { sendPushNotification } from '../../pushNotification/pushNotification';
 
 export default function SearchPage() {
     const origins = flightData.map(dataset => dataset.origin);
