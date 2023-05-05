@@ -17,11 +17,11 @@ firebase.initializeApp(firebaseConfig);
 
 const firestore = firebase.firestore();
 
-export async function getActiveItems(): Promise<Object[]> {
+export async function getActiveItems(): Promise<any[]> {
     const itemsRef = firestore.collection('alerts');
     const querySnapshot = await itemsRef.where('isActive', '==', true).get();
-    const activeItems: Object[] = [];
-    querySnapshot.forEach((doc) => {
+    const activeItems: any[] = [];
+    querySnapshot.forEach((doc: any) => {
         activeItems.push({ id: doc.id, ...doc.data() });
     });
     return activeItems;
