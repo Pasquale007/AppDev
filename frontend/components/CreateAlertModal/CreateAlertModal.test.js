@@ -1,6 +1,14 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import CreateAlertModal from './CreateAlertModal';
+import { Notifications } from 'expo-notifications';
+
+jest.mock('expo-notifications', () => {
+  return {
+    ...jest.requireActual('expo-notifications'),
+    getExpoPushTokenAsync: jest.fn().mockResolvedValue({ data: 'dummy-token' })
+  };
+});
 
 describe('CreateAlertModal', () => {
     const onBackdropPress = jest.fn();

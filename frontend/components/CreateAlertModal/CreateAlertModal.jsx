@@ -7,10 +7,10 @@ import AlertModalData from '../AlertModalData/AlertModalData';
 import { TouchableOpacity } from 'react-native';
 import AlertModalMaxPrice from '../AlertModalMaxPrice/AlertModalMaxPrice';
 import { safeAlert } from '../../firebaseQueries/firebaseQueries';
-import { getUUID } from '../../auth/uuid';
+import * as Notifications from 'expo-notifications';
 
 function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError }) {
-    const [uuid, setUuid] = useState("");
+    const [deviceToken, setDeviceToken] = useState("");
     const { origin, destination, lengthMin, lengthMax, outFromDate, outToDate } = data;
     console.log(data);
     const fromDate = new Date(outFromDate);
@@ -21,10 +21,11 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
     const [maxPrice, setMaxPrice] = useState(0);
 
     useEffect(() => {
-        const queryUUID = async () => {
-            setUuid(await getUUID());
+        const queryDeviceToken = async () => {
+            const token = (await Notifications.getExpoPushTokenAsync({projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0"})).data;
+            setDeviceToken(token);
         }
-        queryUUID();
+        queryDeviceToken();
         buildDurationString();
     }, []);
 
@@ -56,8 +57,8 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             return;
         }
 
-        if (uuid) {
-            console.log(uuid);
+        if (deviceToken) {
+            console.log(deviceToken);
             const alert = {
                 startDate: fromDateFormatted,
                 endDate: untilDateFormatted,
@@ -69,7 +70,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
                 destinationIATA: destination.iata,
                 //maxPrice is already parsed as Float
                 maxPrice: maxPrice,
-                deviceId: uuid,
+                deviceId: deviceToken,
                 isActive: true
             };
             console.log(alert)
