@@ -28,8 +28,8 @@ app.get('/getFlights', async (req: any, res: Response) => {
       ignoredDestinations: req.query.ignoredDestinations ? req.query.ignoredDestinations.split(",") : [],
       outFromDate: new Date(req.query.outFromDate),
       outToDate: new Date(req.query.outToDate),
-      lengthMin: req.query.lengthMin ?? -1, //TODO Handle undefined
-      lengthMax: req.query.lengthMax ?? -1, //TODO Handle undefined
+      lengthMin: req.query.lengthMin ?? -1,
+      lengthMax: req.query.lengthMax ?? -1,
       timeShift: req.query.timeShift ?? 0
     };
   } catch (e) {
