@@ -14,9 +14,9 @@ export default function AlertPage() {
     let card = [];
     let prevOpenedCard;
 
-    useEffect(() => {    
+    useEffect(() => {
         const queryDeviceToken = async () => {
-            const token = (await Notifications.getExpoPushTokenAsync({projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0"})).data;
+            const token = (await Notifications.getExpoPushTokenAsync({ projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0" })).data;
             setDeviceToken(token);
         }
         queryDeviceToken();
@@ -75,7 +75,7 @@ export default function AlertPage() {
                                     id={alert.id}
                                     date={{ start: alert.startDate, end: alert.endDate }}
                                     locations={{ origin: alert.origin, destination: alert.destination }}
-                                    duration={{start: alert.minLength, end: alert.maxLength}}
+                                    duration={{ start: alert.minLength, end: alert.maxLength }}
                                     maxPrice={alert.maxPrice}
                                     closeCard={closeCard}
                                     onDelete={deleteCard}

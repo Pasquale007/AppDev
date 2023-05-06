@@ -29,9 +29,6 @@ export default function SelectDuration({ onSelect }) {
 
     const handleEndChangeText = (text) => {
         let numericInput = text.replace(/[^0-9]/g, '');
-        if (parseInt(numericInput) > 15) {
-            numericInput = '15';
-        }
         setEnd(numericInput);
     }
 
@@ -39,12 +36,13 @@ export default function SelectDuration({ onSelect }) {
     return (
         <View style={styles.row}>
             <TextInput
-                placeholder="01"
+                placeholder="1"
                 maxLength={maxLengthInput}
                 keyboardType='numeric'
                 style={styles.input}
                 value={start}
                 onChangeText={handleStartChangeText}
+                placeholderTextColor='#C3C3C3'
             />
             <Text style={styles.text}>bis</Text>
 
@@ -56,6 +54,7 @@ export default function SelectDuration({ onSelect }) {
                 onEndEditing={() => checkValid()}
                 value={end}
                 onChangeText={handleEndChangeText}
+                placeholderTextColor='#C3C3C3'
             />
             <Text style={styles.text} adjustsFontSizeToFit={true} numberOfLines={1}>Tagen</Text>
         </View>

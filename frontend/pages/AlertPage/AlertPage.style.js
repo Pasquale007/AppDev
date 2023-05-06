@@ -4,9 +4,8 @@ import { COLORS, FONT, SIZES } from "../../constants/theme";
 const styles = StyleSheet.create({
     alertContainer: {
         flex: 1,
-        paddingHorizontal: SIZES.medium,
-        marginTop: 30,
         paddingBottom: SIZES.medium,
+        marginTop: 30,
         minHeight: "100%",
     },
 
@@ -35,6 +34,9 @@ const styles = StyleSheet.create({
     alertCardContainer: {
         display: "flex",
         gap: SIZES.medium,
+        marginLeft: SIZES.medium,
+        marginRight: SIZES.medium
+
     },
 });
 

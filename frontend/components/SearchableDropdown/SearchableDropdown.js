@@ -100,6 +100,8 @@ export default function DropDown({ data, title, icon, onSelect }) {
                             placeholder="Search"
                             value={searchText}
                             onChangeText={handleFilter}
+                            clearButtonMode='while-editing'
+                            onClearText={() => { setSearchText('') }}
                             style={{ flex: 1, borderWidth: 1, borderRadius: 8, padding: 8, margin: 8, backgroundColor: COLORS.searchFieldColor, color: COLORS.textBlack, fontFamily: FONT.medium, fontSize: SIZES.medium }}
                         />
                         <TouchableOpacity onPress={handleToggleModal} style={{ padding: 8 }}>
