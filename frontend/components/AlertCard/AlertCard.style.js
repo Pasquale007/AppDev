@@ -31,6 +31,26 @@ const styles = StyleSheet.create({
         fontSize: SIZES.small,
     },
 
+    minLineHeight: {
+        lineHeight: SIZES.small,
+    },
+
+    locationsContainer: {
+        display: "flex",
+        flexDirection: "row",
+    },  
+
+    arrowContainer: {
+        display: "flex",
+        justifyContent: "center",
+        marginBottom: 5,
+    },  
+
+    locations: {
+        marginLeft: 8,
+        width: "100%",
+    },
+
     departureText: {
         color: COLORS.textWhite,
         fontFamily: FONT.semiBold,

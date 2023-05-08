@@ -3,12 +3,6 @@ import { StyleSheet } from "react-native";
 import { COLORS, SIZES } from "../../constants/theme";
 
 const styles = StyleSheet.create({
-    main: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        color: COLORS.background,
-    },
     topBar: {
         display: 'flex',
         flexDirection: 'row',
@@ -16,7 +10,6 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.backgroundOpacity,
         borderRadius: 20,
         width: '90%',
-
     },
     header: {
         display: 'flex',
@@ -26,7 +19,7 @@ const styles = StyleSheet.create({
     content: {
         margin: "5%",
         marginTop: "10%",
-        height: '100%',
+        marginBottom: '15%',
     },
     icon: {
         backgroundColor: COLORS.backgroundOpacity,

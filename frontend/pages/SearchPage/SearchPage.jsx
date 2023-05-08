@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, ImageBackground, Alert } from 'react-native';
+import { View, Text, ImageBackground } from 'react-native';
 import styles from './SearchPage.style';
 import image from '../../assets/images/background.jpg';
 import Button from '../../components/Button/Button';
@@ -11,6 +11,8 @@ import DropDown from '../../components/SearchableDropdown/SearchableDropdown';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import flightData from '../../data/flightData.json';
+import ToastContainer from '../../components/ToastContainer/ToastContainer';
+import Toast from 'react-native-toast-message';
 
 export default function SearchPage() {
     const origins = flightData.map(dataset => dataset.origin);
@@ -32,21 +34,18 @@ export default function SearchPage() {
             .filter(dataset => dataset.origin.name === startAirport?.name)
             .flatMap(dataset => dataset.destinations.map(dest => dest));
         setDestinations(dataset);
+        setEndAirport(undefined);
     }, [startAirport]);
-
-    const showToast = (title, message) => {
-        Alert.alert(title, message);
-    };
 
     const navigation = useNavigation();
     return (
         <View style={styles.flex}>
-            <ScrollView >
+            <ScrollView keyboardShouldPersistTaps="handled">
                 <ImageBackground
                     source={image}
                     resizeMode="cover"
                 >
-                    <View style={styles.main} >
+                    <View style={styles.main}>
                         <Text style={styles.seachText}>Suche</Text>
                         <DropDown data={origins} title={"Von"} icon="aircraft-take-off" onSelect={setStartAirport} />
                         <DropDown data={destinations} title={"Nach"} icon="aircraft-landing" onSelect={setEndAirport} />
@@ -54,7 +53,7 @@ export default function SearchPage() {
                             <MySelect left={"Flexible Reisedaten"} right={"Genaue Reisedaten"} style={{ alignSelf: 'center' }} onClick={() => { setFlexible(!flexible) }} />
                         </View>
                         <View
-                            style={(!flexible) && styles.double}
+                            style={(flexible) && styles.double}
                         >
                             <SettingsItem
                                 label="Verfügbarer Reisezeitraum"
@@ -67,7 +66,7 @@ export default function SearchPage() {
                         </View>
 
                         <View
-                            style={(!flexible) && styles.disabled}
+                            style={(flexible) && styles.disabled}
                         >
                             <SettingsItem
                                 label="Reisedauer"
@@ -82,35 +81,49 @@ export default function SearchPage() {
                 </ImageBackground>
                 <Button
                     text={"Suche"}
-                    onClick={() => {
-                        if (flexible) {
-                            {
-                                if (!duration) {
-                                    showToast("Fehler", "Die Reisedauer muss definiert sein.");
-                                    return;
-                                }
-                                const durationInDays = parseInt(duration.end) - parseInt(duration.start)
-                                const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));
-                                if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays) {
-                                    showToast("Fehler", "Die Reisedauer darf nicht länger sein als der Reisezeitraum.")
-                                    return;
-                                }
+                    onClick={async () => {
+                        //await sendPushNotification('ExponentPushToken[Ef5M2qFl2bYdnWJG_LfS9m]');
+                        if (!startAirport) {
+                            Toast.show({
+                                type: "error",
+                                text1: "Keinen Startflughafen ausgewählt!",
+                            });
+                            return;
+                        }
+
+                        if (!flexible) {
+                            if (!duration.start || !duration.end) {
+                                Toast.show({
+                                    type: "error",
+                                    text1: "Die Reisedauer muss definiert sein.",
+                                });
+                                return;
+                            }
+                            const durationInDays = parseInt(duration.end) - parseInt(duration.start)
+                            const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));
+                            if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays) {
+                                Toast.show({
+                                    type: "error",
+                                    text1: "Die Reisedauer darf nicht länger sein als der Reisezeitraum.",
+                                });
+                                return;
                             }
                         }
                         navigation.navigate('FlightResultPage', {
                             data: {
-                                'startAirport': startAirport,
-                                'endAirport': endAirport,
-                                'duration': flexible ? duration : undefined,
-                                'dateSpan': {
-                                    from: dateSpan.from.toISOString(),
-                                    until: dateSpan.until.toISOString(),
-                                }
+                                'origin': startAirport,
+                                'destination': endAirport || { name: "Europa", iata: 'All destinations' },
+                                'ignoredDestinations': '',
+                                'outFromDate': dateSpan?.from?.toISOString().split('T')[0],
+                                'outToDate': dateSpan?.until?.toISOString().split('T')[0],
+                                'lengthMin': !flexible ? duration?.start : undefined,
+                                'lengthMax': !flexible ? duration?.end : undefined
                             }
                         });
                     }}
                 />
             </ScrollView>
+            <ToastContainer />
         </View>
     );
 }

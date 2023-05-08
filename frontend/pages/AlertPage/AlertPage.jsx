@@ -4,41 +4,37 @@ import styles from "./AlertPage.style";
 import { Ionicons } from '@expo/vector-icons';
 import AlertCard from '../../components/AlertCard/AlertCard';
 import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler';
-import * as SecureStore from 'expo-secure-store';
-import { v4 as uuidv4 } from "uuid";
 import { getAlerts, deleteAlert, updateAlertActive } from '../../firebaseQueries/firebaseQueries';
+import * as Notifications from 'expo-notifications';
 
 export default function AlertPage() {
-    const [uuid, setUuid] = useState("");
+    const [deviceToken, setDeviceToken] = useState("");
     const [alerts, setAlerts] = useState([]);
 
     let card = [];
     let prevOpenedCard;
 
-    useEffect(() => {
-        const getUUID = async () => {
-            let storedUuid = await SecureStore.getItemAsync("uuid");
-            if (!storedUuid) {
-                storedUuid = uuidv4();
-                await SecureStore.setItemAsync("uuid", storedUuid);
-            }
-            setUuid(storedUuid);
+    useEffect(() => {    
+        const queryDeviceToken = async () => {
+            const token = (await Notifications.getExpoPushTokenAsync({projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0"})).data;
+            setDeviceToken(token);
         }
-        getUUID();
+        queryDeviceToken();
     }, []);
 
     useEffect(() => {
         let unsubscribe;
+        console.log(deviceToken);
 
-        if (uuid) {
-            unsubscribe = getAlerts(uuid, setAlerts);
+        if (deviceToken) {
+            unsubscribe = getAlerts(deviceToken, setAlerts);
         }
 
         //Cleanup
         return () => {
             unsubscribe && unsubscribe();
         };
-    }, [uuid]);
+    }, [deviceToken]);
 
     const handleActiveChange = (isActive, id) => {
         updateAlertActive(isActive, id);
@@ -78,7 +74,8 @@ export default function AlertPage() {
                                     key={alert.id}
                                     id={alert.id}
                                     date={{ start: alert.startDate, end: alert.endDate }}
-                                    locations={{ departure: alert.departure, arrival: alert.arrival }}
+                                    locations={{ origin: alert.origin, destination: alert.destination }}
+                                    duration={{start: alert.minLength, end: alert.maxLength}}
                                     maxPrice={alert.maxPrice}
                                     closeCard={closeCard}
                                     onDelete={deleteCard}

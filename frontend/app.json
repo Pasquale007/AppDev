@@ -1,13 +1,17 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "frontend",
+    "name": "Flexi Flight",
+    "slug": "flexi-flight",
     "version": "1.0.0",
     "orientation": "portrait",
+    "scheme": "com.pthurow.frontend",
     "icon": "",
     "userInterfaceStyle": "light",
+    "notification": {
+      "icon": "./assets/splashscreen/splashscreen.png"
+    },
     "splash": {
-      "image": "./assets/splashscreen/Launch-ScreenwithLogoanimated-new.png",
+      "image": "./assets/splashscreen/splashscreen.png",
       "resizeMode": "contain",
       "backgroundColor": "#0F0D1E"
     },
@@ -18,16 +22,28 @@
       "supportsTablet": true
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE"
+      ],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/splashscreen/splashscreen.png",
         "backgroundColor": "#0F0D1E"
-      }
+      },
+      "package": "com.pthurow.frontend"
     },
     "plugins": [
       "@react-native-firebase/app"
     ],
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c5287f58-26cb-41b8-b6cc-426b8dfd784c"
+      }
+    },
+    "owner": "bababoys"
   }
 }
