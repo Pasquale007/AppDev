@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express, { Response } from 'express';
 import { getResult, setRoutes } from "./ryanair";
 import { Route } from "./items";
 
@@ -39,7 +39,7 @@ app.get('/getFlights', async (req: any, res: Response) => {
     await res.status(501).send("Length of origin not 3 characters. (No IATA-Code)")
     return
   }
-  if (queryParams.destination.length != 3 && queryParams.destination != "All destinations") {
+  if (queryParams.destination.length != 3 && queryParams.destination.length != 2 && queryParams.destination != "All destinations") {
     await res.status(501).send("Length of destination not 3 characters. (No IATA-Code)")
     return
   }
