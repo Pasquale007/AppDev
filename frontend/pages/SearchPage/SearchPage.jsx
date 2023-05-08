@@ -101,7 +101,7 @@ export default function SearchPage() {
                             }
                             const durationInDays = parseInt(duration.end) - parseInt(duration.start)
                             const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));
-                            if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays) {
+                            if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays || parseInt(duration.end) > spanInDays) {
                                 Toast.show({
                                     type: "error",
                                     text1: "Die Reisedauer darf nicht länger sein als der Reisezeitraum.",
