@@ -6,6 +6,6 @@ export const axiosInstance = axios.create({
 });
 
 export const fetchData = async (params) => {
-    const response = await axiosInstance.get(`/getFlights?origin=${params.origin.iata}&destination=${params.destination.iata}&ignoredDestinations=${params.ignoredDestinations}&outFromDate=${params.outFromDate}&outToDate=${params.outToDate}&lengthMin=${params.lengthMin}&lengthMax=${params.lengthMax}&timeShift=${timezoneOffsetHours}`);
+    const response = await axiosInstance.get(`/getFlights?origin=${params.origin.iata}&destination=${params.destination.iata}&ignoredDestinations=${params.ignoredDestinations}&outFromDate=${params.outFromDate}&outToDate=${params.outToDate}&lengthMin=${params.lengthMin}&lengthMax=${params.lengthMax}`);
     return response.data;
 }
