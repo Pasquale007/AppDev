@@ -6,7 +6,7 @@ describe('SelectDuration', () => {
     it('should call setValues with correct start and end values', () => {
         const setValuesMock = jest.fn();
         const { getByPlaceholderText, getByText } = render(<SelectDuration onSelect={setValuesMock} />);
-        const startInput = getByPlaceholderText('01');
+        const startInput = getByPlaceholderText('1');
         const endInput = getByPlaceholderText('15');
         fireEvent.changeText(startInput, '10');
         fireEvent.changeText(endInput, '15');
