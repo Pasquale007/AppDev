@@ -54,7 +54,7 @@ export default function SelectDuration({ onSelect }) {
                 value={start}
                 onChangeText={handleStartChangeText}
                 onFocus={() => { setPlaceholderTextSmall("") }}
-                onBlur={() => { setPlaceholder(end, setPlaceholderTextSmall, defaultPlaceholderSmall) }}
+                onBlur={() => { setPlaceholder(start, setPlaceholderTextSmall, defaultPlaceholderSmall) }}
             />
             <Text style={styles.text}>bis</Text>
 
