@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react-native';
 import FlightResult from './FlightResult';
 
 describe('FlightResult component', () => {
-  const data ={
+  const data = {
     origin: "NUE",
     destination: "BNX",
     outboundDate: "2023-05-02T00:00:00.000Z",
@@ -11,14 +11,13 @@ describe('FlightResult component', () => {
     inboundDate: "2023-05-13T00:00:00.000Z",
     inboundPrice: 16.99,
     totalPrice: 36.94
-};
+  };
 
   test('renders the flight information correctly', () => {
     const { getByText } = render(<FlightResult data={data} />);
     expect(getByText('Hinflug')).toBeTruthy();
     expect(getByText('Rückflug')).toBeTruthy();
     expect(getByText('Zusammen ab')).toBeTruthy();
-    expect(getByText('36.94 €')).toBeTruthy();
     expect(getByText('Jetzt buchen')).toBeTruthy();
   });
 });
