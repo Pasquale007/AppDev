@@ -1,4 +1,4 @@
-import { View, TextInput, Text, KeyboardAvoidingView, Platform } from "react-native";
+import { View, TextInput, Text } from "react-native";
 import styles from '../SelectDuration/SelectDuration.style';
 import * as React from 'react';
 

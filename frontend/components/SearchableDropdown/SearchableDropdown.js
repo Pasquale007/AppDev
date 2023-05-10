@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, FlatList, TextInput } from 'react-native';
 import { COLORS, FONT, SIZES } from '../../constants/theme';
 import { Entypo } from '@expo/vector-icons';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function DropDown({ data, title, icon, onSelect }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
