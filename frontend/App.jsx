@@ -100,7 +100,7 @@ export default function App() {
     : <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{ flex: 1 }}>
-      <NavigationContainer theme={MyTheme}>
+      <NavigationContainer theme={MyTheme} style={{flex: 1}}>
         <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarStyle: { borderTopWidth: 0, paddingBottom: 0 },
