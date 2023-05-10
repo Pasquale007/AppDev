@@ -109,6 +109,7 @@ export default function SearchPage() {
                                 return;
                             }
                         }
+
                         navigation.navigate('FlightResultPage', {
                             data: {
                                 'origin': startAirport,

@@ -85,8 +85,7 @@ const styles = StyleSheet.create({
     deleteButton: {
         backgroundColor: COLORS.deleteColor,
         width: 60,
-        borderTopRightRadius: SIZES.xSmall,
-        borderBottomRightRadius: SIZES.xSmall,
+        borderRadius: SIZES.xSmall,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -98,12 +97,23 @@ const styles = StyleSheet.create({
 
     cardBackground: {
         position: "absolute",
+        display: "flex",
+        alignItems: "flex-end",
+        justifyContent: "center",
         backgroundColor: COLORS.deleteColor,
         width: "100%",
         height: "100%",
         borderRadius: 12,
         zIndex: -1,
     },
+
+    cardBackgroundText: {
+        color: COLORS.textWhite,
+        fontFamily: FONT.medium,
+        fontSize: SIZES.medium,
+        marginRight: 60,
+        paddingRight: SIZES.xSmall,
+    }
 
 });
 

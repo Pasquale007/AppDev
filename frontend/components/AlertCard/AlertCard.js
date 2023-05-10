@@ -8,8 +8,9 @@ import { Ionicons } from '@expo/vector-icons';
 import Animated, { Layout, LightSpeedOutLeft } from "react-native-reanimated";
 import AlertsArrow from '../AlertsArrow/AlertsArrow';
 
-function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, cardArr, isActive, setIsActive, id }) {
+function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, onSearch, cardArr, isActive, setIsActive, id }) {
     const [durationString, setDurationString] = useState("");
+    const [deleteOpen, setDeleteOpen] = useState(false);
 
     useEffect(() => {
         buildDurationString();
@@ -35,6 +36,14 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, c
         );
     };
 
+    const renderLeftActions = () => {
+        return (
+            <TouchableOpacity style={styles.deleteButton} onPress={() => onSearch(id)} testID="deleteButton">
+                <Ionicons style={styles.trashIcon} size={30} name="search" />
+            </TouchableOpacity>
+        );
+    }
+
     const handleToggleChange = () => {
         setIsActive(!isActive, id);
     }
@@ -43,6 +52,9 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, c
         <Animated.View style={styles.container} exiting={LightSpeedOutLeft} layout={Layout}>
             <Swipeable
                 renderRightActions={renderRightActions}
+                renderLeftActions={renderLeftActions}
+                onSwipeableRightWillOpen={() => setDeleteOpen(true)}
+                onSwipeableLeftWillOpen={() => setDeleteOpen(false)}
                 onSwipeableOpen={() => closeCard(id)}
                 ref={(ref) => (cardArr[id] = ref)}
                 testID="alertCard"
@@ -98,7 +110,13 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, c
                     </View>
                 </View>
             </Swipeable>
-            <View style={styles.cardBackground} />
+            <View style={styles.cardBackground}>
+                {deleteOpen ?
+                    <Text style={styles.cardBackgroundText}>Löschen</Text>
+                    :
+                    <Text style={styles.cardBackgroundText}>Anzeigen</Text>
+                }
+            </View>
         </Animated.View>
     )
 }
