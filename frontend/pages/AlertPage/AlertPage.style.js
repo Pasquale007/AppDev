@@ -7,6 +7,8 @@ const styles = StyleSheet.create({
         paddingBottom: SIZES.medium,
         marginTop: 30,
         minHeight: "100%",
+        marginLeft: '5%',
+        marginRight: '5%',
     },
 
     alertHeadline: {
@@ -34,9 +36,6 @@ const styles = StyleSheet.create({
     alertCardContainer: {
         display: "flex",
         gap: SIZES.medium,
-        marginLeft: SIZES.medium,
-        marginRight: SIZES.medium
-
     },
 });
 
