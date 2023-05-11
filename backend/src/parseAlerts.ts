@@ -1,6 +1,6 @@
-import {getActiveItems, setAlreadyAlerted} from "./config";
-import {Route, SimpleConnection} from "./items";
-import {getResult, setRoutes} from "./ryanair";
+import { getActiveItems, setAlreadyAlerted } from "./config";
+import { Route, SimpleConnection } from "./items";
+import { getResult, setRoutes } from "./ryanair";
 import sendNotification from "./pushNotification";
 export interface Alert {
     id: string,
@@ -40,17 +40,17 @@ interface AlreadyAlerted {
     price: number
 }
 
-async function parseAlerts(){
+async function parseAlerts() {
     const allRoutes: Route[] = await setRoutes();
     const firebaseDataset = await getActiveItems();
     let item: FirebaseAlert;
-    for(item of firebaseDataset){
+    for (item of firebaseDataset) {
         const parsedItem: Alert = {
             ...item,
             startDate: new Date(Date.parse(`${item.startDate.split(".")[2]}-${item.startDate.split(".")[1]}-${item.startDate.split(".")[0]}`)),
             endDate: new Date(Date.parse(`${item.endDate.split(".")[2]}-${item.endDate.split(".")[1]}-${item.endDate.split(".")[0]}`))
         };
-        if(!parsedItem.maxLength){
+        if (!parsedItem.maxLength) {
             continue
         }
         console.log(parsedItem)
@@ -69,15 +69,15 @@ async function parseAlerts(){
         }*/
         await compareSavedAndNewResults(allRoutes, parsedItem).then(
             async (response: Alert) => {
-                if(parsedItem.alreadyAlerted){
+                if (parsedItem.alreadyAlerted) {
                     if (response.alreadyAlerted && parsedItem.alreadyAlerted.price > response.alreadyAlerted.price) {
-                        //Alert with following line:
+                        //Alert with following line. Is id correct:
                         //sendNotification(id)
                         await setAlreadyAlerted(response)
                     } else {
                         return;
                     }
-                }else{
+                } else {
                     console.log("Into Firebase")
                     await setAlreadyAlerted(response)
                 }
@@ -87,10 +87,10 @@ async function parseAlerts(){
     }
 }
 
-async function compareSavedAndNewResults(allRoutes: Route[], parsedItem: Alert): Promise<Alert>{
+async function compareSavedAndNewResults(allRoutes: Route[], parsedItem: Alert): Promise<Alert> {
     const scrapedRoutes: SimpleConnection[] = await getResult(allRoutes, parsedItem.originIATA, parsedItem.destinationIATA, [], parsedItem.startDate, parsedItem.endDate, parsedItem.minLength, parsedItem.maxLength)
 
-    if(scrapedRoutes.length === 0){
+    if (scrapedRoutes.length === 0) {
         throw Error;
     }
     return {
