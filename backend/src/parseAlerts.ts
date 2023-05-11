@@ -1,7 +1,7 @@
 import {getActiveItems, setAlreadyAlerted} from "./config";
 import {Route, SimpleConnection} from "./items";
 import {getResult, setRoutes} from "./ryanair";
-
+import sendNotification from "./pushNotification";
 export interface Alert {
     id: string,
     isActive: boolean,
@@ -71,7 +71,8 @@ async function parseAlerts(){
             async (response: Alert) => {
                 if(parsedItem.alreadyAlerted){
                     if (response.alreadyAlerted && parsedItem.alreadyAlerted.price > response.alreadyAlerted.price) {
-                        console.log("ALERT HERE")
+                        //Alert with following line:
+                        //sendNotification(deviceId)
                         await setAlreadyAlerted(response)
                     } else {
                         return;
