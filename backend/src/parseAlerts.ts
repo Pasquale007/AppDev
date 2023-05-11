@@ -72,7 +72,7 @@ async function parseAlerts() {
                 if (parsedItem.alreadyAlerted) {
                     if (response.alreadyAlerted && parsedItem.alreadyAlerted.price > response.alreadyAlerted.price) {
                         //Alert with following line. Is id correct:
-                        //sendNotification(id)
+                        //sendNotification(parsedItem.id)
                         await setAlreadyAlerted(response)
                     } else {
                         return;
