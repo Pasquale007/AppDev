@@ -25,6 +25,9 @@ eas build --profile development --platform android
 ### Backend
 Folgender Befehl muss im backend Order ausgeführt werden um das Backend zu starten:
 ```
+npm install -g typescript
+tsc
+node api.js
 ```
 
 ### APK erstellen (Android)
