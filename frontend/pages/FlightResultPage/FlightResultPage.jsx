@@ -41,9 +41,13 @@ export default function FlightResultPage({ route }) {
 
     useEffect(() => {
         async function setData() {
-            const response = await fetchData(route.params.data);
+            let response = await fetchData(route.params.data);
             console.log(response)
+            if (route.params.data.maxprice !== 0) {
+                response = response.filter(data => data.totalPrice <= route.params.data.maxprice)
+            }
             setTrips(response);
+
         }
         setData();
     }, []);

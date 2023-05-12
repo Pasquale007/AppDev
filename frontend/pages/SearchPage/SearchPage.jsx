@@ -118,7 +118,8 @@ export default function SearchPage() {
                                 'outFromDate': dateSpan?.from?.toISOString().split('T')[0],
                                 'outToDate': dateSpan?.until?.toISOString().split('T')[0],
                                 'lengthMin': !flexible ? duration?.start : -1,
-                                'lengthMax': !flexible ? duration?.end : -1
+                                'lengthMax': !flexible ? duration?.end : -1,
+                                'maxprice': 0
                             }
                         });
                     }}
