@@ -40,11 +40,11 @@ export default function FlightResultPage({ route }) {
 
 
     useEffect(() => {
+        setCreateAlertModalIsVisible(false);
+        setSuccessMsg("");
+        setErrorMsg("");
+
         async function setData() {
-            setCreateAlertModalIsVisible(false);
-            setSuccessMsg("");
-            setErrorMsg("");
-            useNavigation();
             let response = await fetchData(route.params.data);
             console.log(response)
             console.log(route.params.data.maxprice)
