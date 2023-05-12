@@ -82,13 +82,22 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 
-    deleteButton: {
-        backgroundColor: "#ADD7F6",
+    button: {
+        backgroundColor: COLORS.deleteColor,
         width: 60,
-        borderRadius: SIZES.xSmall,
+        borderTopRightRadius: SIZES.xSmall,
+        borderBottomRightRadius: SIZES.xSmall,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+    },
+
+    searchButton: {
+        backgroundColor: COLORS.switchActive,
+        borderTopRightRadius: 0,
+        borderBottomRightRadius: 0,
+        borderTopLeftRadius: SIZES.xSmall,
+        borderBottomLeftRadius: SIZES.xSmall,
     },
 
     trashIcon: {
@@ -100,7 +109,6 @@ const styles = StyleSheet.create({
         display: "flex",
         alignItems: "flex-end",
         justifyContent: "center",
-        backgroundColor: "#ADD7F6",
         width: "100%",
         height: "100%",
         borderRadius: 12,

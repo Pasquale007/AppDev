@@ -30,7 +30,7 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
 
     const renderRightActions = () => {
         return (
-            <TouchableOpacity style={styles.deleteButton} onPress={() => onDelete(id)} testID="deleteButton">
+            <TouchableOpacity style={styles.button} onPress={() => onDelete(id)} testID="deleteButton">
                 <Ionicons style={styles.trashIcon} size={30} name="trash" />
             </TouchableOpacity>
         );
@@ -38,7 +38,7 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
 
     const renderLeftActions = () => {
         return (
-            <TouchableOpacity style={styles.deleteButton} onPress={() => onSearch(id)} testID="deleteButton">
+            <TouchableOpacity style={[styles.button, styles.searchButton]} onPress={() => onSearch(id)} testID="deleteButton">
                 <Ionicons style={styles.trashIcon} size={30} name="search" />
             </TouchableOpacity>
         );
@@ -55,6 +55,9 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
                 renderLeftActions={renderLeftActions}
                 onSwipeableRightWillOpen={() => setDeleteOpen(true)}
                 onSwipeableLeftWillOpen={() => setDeleteOpen(false)}
+                overshootLeft={false}
+                overshootRight={false}
+                friction={2}
                 onSwipeableOpen={() => closeCard(id)}
                 ref={(ref) => (cardArr[id] = ref)}
                 testID="alertCard"
