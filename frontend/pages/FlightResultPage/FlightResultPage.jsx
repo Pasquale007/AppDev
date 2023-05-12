@@ -17,6 +17,7 @@ export default function FlightResultPage({ route }) {
     const [createAlertModalIsVisible, setCreateAlertModalIsVisible] = useState(false);
     const [successMsg, setSuccessMsg] = useState("");
     const [errorMsg, setErrorMsg] = useState("");
+    const [trips, setTrips] = useState([]);
     const navigation = useNavigation();
 
     useEffect(() => {
@@ -37,7 +38,6 @@ export default function FlightResultPage({ route }) {
         }
     }, [successMsg, errorMsg]);
 
-    const [trips, setTrips] = useState([]);
 
     useEffect(() => {
         async function setData() {
@@ -53,6 +53,7 @@ export default function FlightResultPage({ route }) {
 
         }
         setData();
+        return () => { setTrips([]) }
     }, []);
 
     return (
