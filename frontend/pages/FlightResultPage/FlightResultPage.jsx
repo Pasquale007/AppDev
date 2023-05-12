@@ -53,7 +53,7 @@ export default function FlightResultPage({ route }) {
 
     return (
         <SafeAreaView>
-            {isLoaded ? <LoadingScreen loadingPhrases={true} />
+            {!isLoaded ? <LoadingScreen loadingPhrases={true} />
                 :
                 <ImageBackground
                     source={image}
