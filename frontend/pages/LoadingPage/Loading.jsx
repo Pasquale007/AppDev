@@ -19,11 +19,9 @@ export default function LoadingScreen({ LoadingPhrases }) {
         style={styles.video}
         resizeMode="cover"
       />
-      if (LoadingPhrases1==true) {
-        <Text>{LoadingPhrasesFile[Math.floor(Math.random() * LoadingPhrasesFile.length)].title}</Text>
-      }else{
-      <Text style={styles.text}>Flexi Flight</Text>
-}
+      {LoadingPhrases1
+      ? <Text>{LoadingPhrasesFile[Math.floor(Math.random() * LoadingPhrasesFile.length)].title}</Text>
+      : <Text style={styles.text}>Flexi Flight</Text>}
     </View>
   );
 }
