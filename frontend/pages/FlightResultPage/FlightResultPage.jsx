@@ -40,6 +40,11 @@ export default function FlightResultPage({ route }) {
 
 
     useEffect(() => {
+        setCreateAlertModalIsVisible(false);
+        setSuccessMsg("");
+        setErrorMsg("");
+        useNavigation();
+
         async function setData() {
             let response = await fetchData(route.params.data);
             console.log(response)
