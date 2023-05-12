@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     },
 
     deleteButton: {
-        backgroundColor: COLORS.deleteColor,
+        backgroundColor: "#ADD7F6",
         width: 60,
         borderRadius: SIZES.xSmall,
         display: "flex",
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
         display: "flex",
         alignItems: "flex-end",
         justifyContent: "center",
-        backgroundColor: COLORS.deleteColor,
+        backgroundColor: "#ADD7F6",
         width: "100%",
         height: "100%",
         borderRadius: 12,

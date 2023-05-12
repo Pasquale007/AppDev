@@ -73,7 +73,7 @@ export default function FlightResultPage({ route }) {
                             size={40}
                             color={COLORS.textWhite}
                             style={styles.icon}
-                            onPress={() => navigation.goBack()}
+                            onPress={() => navigation.navigate("Search")}
                         />
                         <View style={styles.topBar}>
                             <TouchableOpacity onPress={() => setCreateAlertModalIsVisible(true)}>

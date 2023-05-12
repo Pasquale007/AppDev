@@ -57,20 +57,24 @@ export default function AlertPage() {
         try {
             const alert = await getAlert(id);
             const alertData = alert.data();
-        
-            navigation.navigate('FlightResultPage', {
-                data: {
-                    'origin': {name: alertData.origin, iata: alertData.originIATA},
-                    'destination': {name: alertData.destination, iata: alertData.destinationIATA},
-                    'ignoredDestinations': '',
-                    'outFromDate': alertData.startDate.split(".").reverse().join("-"),
-                    'outToDate': alertData.endDate.split(".").reverse().join("-"),
-                    'lengthMin': alertData.minLength,
-                    'lengthMax': alertData.maxLength,
-                    'maxprice': alertData.maxPrice
+
+
+            navigation.navigate("Home", {
+                screen: 'FlightResultPage',
+                params: {
+                    data: {
+                        'origin': { name: alertData.origin, iata: alertData.originIATA },
+                        'destination': { name: alertData.destination, iata: alertData.destinationIATA },
+                        'ignoredDestinations': '',
+                        'outFromDate': alertData.startDate.split(".").reverse().join("-"),
+                        'outToDate': alertData.endDate.split(".").reverse().join("-"),
+                        'lengthMin': alertData.minLength,
+                        'lengthMax': alertData.maxLength,
+                        'maxprice': alertData.maxPrice
+                    }
                 }
             });
-        }catch (error) {
+        } catch (error) {
             console.error(error);
         }
     }
