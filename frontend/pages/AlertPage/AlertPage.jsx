@@ -66,7 +66,8 @@ export default function AlertPage() {
                     'outFromDate': alertData.startDate.split(".").reverse().join("-"),
                     'outToDate': alertData.endDate.split(".").reverse().join("-"),
                     'lengthMin': alertData.minLength,
-                    'lengthMax': alertData.maxLength
+                    'lengthMax': alertData.maxLength,
+                    'maxprice': alertData.maxPrice
                 }
             });
         }catch (error) {
