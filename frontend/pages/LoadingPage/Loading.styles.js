@@ -21,6 +21,15 @@ const styles = StyleSheet.create({
         fontSize: 50,
         textAlign: 'center'
     },
+
+    phrases: {
+        color: COLORS.textWhite,
+        fontFamily: FONT.regular,
+        fontSize: 20,
+        textAlign: 'center',
+        paddingLeft: '4%',
+        paddingRight: '4%'
+    },
 });
 
 export default styles;

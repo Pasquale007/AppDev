@@ -15,7 +15,7 @@ export default function LoadingScreen({ loadingPhrases }) {
         resizeMode="cover"
       />
       {loadingPhrases
-        ? <Text>{phrases[Math.floor(Math.random() * phrases.length)].title}</Text>
+        ? <Text style={styles.phrases}>{phrases[Math.floor(Math.random() * phrases.length)] }</Text>
         : <Text style={styles.text}>Flexi Flight</Text>}
     </View>
   );
