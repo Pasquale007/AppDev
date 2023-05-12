@@ -103,6 +103,7 @@ export default function App() {
           tabBarStyle: { borderTopWidth: 0 },
           tabBarHideOnKeyboard: true,
           headerShown: false,
+          unmountOnBlur: true,
           tabBarActiveTintColor: COLORS.navIconActive,
           tabBarInactiveTintColor: COLORS.navIconInactive,
           tabBarActiveBackgroundColor: COLORS.navigationBar,
