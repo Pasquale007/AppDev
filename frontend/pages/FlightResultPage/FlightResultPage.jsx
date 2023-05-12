@@ -43,9 +43,12 @@ export default function FlightResultPage({ route }) {
         async function setData() {
             let response = await fetchData(route.params.data);
             console.log(response)
+            console.log(route.params.data.maxprice)
             if (route.params.data.maxprice !== 0) {
                 response = response.filter(data => data.totalPrice <= route.params.data.maxprice)
             }
+            console.log("After filter")
+            console.log(response)
             setTrips(response);
 
         }
