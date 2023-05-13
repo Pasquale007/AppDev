@@ -1,4 +1,5 @@
 import { Expo, ExpoPushToken } from 'expo-server-sdk';
+import { Alert } from './parseAlerts';
 
 const expo = new Expo();
 
@@ -28,20 +29,21 @@ type ExpoPushMessage = {
     [key: string]: any;
 }
 
-export default async function sendNotification(expoPushToken: ExpoPushToken): Promise<Response> {
+export default async function sendNotification(alert: Alert): Promise<Response> {
 
-    if (!Expo.isExpoPushToken(expoPushToken)) {
+    if (!Expo.isExpoPushToken(alert.id)) {
         return {
             successfull: false,
-            message: `Push token ${expoPushToken} is not a valid Expo push token`
+            message: `Push token ${alert.id} is not a valid Expo push token`
         };
     }
 
     const message: ExpoPushMessage = {
-        to: expoPushToken,
+        to: alert.id,
         sound: 'default',
-        body: 'This is a test notification',
-        data: { withSome: 'data' },
+        title: 'Es gibt neue Flüge für dich von ' + alert.origin,
+        body: 'Ein neuer Flug unter ' + alert.maxPrice + '€ wartet auf dich!',
+        data: { data: alert },
     }
 
     //Send message

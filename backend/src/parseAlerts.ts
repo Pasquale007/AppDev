@@ -2,8 +2,9 @@ import { getActiveItems, setAlreadyAlerted } from "./config";
 import { Route, SimpleConnection } from "./items";
 import { getResult, setRoutes } from "./ryanair";
 import sendNotification from "./pushNotification";
+import { ExpoPushToken } from "expo-server-sdk";
 export interface Alert {
-    id: string,
+    id: ExpoPushToken,
     isActive: boolean,
     origin: string,
     originIATA: string,
@@ -72,7 +73,7 @@ async function parseAlerts() {
                 if (parsedItem.alreadyAlerted) {
                     if (response.alreadyAlerted && parsedItem.alreadyAlerted.price > response.alreadyAlerted.price) {
                         //Alert with following line. Is id correct:
-                        //sendNotification(parsedItem.id)
+                        sendNotification(parsedItem)
                         await setAlreadyAlerted(response)
                     } else {
                         return;
