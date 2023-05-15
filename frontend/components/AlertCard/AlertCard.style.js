@@ -88,16 +88,26 @@ const styles = StyleSheet.create({
         borderTopRightRadius: SIZES.xSmall,
         borderBottomRightRadius: SIZES.xSmall,
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "row",
+        justifyContent: "flex-start",
         alignItems: "center",
+        gap: SIZES.xSmall,
     },
 
     searchButton: {
+        flex: 1,
+        paddingLeft: SIZES.medium,
         backgroundColor: COLORS.switchActive,
         borderTopRightRadius: 0,
         borderBottomRightRadius: 0,
         borderTopLeftRadius: SIZES.xSmall,
         borderBottomLeftRadius: SIZES.xSmall,
+    },
+
+    buttonText: {
+        color: COLORS.textWhite,
+        fontFamily: FONT.medium,
+        fontSize: SIZES.medium,
     },
 
     trashIcon: {

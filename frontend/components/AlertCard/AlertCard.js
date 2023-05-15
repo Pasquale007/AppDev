@@ -38,9 +38,10 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
 
     const renderLeftActions = () => {
         return (
-            <TouchableOpacity style={[styles.button, styles.searchButton]} onPress={() => onSearch(id)} testID="deleteButton">
+            <View style={[styles.button, styles.searchButton]} onPress={() => onSearch(id)} testID="deleteButton">
                 <Ionicons style={styles.trashIcon} size={30} name="search" />
-            </TouchableOpacity>
+                <Text style={styles.buttonText}>Suchen</Text>
+            </View>
         );
     }
 
