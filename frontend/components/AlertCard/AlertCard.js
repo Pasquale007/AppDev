@@ -53,11 +53,6 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
             <Swipeable
                 renderRightActions={renderRightActions}
                 renderLeftActions={renderLeftActions}
-                onSwipeableRightWillOpen={() => setDeleteOpen(true)}
-                onSwipeableLeftWillOpen={() => setDeleteOpen(false)}
-                overshootLeft={false}
-                overshootRight={false}
-                friction={2}
                 onSwipeableOpen={() => closeCard(id)}
                 ref={(ref) => (cardArr[id] = ref)}
                 testID="alertCard"
@@ -113,13 +108,6 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
                     </View>
                 </View>
             </Swipeable>
-            <View style={styles.cardBackground}>
-                {deleteOpen ?
-                    <Text style={styles.cardBackgroundText}>Löschen</Text>
-                    :
-                    <Text style={styles.cardBackgroundText}>Anzeigen</Text>
-                }
-            </View>
         </Animated.View>
     )
 }
