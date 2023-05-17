@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./AlertCard.style";
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View } from 'react-native';
 import { Switch } from 'react-native-switch';
 import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
-import { Ionicons } from '@expo/vector-icons';
-import Animated, { Layout, LightSpeedOutLeft } from "react-native-reanimated";
+import Animated, { Layout, LightSpeedOutLeft, } from "react-native-reanimated";
 import AlertsArrow from '../AlertsArrow/AlertsArrow';
+import AlertCardLeftBg from '../AlertCardLeftBg/AlertCardLeftBg';
+import AlertCardRightBg from '../AlertCardRightBg/AlertCardRightBg';
 
-function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, onSearch, cardArr, isActive, setIsActive, id }) {
+function AlertCard({ date, locations, duration, maxPrice, onDelete, onSearch, isActive, setIsActive, id }) {
     const [durationString, setDurationString] = useState("");
-    const [deleteOpen, setDeleteOpen] = useState(false);
 
     useEffect(() => {
         buildDurationString();
@@ -28,22 +28,21 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
         }
     }
 
-    const renderRightActions = () => {
-        return (
-            <TouchableOpacity style={styles.button} onPress={() => onDelete(id)} testID="deleteButton">
-                <Ionicons style={styles.trashIcon} size={30} name="trash" />
-            </TouchableOpacity>
-        );
-    };
+    const renderRightActions = (progress, dragX) => (
+        <AlertCardRightBg progress={progress} dragX={dragX} />
+    );
 
-    const renderLeftActions = () => {
-        return (
-            <View style={[styles.button, styles.searchButton]} onPress={() => onSearch(id)} testID="deleteButton">
-                <Ionicons style={styles.trashIcon} size={30} name="search" />
-                <Text style={styles.buttonText}>Suchen</Text>
-            </View>
-        );
-    }
+    const renderLeftActions = (progress, dragX) => (
+        <AlertCardLeftBg progress={progress} dragX={dragX} />
+    )
+
+    const onSwipeableOpen = (progress, dragX) => {
+        if (dragX > 0) {
+            onDelete(id);
+        } else {
+            onSearch(id);
+        }
+    };
 
     const handleToggleChange = () => {
         setIsActive(!isActive, id);
@@ -54,8 +53,7 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
             <Swipeable
                 renderRightActions={renderRightActions}
                 renderLeftActions={renderLeftActions}
-                onSwipeableOpen={() => closeCard(id)}
-                ref={(ref) => (cardArr[id] = ref)}
+                onSwipeableOpen={onSwipeableOpen}
                 testID="alertCard"
             >
                 <View style={styles.alertCard}>

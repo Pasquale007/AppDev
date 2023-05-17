@@ -13,9 +13,6 @@ export default function AlertPage() {
     const [alerts, setAlerts] = useState([]);
     const navigation = useNavigation();
 
-    let card = [];
-    let prevOpenedCard;
-
     useEffect(() => {
         const queryDeviceToken = async () => {
             const token = (await Notifications.getExpoPushTokenAsync({ projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0" })).data;
@@ -40,13 +37,6 @@ export default function AlertPage() {
 
     const handleActiveChange = (isActive, id) => {
         updateAlertActive(isActive, id);
-    }
-
-    const closeCard = (id) => {
-        if (prevOpenedCard && prevOpenedCard !== card[id]) {
-            prevOpenedCard.close();
-        }
-        prevOpenedCard = card[id];
     }
 
     const deleteCard = (id) => {
@@ -105,10 +95,8 @@ export default function AlertPage() {
                                     locations={{ origin: alert.origin, destination: alert.destination }}
                                     duration={{ start: alert.minLength, end: alert.maxLength }}
                                     maxPrice={alert.maxPrice}
-                                    closeCard={closeCard}
                                     onDelete={deleteCard}
                                     onSearch={searchAlert}
-                                    cardArr={card}
                                     isActive={alert.isActive}
                                     setIsActive={handleActiveChange}
                                     testID="alertCard"

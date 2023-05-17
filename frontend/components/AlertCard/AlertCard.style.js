@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 
-    button: {
+    cardBackground: {
         backgroundColor: COLORS.deleteColor,
         width: 60,
         borderTopRightRadius: SIZES.xSmall,
@@ -91,15 +91,13 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "flex-start",
         alignItems: "center",
-        gap: SIZES.xSmall,
+        gap: 5,
     },
 
     searchButton: {
         flex: 1,
         paddingLeft: SIZES.medium,
         backgroundColor: COLORS.switchActive,
-        borderTopRightRadius: 0,
-        borderBottomRightRadius: 0,
         borderTopLeftRadius: SIZES.xSmall,
         borderBottomLeftRadius: SIZES.xSmall,
     },
@@ -113,25 +111,6 @@ const styles = StyleSheet.create({
     trashIcon: {
         color: COLORS.textWhite,
     },
-
-    cardBackground: {
-        position: "absolute",
-        display: "flex",
-        alignItems: "flex-end",
-        justifyContent: "center",
-        width: "100%",
-        height: "100%",
-        borderRadius: 12,
-        zIndex: -1,
-    },
-
-    cardBackgroundText: {
-        color: COLORS.textWhite,
-        fontFamily: FONT.medium,
-        fontSize: SIZES.medium,
-        marginRight: 60,
-        paddingRight: SIZES.xSmall,
-    }
 
 });
 
