@@ -11,7 +11,7 @@ import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import { COLORS } from './constants/theme';
 import Splash from './pages/SplashPage/Splash';
-import { Platform } from 'react-native';
+import { Platform, StatusBar } from 'react-native';
 
 polyfillWebCrypto();
 
@@ -98,6 +98,10 @@ export default function App() {
   return (isLoading
     ? <Splash setIsLoading={() => setIsLoading(false)} />
     : <NavigationContainer theme={MyTheme}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={COLORS.background}
+      />
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarStyle: { borderTopWidth: 0 },
