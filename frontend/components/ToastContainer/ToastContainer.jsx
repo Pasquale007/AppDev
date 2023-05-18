@@ -18,6 +18,7 @@ function ToastContainer() {
                     color: COLORS.textWhite,
                     paddingVertical: SIZES.small,
                 }}
+                text1NumberOfLines={10}
             />
         ),
 
@@ -31,6 +32,7 @@ function ToastContainer() {
                     color: COLORS.textWhite,
                     paddingVertical: SIZES.small,
                 }}
+                text1NumberOfLines={10}
             />
         ),
     }
