@@ -1,11 +1,11 @@
-name: Deploy App to expo
+name: Build App
 on:
   push:
     branches: [ "master"]
 jobs:
-  deploy-expo:
+  update:
+    name: EAS Update
     runs-on: ubuntu-latest
-    needs: [build-backend, build-frontend]
     steps:
       - name: Check for EXPO_TOKEN
         run: |
@@ -32,5 +32,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build new internal update
+      - name: Build new update
         run: eas build --profile development --platform android
