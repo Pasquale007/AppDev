@@ -36,12 +36,8 @@ function AlertCard({ date, locations, duration, maxPrice, onDelete, onSearch, is
         <AlertCardLeftBg progress={progress} dragX={dragX} />
     )
 
-    const onSwipeableOpen = (progress, dragX) => {
-        if (dragX > 0) {
-            onDelete(id);
-        } else {
-            onSearch(id);
-        }
+    const onSwipeableOpen = (direction) => {
+        direction === "right" ? onDelete(id) : onSearch(id);
     };
 
     const handleToggleChange = () => {
