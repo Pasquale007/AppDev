@@ -36,4 +36,4 @@ jobs:
       - name: Build new update
         run: |
           cd frontend
-          eas build --profile development --platform android
+          eas build --profile development --platform android --non-interactive
