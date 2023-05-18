@@ -34,4 +34,6 @@ jobs:
           npm install
 
       - name: Build new update
-        run: eas build --profile development --platform android
+        run: |
+          cd frontend
+          eas build --profile development --platform android
