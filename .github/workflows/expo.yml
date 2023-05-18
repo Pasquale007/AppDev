@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: npm
 
       - name: Setup EAS
         uses: expo/expo-github-action@v8
@@ -30,7 +29,9 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd frontend
+          npm install
 
       - name: Build new update
         run: eas build --profile development --platform android
