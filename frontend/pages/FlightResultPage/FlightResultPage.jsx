@@ -38,8 +38,8 @@ export default function FlightResultPage({ route }) {
         }
     }, [successMsg, errorMsg]);
 
-
     useEffect(() => {
+        console.log("Start")
         setCreateAlertModalIsVisible(false);
         setSuccessMsg("");
         setErrorMsg("");
@@ -54,11 +54,10 @@ export default function FlightResultPage({ route }) {
             console.log("After filter")
             console.log(response)
             setTrips(response);
-
         }
         setData();
         return () => { setTrips([]) }
-    }, []);
+    }, [route]);
 
     return (
         <SafeAreaView>
@@ -73,7 +72,7 @@ export default function FlightResultPage({ route }) {
                             size={40}
                             color={COLORS.textWhite}
                             style={styles.icon}
-                            onPress={() => navigation.navigate("Search")}
+                            onPress={() => { navigation.navigate("Search"); setTrips([]) }}
                         />
                         <View style={styles.topBar}>
                             <TouchableOpacity onPress={() => setCreateAlertModalIsVisible(true)}>
