@@ -39,7 +39,6 @@ export default function FlightResultPage({ route }) {
     }, [successMsg, errorMsg]);
 
     useEffect(() => {
-        console.log("Start")
         setCreateAlertModalIsVisible(false);
         setSuccessMsg("");
         setErrorMsg("");
