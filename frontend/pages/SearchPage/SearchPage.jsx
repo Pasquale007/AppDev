@@ -13,7 +13,6 @@ import { useNavigation } from '@react-navigation/native';
 import flightData from '../../data/flightData.json';
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
 import Toast from 'react-native-toast-message';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function SearchPage() {
     const origins = flightData.map(dataset => dataset.origin);
@@ -83,7 +82,6 @@ export default function SearchPage() {
                 <Button
                     text={"Suche"}
                     onClick={async () => {
-                        //await sendPushNotification('ExponentPushToken[Ef5M2qFl2bYdnWJG_LfS9m]');
                         if (!startAirport) {
                             Toast.show({
                                 type: "error",

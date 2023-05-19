@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.searchFieldColor,
         borderRadius: 10,
         marginBottom: "5%",
-
     },
     label: {
         paddingLeft: 10,
