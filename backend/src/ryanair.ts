@@ -94,18 +94,19 @@ async function processDestination(origin: string, destination: string, outFromDa
     lengthMin = (+lengthMin)
     lengthMax = (+lengthMax)
 
-    outToDate = new Date(outToDate.setHours(outToDate.getHours() + 23)) //outToDate needs to be bigger than the inbound departure date which is only possible if it is 23:59 on the return day
-    outToDate = new Date(outToDate.setMinutes(outToDate.getMinutes() + 59))
+    let outToDateLocal = new Date(outToDate) //WTF!?!?!?
+    outToDateLocal = new Date(outToDateLocal.setHours(outToDateLocal.getHours() + 23)) //outToDate needs to be bigger than the inbound departure date which is only possible if it is 23:59 on the return day
+    outToDateLocal = new Date(outToDateLocal.setMinutes(outToDateLocal.getMinutes() + 59))
 
     outFromDate = new Date(outFromDate.setHours(outFromDate.getHours() - timeShift)) // - timeShift so that i don't need to shift + every time we introduce a new var and compare it with the outFromDate/outToDate
-    outToDate = new Date(outToDate.setHours(outToDate.getHours() - timeShift))
+    outToDateLocal = new Date(outToDateLocal.setHours(outToDateLocal.getHours() - timeShift))
 
     for (let i = 0; i < outbound.length; i++) {
-        if(outFromDate <= new Date(outbound[i].arrivalDate) && outToDate >= new Date(outbound[i].arrivalDate) && outbound[i].unavailable == false && outbound[i].soldOut == false){
+        if(outFromDate <= new Date(outbound[i].arrivalDate) && outToDateLocal >= new Date(outbound[i].arrivalDate) && outbound[i].unavailable == false && outbound[i].soldOut == false){
             //Flight available
             //Searching for back flight
             for (let j = i + lengthMin; j <= i + lengthMax ; j++) {
-                if(inbound[j] && outToDate >= new Date(inbound[j].departureDate) && inbound[j].unavailable == false && inbound[j].soldOut == false){
+                if(inbound[j] && outToDateLocal >= new Date(inbound[j].departureDate) && inbound[j].unavailable == false && inbound[j].soldOut == false){
                     const outboundDate: Date = new Date(outbound[i].departureDate)
                     const inboundDate: Date = new Date(inbound[j].departureDate)
                     const parsedOutboundDate = outboundDate.toISOString().slice(0, 10);
