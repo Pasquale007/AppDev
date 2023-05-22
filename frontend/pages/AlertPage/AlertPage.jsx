@@ -27,6 +27,12 @@ export default function AlertPage() {
     }, []);
 
     useEffect(() => {
+        if (alerts.length > 0) {
+            setIsLoaded(true);
+        }
+    }, [alerts]);
+
+    useEffect(() => {
         let unsubscribe;
         console.log(deviceToken);
 
