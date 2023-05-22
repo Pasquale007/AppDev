@@ -84,7 +84,7 @@ function Info({ direction, iataCode, date, bookingLink }) {
             </Text>
             {direction === "right" &&
                 <TouchableOpacity onPress={pressed} style={styles.button}>
-                    <Text >Jetzt buchen</Text>
+                    <Text style={styles.bookingButton}>Jetzt buchen</Text>
                 </TouchableOpacity>
             }
         </View>
