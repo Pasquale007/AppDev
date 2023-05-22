@@ -10,11 +10,12 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.backgroundOpacity,
         borderRadius: 20,
         width: '90%',
+        alignItems: "center"
     },
     header: {
         display: 'flex',
         flexDirection: 'row',
-        marginRight: "5%",
+        justifyContent: 'space-between',
     },
     content: {
         margin: "5%",
@@ -23,10 +24,6 @@ const styles = StyleSheet.create({
     },
     icon: {
         backgroundColor: COLORS.backgroundOpacity,
-        borderRadius: 20,
-        marginRight: SIZES.small,
-    },
-    iconWithoutBackground: {
         borderRadius: 20,
         marginRight: SIZES.small,
     },

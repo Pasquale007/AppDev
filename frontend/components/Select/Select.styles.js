@@ -24,14 +24,22 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         verticalAlign: 'middle',
         padding: 5,
-
     },
     active: {
+        height: '100%',
+        borderRadius: 20,
+    },
+    passive: {
+        height: '100%',
+        color: COLORS.textWhite,
+        borderRadius: 20,
+    },
+    activeBG: {
         height: '100%',
         backgroundColor: COLORS.searchFieldColor,
         borderRadius: 20,
     },
-    passive: {
+    passiveBG: {
         height: '100%',
         color: COLORS.textWhite,
         borderRadius: 20,
