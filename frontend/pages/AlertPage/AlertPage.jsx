@@ -7,8 +7,10 @@ import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler
 import { getAlerts, deleteAlert, updateAlertActive, getAlert } from '../../firebaseQueries/firebaseQueries';
 import * as Notifications from 'expo-notifications';
 import { useNavigation } from '@react-navigation/native';
+import LoadingScreen from '../LoadingPage/Loading';
 
 export default function AlertPage() {
+    const [isLoaded, setIsLoaded] = useState(false);
     const [deviceToken, setDeviceToken] = useState("");
     const [alerts, setAlerts] = useState([]);
     const navigation = useNavigation();
@@ -23,6 +25,10 @@ export default function AlertPage() {
         }
         queryDeviceToken();
     }, []);
+
+    useEffect(() => {
+        setIsLoaded(true)
+    }, [alerts]);
 
     useEffect(() => {
         let unsubscribe;
@@ -81,43 +87,45 @@ export default function AlertPage() {
 
     return (
         <GestureHandlerRootView>
-            <ScrollView
-                contentContainerStyle={{ minHeight: '100%' }}
-                showsVerticalScrollIndicator={false}
-            >
-                <SafeAreaView style={styles.alertContainer}>
-                    <Text style={styles.alertHeadline}>
-                        Meine Alerts
-                    </Text>
-                    {alerts.length === 0 ?
-                        <View style={styles.noAlertsContainer}>
-                            <Ionicons style={styles.alertIcon} size={100} name="notifications" testID="" />
-                            <Text style={styles.noAlertsText} testID="noAlertsText">
-                                Keine Alerts vorhanden
-                            </Text>
-                        </View>
-                        : <View style={styles.alertCardContainer}>
-                            {alerts.map((alert) => (
-                                <AlertCard
-                                    key={alert.id}
-                                    id={alert.id}
-                                    date={{ start: alert.startDate, end: alert.endDate }}
-                                    locations={{ origin: alert.origin, destination: alert.destination }}
-                                    duration={{ start: alert.minLength, end: alert.maxLength }}
-                                    maxPrice={alert.maxPrice}
-                                    closeCard={closeCard}
-                                    cardArr={card}
-                                    onDelete={deleteCard}
-                                    onSearch={searchAlert}
-                                    isActive={alert.isActive}
-                                    setIsActive={handleActiveChange}
-                                    testID="alertCard"
-                                />
-                            ))}
-                        </View>
-                    }
-                </SafeAreaView>
-            </ScrollView>
+            
+                <ScrollView
+                    contentContainerStyle={{ minHeight: '100%' }}
+                    showsVerticalScrollIndicator={false}
+                >
+                    <SafeAreaView style={styles.alertContainer}>
+                        <Text style={styles.alertHeadline}>
+                            Meine Alerts
+                        </Text>
+                        {alerts.length === 0 ?
+                            <View style={styles.noAlertsContainer}>
+                                <Ionicons style={styles.alertIcon} size={100} name="notifications" testID="" />
+                                <Text style={styles.noAlertsText} testID="noAlertsText">
+                                    Keine Alerts vorhanden
+                                </Text>
+                            </View>
+                            : <View style={styles.alertCardContainer}>
+                                {alerts.map((alert) => (
+                                    <AlertCard
+                                        key={alert.id}
+                                        id={alert.id}
+                                        date={{ start: alert.startDate, end: alert.endDate }}
+                                        locations={{ origin: alert.origin, destination: alert.destination }}
+                                        duration={{ start: alert.minLength, end: alert.maxLength }}
+                                        maxPrice={alert.maxPrice}
+                                        closeCard={closeCard}
+                                        onDelete={deleteCard}
+                                        onSearch={searchAlert}
+                                        cardArr={card}
+                                        isActive={alert.isActive}
+                                        setIsActive={handleActiveChange}
+                                        testID="alertCard"
+                                    />
+                                ))}
+                            </View>
+                        }
+                    </SafeAreaView>
+                </ScrollView>
+        
         </GestureHandlerRootView>
     );
 }

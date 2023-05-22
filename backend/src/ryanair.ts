@@ -75,7 +75,7 @@ export async function setRoutes(): Promise<Route[]>{
     return allRoutes;
 }
 
-async function processDestination(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number){
+async function processDestination(origin: string, destination: string, outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number, timeShift: number){
     const result: Array<SimpleConnection> = [];
     const monthsBetween = getMonthsBetween(outFromDate, outToDate);
     //eslint-disable-next-line
@@ -94,20 +94,34 @@ async function processDestination(origin: string, destination: string, outFromDa
     lengthMin = (+lengthMin)
     lengthMax = (+lengthMax)
 
+    let outToDateLocal = new Date(outToDate) //WTF!?!?!?
+    outToDateLocal = new Date(outToDateLocal.setHours(outToDateLocal.getHours() + 23)) //outToDate needs to be bigger than the inbound departure date which is only possible if it is 23:59 on the return day
+    outToDateLocal = new Date(outToDateLocal.setMinutes(outToDateLocal.getMinutes() + 59))
+
+    outFromDate = new Date(outFromDate.setHours(outFromDate.getHours() - timeShift)) // - timeShift so that i don't need to shift + every time we introduce a new var and compare it with the outFromDate/outToDate
+    outToDateLocal = new Date(outToDateLocal.setHours(outToDateLocal.getHours() - timeShift))
+
     for (let i = 0; i < outbound.length; i++) {
-        if(new Date(outFromDate) <= new Date(outbound[i].day) && new Date(outToDate) >= new Date(outbound[i].day) && outbound[i].unavailable == false && outbound[i].soldOut == false){
+        if(outFromDate <= new Date(outbound[i].arrivalDate) && outToDateLocal >= new Date(outbound[i].arrivalDate) && outbound[i].unavailable == false && outbound[i].soldOut == false){
             //Flight available
             //Searching for back flight
-            for (let j = i + lengthMin; j <= i + lengthMax; j++) {
-                if(inbound[j] && new Date(outToDate) >= new Date(inbound[j].day) && inbound[j].unavailable == false && inbound[j].soldOut == false){
+            for (let j = i + lengthMin; j <= i + lengthMax ; j++) {
+                if(inbound[j] && outToDateLocal >= new Date(inbound[j].departureDate) && inbound[j].unavailable == false && inbound[j].soldOut == false){
+                    const outboundDate: Date = new Date(outbound[i].departureDate)
+                    const inboundDate: Date = new Date(inbound[j].departureDate)
+                    const parsedOutboundDate = outboundDate.toISOString().slice(0, 10);
+                    const parsedInboundDate = inboundDate.toISOString().slice(0, 10);
+                    const shiftedOutboundDate = new Date(outboundDate.getTime() + (timeShift * 60 * 60 * 1000))
+                    const shiftedInboundDate = new Date(inboundDate.getTime() + (timeShift * 60 * 60 * 1000))
                     result.push({
                         origin: origin,
                         destination: destination,
-                        outboundDate: new Date(outbound[i].departureDate),
+                        outboundDate: shiftedOutboundDate,
                         outboundPrice: outbound[i].price.value,
-                        inboundDate: new Date(inbound[j].departureDate),
+                        inboundDate: shiftedInboundDate,
                         inboundPrice: inbound[j].price.value,
-                        totalPrice: outbound[i].price.value + inbound[j].price.value
+                        totalPrice: outbound[i].price.value + inbound[j].price.value,
+                        bookingLink: `https://www.ryanair.com/de/de/trip/flights/select?adults=1&teens=0&children=0&infants=0&dateOut=${parsedOutboundDate}&dateIn=${parsedInboundDate}&isConnectedFlight=false&isReturn=true&discount=0&promoCode=&originIata=${origin}&destinationIata=${destination}&tpAdults=1&tpTeens=0&tpChildren=0&tpInfants=0&tpStartDate=${parsedOutboundDate}&tpEndDate=${parsedInboundDate}&tpDiscount=0&tpPromoCode=&tpOriginIata=${origin}&tpDestinationIata=${destination}`
                     })
                 }
             }
@@ -132,11 +146,11 @@ function getMonthsBetween(startDate: Date, endDate: Date): Array<Date> {
     return months;
 }
 
-export async function getResult(routes: Route[], origin: string, destination: string, ignoredDestinations: string[], outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number): Promise<Array<SimpleConnection>>{
+export async function getResult(routes: Route[], origin: string, destination: string, ignoredDestinations: string[], outFromDate: Date, outToDate: Date, lengthMin: number, lengthMax: number, timeShift: number): Promise<Array<SimpleConnection>>{
     allRoutes = routes;
     let allAvailableConnections: Array<SimpleConnection> = [];
     if(destination.length === 3){
-        allAvailableConnections = await processDestination(origin, destination, outFromDate, outToDate, lengthMin, lengthMax)
+        allAvailableConnections = await processDestination(origin, destination, outFromDate, outToDate, lengthMin, lengthMax, timeShift)
     }else if(destination.length === 2){
         destination = destination.toLowerCase();
         for (let i = 0; i < allRoutes.length; i++) {
@@ -144,7 +158,7 @@ export async function getResult(routes: Route[], origin: string, destination: st
                 if(ignoredDestinations.includes(allRoutes[i].destination.iata)){
                     continue
                 }
-                const tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
+                const tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax, timeShift)
                 allAvailableConnections = [...allAvailableConnections, ...tempResult]
             }
         }
@@ -155,7 +169,7 @@ export async function getResult(routes: Route[], origin: string, destination: st
                 if(ignoredDestinations.includes(allRoutes[i].destination.iata)){
                     continue
                 }
-                const tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax)
+                const tempResult = await processDestination(origin, allRoutes[i].destination.iata, outFromDate, outToDate, lengthMin, lengthMax, timeShift)
                 allAvailableConnections = [...allAvailableConnections, ...tempResult]
             }
         }
@@ -172,7 +186,7 @@ export async function getResult(routes: Route[], origin: string, destination: st
 }
 
 /*~(async () => {
-    //await saveRoutes()
-    await getResult(routestemp, "NUE", "All destinations", [], new Date("2023-04-09"), new Date("2023-05-18"), 1, 14)
+    await saveRoutes()
+    //await getResult(routestemp, "NUE", "All destinations", [], new Date("2023-04-09"), new Date("2023-05-18"), 1, 14)
 })();*/
 
