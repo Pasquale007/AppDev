@@ -56,9 +56,9 @@ app.get('/getFlights', async (req: any, res: Response) => {
   }
 
   if(queryParams.lengthMin === -1 && queryParams.lengthMax === -1){
-    const length = (queryParams.outToDate.getTime() - queryParams.outFromDate.getTime()) / (1000 * 3600 * 24) + 1;
-    queryParams.lengthMin = length;
-    queryParams.lengthMax = length;
+    const length = (queryParams.outToDate.getTime() - queryParams.outFromDate.getTime()) / (1000 * 3600 * 24);
+    queryParams.lengthMin = Math.floor(length);
+    queryParams.lengthMax = Math.floor(length);
   }
 
   const redisKey = req.originalUrl.includes("&pageKey") ? req.originalUrl.split("&pageKey")[0] : req.originalUrl
