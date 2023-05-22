@@ -27,7 +27,9 @@ export default function AlertPage() {
     }, []);
 
     useEffect(() => {
-        setIsLoaded(true)
+        if (alerts.length > 0) {
+            setIsLoaded(true);
+        }
     }, [alerts]);
 
     useEffect(() => {
