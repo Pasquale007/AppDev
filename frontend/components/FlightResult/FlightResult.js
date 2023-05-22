@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View } from "react-native";
+import { Linking, Text, View } from "react-native";
 import styles from './FlightResult.styles';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../../constants/theme';
 import flightData from '../../data/flightData.json';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-function Info({ direction, iataCode, date }) {
+function Info({ direction, iataCode, date, bookingLink }) {
     const [cityName, setCityName] = useState("");
 
     useEffect(() => {
@@ -15,7 +15,7 @@ function Info({ direction, iataCode, date }) {
     }, []);
 
     const pressed = () => {
-        console.log("Umleitung / Öffnen des Browsers initialisieren")
+        Linking.openURL(bookingLink).catch(err => console.error('An error occurred: ', err));
     }
 
     function getDate() {
@@ -117,6 +117,7 @@ export default function FlightResult({ data }) {
                     direction={"right"}
                     iataCode={data.destination}
                     date={data.inboundDate}
+                    bookingLink={data.bookingLink}
                 />
             </View>
         </View>
