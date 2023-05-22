@@ -112,6 +112,18 @@ const styles = StyleSheet.create({
         color: COLORS.textWhite,
     },
 
+    alertBg: {
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        zIndex: -1,
+        borderRadius: SIZES.xSmall,
+        borderRightColor: COLORS.switchInactive,
+        borderLeftColor: COLORS.switchActive,
+        borderRightWidth: 120,
+        borderLeftWidth: 120,
+    }
+
 });
 
 export default styles;

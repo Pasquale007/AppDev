@@ -6,14 +6,12 @@ const styles = StyleSheet.create({
 
     container: {
         backgroundColor: COLORS.deleteColor,
-        width: 60,
+        width: 100,
         borderRadius: SIZES.xSmall,
-        paddingRight: SIZES.medium,
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "flex-end",
+        flexDirection: "column",
+        justifyContent: "center",
         alignItems: "center",
-        flex: 1,
         gap: 5,
     },
 

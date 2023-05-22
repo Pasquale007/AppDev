@@ -4,12 +4,12 @@ import { Text, View } from 'react-native';
 import { Switch } from 'react-native-switch';
 import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
-import Animated, { Layout, LightSpeedOutLeft, } from "react-native-reanimated";
+import Animated, { Layout, LightSpeedOutLeft } from "react-native-reanimated";
 import AlertsArrow from '../AlertsArrow/AlertsArrow';
 import AlertCardLeftBg from '../AlertCardLeftBg/AlertCardLeftBg';
 import AlertCardRightBg from '../AlertCardRightBg/AlertCardRightBg';
 
-function AlertCard({ date, locations, duration, maxPrice, onDelete, onSearch, isActive, setIsActive, id }) {
+function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, onSearch, cardArr, isActive, setIsActive, id }) {
     const [durationString, setDurationString] = useState("");
 
     useEffect(() => {
@@ -29,16 +29,12 @@ function AlertCard({ date, locations, duration, maxPrice, onDelete, onSearch, is
     }
 
     const renderRightActions = (progress, dragX) => (
-        <AlertCardRightBg progress={progress} dragX={dragX} />
+        <AlertCardRightBg progress={progress} dragX={dragX} id={id} onDelete={onDelete}/>
     );
 
     const renderLeftActions = (progress, dragX) => (
-        <AlertCardLeftBg progress={progress} dragX={dragX} />
+        <AlertCardLeftBg progress={progress} dragX={dragX} id={id} onSearch={onSearch}/>
     )
-
-    const onSwipeableOpen = (direction) => {
-        direction === "right" ? onDelete(id) : onSearch(id);
-    };
 
     const handleToggleChange = () => {
         setIsActive(!isActive, id);
@@ -49,7 +45,11 @@ function AlertCard({ date, locations, duration, maxPrice, onDelete, onSearch, is
             <Swipeable
                 renderRightActions={renderRightActions}
                 renderLeftActions={renderLeftActions}
-                onSwipeableOpen={onSwipeableOpen}
+                friction={1.5} // Set the friction value for resistance during swipe
+                overshootLeft={false} // Disable overshooting to the left
+                overshootRight={false} // Disable overshooting to the right
+                onSwipeableOpen={() => closeCard(id)}
+                ref={(ref) => (cardArr[id] = ref)}
                 testID="alertCard"
             >
                 <View style={styles.alertCard}>
@@ -103,6 +103,7 @@ function AlertCard({ date, locations, duration, maxPrice, onDelete, onSearch, is
                     </View>
                 </View>
             </Swipeable>
+            <View style={styles.alertBg}/>
         </Animated.View>
     )
 }
