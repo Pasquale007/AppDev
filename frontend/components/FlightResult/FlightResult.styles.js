@@ -49,12 +49,18 @@ const styles = StyleSheet.create({
 
     },
     costs: {
+        position: 'absolute',
+        left: '50%',
+        transform: [{ translateX: -50 }],
+        backgroundColor: COLORS.background,
+        borderRadius: 20,
+
+    },
+    costsText: {
         color: COLORS.textWhite,
         fontSize: SIZES.xLarge,
         fontFamily: FONT.bold,
-        backgroundColor: COLORS.background,
         padding: 10,
-        borderRadius: 20,
     },
     button: {
         fontSize: SIZES.medium,

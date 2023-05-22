@@ -82,7 +82,6 @@ export default function SearchPage() {
                 <Button
                     text={"Suche"}
                     onClick={async () => {
-                        //await sendPushNotification('ExponentPushToken[Ef5M2qFl2bYdnWJG_LfS9m]');
                         if (!startAirport) {
                             Toast.show({
                                 type: "error",
