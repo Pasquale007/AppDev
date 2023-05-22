@@ -56,14 +56,16 @@ export default function FlightResultPage({ route }) {
                 style={{ height: '100%' }}>
                 <View style={styles.content}>
                     <View style={styles.header}>
-                        <Ionicons
-                            name={'arrow-back-outline'}
-                            size={40}
-                            color={COLORS.textWhite}
-                            style={styles.icon}
-                            onPress={() => navigation.goBack()}
-                        />
-                        <View style={styles.topBar}>
+                        <View style={styles.icon}>
+                            <TouchableOpacity onPress={() => navigation.goBack()}>
+                                <Ionicons
+                                    name={'arrow-back-outline'}
+                                    size={40}
+                                    color={COLORS.textWhite}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.icon}>
                             <TouchableOpacity onPress={() => setCreateAlertModalIsVisible(true)}>
                                 <Ionicons
                                     name={'notifications-outline'}

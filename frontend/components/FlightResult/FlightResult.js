@@ -83,8 +83,8 @@ function Info({ direction, iataCode, date, bookingLink }) {
                 {getDate()}
             </Text>
             {direction === "right" &&
-                <TouchableOpacity onPress={pressed}>
-                    <Text style={styles.button}>Jetzt buchen</Text>
+                <TouchableOpacity onPress={pressed} style={styles.button}>
+                    <Text >Jetzt buchen</Text>
                 </TouchableOpacity>
             }
         </View>
@@ -102,11 +102,11 @@ export default function FlightResult({ data }) {
                 iataCode={data.origin}
                 date={data.outboundDate}
             />
-            <View style={{ backgroundColor: COLORS.background, height: 18, marginTop: 13 }}>
+            <View style={{ backgroundColor: COLORS.background, height: 18, marginTop: '6%', marginBottom: '4%' }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={[styles.textSmall, { transform: [{ translateX: -110 }] }]}>Zusammen ab</Text>
-                    <View style={{ position: 'absolute', left: '50%', transform: [{ translateX: -50 }] }}>
-                        <Text style={styles.costs}>{(Math.round(data.totalPrice * 100) / 100).toLocaleString("de-DE", { style: "currency", currency: "EUR" })}</Text>
+                    <View style={styles.costs}>
+                        <Text style={styles.costsText}>{(Math.round(data.totalPrice * 100) / 100).toLocaleString("de-DE", { style: "currency", currency: "EUR" })}</Text>
                     </View>
                 </View>
             </View>
