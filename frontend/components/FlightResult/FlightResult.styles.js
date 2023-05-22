@@ -72,6 +72,13 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 20,
         textAlign: 'center',
         width: 150,
+    },
+    bookingButton: {
+        fontSize: SIZES.medium,
+        color: COLORS.textWhite,
+        fontFamily: FONT.medium,
+        textAlign: 'center',
+
     }
 
 });
