@@ -25,8 +25,11 @@ export default function AlertPage() {
         }
         queryDeviceToken();
     }, []);
+
     useEffect(() => {
-        setIsLoaded(true)
+        if (alerts.length > 0) {
+            setIsLoaded(true);
+        }
     }, [alerts]);
 
     useEffect(() => {
@@ -82,7 +85,7 @@ export default function AlertPage() {
 
     return (
         <GestureHandlerRootView>
-            {isLoaded
+            {!isLoaded
                 ? <LoadingScreen />
                 : <ScrollView
                     contentContainerStyle={{ minHeight: '100%' }}
