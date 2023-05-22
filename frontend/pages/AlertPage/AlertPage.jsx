@@ -27,17 +27,11 @@ export default function AlertPage() {
     }, []);
 
     useEffect(() => {
-        if (alerts.length > 0) {
-            setIsLoaded(true);
-        }
-    }, [alerts]);
-
-    useEffect(() => {
         let unsubscribe;
         console.log(deviceToken);
 
         if (deviceToken) {
-            unsubscribe = getAlerts(deviceToken, setAlerts);
+            unsubscribe = getAlerts(deviceToken, handleFetchedAlerts);
         }
 
         //Cleanup
@@ -45,6 +39,11 @@ export default function AlertPage() {
             unsubscribe && unsubscribe();
         };
     }, [deviceToken]);
+
+    const handleFetchedAlerts = (alerts) => {
+        setAlerts(alerts);
+        setIsLoaded(true);
+    }
 
     const handleActiveChange = (isActive, id) => {
         updateAlertActive(isActive, id);

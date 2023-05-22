@@ -17,7 +17,7 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
     }, []);
 
     const buildDurationString = () => {
-        if (duration?.start && duration?.end) {
+        if (duration?.start > -1 && duration?.end > -1) {
             const dayOrDays = +duration.end === 1 ? "Tag" : "Tage";
 
             if (parseInt(duration.start) - parseInt(duration.end) === 0) {

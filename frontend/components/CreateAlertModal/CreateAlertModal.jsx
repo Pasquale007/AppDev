@@ -30,7 +30,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
     }, []);
 
     const buildDurationString = () => {
-        if (lengthMin > 0 && lengthMax > 0) {
+        if (lengthMin > -1 && lengthMax > -1) {
             const dayOrDays = parseInt(lengthMax) === 1 ? "Tag" : "Tage";
 
             if (parseInt(lengthMin) - parseInt(lengthMax) === 0) {
