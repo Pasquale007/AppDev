@@ -4,10 +4,11 @@ import styles from './Loading.styles';
 import Giffile from '../../assets/loading-phrases/LoadingGif.gif';
 import { Text } from 'react-native';
 import {phrases} from '../../assets/loading-phrases/loadingPhrases';
+import { useEffect, useState } from 'react';
 
 export default function LoadingScreen({ loadingPhrases }) {
 
-  export default function LoadingScreen({ loadingPhrases }) {
+
     const [randomPhrase, setRandomPhrase] = useState('');
   
     useEffect(() => {
