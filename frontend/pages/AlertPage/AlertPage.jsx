@@ -87,8 +87,9 @@ export default function AlertPage() {
 
     return (
         <GestureHandlerRootView>
-            
-                <ScrollView
+            {!isLoaded
+                ? <LoadingScreen />
+                : <ScrollView
                     contentContainerStyle={{ minHeight: '100%' }}
                     showsVerticalScrollIndicator={false}
                 >
@@ -125,7 +126,7 @@ export default function AlertPage() {
                         }
                     </SafeAreaView>
                 </ScrollView>
-        
+            }
         </GestureHandlerRootView>
     );
 }
