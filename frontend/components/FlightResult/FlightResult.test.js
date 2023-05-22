@@ -10,6 +10,7 @@ describe('FlightResult component', () => {
     outboundPrice: 19.95,
     inboundDate: "2023-05-13T00:00:00.000Z",
     inboundPrice: 16.99,
+    bookingLink: 'https:some-link.com',
     totalPrice: 36.94
   };
 

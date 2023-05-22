@@ -18,24 +18,35 @@ export default function MySelect({ left, right, onClick }) {
             <TouchableWithoutFeedback
                 onPress={() => handlePress(0)}
             >
-                <Text
-                    style={[
-                        styles.text,
-                        activeIndex === 0 ? styles.active : styles.passive,
-                    ]}>
-                    {left}
-                </Text>
+                <View
+                    style={[activeIndex === 0 ? styles.activeBG : styles.passiveBG, styles.text]}
+                >
+                    <Text
+                        style={[
+                            styles.text,
+                            activeIndex === 0 ? styles.active : styles.passive,
+                        ]}
+                        numberOfLines={2}
+                        adjustsFontSizeToFit={true}>
+                        {left}
+                    </Text>
+                </View>
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback
                 onPress={() => handlePress(1)}
             >
-                <Text
-                    style={[
-                        styles.text,
-                        activeIndex === 1 ? styles.active : styles.passive,
-                    ]}>
-                    {right}
-                </Text>
+                <View style={[activeIndex === 1 ? styles.activeBG : styles.passiveBG, styles.text]}
+                >
+                    <Text
+                        style={[
+                            styles.text,
+                            activeIndex === 1 ? styles.active : styles.passive,
+                        ]}
+                        numberOfLines={2}
+                        adjustsFontSizeToFit={true}>
+                        {right}
+                    </Text>
+                </View>
             </TouchableWithoutFeedback>
         </View>
     );

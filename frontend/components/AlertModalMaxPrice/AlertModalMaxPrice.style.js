@@ -13,6 +13,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         gap: 5,
         alignItems: "center",
+        paddingBottom: '2%',
+
     }, 
 
     headline: {

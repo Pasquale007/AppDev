@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View } from "react-native";
+import { Linking, Text, View } from "react-native";
 import styles from './FlightResult.styles';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../../constants/theme';
 import flightData from '../../data/flightData.json';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-function Info({ direction, iataCode, date }) {
+function Info({ direction, iataCode, date, bookingLink }) {
     const [cityName, setCityName] = useState("");
 
     useEffect(() => {
@@ -15,7 +15,7 @@ function Info({ direction, iataCode, date }) {
     }, []);
 
     const pressed = () => {
-        console.log("Umleitung / Öffnen des Browsers initialisieren")
+        Linking.openURL(bookingLink).catch(err => console.error('An error occurred: ', err));
     }
 
     function getDate() {
@@ -83,8 +83,8 @@ function Info({ direction, iataCode, date }) {
                 {getDate()}
             </Text>
             {direction === "right" &&
-                <TouchableOpacity onPress={pressed}>
-                    <Text style={styles.button}>Jetzt buchen</Text>
+                <TouchableOpacity onPress={pressed} style={styles.button}>
+                    <Text style={styles.bookingButton}>Jetzt buchen</Text>
                 </TouchableOpacity>
             }
         </View>
@@ -102,11 +102,11 @@ export default function FlightResult({ data }) {
                 iataCode={data.origin}
                 date={data.outboundDate}
             />
-            <View style={{ backgroundColor: COLORS.background, height: 18, marginTop: 13 }}>
+            <View style={{ backgroundColor: COLORS.background, height: 18, marginTop: '6%', marginBottom: '4%' }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={[styles.textSmall, { transform: [{ translateX: -110 }] }]}>Zusammen ab</Text>
-                    <View style={{ position: 'absolute', left: '50%', transform: [{ translateX: -50 }] }}>
-                        <Text style={styles.costs}>{(Math.round(data.totalPrice * 100) / 100).toLocaleString("de-DE", { style: "currency", currency: "EUR" })}</Text>
+                    <View style={styles.costs}>
+                        <Text style={styles.costsText}>{(Math.round(data.totalPrice * 100) / 100).toLocaleString("de-DE", { style: "currency", currency: "EUR" })}</Text>
                     </View>
                 </View>
             </View>
@@ -117,6 +117,7 @@ export default function FlightResult({ data }) {
                     direction={"right"}
                     iataCode={data.destination}
                     date={data.inboundDate}
+                    bookingLink={data.bookingLink}
                 />
             </View>
         </View>
