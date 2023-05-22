@@ -100,10 +100,16 @@ export default function App() {
     : <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{ flex: 1 }}>
-      <NavigationContainer theme={MyTheme} style={{flex: 1}}>
+      <NavigationContainer theme={MyTheme} style={{ flex: 1 }}>
         <Tab.Navigator
           screenOptions={({ route }) => ({
-            tabBarStyle: { borderTopWidth: 0, paddingBottom: 0 },
+            tabBarStyle: {
+              borderTopWidth: 0, paddingBottom: 0, ...(Platform.OS === 'ios' && {
+                height: 80,
+                borderBottomColor: COLORS.navigationBar,
+                borderBottomWidth: 20,
+              }),
+            },
             tabBarHideOnKeyboard: true,
             headerShown: false,
             tabBarActiveTintColor: COLORS.navIconActive,
@@ -127,6 +133,6 @@ export default function App() {
           <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
         </Tab.Navigator>
       </NavigationContainer>
-    </KeyboardAvoidingView>
+    </KeyboardAvoidingView >
   );
 }

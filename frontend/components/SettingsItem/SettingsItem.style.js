@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     flex: {
         display: 'flex',
         flexDirection: 'row',
+        alignItems: 'center'
     },
 });
 
