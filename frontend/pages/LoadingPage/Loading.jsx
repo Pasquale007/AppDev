@@ -16,7 +16,11 @@ export default function LoadingScreen({ loadingPhrases }) {
         const interval = setInterval(() => {
           const randomIndex = Math.floor(Math.random() * phrases.length);
           setRandomPhrase(phrases[randomIndex]);
-        }, 5000);
+        }, 2500);
+  
+        // Set initial random phrase immediately
+        const initialRandomIndex = Math.floor(Math.random() * phrases.length);
+        setRandomPhrase(phrases[initialRandomIndex]);
   
         return () => {
           clearInterval(interval);
@@ -33,7 +37,7 @@ export default function LoadingScreen({ loadingPhrases }) {
         resizeMode="cover"
       />
       {loadingPhrases
-        ? <Text style={styles.phrases}>{phrases[Math.floor(Math.random() * phrases.length)] }</Text>
+        ? <Text style={styles.phrases}>{randomPhrase}</Text>
         : <Text style={styles.text}>Flexi Flight</Text>}
     </View>
   );
