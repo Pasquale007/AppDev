@@ -58,7 +58,7 @@ export default function FlightResultPage({ route }) {
             setIsLoaded(true)
         }
         setData();
-        return () => { setTrips([]) }
+        return () => { setTrips([]); setIsLoaded(false) }
     }, [route]);
 
     return (
