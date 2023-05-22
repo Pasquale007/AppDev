@@ -7,6 +7,23 @@ import {phrases} from '../../assets/loading-phrases/loadingPhrases';
 
 export default function LoadingScreen({ loadingPhrases }) {
 
+  export default function LoadingScreen({ loadingPhrases }) {
+    const [randomPhrase, setRandomPhrase] = useState('');
+  
+    useEffect(() => {
+      if (loadingPhrases) {
+        const interval = setInterval(() => {
+          const randomIndex = Math.floor(Math.random() * phrases.length);
+          setRandomPhrase(phrases[randomIndex]);
+        }, 5000);
+  
+        return () => {
+          clearInterval(interval);
+        };
+      }
+    }, [loadingPhrases]);
+  
+
   return (
     <View style={styles.container}>
       <Image
