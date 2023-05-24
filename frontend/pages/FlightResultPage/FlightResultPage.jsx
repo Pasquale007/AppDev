@@ -84,7 +84,7 @@ export default function FlightResultPage({ route }) {
                                         name={'notifications-outline'}
                                         size={40}
                                         color={COLORS.textWhite}
-                                        style={styles.iconWithoutBackground}
+                                        style={styles.icon}
                                     />
                                 </TouchableOpacity>
                             </View>
@@ -113,6 +113,6 @@ export default function FlightResultPage({ route }) {
                     <ToastContainer />
                 </ImageBackground>
             }
-        </SafeAreaView>
+        </SafeAreaView >
     );
 }
