@@ -5,11 +5,11 @@ export const axiosInstance = axios.create({
     timeout: 10000
 });
 
-export const fetchData = async (params) => {
-    
+export const fetchData = async (params, pageNumber) => {
+
     const date = new Date();
     const timezoneOffset = date.getTimezoneOffset();
     const timezoneOffsetHours = -1 * timezoneOffset / 60;
-    const response = await axiosInstance.get(`/getFlights?origin=${params.origin.iata}&destination=${params.destination.iata}&ignoredDestinations=${params.ignoredDestinations}&outFromDate=${params.outFromDate}&outToDate=${params.outToDate}&lengthMin=${params.lengthMin}&lengthMax=${params.lengthMax}&timeShift=${timezoneOffsetHours}`);
+    const response = await axiosInstance.get(`/getFlights?origin=${params.origin.iata}&destination=${params.destination.iata}&ignoredDestinations=${params.ignoredDestinations}&outFromDate=${params.outFromDate}&outToDate=${params.outToDate}&lengthMin=${params.lengthMin}&lengthMax=${params.lengthMax}&timeShift=${timezoneOffsetHours}&pageKey=${pageNumber}`);
     return response.data;
 }

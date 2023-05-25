@@ -5,7 +5,7 @@ import image from '../../assets/images/background.jpg';
 import styles from './FlightResultPage.styles';
 import { COLORS } from '../../constants/theme';
 import FlightResult from '../../components/FlightResult/FlightResult';
-import { ScrollView } from 'react-native-gesture-handler';
+import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import CreateAlertModal from '../../components/CreateAlertModal/CreateAlertModal';
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
@@ -20,6 +20,7 @@ export default function FlightResultPage({ route }) {
     const [errorMsg, setErrorMsg] = useState("");
     const navigation = useNavigation();
     const [isLoaded, setIsLoaded] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         if (successMsg) {
@@ -42,14 +43,26 @@ export default function FlightResultPage({ route }) {
     const [trips, setTrips] = useState([]);
 
     useEffect(() => {
-        async function setData() {
-            const response = await fetchData(route.params.data);
-            console.log(response)
-            setTrips(response);
-            setIsLoaded(true)
-        }
         setData();
     }, []);
+
+    async function setData() {
+        const response = await fetchData(route.params.data, currentPage);
+        if (currentPage === 1) {
+            setTrips(response);
+        } else {
+            if (response.length > 0) {
+                setTrips(response);
+            }
+        }
+        console.log(response)
+
+        setIsLoaded(true)
+    }
+
+    useEffect(() => {
+        setData();
+    }, [currentPage])
 
     return (
         <SafeAreaView>
@@ -81,17 +94,19 @@ export default function FlightResultPage({ route }) {
                         </View>
                         {trips.length == 0 ?
                             <EmptyFlights />
-                            : <ScrollView
-                                showsVerticalScrollIndicator={false}>
-                                {trips.map(trip => {
-                                    return (
-                                        <FlightResult
-                                            key={trip.outboundDate + trip.origin + trip.inboundDate + trip.destination}
-                                            data={trip}
-                                        />
-                                    )
-                                })}
-                            </ScrollView>}
+                            :
+                            <FlatList
+                                data={trips}
+                                renderItem={({ item }) =>
+                                    <FlightResult
+                                        key={item.outboundDate + item.origin + item.inboundDate + item.destination}
+                                        data={item}
+                                    />
+                                }
+                                keyExtractor={trip => trip.outboundDate + trip.origin + trip.inboundDate + trip.destination}
+                                onEndReached={() => { setCurrentPage(currentPage + 1) }}
+                            />
+                        }
                         <CreateAlertModal
                             isVisible={createAlertModalIsVisible}
                             onBackdropPress={() => setCreateAlertModalIsVisible(false)}
