@@ -5,7 +5,7 @@ import image from '../../assets/images/background.jpg';
 import styles from './FlightResultPage.styles';
 import { COLORS } from '../../constants/theme';
 import FlightResult from '../../components/FlightResult/FlightResult';
-import { FlatList, ScrollView } from 'react-native-gesture-handler';
+import { FlatList } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import CreateAlertModal from '../../components/CreateAlertModal/CreateAlertModal';
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
