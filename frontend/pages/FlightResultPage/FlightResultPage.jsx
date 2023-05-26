@@ -111,7 +111,7 @@ export default function FlightResultPage({ route }) {
                                 showsVerticalScrollIndicator={false}
                             />
                         }
-                        {fetchingMoreData && <ActivityIndicator style={styles.activityIndicator} />}
+                        {fetchingMoreData && <ActivityIndicator style={styles.activityIndicator} size={40}/>}
 
                         <CreateAlertModal
                             isVisible={createAlertModalIsVisible}
