@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
-import { ImageBackground, SafeAreaView, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, ImageBackground, SafeAreaView, TouchableOpacity, View } from "react-native";
 import image from '../../assets/images/background.jpg';
 import styles from './FlightResultPage.styles';
 import { COLORS } from '../../constants/theme';
@@ -21,6 +21,7 @@ export default function FlightResultPage({ route }) {
     const navigation = useNavigation();
     const [isLoaded, setIsLoaded] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
+    const [fetchingMoreData, setFetchingMoreData] = useState(false);
 
     useEffect(() => {
         if (successMsg) {
@@ -56,11 +57,13 @@ export default function FlightResultPage({ route }) {
             }
         }
         console.log(response)
+        setFetchingMoreData(false)
 
         setIsLoaded(true)
     }
 
     useEffect(() => {
+        setFetchingMoreData(true)
         setData();
     }, [currentPage])
 
@@ -105,8 +108,11 @@ export default function FlightResultPage({ route }) {
                                 }
                                 keyExtractor={trip => trip.outboundDate + trip.origin + trip.inboundDate + trip.destination}
                                 onEndReached={() => { setCurrentPage(currentPage + 1) }}
+                                showsVerticalScrollIndicator={false}
                             />
                         }
+                        {fetchingMoreData && <ActivityIndicator style={styles.activityIndicator} />}
+
                         <CreateAlertModal
                             isVisible={createAlertModalIsVisible}
                             onBackdropPress={() => setCreateAlertModalIsVisible(false)}

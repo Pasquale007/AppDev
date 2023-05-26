@@ -34,6 +34,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginVertical: 20,
     },
+    activityIndicator: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        position: 'absolute',
+        width: '100%',
+        bottom: 0,
+    }
 });
 
 export default styles;
