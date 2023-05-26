@@ -52,7 +52,7 @@ export default function FlightResultPage({ route }) {
             setTrips(response);
         } else {
             if (response.length > 0) {
-                setTrips(response);
+                setTrips([...trips, ...response]);
             }
         }
         console.log(response)
