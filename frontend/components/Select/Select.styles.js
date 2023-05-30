@@ -11,12 +11,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         borderRadius: 20,
     },
-    clickElement: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        height: '100%',
-    },
     text: {
         fontFamily: FONT.semiBold,
         display: 'flex',

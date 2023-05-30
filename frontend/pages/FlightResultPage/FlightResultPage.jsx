@@ -18,6 +18,7 @@ export default function FlightResultPage({ route }) {
     const [createAlertModalIsVisible, setCreateAlertModalIsVisible] = useState(false);
     const [successMsg, setSuccessMsg] = useState("");
     const [errorMsg, setErrorMsg] = useState("");
+    const [trips, setTrips] = useState([]);
     const navigation = useNavigation();
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -39,17 +40,26 @@ export default function FlightResultPage({ route }) {
         }
     }, [successMsg, errorMsg]);
 
-    const [trips, setTrips] = useState([]);
-
     useEffect(() => {
+        setCreateAlertModalIsVisible(false);
+        setSuccessMsg("");
+        setErrorMsg("");
+
         async function setData() {
-            const response = await fetchData(route.params.data);
+            let response = await fetchData(route.params.data);
+            console.log(response)
+            console.log(route.params.data.maxprice)
+            if (route.params.data.maxprice !== 0) {
+                response = response.filter(data => data.totalPrice <= route.params.data.maxprice)
+            }
+            console.log("After filter")
             console.log(response)
             setTrips(response);
             setIsLoaded(true)
         }
         setData();
-    }, []);
+        return () => { setTrips([]); setIsLoaded(false) }
+    }, [route]);
 
     return (
         <SafeAreaView>
@@ -66,7 +76,7 @@ export default function FlightResultPage({ route }) {
                                 size={40}
                                 color={COLORS.textWhite}
                                 style={styles.icon}
-                                onPress={() => navigation.goBack()}
+                                onPress={() => { navigation.navigate("Search"); setTrips([]) }}
                             />
                             <View style={styles.topBar}>
                                 <TouchableOpacity onPress={() => setCreateAlertModalIsVisible(true)}>
@@ -74,7 +84,7 @@ export default function FlightResultPage({ route }) {
                                         name={'notifications-outline'}
                                         size={40}
                                         color={COLORS.textWhite}
-                                        style={styles.iconWithoutBackground}
+                                        style={styles.icon}
                                     />
                                 </TouchableOpacity>
                             </View>
@@ -103,6 +113,6 @@ export default function FlightResultPage({ route }) {
                     <ToastContainer />
                 </ImageBackground>
             }
-        </SafeAreaView>
+        </SafeAreaView >
     );
 }

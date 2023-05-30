@@ -25,8 +25,11 @@ export default function AlertPage() {
         }
         queryDeviceToken();
     }, []);
+
     useEffect(() => {
-        setIsLoaded(true)
+        if (alerts.length > 0) {
+            setIsLoaded(true);
+        }
     }, [alerts]);
 
     useEffect(() => {
@@ -34,7 +37,7 @@ export default function AlertPage() {
         console.log(deviceToken);
 
         if (deviceToken) {
-            unsubscribe = getAlerts(deviceToken, setAlerts);
+            unsubscribe = getAlerts(deviceToken, handleFetchedAlerts);
         }
 
         //Cleanup
@@ -42,6 +45,11 @@ export default function AlertPage() {
             unsubscribe && unsubscribe();
         };
     }, [deviceToken]);
+
+    const handleFetchedAlerts = (alerts) => {
+        setAlerts(alerts);
+        setIsLoaded(true);
+    }
 
     const handleActiveChange = (isActive, id) => {
         updateAlertActive(isActive, id);
@@ -63,16 +71,20 @@ export default function AlertPage() {
             const alert = await getAlert(id);
             const alertData = alert.data();
 
-            navigation.navigate('FlightResultPage', {
-                data: {
-                    'origin': { name: alertData.origin, iata: alertData.originIATA },
-                    'destination': { name: alertData.destination, iata: alertData.destinationIATA },
-                    'ignoredDestinations': '',
-                    'outFromDate': alertData.startDate.split(".").reverse().join("-"),
-                    'outToDate': alertData.endDate.split(".").reverse().join("-"),
-                    'lengthMin': alertData.minLength,
-                    'lengthMax': alertData.maxLength,
-                    'maxprice': alertData.maxPrice
+
+            navigation.navigate("Home", {
+                screen: 'FlightResultPage',
+                params: {
+                    data: {
+                        'origin': { name: alertData.origin, iata: alertData.originIATA },
+                        'destination': { name: alertData.destination, iata: alertData.destinationIATA },
+                        'ignoredDestinations': '',
+                        'outFromDate': alertData.startDate.split(".").reverse().join("-"),
+                        'outToDate': alertData.endDate.split(".").reverse().join("-"),
+                        'lengthMin': alertData.minLength,
+                        'lengthMax': alertData.maxLength,
+                        'maxprice': alertData.maxPrice
+                    }
                 }
             });
         } catch (error) {
@@ -82,7 +94,7 @@ export default function AlertPage() {
 
     return (
         <GestureHandlerRootView>
-            {isLoaded
+            {!isLoaded
                 ? <LoadingScreen />
                 : <ScrollView
                     contentContainerStyle={{ minHeight: '100%' }}
