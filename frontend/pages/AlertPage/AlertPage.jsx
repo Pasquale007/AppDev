@@ -115,16 +115,11 @@ export default function AlertPage() {
                                 {alerts.map((alert) => (
                                     <AlertCard
                                         key={alert.id}
-                                        id={alert.id}
-                                        date={{ start: alert.startDate, end: alert.endDate }}
-                                        locations={{ origin: alert.origin, destination: alert.destination }}
-                                        duration={{ start: alert.minLength, end: alert.maxLength }}
-                                        maxPrice={alert.maxPrice}
+                                        alert={alert}
                                         closeCard={closeCard}
                                         onDelete={deleteCard}
                                         onSearch={searchAlert}
                                         cardArr={card}
-                                        isActive={alert.isActive}
                                         setIsActive={handleActiveChange}
                                         testID="alertCard"
                                     />
