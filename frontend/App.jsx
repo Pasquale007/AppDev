@@ -116,7 +116,6 @@ export default function App() {
             },
             tabBarHideOnKeyboard: true,
             headerShown: false,
-            unmountOnBlur: true,
           tabBarActiveTintColor: COLORS.navIconActive,
             tabBarInactiveTintColor: COLORS.navIconInactive,
             tabBarActiveBackgroundColor: COLORS.navigationBar,
@@ -134,8 +133,8 @@ export default function App() {
             },
           })}>
 
-          <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
-          <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
+          <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home', unmountOnBlur: true }} />
+          <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts', unmountOnBlur: false }} />
         </Tab.Navigator>
       </NavigationContainer>
     </KeyboardAvoidingView >
