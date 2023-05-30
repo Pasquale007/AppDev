@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     alertContainer: {
         flex: 1,
         paddingBottom: SIZES.medium,
-        marginTop: "15%",
+        marginTop: "10%",
         minHeight: "100%",
         marginLeft: '5%',
         marginRight: '5%',

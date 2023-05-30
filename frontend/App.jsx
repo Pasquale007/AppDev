@@ -11,7 +11,7 @@ import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import { COLORS } from './constants/theme';
 import Splash from './pages/SplashPage/Splash';
-import { KeyboardAvoidingView, Platform } from 'react-native';
+import { KeyboardAvoidingView, Platform, StatusBar } from 'react-native';
 
 polyfillWebCrypto();
 
@@ -101,7 +101,11 @@ export default function App() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{ flex: 1 }}>
       <NavigationContainer theme={MyTheme} style={{ flex: 1 }}>
-        <Tab.Navigator
+        <StatusBar
+        barStyle="light-content"
+        backgroundColor={COLORS.background}
+      />
+      <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarStyle: {
               borderTopWidth: 0, paddingBottom: 0, ...(Platform.OS === 'ios' && {
@@ -112,7 +116,8 @@ export default function App() {
             },
             tabBarHideOnKeyboard: true,
             headerShown: false,
-            tabBarActiveTintColor: COLORS.navIconActive,
+            unmountOnBlur: true,
+          tabBarActiveTintColor: COLORS.navIconActive,
             tabBarInactiveTintColor: COLORS.navIconInactive,
             tabBarActiveBackgroundColor: COLORS.navigationBar,
             tabBarInactiveBackgroundColor: COLORS.navigationBar,

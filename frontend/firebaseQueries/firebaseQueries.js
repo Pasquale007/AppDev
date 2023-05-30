@@ -4,15 +4,15 @@ const alertRef = firebase.firestore().collection("alerts");
 
 export async function safeAlert(alert) {
     console.log(alert);
-    
+
     return await alertRef.add(alert).then((docRef) => {
         console.log("Alert erstellt mit der ID: ", docRef.id);
     })
-    .catch((error) => {
-        console.log("Fehler beim Speichern des Alerts: ", error);
-        throw error;
-    });
-}   
+        .catch((error) => {
+            console.log("Fehler beim Speichern des Alerts: ", error);
+            throw error;
+        });
+}
 
 export function getAlerts(deviceToken, setAlerts) {
     let alerts = [];
@@ -32,6 +32,10 @@ export function getAlerts(deviceToken, setAlerts) {
             });
 }
 
+export async function getAlert(id) {
+    const alertIdRef = alertRef.doc(id);
+    return alertIdRef.get();
+}
 
 export function deleteAlert(id) {
     const db = firebase.firestore();

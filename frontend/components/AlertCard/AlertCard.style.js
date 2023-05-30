@@ -82,28 +82,47 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 
-    deleteButton: {
+    cardBackground: {
         backgroundColor: COLORS.deleteColor,
         width: 60,
         borderTopRightRadius: SIZES.xSmall,
         borderBottomRightRadius: SIZES.xSmall,
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "row",
+        justifyContent: "flex-start",
         alignItems: "center",
+        gap: 5,
+    },
+
+    searchButton: {
+        flex: 1,
+        paddingLeft: SIZES.medium,
+        backgroundColor: COLORS.switchActive,
+        borderTopLeftRadius: SIZES.xSmall,
+        borderBottomLeftRadius: SIZES.xSmall,
+    },
+
+    buttonText: {
+        color: COLORS.textWhite,
+        fontFamily: FONT.medium,
+        fontSize: SIZES.medium,
     },
 
     trashIcon: {
         color: COLORS.textWhite,
     },
 
-    cardBackground: {
+    alertBg: {
         position: "absolute",
-        backgroundColor: COLORS.deleteColor,
         width: "100%",
         height: "100%",
-        borderRadius: 12,
         zIndex: -1,
-    },
+        borderRadius: SIZES.xSmall,
+        borderRightColor: COLORS.switchInactive,
+        borderLeftColor: COLORS.switchActive,
+        borderRightWidth: 120,
+        borderLeftWidth: 120,
+    }
 
 });
 

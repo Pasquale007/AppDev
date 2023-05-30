@@ -98,6 +98,15 @@ export default function SearchPage() {
                                 });
                                 return;
                             }
+
+                            if (duration.start > duration.end) {
+                                Toast.show({
+                                    type: "error",
+                                    text1: "Ungültige Reisedauer",
+                                });
+                                return;
+                            }
+
                             const durationInDays = parseInt(duration.end) - parseInt(duration.start)
                             const spanInDays = Math.ceil(Math.abs(new Date(dateSpan.until) - new Date(dateSpan.from)) / (1000 * 60 * 60 * 24));
                             if (durationInDays > spanInDays || parseInt(duration.start) > spanInDays || parseInt(duration.end) > spanInDays) {
@@ -108,6 +117,7 @@ export default function SearchPage() {
                                 return;
                             }
                         }
+
                         navigation.navigate('FlightResultPage', {
                             data: {
                                 'origin': startAirport,
@@ -116,7 +126,8 @@ export default function SearchPage() {
                                 'outFromDate': dateSpan?.from?.toISOString().split('T')[0],
                                 'outToDate': dateSpan?.until?.toISOString().split('T')[0],
                                 'lengthMin': !flexible ? duration?.start : -1,
-                                'lengthMax': !flexible ? duration?.end : -1
+                                'lengthMax': !flexible ? duration?.end : -1,
+                                'maxprice': 0
                             }
                         });
                     }}

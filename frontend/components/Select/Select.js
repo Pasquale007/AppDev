@@ -19,7 +19,7 @@ export default function MySelect({ left, right, onClick }) {
                 onPress={() => handlePress(0)}
             >
                 <View
-                    style={[activeIndex === 0 ? styles.activeBG : styles.passiveBG, styles.text]}
+                    style={[activeIndex === 0 ? styles.activeBG : styles.passiveBG]}
                 >
                     <Text
                         style={[
@@ -35,7 +35,7 @@ export default function MySelect({ left, right, onClick }) {
             <TouchableWithoutFeedback
                 onPress={() => handlePress(1)}
             >
-                <View style={[activeIndex === 1 ? styles.activeBG : styles.passiveBG, styles.text]}
+                <View style={[activeIndex === 1 ? styles.activeBG : styles.passiveBG]}
                 >
                     <Text
                         style={[

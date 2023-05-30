@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./AlertCard.style";
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View } from 'react-native';
 import { Switch } from 'react-native-switch';
 import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
-import { Ionicons } from '@expo/vector-icons';
 import Animated, { Layout, LightSpeedOutLeft } from "react-native-reanimated";
 import AlertsArrow from '../AlertsArrow/AlertsArrow';
+import AlertCardLeftBg from '../AlertCardLeftBg/AlertCardLeftBg';
+import AlertCardRightBg from '../AlertCardRightBg/AlertCardRightBg';
 
-function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, cardArr, isActive, setIsActive, id }) {
+function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, onSearch, cardArr, isActive, setIsActive, id }) {
     const [durationString, setDurationString] = useState("");
 
     useEffect(() => {
@@ -16,7 +17,7 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, c
     }, []);
 
     const buildDurationString = () => {
-        if (duration?.start && duration?.end) {
+        if (duration?.start > -1 && duration?.end > -1) {
             const dayOrDays = +duration.end === 1 ? "Tag" : "Tage";
 
             if (parseInt(duration.start) - parseInt(duration.end) === 0) {
@@ -27,13 +28,13 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, c
         }
     }
 
-    const renderRightActions = () => {
-        return (
-            <TouchableOpacity style={styles.deleteButton} onPress={() => onDelete(id)} testID="deleteButton">
-                <Ionicons style={styles.trashIcon} size={30} name="trash" />
-            </TouchableOpacity>
-        );
-    };
+    const renderRightActions = (progress, dragX) => (
+        <AlertCardRightBg progress={progress} dragX={dragX} id={id} onDelete={onDelete}/>
+    );
+
+    const renderLeftActions = (progress, dragX) => (
+        <AlertCardLeftBg progress={progress} dragX={dragX} id={id} onSearch={onSearch}/>
+    )
 
     const handleToggleChange = () => {
         setIsActive(!isActive, id);
@@ -43,6 +44,10 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, c
         <Animated.View style={styles.container} exiting={LightSpeedOutLeft} layout={Layout}>
             <Swipeable
                 renderRightActions={renderRightActions}
+                renderLeftActions={renderLeftActions}
+                friction={1.5} // Set the friction value for resistance during swipe
+                overshootLeft={false} // Disable overshooting to the left
+                overshootRight={false} // Disable overshooting to the right
                 onSwipeableOpen={() => closeCard(id)}
                 ref={(ref) => (cardArr[id] = ref)}
                 testID="alertCard"
@@ -98,7 +103,7 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, c
                     </View>
                 </View>
             </Swipeable>
-            <View style={styles.cardBackground} />
+            <View style={styles.alertBg}/>
         </Animated.View>
     )
 }
