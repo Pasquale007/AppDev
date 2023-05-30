@@ -43,19 +43,12 @@ export default function FlightResultPage({ route }) {
     }, [successMsg, errorMsg]);
 
     useEffect(() => {
-        setCreateAlertModalIsVisible(false);
-        setSuccessMsg("");
-        setErrorMsg("");
+        setData();
+    }, []);
 
-        async function setData() {
-            let response = await fetchData(route.params.data);
-            console.log(response)
-            console.log(route.params.data.maxprice)
-            if (route.params.data.maxprice !== 0) {
-                response = response.filter(data => data.totalPrice <= route.params.data.maxprice)
-            }
-            console.log("After filter")
-            console.log(response)
+    async function setData() {
+        const response = await fetchData(route.params.data, currentPage);
+        if (currentPage === 1) {
             setTrips(response);
         } else {
             if (response.length > 0) {
@@ -71,8 +64,7 @@ export default function FlightResultPage({ route }) {
     useEffect(() => {
         setFetchingMoreData(true)
         setData();
-        return () => { setTrips([]); setIsLoaded(false) }
-    }, [route]);
+    }, [currentPage]);
 
     return (
         <SafeAreaView>
@@ -118,7 +110,7 @@ export default function FlightResultPage({ route }) {
                                 showsVerticalScrollIndicator={false}
                             />
                         }
-                        {fetchingMoreData && <ActivityIndicator style={styles.activityIndicator} size={40}/>}
+                        {fetchingMoreData && <ActivityIndicator style={styles.activityIndicator} size={40} />}
 
                         <CreateAlertModal
                             isVisible={createAlertModalIsVisible}
