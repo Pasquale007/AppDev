@@ -46,11 +46,15 @@ export default function FlightResultPage({ route }) {
         setData();
     }, []);
 
-    const renderListElements = React.useCallback(({ item }) => {
-        return <FlightResult
-            key={item.outboundDate + item.origin + item.inboundDate + item.destination}
-            data={item}
-        />
+    const renderListElements = React.useCallback(({ item, index }) => {
+        const isLastItem = index === trips.length - 1;
+        return <View
+            style={{ marginBottom: isLastItem ? 20 : 0 }}
+        ><FlightResult
+                key={item.outboundDate + item.origin + item.inboundDate + item.destination}
+                data={item}
+            />
+        </View>
     }, []);
 
     const setData = React.useCallback(async () => {
@@ -107,9 +111,8 @@ export default function FlightResultPage({ route }) {
                                 data={trips}
                                 renderItem={renderListElements}
                                 keyExtractor={trip => trip.outboundDate + trip.origin + trip.inboundDate + trip.destination}
-                                onEndReached={() => { console.log("adsf"); setFetchingMoreData(true); setCurrentPage(currentPage + 1) }}
+                                onEndReached={() => { setFetchingMoreData(true); setCurrentPage(currentPage + 1) }}
                                 showsVerticalScrollIndicator={false}
-                                removeClippedSubviews
                             />
                         }
                         {fetchingMoreData && <ActivityIndicator style={styles.activityIndicator} size={40} />}

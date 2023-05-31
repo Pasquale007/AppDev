@@ -33,8 +33,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: '100%',
         bottom: 0,
-        
+
     },
+    list: {
+        marginBottom: '15%',
+    }
 });
 
 export default styles;
