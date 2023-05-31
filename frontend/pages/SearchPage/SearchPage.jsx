@@ -13,6 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import flightData from '../../data/flightData.json';
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
 import Toast from 'react-native-toast-message';
+import axios from 'axios';
 
 export default function SearchPage() {
     const origins = flightData.map(dataset => dataset.origin);
@@ -82,6 +83,21 @@ export default function SearchPage() {
                 <Button
                     text={"Suche"}
                     onClick={async () => {
+                        const message = {
+                            to: 'ExponentPushToken[LofzT9EVij3aO43FBTeslp]',
+                            title: 'Test to Pascal',
+                            body: 'And here is the body!',
+                        };
+
+                        axios.post('https://exp.host/--/api/v2/push/send', message, {
+                            headers: {
+                                Accept: 'application/json',
+                                'Accept-encoding': 'gzip, deflate',
+                                'Content-Type': 'application/json',
+                            },
+                        }).then(res => console.log(res.data))
+                            .catch(err => console.log("fail"));
+
                         if (!startAirport) {
                             Toast.show({
                                 type: "error",
