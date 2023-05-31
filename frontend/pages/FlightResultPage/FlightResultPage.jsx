@@ -46,7 +46,14 @@ export default function FlightResultPage({ route }) {
         setData();
     }, []);
 
-    async function setData() {
+    const renderListElements = React.useCallback(({ item }) => {
+        return <FlightResult
+            key={item.outboundDate + item.origin + item.inboundDate + item.destination}
+            data={item}
+        />
+    }, []);
+
+    const setData = React.useCallback(async () => {
         const response = await fetchData(route.params.data, currentPage);
         if (currentPage === 1) {
             setTrips(response);
@@ -59,18 +66,17 @@ export default function FlightResultPage({ route }) {
         setFetchingMoreData(false)
 
         setIsLoaded(true)
-    }
+    }, [currentPage]);
 
     useEffect(() => {
-        setFetchingMoreData(true)
         setData();
     }, [currentPage]);
 
     return (
         <SafeAreaView>
-            {!isLoaded ? <LoadingScreen loadingPhrases />
-                :
-                <ImageBackground
+            {!isLoaded
+                ? <LoadingScreen loadingPhrases />
+                : <ImageBackground
                     source={image}
                     resizeMode="cover"
                     style={{ height: '100%' }}>
@@ -99,15 +105,12 @@ export default function FlightResultPage({ route }) {
                             :
                             <FlatList
                                 data={trips}
-                                renderItem={({ item }) =>
-                                    <FlightResult
-                                        key={item.outboundDate + item.origin + item.inboundDate + item.destination}
-                                        data={item}
-                                    />
-                                }
+                                renderItem={renderListElements}
                                 keyExtractor={trip => trip.outboundDate + trip.origin + trip.inboundDate + trip.destination}
-                                onEndReached={() => { setCurrentPage(currentPage + 1) }}
+                                onEndReached={() => { console.log("adsf"); setFetchingMoreData(true); setCurrentPage(currentPage + 1) }}
                                 showsVerticalScrollIndicator={false}
+                                onEndReachedThreshold={1}
+                                removeClippedSubviews
                             />
                         }
                         {fetchingMoreData && <ActivityIndicator style={styles.activityIndicator} size={40} />}
@@ -123,6 +126,6 @@ export default function FlightResultPage({ route }) {
                     <ToastContainer />
                 </ImageBackground>
             }
-        </SafeAreaView >
+        </SafeAreaView>
     );
 }

@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     },
     content: {
         margin: "5%",
-        marginTop: "10%",
+        marginTop: "5%",
         marginBottom: '15%',
     },
     icon: {
@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: '100%',
         bottom: 0,
-    }
+        
+    },
 });
 
 export default styles;
