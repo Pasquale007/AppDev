@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from "./AlertCard.style";
-import { Text, View } from 'react-native';
+import { Text, View, AppState } from 'react-native';
 import { Switch } from 'react-native-switch';
 import { Swipeable } from 'react-native-gesture-handler';
 import { COLORS } from "../../constants/theme";
@@ -8,36 +8,58 @@ import Animated, { Layout, LightSpeedOutLeft } from "react-native-reanimated";
 import AlertsArrow from '../AlertsArrow/AlertsArrow';
 import AlertCardLeftBg from '../AlertCardLeftBg/AlertCardLeftBg';
 import AlertCardRightBg from '../AlertCardRightBg/AlertCardRightBg';
+import { useIsFocused } from '@react-navigation/native';
 
-function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, onSearch, cardArr, isActive, setIsActive, id }) {
+function AlertCard({ alert, closeCard, onDelete, onSearch, cardArr, setIsActive}) {
+
     const [durationString, setDurationString] = useState("");
+    const [alertIsActive, setAlertIsActive] = useState(alert.isActive);
+    const isFocused = useIsFocused();
 
     useEffect(() => {
         buildDurationString();
     }, []);
 
-    const buildDurationString = () => {
-        if (duration?.start > -1 && duration?.end > -1) {
-            const dayOrDays = +duration.end === 1 ? "Tag" : "Tage";
+    //Saves isActive to Firebase when App is in Background or this screen is not focused anymore, to have a better performance
+    useEffect(() => {
+        if (!isFocused) {
+            setIsActive(alertIsActive, alert.id);
+            closeCard(alert.id);
+        }
 
-            if (parseInt(duration.start) - parseInt(duration.end) === 0) {
-                setDurationString(`${duration.start} ${dayOrDays}`);
+        const subscription = AppState.addEventListener("change", appState => {
+            if (appState === "background" || appState === "inactive") {
+                setIsActive(alertIsActive, alert.id);
+            }
+        })
+
+        return () => {
+            subscription.remove();
+        };
+    }, [alertIsActive, isFocused])
+
+    const buildDurationString = () => {
+        if (alert.minLength > -1 && alert.maxLength > -1) {
+            const dayOrDays = +alert.maxLength === 1 ? "Tag" : "Tage";
+
+            if (parseInt(alert.minLength) - parseInt(alert.maxLength) === 0) {
+                setDurationString(`${alert.minLength} ${dayOrDays}`);
                 return;
             }
-            setDurationString(`${duration.start} - ${duration.end} ${dayOrDays}`);
+            setDurationString(`${alert.minLength} - ${alert.maxLength} ${dayOrDays}`);
         }
     }
 
     const renderRightActions = (progress, dragX) => (
-        <AlertCardRightBg progress={progress} dragX={dragX} id={id} onDelete={onDelete}/>
+        <AlertCardRightBg progress={progress} dragX={dragX} id={alert.id} onDelete={onDelete} />
     );
 
     const renderLeftActions = (progress, dragX) => (
-        <AlertCardLeftBg progress={progress} dragX={dragX} id={id} onSearch={onSearch}/>
+        <AlertCardLeftBg progress={progress} dragX={dragX} id={alert.id} onSearch={onSearch} />
     )
 
     const handleToggleChange = () => {
-        setIsActive(!isActive, id);
+        setAlertIsActive(!alertIsActive);
     }
 
     return (
@@ -48,14 +70,14 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
                 friction={1.5} // Set the friction value for resistance during swipe
                 overshootLeft={false} // Disable overshooting to the left
                 overshootRight={false} // Disable overshooting to the right
-                onSwipeableOpen={() => closeCard(id)}
-                ref={(ref) => (cardArr[id] = ref)}
+                onSwipeableOpen={() => closeCard(alert.id)}
+                ref={(ref) => (cardArr[alert.id] = ref)}
                 testID="alertCard"
             >
                 <View style={styles.alertCard}>
                     <View style={styles.leftSide}>
                         <Text style={styles.dateText} testID="date">
-                            {date.start} - {date.end}
+                            {alert.startDate} - {alert.endDate}
                         </Text>
                         {durationString != "" &&
                             <Text style={[styles.dateText, styles.minLineHeight]} testID="duration">
@@ -70,12 +92,12 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
                                 <Text style={styles.departureText} numberOfLines={1} ellipsizeMode='tail'
                                     testID="departureText"
                                 >
-                                    {locations.origin}
+                                    {alert.origin}
                                 </Text>
                                 <Text style={styles.arrivalText} numberOfLines={1} ellipsizeMode='tail'
                                     testID="arrivalText"
                                 >
-                                    {locations.destination}
+                                    {alert.destination}
                                 </Text>
                             </View>
                         </View>
@@ -84,11 +106,11 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
                         <Text style={styles.maxPriceText} numberOfLines={1} adjustsFontSizeToFit={true}
                             testID="priceText"
                         >
-                            {maxPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" })}
+                            {alert.maxPrice.toLocaleString("de-DE", { style: "currency", currency: "EUR" })}
                         </Text>
                         <View style={styles.toggleButtonContainer}>
                             <Switch
-                                value={isActive}
+                                value={alertIsActive}
                                 onValueChange={handleToggleChange}
                                 circleSize={20}
                                 circleBorderWidth={0}
@@ -103,7 +125,7 @@ function AlertCard({ date, locations, duration, maxPrice, closeCard, onDelete, o
                     </View>
                 </View>
             </Swipeable>
-            <View style={styles.alertBg}/>
+            <View style={styles.alertBg} />
         </Animated.View>
     )
 }
