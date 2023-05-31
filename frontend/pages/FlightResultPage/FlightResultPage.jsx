@@ -113,6 +113,6 @@ export default function FlightResultPage({ route }) {
                     <ToastContainer />
                 </ImageBackground>
             }
-        </SafeAreaView >
+        </SafeAreaView>
     );
 }
