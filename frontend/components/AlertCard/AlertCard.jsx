@@ -24,6 +24,7 @@ function AlertCard({ alert, closeCard, onDelete, onSearch, cardArr, setIsActive}
     useEffect(() => {
         if (!isFocused) {
             setIsActive(alertIsActive, alert.id);
+            closeCard(alert.id);
         }
 
         const subscription = AppState.addEventListener("change", appState => {
