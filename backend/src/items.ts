@@ -14,7 +14,8 @@ export interface SimpleConnection {
     outboundPrice: number,
     inboundDate: Date,
     inboundPrice: number,
-    totalPrice: number
+    totalPrice: number,
+    bookingLink: string
 }
 export interface Flight {
     route: Route,

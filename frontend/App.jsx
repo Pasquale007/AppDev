@@ -11,7 +11,7 @@ import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import { COLORS } from './constants/theme';
 import Splash from './pages/SplashPage/Splash';
-import { Platform } from 'react-native';
+import { KeyboardAvoidingView, Platform, StatusBar } from 'react-native';
 
 polyfillWebCrypto();
 
@@ -97,32 +97,47 @@ export default function App() {
 
   return (isLoading
     ? <Splash setIsLoading={() => setIsLoading(false)} />
-    : <NavigationContainer theme={MyTheme}>
+    : <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{ flex: 1 }}>
+      <NavigationContainer theme={MyTheme} style={{ flex: 1 }}>
+        <StatusBar
+        barStyle="light-content"
+        backgroundColor={COLORS.background}
+      />
       <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarStyle: { borderTopWidth: 0 },
-          tabBarHideOnKeyboard: true,
-          headerShown: false,
+          screenOptions={({ route }) => ({
+            tabBarStyle: {
+              borderTopWidth: 0, paddingBottom: 0, ...(Platform.OS === 'ios' && {
+                height: 80,
+                borderBottomColor: COLORS.navigationBar,
+                borderBottomWidth: 20,
+              }),
+            },
+            tabBarHideOnKeyboard: true,
+            headerShown: false,
+            unmountOnBlur: true,
           tabBarActiveTintColor: COLORS.navIconActive,
-          tabBarInactiveTintColor: COLORS.navIconInactive,
-          tabBarActiveBackgroundColor: COLORS.navigationBar,
-          tabBarInactiveBackgroundColor: COLORS.navigationBar,
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-            if (route.name === 'Home') {
-              iconName = focused
-                ? 'home'
-                : 'home-outline';
-            } else if (route.name === 'Alerts') {
-              iconName = focused ? "notifications" : "notifications-outline";
-            }
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-        })}>
+            tabBarInactiveTintColor: COLORS.navIconInactive,
+            tabBarActiveBackgroundColor: COLORS.navigationBar,
+            tabBarInactiveBackgroundColor: COLORS.navigationBar,
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+              if (route.name === 'Home') {
+                iconName = focused
+                  ? 'home'
+                  : 'home-outline';
+              } else if (route.name === 'Alerts') {
+                iconName = focused ? "notifications" : "notifications-outline";
+              }
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+          })}>
 
-        <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
-        <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
-      </Tab.Navigator>
-    </NavigationContainer>
+          <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
+          <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </KeyboardAvoidingView >
   );
 }

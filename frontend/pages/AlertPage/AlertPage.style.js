@@ -4,10 +4,11 @@ import { COLORS, FONT, SIZES } from "../../constants/theme";
 const styles = StyleSheet.create({
     alertContainer: {
         flex: 1,
-        paddingHorizontal: SIZES.medium,
-        marginTop: 30,
         paddingBottom: SIZES.medium,
+        marginTop: "10%",
         minHeight: "100%",
+        marginLeft: '5%',
+        marginRight: '5%',
     },
 
     alertHeadline: {

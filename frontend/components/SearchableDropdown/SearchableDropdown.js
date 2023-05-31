@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, FlatList, TextInput } from 'react-native';
 import { COLORS, FONT, SIZES } from '../../constants/theme';
 import { Entypo } from '@expo/vector-icons';
+import { Platform } from 'react-native';
 
 export default function DropDown({ data, title, icon, onSelect }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -93,13 +94,19 @@ export default function DropDown({ data, title, icon, onSelect }) {
                 <Text style={{ fontFamily: FONT.medium, fontSize: SIZES.medium, color: COLORS.textBlack }}>{selectedItem ? selectedItem.name : 'Europa'}</Text>
             </View>
             <Modal visible={isModalVisible} animationType="slide" testID='modal'>
-                <View style={{ flex: 1, backgroundColor: COLORS.background }}>
+                <View style={{
+                    flex: 1,
+                    backgroundColor: COLORS.background,
+                    ...(Platform.OS === 'ios' && { paddingTop: '7%' })
+                }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', padding: 8 }}>
                         <TextInput
                             testID='search-input'
                             placeholder="Search"
                             value={searchText}
                             onChangeText={handleFilter}
+                            clearButtonMode='while-editing'
+                            onClearText={() => { setSearchText('') }}
                             style={{ flex: 1, borderWidth: 1, borderRadius: 8, padding: 8, margin: 8, backgroundColor: COLORS.searchFieldColor, color: COLORS.textBlack, fontFamily: FONT.medium, fontSize: SIZES.medium }}
                         />
                         <TouchableOpacity onPress={handleToggleModal} style={{ padding: 8 }}>

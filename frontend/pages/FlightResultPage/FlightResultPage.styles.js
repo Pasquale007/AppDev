@@ -3,18 +3,10 @@ import { StyleSheet } from "react-native";
 import { COLORS, SIZES } from "../../constants/theme";
 
 const styles = StyleSheet.create({
-    topBar: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        backgroundColor: COLORS.backgroundOpacity,
-        borderRadius: 20,
-        width: '90%',
-    },
     header: {
         display: 'flex',
         flexDirection: 'row',
-        marginRight: "5%",
+        justifyContent: 'space-between',
     },
     content: {
         margin: "5%",
@@ -22,12 +14,9 @@ const styles = StyleSheet.create({
         marginBottom: '15%',
     },
     icon: {
+        padding: 5,
         backgroundColor: COLORS.backgroundOpacity,
-        borderRadius: 20,
-        marginRight: SIZES.small,
-    },
-    iconWithoutBackground: {
-        borderRadius: 20,
+        borderRadius: 50,
         marginRight: SIZES.small,
     },
     center: {
