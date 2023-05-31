@@ -109,7 +109,6 @@ export default function FlightResultPage({ route }) {
                                 keyExtractor={trip => trip.outboundDate + trip.origin + trip.inboundDate + trip.destination}
                                 onEndReached={() => { console.log("adsf"); setFetchingMoreData(true); setCurrentPage(currentPage + 1) }}
                                 showsVerticalScrollIndicator={false}
-                                onEndReachedThreshold={1}
                                 removeClippedSubviews
                             />
                         }
