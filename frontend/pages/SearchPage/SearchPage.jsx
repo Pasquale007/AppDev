@@ -83,21 +83,6 @@ export default function SearchPage() {
                 <Button
                     text={"Suche"}
                     onClick={async () => {
-                        const message = {
-                            to: 'ExponentPushToken[FMVXNOL1E74t53yYe1dQZP]',
-                            title: 'Test to Pascal',
-                            body: 'And here is the body!',
-                        };
-
-                        axios.post('https://exp.host/--/api/v2/push/send', message, {
-                            headers: {
-                                Accept: 'application/json',
-                                'Accept-encoding': 'gzip, deflate',
-                                'Content-Type': 'application/json',
-                            },
-                        }).then(res => console.log(res.data))
-                            .catch(err => console.log("fail"));
-
                         if (!startAirport) {
                             Toast.show({
                                 type: "error",
