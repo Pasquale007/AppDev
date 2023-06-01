@@ -55,14 +55,10 @@ export default function FlightResultPage({ route }) {
     }, [isFocused]);
 
     const renderListElements = React.useCallback(({ item, index }) => {
-        const isLastItem = index === trips.length - 1;
-        return <View
-            style={{ marginBottom: isLastItem ? 20 : 0 }}
-        ><FlightResult
-                key={item.outboundDate + item.origin + item.inboundDate + item.destination}
-                data={item}
-            />
-        </View>
+        return <FlightResult
+            key={item.outboundDate + item.origin + item.inboundDate + item.destination}
+            data={item}
+        />
     }, []);
 
     const setData = React.useCallback(async () => {

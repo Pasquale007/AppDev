@@ -35,9 +35,6 @@ const styles = StyleSheet.create({
         bottom: 0,
 
     },
-    list: {
-        marginBottom: 20,
-    }
 });
 
 export default styles;
