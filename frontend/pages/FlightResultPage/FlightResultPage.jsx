@@ -6,7 +6,7 @@ import styles from './FlightResultPage.styles';
 import { COLORS } from '../../constants/theme';
 import FlightResult from '../../components/FlightResult/FlightResult';
 import { FlatList } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
 import CreateAlertModal from '../../components/CreateAlertModal/CreateAlertModal';
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
 import Toast from 'react-native-toast-message';
@@ -23,6 +23,8 @@ export default function FlightResultPage({ route }) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [fetchingMoreData, setFetchingMoreData] = useState(false);
+
+    const isFocused = useIsFocused();
 
     useEffect(() => {
         if (successMsg) {
@@ -45,6 +47,12 @@ export default function FlightResultPage({ route }) {
     useEffect(() => {
         setData();
     }, []);
+
+    useEffect(() => {
+        if(!isFocused && navigation.canGoBack()){
+            navigation.goBack();
+        }
+    }, [isFocused]);
 
     const renderListElements = React.useCallback(({ item, index }) => {
         const isLastItem = index === trips.length - 1;
