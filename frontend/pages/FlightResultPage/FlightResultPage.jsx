@@ -54,7 +54,7 @@ export default function FlightResultPage({ route }) {
         }
     }, [isFocused]);
 
-    const renderListElements = React.useCallback(({ item, index }) => {
+    const renderListElements = React.useCallback(({ item }) => {
         return <FlightResult
             key={item.outboundDate + item.origin + item.inboundDate + item.destination}
             data={item}
