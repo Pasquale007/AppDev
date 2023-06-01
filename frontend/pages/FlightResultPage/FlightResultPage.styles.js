@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     content: {
         margin: "5%",
         marginTop: "5%",
-        marginBottom: '15%',
+        marginBottom: '20%',
     },
     icon: {
         padding: 5,
