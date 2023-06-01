@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import styles from './AlertModalMaxPrice.style';
 import { Text, TextInput, View } from 'react-native';
 
-import { COLORS } from "../../constants/theme";
-
 function AlertModalMaxPrice({ headline, placeholder, setMaxPrice, icon }) {
     const [price, setPrice] = useState();
 

@@ -12,7 +12,6 @@ import * as Notifications from 'expo-notifications';
 function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError }) {
     const [deviceToken, setDeviceToken] = useState("");
     const { origin, destination, lengthMin, lengthMax, outFromDate, outToDate } = data;
-    console.log(data);
     const fromDate = new Date(outFromDate);
     const untilDate = new Date(outToDate);
     const fromDateFormatted = `${fromDate.getDate().toString().padStart(2, '0')}.${(fromDate.getMonth() + 1).toString().padStart(2, '0')}.${fromDate.getFullYear().toString()}`;
@@ -22,7 +21,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
 
     useEffect(() => {
         const queryDeviceToken = async () => {
-            const token = (await Notifications.getExpoPushTokenAsync({projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0"})).data;
+            const token = (await Notifications.getExpoPushTokenAsync({ projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0" })).data;
             setDeviceToken(token);
         }
         queryDeviceToken();
@@ -39,7 +38,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             }
             setDurationString(`${lengthMin} - ${lengthMax} ${dayOrDays}`);
         }
-    }
+    };
 
     const saveAlertHandler = () => {
         const maxPossiblePrice = 10000;
@@ -73,7 +72,6 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
                 deviceId: deviceToken,
                 isActive: true
             };
-            console.log(alert)
             onBackdropPress();
             //Safes Alert in Firebase Firestore
             safeAlert(alert).then(() => {
@@ -84,7 +82,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
             })
             setMaxPrice(0);
         }
-    }
+    };
 
     return (
         <Modal
