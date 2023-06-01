@@ -84,7 +84,7 @@ export default function SearchPage() {
                     text={"Suche"}
                     onClick={async () => {
                         const message = {
-                            to: 'ExponentPushToken[LofzT9EVij3aO43FBTeslp]',
+                            to: 'ExponentPushToken[FMVXNOL1E74t53yYe1dQZP]',
                             title: 'Test to Pascal',
                             body: 'And here is the body!',
                         };

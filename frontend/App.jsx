@@ -56,7 +56,7 @@ export default function App() {
         console.log('Failed to get push token for push notification!');
         return;
       }
-      token = (await Notifications.getExpoPushTokenAsync({ projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0" })).data;
+      token = (await Notifications.getExpoPushTokenAsync()).data;
       console.log(token);
     } else {
       console.log('Must use physical device for Push Notifications');
@@ -67,6 +67,10 @@ export default function App() {
 
   useEffect(() => {
     registerForPushNotificationsAsync().then(token => console.log(token));
+
+    notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
+      console.log(notification);
+    });
 
     responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
       console.log(response);
