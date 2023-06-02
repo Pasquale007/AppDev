@@ -70,12 +70,15 @@ async function parseAlerts() {
         }*/
         await compareSavedAndNewResults(allRoutes, parsedItem).then(
             async (response: Alert) => {
+                console.log(response)
                 if (parsedItem.alreadyAlerted) {
                     if (response.alreadyAlerted && parsedItem.alreadyAlerted.price > response.alreadyAlerted.price) {
                         //Alert with following line. Is id correct:
-                        sendNotification(parsedItem)
+                        console.log("Notification")
+                        console.log(await sendNotification(parsedItem))
                         await setAlreadyAlerted(response)
                     } else {
+                        console.log("No new")
                         return;
                     }
                 } else {
@@ -83,8 +86,9 @@ async function parseAlerts() {
                     await setAlreadyAlerted(response)
                 }
             }
-        )
-
+        ).catch((err) => {
+            console.log(err)
+        })
     }
 }
 
@@ -92,7 +96,7 @@ async function compareSavedAndNewResults(allRoutes: Route[], parsedItem: Alert):
     const scrapedRoutes: SimpleConnection[] = await getResult(allRoutes, parsedItem.originIATA, parsedItem.destinationIATA, [], parsedItem.startDate, parsedItem.endDate, parsedItem.minLength, parsedItem.maxLength)
 
     if (scrapedRoutes.length === 0) {
-        throw Error;
+        throw Error("Custom: No routes new routes found!");
     }
     return {
         ...parsedItem,

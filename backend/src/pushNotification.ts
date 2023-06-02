@@ -1,4 +1,4 @@
-import { Expo, ExpoPushToken } from 'expo-server-sdk';
+import expo_server_sdk_1, { Expo, ExpoPushToken } from 'expo-server-sdk';
 import { Alert } from './parseAlerts';
 
 const expo = new Expo();
@@ -30,16 +30,17 @@ type ExpoPushMessage = {
 }
 
 export default async function sendNotification(alert: Alert): Promise<Response> {
+    console.log(alert.id)
 
-    if (!Expo.isExpoPushToken(alert.id)) {
+    if (!Expo.isExpoPushToken(alert.deviceId)) {
         return {
             successfull: false,
-            message: `Push token ${alert.id} is not a valid Expo push token`
+            message: `Push token ${alert.deviceId} is not a valid Expo push token`
         };
     }
 
     const message: ExpoPushMessage = {
-        to: alert.id,
+        to: alert.deviceId,
         sound: 'default',
         title: 'Es gibt neue Flüge für dich von ' + alert.origin,
         body: 'Ein neuer Flug unter ' + alert.maxPrice + '€ wartet auf dich!',
@@ -64,3 +65,11 @@ export default async function sendNotification(alert: Alert): Promise<Response> 
         };
     }
 }
+
+~(async () => {
+    console.log(await sendNotification({
+        deviceId: "ExponentPushToken[gnEnyABShQlqEBR4gIQLPi]",
+        origin: "Test",
+        maxPrice: "lalal"
+    }))
+})();
