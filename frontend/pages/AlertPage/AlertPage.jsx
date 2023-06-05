@@ -8,8 +8,9 @@ import { getAlerts, deleteAlert, updateAlertActive, getAlert } from '../../fireb
 import * as Notifications from 'expo-notifications';
 import { useNavigation } from '@react-navigation/native';
 import LoadingScreen from '../LoadingPage/Loading';
+import { ErrorPage } from '../ErrorPage/ErrorPage';
 
-export default function AlertPage() {
+export default function AlertPage({ allowPushNotifications }) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [deviceToken, setDeviceToken] = useState("");
     const [alerts, setAlerts] = useState([]);
@@ -94,40 +95,42 @@ export default function AlertPage() {
 
     return (
         <GestureHandlerRootView>
-            {!isLoaded
-                ? <LoadingScreen />
-                : <ScrollView
-                    contentContainerStyle={{ minHeight: '100%' }}
-                    showsVerticalScrollIndicator={false}
-                >
-                    <SafeAreaView style={styles.alertContainer}>
-                        <Text style={styles.alertHeadline}>
-                            Meine Alerts
-                        </Text>
-                        {alerts.length === 0 ?
-                            <View style={styles.noAlertsContainer}>
-                                <Ionicons style={styles.alertIcon} size={100} name="notifications" testID="" />
-                                <Text style={styles.noAlertsText} testID="noAlertsText">
-                                    Keine Alerts vorhanden
-                                </Text>
-                            </View>
-                            : <View style={styles.alertCardContainer}>
-                                {alerts.map((alert) => (
-                                    <AlertCard
-                                        key={alert.id}
-                                        alert={alert}
-                                        closeCard={closeCard}
-                                        onDelete={deleteCard}
-                                        onSearch={searchAlert}
-                                        cardArr={card}
-                                        setIsActive={handleActiveChange}
-                                        testID="alertCard"
-                                    />
-                                ))}
-                            </View>
-                        }
-                    </SafeAreaView>
-                </ScrollView>
+            {!allowPushNotifications
+                ? <ErrorPage />
+                : !isLoaded
+                    ? <LoadingScreen />
+                    : <ScrollView
+                        contentContainerStyle={{ minHeight: '100%' }}
+                        showsVerticalScrollIndicator={false}
+                    >
+                        <SafeAreaView style={styles.alertContainer}>
+                            <Text style={styles.alertHeadline}>
+                                Meine Alerts
+                            </Text>
+                            {alerts.length === 0 ?
+                                <View style={styles.noAlertsContainer}>
+                                    <Ionicons style={styles.alertIcon} size={100} name="notifications" testID="" />
+                                    <Text style={styles.noAlertsText} testID="noAlertsText">
+                                        Keine Alerts vorhanden
+                                    </Text>
+                                </View>
+                                : <View style={styles.alertCardContainer}>
+                                    {alerts.map((alert) => (
+                                        <AlertCard
+                                            key={alert.id}
+                                            alert={alert}
+                                            closeCard={closeCard}
+                                            onDelete={deleteCard}
+                                            onSearch={searchAlert}
+                                            cardArr={card}
+                                            setIsActive={handleActiveChange}
+                                            testID="alertCard"
+                                        />
+                                    ))}
+                                </View>
+                            }
+                        </SafeAreaView>
+                    </ScrollView>
             }
         </GestureHandlerRootView>
     );

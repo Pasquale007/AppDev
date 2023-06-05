@@ -27,6 +27,7 @@ Notifications.setNotificationHandler({
 const Tab = createBottomTabNavigator();
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [allowPushNotifications, setAllowPushNotifications] = useState(true);
   const notificationListener = useRef();
   const responseListener = useRef();
 
@@ -54,6 +55,7 @@ export default function App() {
       }
       if (finalStatus !== 'granted') {
         console.log('Failed to get push token for push notification!');
+        setAllowPushNotifications(false);
         return;
       }
       token = (await Notifications.getExpoPushTokenAsync({ projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0" })).data;
@@ -134,9 +136,9 @@ export default function App() {
           })}>
 
           <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
-          <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
+          <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts',  }} />
         </Tab.Navigator>
       </NavigationContainer>
-    </KeyboardAvoidingView >
+    </KeyboardAvoidingView>
   );
 }
