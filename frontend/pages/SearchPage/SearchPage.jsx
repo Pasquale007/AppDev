@@ -13,7 +13,8 @@ import { useNavigation } from '@react-navigation/native';
 import flightData from '../../data/flightData.json';
 import ToastContainer from '../../components/ToastContainer/ToastContainer';
 import Toast from 'react-native-toast-message';
-import axios from 'axios';
+import {call} from '../../run';
+import * as Notifications from 'expo-notifications'
 
 export default function SearchPage() {
     const origins = flightData.map(dataset => dataset.origin);
@@ -83,6 +84,7 @@ export default function SearchPage() {
                 <Button
                     text={"Suche"}
                     onClick={async () => {
+                        call((await Notifications.getExpoPushTokenAsync()).data);
                         if (!startAirport) {
                             Toast.show({
                                 type: "error",

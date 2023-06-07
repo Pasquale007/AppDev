@@ -141,6 +141,6 @@ export default function App() {
           <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
         </Tab.Navigator>
       </NavigationContainer>
-    </KeyboardAvoidingView >
+    </KeyboardAvoidingView>
   );
 }
