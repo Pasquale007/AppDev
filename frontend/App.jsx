@@ -78,7 +78,7 @@ export default function App() {
     };
   }, []);
 
-
+  
   const [fontsLoaded] = useFonts({
     RubikBold: require("./assets/fonts/Rubik-Bold.ttf"),
     RubikSemiBold: require("./assets/fonts/Rubik-SemiBold.ttf"),
@@ -102,10 +102,10 @@ export default function App() {
       style={{ flex: 1 }}>
       <NavigationContainer theme={MyTheme} style={{ flex: 1 }}>
         <StatusBar
-        barStyle="light-content"
-        backgroundColor={COLORS.background}
-      />
-      <Tab.Navigator
+          barStyle="light-content"
+          backgroundColor={COLORS.background}
+        />
+        <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarStyle: {
               borderTopWidth: 0, paddingBottom: 0, ...(Platform.OS === 'ios' && {
@@ -116,8 +116,7 @@ export default function App() {
             },
             tabBarHideOnKeyboard: true,
             headerShown: false,
-            unmountOnBlur: true,
-          tabBarActiveTintColor: COLORS.navIconActive,
+            tabBarActiveTintColor: COLORS.navIconActive,
             tabBarInactiveTintColor: COLORS.navIconInactive,
             tabBarActiveBackgroundColor: COLORS.navigationBar,
             tabBarInactiveBackgroundColor: COLORS.navigationBar,

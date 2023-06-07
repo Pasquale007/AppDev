@@ -2,19 +2,21 @@ import React from "react";
 import { render, fireEvent } from '@testing-library/react-native';
 import AlertCard from "./AlertCard";
 
+jest.mock('@react-navigation/native', () => ({
+    useIsFocused: jest.fn().mockReturnValue(true), // Mockt den Rückgabewert von useIsFocused
+}));
+
 describe("AlertCard", () => {
     const onDeleteMock = jest.fn();
     const closeCardMock = jest.fn();
     const setIsEnabledMock = jest.fn();
     const setIsActiveMock = jest.fn();
     const data = {
-        date: { start: "18.08.2023", end: "12.12.2023" },
-        locations: { departure: "Nürnberg", arrival: "Rom" },
-        duration: { start: 7, end: 7 },
-        maxPrice: 1000000.5667,
-        index: 1,
+        alert: {
+            id: 1, startDate: "18.08.2023", endDate: "12.12.2023", minLength: 3, maxLength: 4,
+            origin: "Berlin", destination: "London", maxPrice: 120, isActive: true
+        },
         cardArr: [],
-        id: 1,
         onDelete: onDeleteMock,
         closeCard: closeCardMock,
         setIsEnabled: setIsEnabledMock,

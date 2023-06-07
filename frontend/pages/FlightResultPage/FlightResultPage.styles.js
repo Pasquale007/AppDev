@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
     },
     content: {
         margin: "5%",
-        marginTop: "10%",
-        marginBottom: '15%',
+        marginTop: "5%",
+        marginBottom: '20%',
     },
     icon: {
         padding: 5,
@@ -25,6 +25,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 20,
+    },
+    activityIndicator: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        position: 'absolute',
+        width: '100%',
+        bottom: 0,
+
     },
 });
 
