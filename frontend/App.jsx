@@ -15,15 +15,6 @@ import { KeyboardAvoidingView, Platform, StatusBar } from 'react-native';
 
 polyfillWebCrypto();
 
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldPlaySound: false,
-    shouldSetBadge: false,
-  }),
-});
-
-
 const Tab = createBottomTabNavigator();
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -67,6 +58,14 @@ export default function App() {
 
   useEffect(() => {
     registerForPushNotificationsAsync().then(token => console.log(token));
+
+    Notifications.setNotificationHandler({
+      handleNotification: async () => ({
+        shouldShowAlert: true,
+        shouldPlaySound: true,
+        shouldSetBadge: true,
+      }),
+    });
 
     notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
       console.log(notification);
