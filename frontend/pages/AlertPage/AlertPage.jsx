@@ -92,6 +92,12 @@ export default function AlertPage() {
         }
     }
 
+    const toUnixTimeStamp = (dateString) => {
+        const dateStringParts = dateString.split(".");
+        const dateStringIso = dateStringParts[2] + "-" + dateStringParts[1] + "-" + dateStringParts[0];
+        return new Date(dateStringIso).getTime();
+    }
+
     return (
         <GestureHandlerRootView>
             {!isLoaded
@@ -112,18 +118,19 @@ export default function AlertPage() {
                                 </Text>
                             </View>
                             : <View style={styles.alertCardContainer}>
-                                {alerts.map((alert) => (
-                                    <AlertCard
-                                        key={alert.id}
-                                        alert={alert}
-                                        closeCard={closeCard}
-                                        onDelete={deleteCard}
-                                        onSearch={searchAlert}
-                                        cardArr={card}
-                                        setIsActive={handleActiveChange}
-                                        testID="alertCard"
-                                    />
-                                ))}
+                                {alerts.sort((a, b) => toUnixTimeStamp(a.startDate) - toUnixTimeStamp(b.startDate))
+                                    .map((alert) => (
+                                        <AlertCard
+                                            key={alert.id}
+                                            alert={alert}
+                                            closeCard={closeCard}
+                                            onDelete={deleteCard}
+                                            onSearch={searchAlert}
+                                            cardArr={card}
+                                            setIsActive={handleActiveChange}
+                                            testID="alertCard"
+                                        />
+                                    ))}
                             </View>
                         }
                     </SafeAreaView>
