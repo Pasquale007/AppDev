@@ -20,7 +20,7 @@ function AlertCard({ alert, closeCard, onDelete, onSearch, cardArr, setIsActive}
         buildDurationString();
     }, []);
 
-    //Saves isActive to Firebase when App is in Background or this screen is not focused anymore, to have a better performance
+    //Saves isActive to Firebase when App is in Background or this screen is not focused anymore leading to a better performance
     useEffect(() => {
         if (!isFocused) {
             setIsActive(alertIsActive, alert.id);
