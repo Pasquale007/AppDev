@@ -20,3 +20,17 @@ export const call = async (title) => {
         console.log(err)
     })
 }
+
+export const testForPushTicket = async () => {
+    axios.post('https://exp.host/--/api/v2/push/getReceipts', {
+        'ids': ['bb4f6e5b-1d97-4b4e-9a83-52d7c711b57d'] // bekommen wir aus der 'call' anfrage
+    }, {
+        headers: {
+            'Accept': 'application/json',
+        }
+    },).then(response => {
+        console.log(response.data)
+    }).catch(err => {
+        console.log(err)
+    })
+}
