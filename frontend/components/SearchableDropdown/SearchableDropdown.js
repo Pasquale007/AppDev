@@ -16,7 +16,6 @@ export default function DropDown({ data, title, icon, onSelect }) {
     };
 
     React.useEffect(() => {
-        data.sort((a, b) => (a.name > b.name) ? 1 : -1);
         setFilteredData(data);
         if (title === "Nach") {
             setSelectedItems([]);
@@ -56,8 +55,6 @@ export default function DropDown({ data, title, icon, onSelect }) {
 
             return itemData.indexOf(textData) > -1;
         });
-        newData.sort((a, b) => (a.name > b.name) ? 1 : -1);
-
         setFilteredData(newData);
     };
 
