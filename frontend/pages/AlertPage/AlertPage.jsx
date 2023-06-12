@@ -1,19 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, Platform } from "react-native";
 import styles from "./AlertPage.style";
 import { Ionicons } from '@expo/vector-icons';
 import AlertCard from '../../components/AlertCard/AlertCard';
 import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler';
 import { getAlerts, deleteAlert, updateAlertActive, getAlert } from '../../firebaseQueries/firebaseQueries';
 import * as Notifications from 'expo-notifications';
+import * as Device from 'expo-device';
 import { useNavigation } from '@react-navigation/native';
 import LoadingScreen from '../LoadingPage/Loading';
+import { ErrorPage } from '../ErrorPage/ErrorPage';
 
 export default function AlertPage() {
+    const [allowPushNotifications, setAllowPushNotifications] = useState(true);
     const [isLoaded, setIsLoaded] = useState(false);
     const [deviceToken, setDeviceToken] = useState("");
     const [alerts, setAlerts] = useState([]);
     const navigation = useNavigation();
+
+
+    async function registerForPushNotificationsAsync() {
+        if (Device.isDevice) {
+            const { status: existingStatus } = await Notifications.getPermissionsAsync();
+            if (existingStatus !== 'granted') {
+                setAllowPushNotifications(false)
+            }
+        }else{
+        console.log("Emulator -> no push Notification granted, but ok for testing purpose.")   
+        }
+    }
 
     let card = [];
     let prevOpenedCard;
@@ -24,6 +39,7 @@ export default function AlertPage() {
             setDeviceToken(token);
         }
         queryDeviceToken();
+        registerForPushNotificationsAsync();
     }, []);
 
     useEffect(() => {
@@ -100,26 +116,27 @@ export default function AlertPage() {
 
     return (
         <GestureHandlerRootView>
-            {!isLoaded
-                ? <LoadingScreen />
-                : <ScrollView
-                    contentContainerStyle={{ minHeight: '100%' }}
-                    showsVerticalScrollIndicator={false}
-                >
-                    <SafeAreaView style={styles.alertContainer}>
-                        <Text style={styles.alertHeadline}>
-                            Meine Alerts
-                        </Text>
-                        {alerts.length === 0 ?
-                            <View style={styles.noAlertsContainer}>
-                                <Ionicons style={styles.alertIcon} size={100} name="notifications" testID="" />
-                                <Text style={styles.noAlertsText} testID="noAlertsText">
-                                    Keine Alerts vorhanden
-                                </Text>
-                            </View>
-                            : <View style={styles.alertCardContainer}>
-                                {alerts.sort((a, b) => toUnixTimeStamp(a.startDate) - toUnixTimeStamp(b.startDate))
-                                    .map((alert) => (
+            {!allowPushNotifications
+                ? <ErrorPage />
+                : !isLoaded
+                    ? <LoadingScreen />
+                    : <ScrollView
+                        contentContainerStyle={{ minHeight: '100%' }}
+                        showsVerticalScrollIndicator={false}
+                    >
+                        <SafeAreaView style={styles.alertContainer}>
+                            <Text style={styles.alertHeadline}>
+                                Meine Alerts
+                            </Text>
+                            {alerts.length === 0 ?
+                                <View style={styles.noAlertsContainer}>
+                                    <Ionicons style={styles.alertIcon} size={100} name="notifications" testID="" />
+                                    <Text style={styles.noAlertsText} testID="noAlertsText">
+                                        Keine Alerts vorhanden
+                                    </Text>
+                                </View>
+                                : <View style={styles.alertCardContainer}>
+                                    {alerts.map((alert) => (
                                         <AlertCard
                                             key={alert.id}
                                             alert={alert}
@@ -131,10 +148,10 @@ export default function AlertPage() {
                                             testID="alertCard"
                                         />
                                     ))}
-                            </View>
-                        }
-                    </SafeAreaView>
-                </ScrollView>
+                                </View>
+                            }
+                        </SafeAreaView>
+                    </ScrollView>
             }
         </GestureHandlerRootView>
     );
