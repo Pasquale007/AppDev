@@ -37,8 +37,8 @@
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
     "@expo/webpack-config": "^18.0.1",
-    "@react-native-firebase/app": "^17.4.0",
-    "@react-native-firebase/messaging": "^17.4.0",
+    "@react-native-firebase/app": "^17.5.0",
+    "@react-native-firebase/messaging": "^17.5.0",
     "@react-native-masked-view/masked-view": "0.2.8",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/native": "^6.1.6",
