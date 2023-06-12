@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, SafeAreaView, Platform } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import styles from "./AlertPage.style";
 import { Ionicons } from '@expo/vector-icons';
 import AlertCard from '../../components/AlertCard/AlertCard';
