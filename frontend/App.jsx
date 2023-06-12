@@ -81,7 +81,7 @@ export default function App() {
     };
   }, []);
 
-
+  
   const [fontsLoaded] = useFonts({
     RubikBold: require("./assets/fonts/Rubik-Bold.ttf"),
     RubikSemiBold: require("./assets/fonts/Rubik-SemiBold.ttf"),
