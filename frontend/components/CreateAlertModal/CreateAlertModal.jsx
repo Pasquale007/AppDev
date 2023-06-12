@@ -21,7 +21,7 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
 
     useEffect(() => {
         const queryDeviceToken = async () => {
-            const token = (await Notifications.getExpoPushTokenAsync({ projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0" })).data;
+            const token = (await Notifications.getExpoPushTokenAsync()).data;
             setDeviceToken(token);
         }
         queryDeviceToken();
@@ -67,7 +67,6 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
                 originIATA: origin.iata,
                 destination: destination.name,
                 destinationIATA: destination.iata,
-                //maxPrice is already parsed as Float
                 maxPrice: maxPrice,
                 deviceId: deviceToken,
                 isActive: true
