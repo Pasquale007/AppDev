@@ -22,8 +22,6 @@ const styles = StyleSheet.create({
         margin: "5%",
         marginTop: "30%",
         color: COLORS.background,
-        height: Dimensions.get('window').height * 0.6,
-
     },
     button: {
         borderRadius: 10,
