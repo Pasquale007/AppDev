@@ -28,7 +28,7 @@
         "READ_EXTERNAL_STORAGE"
       ],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/splashscreen/splashscreen.png",
+        "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#0F0D1E"
       },
       "package": "com.pthurow.frontend"
