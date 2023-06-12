@@ -108,6 +108,12 @@ export default function AlertPage() {
         }
     }
 
+    const toUnixTimeStamp = (dateString) => {
+        const dateStringParts = dateString.split(".");
+        const dateStringIso = dateStringParts[2] + "-" + dateStringParts[1] + "-" + dateStringParts[0];
+        return new Date(dateStringIso).getTime();
+    }
+
     return (
         <GestureHandlerRootView>
             {!allowPushNotifications
