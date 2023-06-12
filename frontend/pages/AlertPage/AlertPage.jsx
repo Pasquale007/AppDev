@@ -1,20 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, Platform } from "react-native";
 import styles from "./AlertPage.style";
 import { Ionicons } from '@expo/vector-icons';
 import AlertCard from '../../components/AlertCard/AlertCard';
 import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler';
 import { getAlerts, deleteAlert, updateAlertActive, getAlert } from '../../firebaseQueries/firebaseQueries';
 import * as Notifications from 'expo-notifications';
+import * as Device from 'expo-device';
 import { useNavigation } from '@react-navigation/native';
 import LoadingScreen from '../LoadingPage/Loading';
 import { ErrorPage } from '../ErrorPage/ErrorPage';
 
-export default function AlertPage({ allowPushNotifications }) {
+export default function AlertPage() {
+    const [allowPushNotifications, setAllowPushNotifications] = useState(true);
     const [isLoaded, setIsLoaded] = useState(false);
     const [deviceToken, setDeviceToken] = useState("");
     const [alerts, setAlerts] = useState([]);
     const navigation = useNavigation();
+
+
+    async function registerForPushNotificationsAsync() {
+        if (Device.isDevice) {
+            const { status: existingStatus } = await Notifications.getPermissionsAsync();
+            if (existingStatus !== 'granted') {
+                setAllowPushNotifications(false)
+            }
+        }else{
+        console.log("Emulator -> no push Notification granted, but ok for testing purpose.")   
+        }
+    }
 
     let card = [];
     let prevOpenedCard;
@@ -25,6 +39,7 @@ export default function AlertPage({ allowPushNotifications }) {
             setDeviceToken(token);
         }
         queryDeviceToken();
+        registerForPushNotificationsAsync();
     }, []);
 
     useEffect(() => {

@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground } from "react-native";
+import { Text, ImageBackground, View } from "react-native";
 import React from 'react';
 import styles from "./ErrorPage.style.js";
 import image from '../../assets/images/background.jpg';
@@ -7,16 +7,17 @@ export function ErrorPage() {
 
 
     return (
-        <View style={styles.container}>
         <ImageBackground
-                    source={image}
-                    resizeMode="cover"
-                >
-        {/* <View style={styles.main}> */}
+            source={image}
+            resizeMode="cover"
+            style={styles.container}
+            blurRadius={5}
 
-            <Text style={styles.errorText}>Kein Notification-Token erkannt</Text>
-            {/* </View> */}
+
+        >
+            <View style={styles.overlay} />
+            <Text style={styles.errorText}>Du musst dieser App die Berechtigung geben, Benachrichtigungen zu senden. Gehe dazu in die Einstellungen um dies zu ändern ;)</Text>
+            <View />
         </ImageBackground>
-        </View>
     )
 }
