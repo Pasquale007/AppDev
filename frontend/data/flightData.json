@@ -160,6 +160,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -589,6 +594,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -643,6 +653,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -892,6 +907,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -1126,6 +1146,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -1545,6 +1570,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -1569,6 +1599,11 @@
                 "name": "Faro",
                 "iata": "FAO",
                 "countryCode": "pt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -1813,6 +1848,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -2197,6 +2237,11 @@
                 "name": "Jerez",
                 "iata": "XRY",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -2401,6 +2446,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -2675,6 +2725,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -2799,6 +2854,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -3383,6 +3443,11 @@
                 "name": "Zakynthos",
                 "iata": "ZTH",
                 "countryCode": "gr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -3512,6 +3577,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -3756,6 +3826,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -3885,6 +3960,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -4069,6 +4149,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -4298,6 +4383,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -4332,6 +4422,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -4531,6 +4626,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -4835,6 +4935,11 @@
                 "name": "Zakynthos",
                 "iata": "ZTH",
                 "countryCode": "gr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -4924,6 +5029,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -5273,6 +5383,11 @@
                 "name": "Saragossa",
                 "iata": "ZAZ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -5407,6 +5522,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -5756,6 +5876,11 @@
                 "name": "Saragossa",
                 "iata": "ZAZ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -5845,6 +5970,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -5874,6 +6004,11 @@
                 "name": "Faro",
                 "iata": "FAO",
                 "countryCode": "pt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -6573,6 +6708,11 @@
                 "name": "Zakynthos",
                 "iata": "ZTH",
                 "countryCode": "gr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -6592,6 +6732,11 @@
                 "name": "Dublin",
                 "iata": "DUB",
                 "countryCode": "ie"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -6621,6 +6766,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -6830,6 +6980,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -6869,6 +7024,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -7073,6 +7233,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -7197,6 +7362,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -7256,6 +7426,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -7485,6 +7660,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -7674,6 +7854,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -7728,6 +7913,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -8107,6 +8297,11 @@
                 "name": "Paris Vatry",
                 "iata": "XCR",
                 "countryCode": "fr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -8361,6 +8556,11 @@
                 "name": "Zakynthos",
                 "iata": "ZTH",
                 "countryCode": "gr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -8565,6 +8765,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -8624,6 +8829,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -8728,6 +8938,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -9102,6 +9317,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -9161,6 +9381,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -9755,6 +9980,11 @@
                 "name": "Saragossa",
                 "iata": "ZAZ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -9789,6 +10019,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -9973,6 +10208,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -10182,6 +10422,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -10461,6 +10706,11 @@
                 "name": "Zakynthos",
                 "iata": "ZTH",
                 "countryCode": "gr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -10550,6 +10800,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -10704,6 +10959,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -10893,6 +11153,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -10937,6 +11202,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -11116,6 +11386,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -11270,6 +11545,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -11694,6 +11974,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -11748,6 +12033,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -11847,6 +12137,11 @@
                 "name": "Venedig M. Polo",
                 "iata": "VCE",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -11866,6 +12161,11 @@
                 "name": "Palermo",
                 "iata": "PMO",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -12075,6 +12375,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -12099,6 +12404,11 @@
                 "name": "Palermo",
                 "iata": "PMO",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -12238,6 +12548,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -12372,6 +12687,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -12391,6 +12711,11 @@
                 "name": "Porto",
                 "iata": "OPO",
                 "countryCode": "pt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -12415,6 +12740,11 @@
                 "name": "Marrakesch",
                 "iata": "RAK",
                 "countryCode": "ma"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -12619,6 +12949,11 @@
                 "name": "Saragossa",
                 "iata": "ZAZ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -12663,6 +12998,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -13487,6 +13827,11 @@
                 "name": "Zakynthos",
                 "iata": "ZTH",
                 "countryCode": "gr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -13511,6 +13856,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -13655,6 +14005,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -13684,6 +14039,11 @@
                 "name": "Kaunas",
                 "iata": "KUN",
                 "countryCode": "lt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -13803,6 +14163,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -13852,6 +14217,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -14036,6 +14406,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -14225,6 +14600,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -14379,6 +14759,11 @@
                 "name": "Vilnius",
                 "iata": "VNO",
                 "countryCode": "lt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -14523,6 +14908,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -14657,6 +15047,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -14841,6 +15236,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -15020,6 +15420,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -15064,6 +15469,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -15493,6 +15903,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -15552,6 +15967,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -15751,6 +16171,11 @@
                 "name": "Saragossa",
                 "iata": "ZAZ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -15830,6 +16255,11 @@
                 "name": "Toulouse",
                 "iata": "TLS",
                 "countryCode": "fr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -16144,6 +16574,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -16173,6 +16608,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -16507,6 +16947,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -16531,6 +16976,11 @@
                 "name": "Porto",
                 "iata": "OPO",
                 "countryCode": "pt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -16570,6 +17020,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -16734,6 +17189,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -16763,6 +17223,11 @@
                 "name": "Shannon",
                 "iata": "SNN",
                 "countryCode": "ie"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -16917,6 +17382,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -17261,6 +17731,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -17295,6 +17770,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -17759,6 +18239,11 @@
                 "name": "Zakynthos",
                 "iata": "ZTH",
                 "countryCode": "gr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -17778,6 +18263,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -17812,6 +18302,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -18106,6 +18601,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -18150,6 +18650,11 @@
                 "name": "Venedig Treviso",
                 "iata": "TSF",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -18334,6 +18839,11 @@
                 "name": "Zakynthos",
                 "iata": "ZTH",
                 "countryCode": "gr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -18378,6 +18888,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -18542,6 +19057,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -18846,6 +19366,11 @@
                 "name": "Zakynthos",
                 "iata": "ZTH",
                 "countryCode": "gr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -18920,6 +19445,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -19094,6 +19624,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -19158,6 +19693,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -19382,6 +19922,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -19421,6 +19966,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -19535,6 +20085,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -19969,6 +20524,11 @@
                 "name": "Saragossa",
                 "iata": "ZAZ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -19988,6 +20548,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -20012,6 +20577,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -20256,6 +20826,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -20320,6 +20895,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -20629,6 +21209,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -20738,6 +21323,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -20872,6 +21462,11 @@
                 "name": "Saragossa",
                 "iata": "ZAZ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -21171,6 +21766,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -21365,6 +21965,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -21399,6 +22004,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -21458,6 +22068,11 @@
                 "name": "Toulouse",
                 "iata": "TLS",
                 "countryCode": "fr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -21642,6 +22257,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -21676,6 +22296,11 @@
                 "name": "Toulouse",
                 "iata": "TLS",
                 "countryCode": "fr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -21715,6 +22340,11 @@
                 "name": "Toulouse",
                 "iata": "TLS",
                 "countryCode": "fr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -21779,6 +22409,11 @@
                 "name": "Toulouse",
                 "iata": "TLS",
                 "countryCode": "fr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -22018,6 +22653,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -22082,6 +22722,11 @@
                 "name": "Teneriffa S\u00c3\u0192\u00c2\u00bcd",
                 "iata": "TFS",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -22136,6 +22781,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -22430,6 +23080,11 @@
                 "name": "Saragossa",
                 "iata": "ZAZ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -22454,6 +23109,11 @@
                 "name": "Venedig Treviso",
                 "iata": "TSF",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -22523,6 +23183,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -22672,6 +23337,11 @@
                 "name": "Oslo Torp",
                 "iata": "TRF",
                 "countryCode": "no"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -22691,6 +23361,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -22710,6 +23385,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -22919,6 +23599,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -23043,6 +23728,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -23222,6 +23912,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -23256,6 +23951,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -23285,6 +23985,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -23374,6 +24079,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -23503,6 +24213,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -23672,6 +24387,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -23746,6 +24466,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -23925,6 +24650,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -23964,6 +24694,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -24098,6 +24833,11 @@
                 "name": "Vilnius",
                 "iata": "VNO",
                 "countryCode": "lt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -24307,6 +25047,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -24406,6 +25151,11 @@
                 "name": "Verona",
                 "iata": "VRN",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -24590,6 +25340,11 @@
                 "name": "Saragossa",
                 "iata": "ZAZ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -24694,6 +25449,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -24763,6 +25523,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -24852,6 +25617,11 @@
                 "name": "Lamezia",
                 "iata": "SUF",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -24986,6 +25756,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25010,6 +25785,11 @@
                 "name": "Vilnius",
                 "iata": "VNO",
                 "countryCode": "lt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25044,6 +25824,11 @@
                 "name": "Vilnius",
                 "iata": "VNO",
                 "countryCode": "lt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25258,6 +26043,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25302,6 +26092,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25586,6 +26381,11 @@
                 "name": "Zakynthos",
                 "iata": "ZTH",
                 "countryCode": "gr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25640,6 +26440,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25674,6 +26479,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25753,6 +26563,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25812,6 +26627,11 @@
                 "name": "Warschau Modlin",
                 "iata": "WMI",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25836,6 +26656,11 @@
                 "name": "Breslau",
                 "iata": "WRO",
                 "countryCode": "pl"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25890,6 +26715,11 @@
                 "name": "Zagreb",
                 "iata": "ZAG",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25919,6 +26749,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -25958,6 +26793,11 @@
                 "name": "Venedig Treviso",
                 "iata": "TSF",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26042,6 +26882,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26116,6 +26961,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26150,6 +27000,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26219,6 +27074,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26283,6 +27143,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26322,6 +27187,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26361,6 +27231,11 @@
                 "name": "Sevilla",
                 "iata": "SVQ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26405,6 +27280,11 @@
                 "name": "Sevilla",
                 "iata": "SVQ",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26469,6 +27349,11 @@
                 "name": "Valencia",
                 "iata": "VLC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26508,6 +27393,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26552,6 +27442,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26581,6 +27476,11 @@
                 "name": "Zadar",
                 "iata": "ZAD",
                 "countryCode": "hr"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26620,6 +27520,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26649,6 +27554,11 @@
                 "name": "Palma de Mallorca",
                 "iata": "PMI",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26738,6 +27648,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26762,6 +27677,11 @@
                 "name": "Palma de Mallorca",
                 "iata": "PMI",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26781,6 +27701,11 @@
                 "name": "Palma de Mallorca",
                 "iata": "PMI",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26815,6 +27740,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26839,6 +27769,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26903,6 +27838,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26932,6 +27872,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26946,6 +27891,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -26985,6 +27935,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27009,6 +27964,11 @@
                 "name": "Wien",
                 "iata": "VIE",
                 "countryCode": "at"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27053,6 +28013,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27077,6 +28042,11 @@
                 "name": "Palermo",
                 "iata": "PMO",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27101,6 +28071,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27135,6 +28110,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27164,6 +28144,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27183,6 +28168,11 @@
                 "name": "Porto",
                 "iata": "OPO",
                 "countryCode": "pt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27227,6 +28217,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27241,6 +28236,11 @@
                 "name": "Manchester",
                 "iata": "MAN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27270,6 +28270,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27309,6 +28314,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27333,6 +28343,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27372,6 +28387,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27401,6 +28421,11 @@
                 "name": "London Luton",
                 "iata": "LTN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27420,6 +28445,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27444,6 +28474,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27478,6 +28513,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27512,6 +28552,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27531,6 +28576,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27550,6 +28600,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27589,6 +28644,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27608,6 +28668,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27622,6 +28687,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27636,6 +28706,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27650,6 +28725,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27669,6 +28749,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27693,6 +28778,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27712,6 +28802,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27736,6 +28831,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27765,6 +28865,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27789,6 +28894,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27803,6 +28913,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27822,6 +28937,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27846,6 +28966,11 @@
                 "name": "London Stansted",
                 "iata": "STN",
                 "countryCode": "gb"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27865,6 +28990,11 @@
                 "name": "Marrakesch",
                 "iata": "RAK",
                 "countryCode": "ma"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27884,6 +29014,11 @@
                 "name": "Rom Fiumicino",
                 "iata": "FCO",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27913,6 +29048,11 @@
                 "name": "Dublin",
                 "iata": "DUB",
                 "countryCode": "ie"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27932,6 +29072,11 @@
                 "name": "Porto",
                 "iata": "OPO",
                 "countryCode": "pt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27951,6 +29096,11 @@
                 "name": "Dublin",
                 "iata": "DUB",
                 "countryCode": "ie"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27965,6 +29115,11 @@
                 "name": "Dublin",
                 "iata": "DUB",
                 "countryCode": "ie"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27979,6 +29134,11 @@
                 "name": "Mailand Bergamo",
                 "iata": "BGY",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -27993,6 +29153,11 @@
                 "name": "Mailand Bergamo",
                 "iata": "BGY",
                 "countryCode": "it"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -28017,6 +29182,11 @@
                 "name": "Faro",
                 "iata": "FAO",
                 "countryCode": "pt"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -28031,6 +29201,11 @@
                 "name": "Alicante",
                 "iata": "ALC",
                 "countryCode": "es"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -28045,6 +29220,11 @@
                 "name": "Stockholm Arlanda",
                 "iata": "ARN",
                 "countryCode": "se"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -28059,6 +29239,11 @@
                 "name": "Stockholm Arlanda",
                 "iata": "ARN",
                 "countryCode": "se"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     },
@@ -28073,6 +29258,11 @@
                 "name": "Stockholm Arlanda",
                 "iata": "ARN",
                 "countryCode": "se"
+            },
+            {
+                "name": "Europa",
+                "iata": "All destinations",
+                "countryCode": "--"
             }
         ]
     }

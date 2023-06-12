@@ -62,7 +62,12 @@ export default function FlightResultPage({ route }) {
     }, []);
 
     const setData = React.useCallback(async () => {
-        const response = await fetchData(route.params.data, currentPage);
+        let response = await fetchData(route.params.data, currentPage);
+
+        if(route.params.data.maxprice !== 0){
+            response = response.filter(data => data.totalPrice <= route.params.data.maxprice);
+        }
+
         if (currentPage === 1) {
             setTrips(response);
         } else {
