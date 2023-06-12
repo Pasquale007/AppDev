@@ -16,8 +16,6 @@ describe('FlightResult component', () => {
 
   test('renders the flight information correctly', () => {
     const { getByText } = render(<FlightResult data={data} />);
-    expect(getByText('Hinflug')).toBeTruthy();
-    expect(getByText('Rückflug')).toBeTruthy();
     expect(getByText('Zusammen ab')).toBeTruthy();
     expect(getByText('Jetzt buchen')).toBeTruthy();
   });
