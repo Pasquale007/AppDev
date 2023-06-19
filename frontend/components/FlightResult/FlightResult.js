@@ -44,6 +44,19 @@ function Info({ direction, iataCode, date, bookingLink }) {
                         ? ({ justifyContent: 'flex-start' })
                         : ({ justifyContent: 'flex-end' }),
                     { display: 'flex', flexDirection: 'row', alignItems: 'center' }]}>
+
+
+            </View>
+            <View style={[
+                direction === "left"
+                    ? ({ flexDirection: 'row' })
+                    : ({ flexDirection: 'row-reverse' }), { justifyContent: 'flex-start', display: 'flex', alignItems: 'center' }]}>
+                {direction === "right" &&
+                    <Ionicons
+                        name={"airplane"}
+                        color={COLORS.textWhite}
+                        size={13}
+                        style={[{ transform: [{ rotate: '180deg' }], marginLeft: '2%' }, styles.right]} />}
                 {direction === "left" &&
                     <Ionicons
                         name={"airplane"}
@@ -52,29 +65,13 @@ function Info({ direction, iataCode, date, bookingLink }) {
                         style={[{ marginRight: 10 }, (direction === 'right' && styles.right)]}
                     />}
                 <Text
-                    style={[styles.text, (direction === 'right' && styles.right), { marginRight: 10, paddingTop: 4 }]}
+                    style={[styles.city, (direction === 'right' && styles.right)]}
                     numberOfLines={1}
                     adjustsFontSizeToFit={true}
                 >
-                    {direction === "right"
-                        ? "Rückflug"
-                        : "Hinflug"
-                    }
+                    {cityName}
                 </Text>
-                {direction === "right" &&
-                    <Ionicons
-                        name={"airplane"}
-                        color={COLORS.textWhite}
-                        size={13}
-                        style={[{ transform: [{ rotate: '180deg' }] }, (direction === 'right' && styles.right)]} />}
             </View>
-            <Text
-                style={[styles.city, (direction === 'right' && styles.right)]}
-                numberOfLines={1}
-                adjustsFontSizeToFit={true}
-            >
-                {cityName}
-            </Text>
             <Text
                 style={[styles.date, (direction === 'right' && styles.right)]}
                 numberOfLines={1}
@@ -84,7 +81,7 @@ function Info({ direction, iataCode, date, bookingLink }) {
             </Text>
             {direction === "right" &&
                 <TouchableOpacity onPress={pressed} style={styles.button}>
-                    <Text >Jetzt buchen</Text>
+                    <Text style={styles.bookingButton}>Jetzt buchen</Text>
                 </TouchableOpacity>
             }
         </View>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, FlatList, TextInput } from 'react-native';
 import { COLORS, FONT, SIZES } from '../../constants/theme';
 import { Entypo } from '@expo/vector-icons';
+import { Platform } from 'react-native';
 
 export default function DropDown({ data, title, icon, onSelect }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -15,6 +16,7 @@ export default function DropDown({ data, title, icon, onSelect }) {
     };
 
     React.useEffect(() => {
+        data.sort((a, b) => (a.name > b.name) ? 1 : -1);
         setFilteredData(data);
         if (title === "Nach") {
             setSelectedItems([]);
@@ -54,6 +56,7 @@ export default function DropDown({ data, title, icon, onSelect }) {
 
             return itemData.indexOf(textData) > -1;
         });
+        newData.sort((a, b) => (a.name > b.name) ? 1 : -1);
         setFilteredData(newData);
     };
 
@@ -93,7 +96,11 @@ export default function DropDown({ data, title, icon, onSelect }) {
                 <Text style={{ fontFamily: FONT.medium, fontSize: SIZES.medium, color: COLORS.textBlack }}>{selectedItem ? selectedItem.name : 'Europa'}</Text>
             </View>
             <Modal visible={isModalVisible} animationType="slide" testID='modal'>
-                <View style={{ flex: 1, backgroundColor: COLORS.background, paddingTop: '7%' }}>
+                <View style={{
+                    flex: 1,
+                    backgroundColor: COLORS.background,
+                    ...(Platform.OS === 'ios' && { paddingTop: '7%' })
+                }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', padding: 8 }}>
                         <TextInput
                             testID='search-input'

@@ -23,12 +23,15 @@
     },
     "android": {
       "googleServicesFile": "./google-services.json",
+      "useNextNotificationsApi":true,
       "permissions": [
         "WRITE_EXTERNAL_STORAGE",
-        "READ_EXTERNAL_STORAGE"
+        "READ_EXTERNAL_STORAGE",
+        "com.google.android.c2dm.permission.RECEIVE",
+        "com.google.android.c2dm.permission.SEND"
       ],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/splashscreen/splashscreen.png",
+        "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#0F0D1E"
       },
       "package": "com.pthurow.frontend"

@@ -11,18 +11,9 @@ import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import { COLORS } from './constants/theme';
 import Splash from './pages/SplashPage/Splash';
-import { KeyboardAvoidingView, Platform } from 'react-native';
+import { KeyboardAvoidingView, Platform, StatusBar } from 'react-native';
 
 polyfillWebCrypto();
-
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldPlaySound: false,
-    shouldSetBadge: false,
-  }),
-});
-
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -56,7 +47,7 @@ export default function App() {
         console.log('Failed to get push token for push notification!');
         return;
       }
-      token = (await Notifications.getExpoPushTokenAsync({ projectId: "784e3e08-c80d-45aa-aebc-9a3c8f5440c0" })).data;
+      token = (await Notifications.getExpoPushTokenAsync()).data;
       console.log(token);
     } else {
       console.log('Must use physical device for Push Notifications');
@@ -68,6 +59,18 @@ export default function App() {
   useEffect(() => {
     registerForPushNotificationsAsync().then(token => console.log(token));
 
+    Notifications.setNotificationHandler({
+      handleNotification: async () => ({
+        shouldShowAlert: true,
+        shouldPlaySound: true,
+        shouldSetBadge: true,
+      }),
+    });
+
+    notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
+      console.log(notification);
+    });
+
     responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
       console.log(response);
     });
@@ -78,7 +81,7 @@ export default function App() {
     };
   }, []);
 
-
+  
   const [fontsLoaded] = useFonts({
     RubikBold: require("./assets/fonts/Rubik-Bold.ttf"),
     RubikSemiBold: require("./assets/fonts/Rubik-SemiBold.ttf"),
@@ -101,6 +104,10 @@ export default function App() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{ flex: 1 }}>
       <NavigationContainer theme={MyTheme} style={{ flex: 1 }}>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor={COLORS.background}
+        />
         <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarStyle: {
@@ -133,6 +140,6 @@ export default function App() {
           <Tab.Screen name="Alerts" component={AlertPage} options={{ title: 'Alerts' }} />
         </Tab.Navigator>
       </NavigationContainer>
-    </KeyboardAvoidingView >
+    </KeyboardAvoidingView>
   );
 }
