@@ -137,7 +137,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -256,7 +256,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -271,7 +271,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -281,7 +281,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -351,7 +351,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -451,12 +451,12 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -531,7 +531,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -556,7 +556,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "T\u00c3\u00a9touan",
+                "name": "Tétouan",
                 "iata": "TTU",
                 "countryCode": "ma"
             },
@@ -576,7 +576,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Stockholm V\u00c3\u00a4ster\u00c3\u00a5s",
+                "name": "Stockholm Västerås",
                 "iata": "VST",
                 "countryCode": "se"
             },
@@ -719,7 +719,7 @@
                 "countryCode": "hu"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -729,7 +729,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -759,7 +759,7 @@
                 "countryCode": "de"
             },
             {
-                "name": "M\u00c3\u00bcnster Osnabr\u00c3\u00bcck",
+                "name": "Münster Osnabrück",
                 "iata": "FMO",
                 "countryCode": "de"
             },
@@ -809,12 +809,12 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -978,7 +978,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -988,7 +988,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -1013,7 +1013,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -1048,7 +1048,7 @@
                 "countryCode": "mt"
             },
             {
-                "name": "Malm\u00c3\u00b6",
+                "name": "Malmö",
                 "iata": "MMX",
                 "countryCode": "se"
             },
@@ -1242,7 +1242,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -1252,7 +1252,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -1312,7 +1312,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -1432,12 +1432,12 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -1532,7 +1532,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "T\u00c3\u00a9touan",
+                "name": "Tétouan",
                 "iata": "TTU",
                 "countryCode": "ma"
             },
@@ -1547,12 +1547,12 @@
                 "countryCode": "es"
             },
             {
-                "name": "Stockholm V\u00c3\u00a4ster\u00c3\u00a5s",
+                "name": "Stockholm Västerås",
                 "iata": "VST",
                 "countryCode": "se"
             },
             {
-                "name": "V\u00c3\u00a4xj\u00c3\u00b6 Sm\u00c3\u00a5land",
+                "name": "Växjö Småland",
                 "iata": "VXO",
                 "countryCode": "se"
             },
@@ -1670,7 +1670,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -1680,7 +1680,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -1800,12 +1800,12 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -1929,7 +1929,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -1949,7 +1949,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -1959,7 +1959,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -2179,7 +2179,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -2313,12 +2313,12 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -2393,7 +2393,7 @@
                 "countryCode": "ie"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -2512,7 +2512,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -2682,7 +2682,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -2766,7 +2766,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -2776,7 +2776,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -2955,7 +2955,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcnn",
+                "name": "Brünn",
                 "iata": "BRQ",
                 "countryCode": "cz"
             },
@@ -2990,7 +2990,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -3010,7 +3010,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -3080,7 +3080,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -3220,7 +3220,7 @@
                 "countryCode": "ie"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -3335,7 +3335,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -3454,7 +3454,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -3499,7 +3499,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -3524,12 +3524,12 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Stra\u00c3\u0178burg",
+                "name": "Straßburg",
                 "iata": "SXB",
                 "countryCode": "fr"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -3598,7 +3598,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -3733,7 +3733,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -3817,7 +3817,7 @@
                 "countryCode": "hu"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -3951,7 +3951,7 @@
                 "countryCode": "hu"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -4255,7 +4255,7 @@
                 "countryCode": "bg"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -4383,7 +4383,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -4493,7 +4493,7 @@
                 "countryCode": "bg"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -4647,7 +4647,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -4672,7 +4672,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -4717,7 +4717,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -5010,7 +5010,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -5025,7 +5025,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -5130,7 +5130,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -5210,7 +5210,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -5304,7 +5304,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -5683,7 +5683,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -6000,7 +6000,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -6050,7 +6050,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -6070,7 +6070,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -6155,7 +6155,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -6345,7 +6345,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -6490,7 +6490,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -6598,7 +6598,7 @@
         },
         "destinations": [
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -6608,7 +6608,7 @@
                 "countryCode": "--"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -6626,7 +6626,7 @@
     },
     {
         "origin": {
-            "name": "K\u00c3\u0192\u00c2\u00b6ln",
+            "name": "Köln",
             "iata": "CGN",
             "countryCode": "de"
         },
@@ -6802,7 +6802,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -6856,7 +6856,7 @@
                 "countryCode": "--"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -6866,7 +6866,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -6930,7 +6930,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -7104,7 +7104,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -7347,7 +7347,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -7442,7 +7442,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "V\u00c3\u00a4xj\u00c3\u00b6 Sm\u00c3\u00a5land",
+                "name": "Växjö Småland",
                 "iata": "VXO",
                 "countryCode": "se"
             },
@@ -7511,7 +7511,7 @@
                 "countryCode": "hu"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -7581,12 +7581,12 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -7789,7 +7789,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -7829,7 +7829,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -7844,7 +7844,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -7979,12 +7979,12 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -8019,7 +8019,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Stra\u00c3\u0178burg",
+                "name": "Straßburg",
                 "iata": "SXB",
                 "countryCode": "fr"
             },
@@ -8029,7 +8029,7 @@
                 "countryCode": "pt"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -8158,7 +8158,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -8253,12 +8253,12 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -8397,7 +8397,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -8427,7 +8427,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -8462,12 +8462,12 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -8581,7 +8581,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -8710,7 +8710,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -8844,7 +8844,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -8884,7 +8884,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -8949,7 +8949,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -9049,7 +9049,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -9133,7 +9133,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -9153,7 +9153,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -9171,7 +9171,7 @@
     },
     {
         "origin": {
-            "name": "Br\u00c3\u0192\u00c2\u00bcssel Charleroi",
+            "name": "Brüssel Charleroi",
             "iata": "CRL",
             "countryCode": "be"
         },
@@ -9652,7 +9652,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -9702,7 +9702,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "T\u00c3\u00a9touan",
+                "name": "Tétouan",
                 "iata": "TTU",
                 "countryCode": "ma"
             },
@@ -9766,7 +9766,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -9786,7 +9786,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -9855,7 +9855,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -10164,7 +10164,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -10273,7 +10273,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -10283,7 +10283,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -10433,7 +10433,7 @@
                 "countryCode": "hr"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -10486,7 +10486,7 @@
     },
     {
         "origin": {
-            "name": "Br\u00c3\u0192\u00c2\u00bcssel Zaventem",
+            "name": "Brüssel Zaventem",
             "iata": "BRU",
             "countryCode": "be"
         },
@@ -10591,7 +10591,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -10601,7 +10601,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -10661,12 +10661,12 @@
                 "countryCode": "ie"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -10895,7 +10895,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -10939,7 +10939,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -11018,7 +11018,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -11118,7 +11118,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -11182,12 +11182,12 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -11242,7 +11242,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -11401,7 +11401,7 @@
                 "countryCode": "lv"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -11495,7 +11495,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -11555,12 +11555,12 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -11764,7 +11764,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -11858,7 +11858,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -11898,7 +11898,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -12030,7 +12030,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -12040,7 +12040,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -12050,7 +12050,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -12120,7 +12120,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -12204,7 +12204,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -12363,7 +12363,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcnn",
+                "name": "Brünn",
                 "iata": "BRQ",
                 "countryCode": "cz"
             },
@@ -12413,7 +12413,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -12533,7 +12533,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -12703,7 +12703,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -12713,7 +12713,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -12943,7 +12943,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -13033,12 +13033,12 @@
                 "countryCode": "it"
             },
             {
-                "name": "Stockholm V\u00c3\u00a4ster\u00c3\u00a5s",
+                "name": "Stockholm Västerås",
                 "iata": "VST",
                 "countryCode": "se"
             },
             {
-                "name": "V\u00c3\u00a4xj\u00c3\u00b6 Sm\u00c3\u00a5land",
+                "name": "Växjö Småland",
                 "iata": "VXO",
                 "countryCode": "se"
             },
@@ -13156,7 +13156,7 @@
                 "countryCode": "sk"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -13166,7 +13166,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -13186,7 +13186,7 @@
                 "countryCode": "il"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -13290,7 +13290,7 @@
                 "countryCode": "hu"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -13345,7 +13345,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -13534,7 +13534,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -13589,7 +13589,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -13669,7 +13669,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -13769,7 +13769,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -13912,7 +13912,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -14065,12 +14065,12 @@
                 "countryCode": "it"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -14145,7 +14145,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -14353,7 +14353,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -14442,12 +14442,12 @@
                 "countryCode": "hu"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -14736,7 +14736,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -14790,7 +14790,7 @@
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -14800,12 +14800,12 @@
                 "countryCode": "de"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -14818,7 +14818,7 @@
     },
     {
         "origin": {
-            "name": "G\u00c3\u0192\u00c2\u00b6teborg Landvetter",
+            "name": "Göteborg Landvetter",
             "iata": "GOT",
             "countryCode": "se"
         },
@@ -15043,7 +15043,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -15063,7 +15063,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -15108,7 +15108,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -15298,7 +15298,7 @@
                 "countryCode": "at"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -15392,7 +15392,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -15417,7 +15417,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -15501,7 +15501,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -15511,7 +15511,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -15789,7 +15789,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -15814,7 +15814,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -15994,7 +15994,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -16009,7 +16009,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "T\u00c3\u00a9touan",
+                "name": "Tétouan",
                 "iata": "TTU",
                 "countryCode": "ma"
             },
@@ -16038,7 +16038,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -16147,7 +16147,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -16347,7 +16347,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -16367,7 +16367,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "T\u00c3\u00a9touan",
+                "name": "Tétouan",
                 "iata": "TTU",
                 "countryCode": "ma"
             },
@@ -16430,7 +16430,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -16609,7 +16609,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -16797,7 +16797,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -16901,7 +16901,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -16916,7 +16916,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -17294,7 +17294,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -17309,7 +17309,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -17359,7 +17359,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -17544,7 +17544,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -17731,7 +17731,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -17766,7 +17766,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -17816,7 +17816,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -17931,7 +17931,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -18069,7 +18069,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -18099,7 +18099,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -18302,7 +18302,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -18402,7 +18402,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -18467,7 +18467,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -18566,7 +18566,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -18670,7 +18670,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -18944,7 +18944,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -18998,7 +18998,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -19087,7 +19087,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -19137,12 +19137,12 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -19190,7 +19190,7 @@
     },
     {
         "origin": {
-            "name": "D\u00c3\u0192\u00c2\u00bcsseldorf Weeze",
+            "name": "Düsseldorf Weeze",
             "iata": "NRN",
             "countryCode": "de"
         },
@@ -19366,7 +19366,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -19410,7 +19410,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -19425,7 +19425,7 @@
                 "countryCode": "ie"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -19469,7 +19469,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -19489,7 +19489,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -19593,7 +19593,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -19618,7 +19618,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -19628,7 +19628,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -19683,12 +19683,12 @@
                 "countryCode": "de"
             },
             {
-                "name": "M\u00c3\u00bcnster Osnabr\u00c3\u00bcck",
+                "name": "Münster Osnabrück",
                 "iata": "FMO",
                 "countryCode": "de"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -19783,12 +19783,12 @@
                 "countryCode": "ie"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -19965,7 +19965,7 @@
     },
     {
         "origin": {
-            "name": "M\u00c3\u0192\u00c2\u00bcnster Osnabr\u00c3\u0192\u00c2\u00bcck",
+            "name": "Münster Osnabrück",
             "iata": "FMO",
             "countryCode": "de"
         },
@@ -20060,12 +20060,12 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -20100,7 +20100,7 @@
                 "countryCode": "de"
             },
             {
-                "name": "M\u00c3\u00bcnster Osnabr\u00c3\u00bcck",
+                "name": "Münster Osnabrück",
                 "iata": "FMO",
                 "countryCode": "de"
             },
@@ -20110,7 +20110,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -20170,12 +20170,12 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -20225,7 +20225,7 @@
                 "countryCode": "at"
             },
             {
-                "name": "V\u00c3\u00a4xj\u00c3\u00b6 Sm\u00c3\u00a5land",
+                "name": "Växjö Småland",
                 "iata": "VXO",
                 "countryCode": "se"
             },
@@ -20383,7 +20383,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Br\u00c3\u00bcssel Zaventem",
+                "name": "Brüssel Zaventem",
                 "iata": "BRU",
                 "countryCode": "be"
             },
@@ -20403,12 +20403,12 @@
                 "countryCode": "it"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -20528,7 +20528,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -20588,7 +20588,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -20672,7 +20672,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -20796,7 +20796,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -20866,7 +20866,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -20950,7 +20950,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -20960,7 +20960,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -21060,7 +21060,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -21070,7 +21070,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -21130,7 +21130,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -21160,7 +21160,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "T\u00c3\u00a9touan",
+                "name": "Tétouan",
                 "iata": "TTU",
                 "countryCode": "ma"
             },
@@ -21324,7 +21324,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -21515,7 +21515,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -21688,7 +21688,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             }
@@ -21696,7 +21696,7 @@
     },
     {
         "origin": {
-            "name": "Teneriffa S\u00c3\u0192\u00c2\u00bcd",
+            "name": "Teneriffa Süd",
             "iata": "TFS",
             "countryCode": "es"
         },
@@ -21762,12 +21762,12 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -21862,12 +21862,12 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -22036,7 +22036,7 @@
                 "countryCode": "ie"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -22110,7 +22110,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -22125,7 +22125,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -22403,7 +22403,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -22502,7 +22502,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -22517,7 +22517,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -22591,7 +22591,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -22755,7 +22755,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -22770,7 +22770,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -22825,7 +22825,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -22934,7 +22934,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -22979,7 +22979,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -23113,7 +23113,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -23128,7 +23128,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -23163,7 +23163,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -23213,7 +23213,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -23278,7 +23278,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -23342,7 +23342,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -23451,7 +23451,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -23644,7 +23644,7 @@
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -23728,7 +23728,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -23758,7 +23758,7 @@
                 "countryCode": "de"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -23783,7 +23783,7 @@
                 "countryCode": "mt"
             },
             {
-                "name": "Malm\u00c3\u00b6",
+                "name": "Malmö",
                 "iata": "MMX",
                 "countryCode": "se"
             },
@@ -23793,7 +23793,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -23985,7 +23985,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -24125,7 +24125,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -24268,12 +24268,12 @@
                 "countryCode": "fr"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -24303,7 +24303,7 @@
                 "countryCode": "pl"
             },
             {
-                "name": "G\u00c3\u00b6teborg Landvetter",
+                "name": "Göteborg Landvetter",
                 "iata": "GOT",
                 "countryCode": "se"
             },
@@ -24417,7 +24417,7 @@
                 "countryCode": "sk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -24462,7 +24462,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -24541,7 +24541,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -24576,7 +24576,7 @@
                 "countryCode": "mt"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -24695,7 +24695,7 @@
                 "countryCode": "dk"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -24849,7 +24849,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -24889,7 +24889,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -24998,7 +24998,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
@@ -25053,7 +25053,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -25107,7 +25107,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -25181,7 +25181,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -25320,7 +25320,7 @@
                 "countryCode": "mt"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -25472,7 +25472,7 @@
                 "countryCode": "gr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -25587,7 +25587,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Teneriffa S\u00c3\u00bcd",
+                "name": "Teneriffa Süd",
                 "iata": "TFS",
                 "countryCode": "es"
             },
@@ -25636,7 +25636,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -25675,7 +25675,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -25685,7 +25685,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -25729,7 +25729,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -25744,7 +25744,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -25803,7 +25803,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -25818,7 +25818,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -25971,7 +25971,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -26065,7 +26065,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -26090,7 +26090,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -26208,7 +26208,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -26241,7 +26241,7 @@
     },
     {
         "origin": {
-            "name": "Malm\u00c3\u0192\u00c2\u00b6",
+            "name": "Malmö",
             "iata": "MMX",
             "countryCode": "se"
         },
@@ -26438,7 +26438,7 @@
                 "countryCode": "--"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -26526,7 +26526,7 @@
                 "countryCode": "--"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -26623,7 +26623,7 @@
     },
     {
         "origin": {
-            "name": "T\u00c3\u0192\u00c2\u00a9touan",
+            "name": "Tétouan",
             "iata": "TTU",
             "countryCode": "ma"
         },
@@ -26644,7 +26644,7 @@
                 "countryCode": "es"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -26693,12 +26693,12 @@
                 "countryCode": "it"
             },
             {
-                "name": "K\u00c3\u00b6ln",
+                "name": "Köln",
                 "iata": "CGN",
                 "countryCode": "de"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -26742,7 +26742,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -26829,7 +26829,7 @@
     },
     {
         "origin": {
-            "name": "V\u00c3\u0192\u00c2\u00a4xj\u00c3\u0192\u00c2\u00b6 Sm\u00c3\u0192\u00c2\u00a5land",
+            "name": "Växjö Småland",
             "iata": "VXO",
             "countryCode": "se"
         },
@@ -26879,7 +26879,7 @@
                 "countryCode": "--"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -27039,7 +27039,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -27059,7 +27059,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -27088,7 +27088,7 @@
                 "countryCode": "--"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -27123,7 +27123,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "D\u00c3\u00bcsseldorf Weeze",
+                "name": "Düsseldorf Weeze",
                 "iata": "NRN",
                 "countryCode": "de"
             },
@@ -27241,7 +27241,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -27426,7 +27426,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -27567,7 +27567,7 @@
                 "countryCode": "--"
             },
             {
-                "name": "N\u00c3\u00bcrnberg",
+                "name": "Nürnberg",
                 "iata": "NUE",
                 "countryCode": "de"
             },
@@ -27634,7 +27634,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -27751,7 +27751,7 @@
                 "countryCode": "--"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -27769,7 +27769,7 @@
     },
     {
         "origin": {
-            "name": "Br\u00c3\u0192\u00c2\u00bcnn",
+            "name": "Brünn",
             "iata": "BRQ",
             "countryCode": "cz"
         },
@@ -27799,7 +27799,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -27843,7 +27843,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -27882,7 +27882,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -28094,7 +28094,7 @@
                 "countryCode": "gb"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -28176,7 +28176,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -28220,7 +28220,7 @@
                 "countryCode": "it"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -28239,7 +28239,7 @@
         },
         "destinations": [
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -28305,7 +28305,7 @@
     },
     {
         "origin": {
-            "name": "Stockholm V\u00c3\u0192\u00c2\u00a4ster\u00c3\u0192\u00c2\u00a5s",
+            "name": "Stockholm Västerås",
             "iata": "VST",
             "countryCode": "se"
         },
@@ -28403,7 +28403,7 @@
                 "countryCode": "fr"
             },
             {
-                "name": "Br\u00c3\u00bcssel Charleroi",
+                "name": "Brüssel Charleroi",
                 "iata": "CRL",
                 "countryCode": "be"
             },
@@ -28416,7 +28416,7 @@
     },
     {
         "origin": {
-            "name": "Stra\u00c3\u0192\u00c2\u0178burg",
+            "name": "Straßburg",
             "iata": "SXB",
             "countryCode": "fr"
         },
