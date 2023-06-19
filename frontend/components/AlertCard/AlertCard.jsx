@@ -10,7 +10,7 @@ import AlertCardLeftBg from '../AlertCardLeftBg/AlertCardLeftBg';
 import AlertCardRightBg from '../AlertCardRightBg/AlertCardRightBg';
 import { useIsFocused } from '@react-navigation/native';
 
-function AlertCard({ alert, closeCard, onDelete, onSearch, cardArr, setIsActive}) {
+function AlertCard({ alert, closeCard, onDelete, onSearch, cardArr, setIsActive }) {
 
     const [durationString, setDurationString] = useState("");
     const [alertIsActive, setAlertIsActive] = useState(alert.isActive);
@@ -67,9 +67,9 @@ function AlertCard({ alert, closeCard, onDelete, onSearch, cardArr, setIsActive}
             <Swipeable
                 renderRightActions={renderRightActions}
                 renderLeftActions={renderLeftActions}
-                friction={1.5} // Set the friction value for resistance during swipe
-                overshootLeft={false} // Disable overshooting to the left
-                overshootRight={false} // Disable overshooting to the right
+                friction={1.5}
+                overshootLeft={false}
+                overshootRight={false}
                 onSwipeableOpen={() => closeCard(alert.id)}
                 ref={(ref) => (cardArr[alert.id] = ref)}
                 testID="alertCard"
