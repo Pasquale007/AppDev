@@ -16,7 +16,7 @@ export default function LoadingScreen({ loadingPhrases }) {
         const interval = setInterval(() => {
           const randomIndex = Math.floor(Math.random() * phrases.length);
           setRandomPhrase(phrases[randomIndex]);
-        }, 2500);
+        }, 5500);
   
         // Set initial random phrase immediately
         const initialRandomIndex = Math.floor(Math.random() * phrases.length);

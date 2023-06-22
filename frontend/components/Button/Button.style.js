@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     button: {
         marginLeft: SIZES.medium,
         marginRight: SIZES.medium,
+        marginBottom: SIZES.medium,
         paddingTop: 10,
         paddingBottom: 10,
         borderRadius: 10,
