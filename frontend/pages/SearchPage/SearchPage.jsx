@@ -98,8 +98,7 @@ export default function SearchPage() {
                                 });
                                 return;
                             }
-
-                            if (duration.start > duration.end) {
+                            if (parseInt(duration.start) > parseInt(duration.end)) {
                                 Toast.show({
                                     type: "error",
                                     text1: "Ungültige Reisedauer",

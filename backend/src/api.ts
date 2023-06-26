@@ -55,7 +55,7 @@ app.get('/getFlights', async (req: any, res: Response) => {
     return
   }
 
-  if(queryParams.lengthMin === -1 && queryParams.lengthMax === -1){
+  if(queryParams.lengthMin === -1 && queryParams.lengthMax === -1){ //TODO
     const length = (queryParams.outToDate.getTime() - queryParams.outFromDate.getTime()) / (1000 * 3600 * 24);
     queryParams.lengthMin = Math.floor(length);
     queryParams.lengthMax = Math.floor(length);
