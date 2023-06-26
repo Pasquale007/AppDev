@@ -57,7 +57,6 @@ function CreateAlertModal({ isVisible, onBackdropPress, data, onSuccess, onError
         }
 
         if (deviceToken) {
-            console.log(deviceToken);
             const alert = {
                 startDate: fromDateFormatted,
                 endDate: untilDateFormatted,

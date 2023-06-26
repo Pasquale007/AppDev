@@ -53,31 +53,15 @@ async function parseAlerts(){
         if(!parsedItem.maxLength){
             continue
         }
-        console.log(parsedItem)
-        /*const parsedItem: Alert = {
-            id: "43b4ij3b54i3jb5345b3",
-            isActive: true,
-            origin: "Nurenberg",
-            originIATA: "NUE",
-            destination: "Palma",
-            destinationIATA: "PMI",
-            startDate: new Date("2023-05-01"),
-            endDate: new Date("2023-05-28"),
-            minLength: 1,
-            maxLength: 14,
-            maxPrice: 200
-        }*/
         await compareSavedAndNewResults(allRoutes, parsedItem).then(
             async (response: Alert) => {
                 if(parsedItem.alreadyAlerted){
                     if (response.alreadyAlerted && parsedItem.alreadyAlerted.price > response.alreadyAlerted.price) {
-                        console.log("ALERT HERE")
                         await setAlreadyAlerted(response)
                     } else {
                         return;
                     }
                 }else{
-                    console.log("Into Firebase")
                     await setAlreadyAlerted(response)
                 }
             }

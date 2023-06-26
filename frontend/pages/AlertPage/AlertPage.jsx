@@ -50,7 +50,6 @@ export default function AlertPage() {
 
     useEffect(() => {
         let unsubscribe;
-        console.log(deviceToken);
 
         if (deviceToken) {
             unsubscribe = getAlerts(deviceToken, handleFetchedAlerts);
@@ -106,12 +105,6 @@ export default function AlertPage() {
         } catch (error) {
             console.error(error);
         }
-    }
-
-    const toUnixTimeStamp = (dateString) => {
-        const dateStringParts = dateString.split(".");
-        const dateStringIso = dateStringParts[2] + "-" + dateStringParts[1] + "-" + dateStringParts[0];
-        return new Date(dateStringIso).getTime();
     }
 
     return (

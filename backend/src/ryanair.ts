@@ -29,7 +29,6 @@ async function getDestinationFromOrigin(origin: string, name: string, countryCod
         return false;
     }
     scrapedOrigins.push(origin)
-    console.log(`Origin ${origin}`)
     const client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
     const resp = await client.get(`https://www.ryanair.com/api/views/locate/searchWidget/routes/de/airport/${origin}`)
     for (let i = 0; i < resp.body.length; i++) {
@@ -50,6 +49,7 @@ async function getDestinationFromOrigin(origin: string, name: string, countryCod
             });
         }
         catch (e) {
+            console.log(e)
             console.log(origin)
             console.log(destinationCode)
         }

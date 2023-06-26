@@ -48,7 +48,6 @@ export default function App() {
         return;
       }
       token = (await Notifications.getExpoPushTokenAsync()).data;
-      console.log(token);
     } else {
       console.log('Must use physical device for Push Notifications');
     }
