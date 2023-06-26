@@ -1,6 +1,7 @@
 # Mobile App Development
 
 ## Vorraussetzungen
+## Vorraussetzungen
 Node v16.15.0
 npm 8.5.5
 
@@ -23,6 +24,7 @@ Das Backend muss nicht extra gestartet werden, da es bereits auf einem Server l�
 Um einen Build dieser App zu erstellen, muss folgendes getan werden:
 
 1. Folgende Dependencies müssen installiert werden:
+1. Folgende Dependencies müssen installiert werden:
 ```
 npm install @react-navigation/native
 
@@ -36,19 +38,23 @@ npx expo install @react-native-masked-view/masked-view
 ```
 
 2. EAS CLI installieren:
+2. EAS CLI installieren:
 ```
 npm install -g eas-cli
 ```
 3. Expo-Account auf <a href="https://expo.dev/" target="_blank">expo.dev</a> erstellen, falls noch nicht vorhanden.
 
 4. Im Terminal mit dem Expo-Account anmelden:
+4. Im Terminal mit dem Expo-Account anmelden:
 ```
 eas login
 ```
 5. Konfigurieren eines Android Projekts für EAS Build:
+5. Konfigurieren eines Android Projekts für EAS Build:
 ```
 eas build:configure
 ```
+6. Erstellen der APK:
 6. Erstellen der APK:
 ```
 eas build -p android --profile preview 
