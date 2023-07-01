@@ -49,7 +49,7 @@ export default function FlightResultPage({ route }) {
     }, []);
 
     useEffect(() => {
-        if(!isFocused && navigation.canGoBack()){
+        if (!isFocused && navigation.canGoBack()) {
             navigation.goBack();
         }
     }, [isFocused]);
@@ -64,7 +64,7 @@ export default function FlightResultPage({ route }) {
     const setData = React.useCallback(async () => {
         let response = await fetchData(route.params.data, currentPage);
 
-        if(route.params.data.maxprice !== 0){
+        if (route.params.data.maxprice !== 0) {
             response = response.filter(data => data.totalPrice <= route.params.data.maxprice);
         }
 
@@ -75,7 +75,6 @@ export default function FlightResultPage({ route }) {
                 setTrips([...trips, ...response]);
             }
         }
-        console.log(response)
         setFetchingMoreData(false)
 
         setIsLoaded(true)

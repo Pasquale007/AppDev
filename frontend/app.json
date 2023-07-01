@@ -23,7 +23,7 @@
     },
     "android": {
       "googleServicesFile": "./google-services.json",
-      "useNextNotificationsApi":true,
+      "useNextNotificationsApi": true,
       "permissions": [
         "WRITE_EXTERNAL_STORAGE",
         "READ_EXTERNAL_STORAGE",

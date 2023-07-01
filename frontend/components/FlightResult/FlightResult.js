@@ -91,7 +91,6 @@ function Info({ direction, iataCode, date, bookingLink }) {
 export default function FlightResult({ data }) {
 
 
-
     return (
         <View style={styles.root}>
             <Info

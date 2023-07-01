@@ -26,7 +26,6 @@ export default function DropDown({ data, title, icon, onSelect }) {
 
     const handleSelectItem = (item) => {
         onSelect(item)
-        console.log(item)
         if (selectedItem === item) {
             setSelectedItems([]);
             setSelectedItem(null);

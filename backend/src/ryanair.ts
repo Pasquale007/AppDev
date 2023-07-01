@@ -29,7 +29,6 @@ async function getDestinationFromOrigin(origin: string, name: string, countryCod
         return false;
     }
     scrapedOrigins.push(origin)
-    console.log(`Origin ${origin}`)
     const client = new tlsClient.tlsClient({sessionId: crypto.randomBytes(20).toString('hex'), debug: false})
     const resp = await client.get(`https://www.ryanair.com/api/views/locate/searchWidget/routes/de/airport/${origin}`)
     for (let i = 0; i < resp.body.length; i++) {
@@ -50,6 +49,7 @@ async function getDestinationFromOrigin(origin: string, name: string, countryCod
             });
         }
         catch (e) {
+            console.log(e)
             console.log(origin)
             console.log(destinationCode)
         }
@@ -95,13 +95,13 @@ async function processDestination(origin: string, destination: string, outFromDa
 
     let outToDateLocal = new Date(outToDate) //WTF!?!?!?
     outToDateLocal = new Date(outToDateLocal.setHours(outToDateLocal.getHours() + 23)) //outToDate needs to be bigger than the inbound departure date which is only possible if it is 23:59 on the return day
-    outToDateLocal = new Date(outToDateLocal.sdetMinutes(outToDateLocal.getMinutes() + 59))
-
-    outFromDate = new Date(outFromDate.setHours(outFromDate.getHours() - timeShift)) // - timeShift so that i don't need to shift + every time we introduce a new var and compare it with the outFromDate/outToDate
+    outToDateLocal = new Date(outToDateLocal.setMinutes(outToDateLocal.getMinutes() + 59))
+    let outFromDateLocal = new Date(outFromDate)
+    outFromDateLocal = new Date(outFromDateLocal.setHours(outFromDateLocal.getHours() - timeShift)) // - timeShift so that i don't need to shift + every time we introduce a new var and compare it with the outFromDate/outToDate
     outToDateLocal = new Date(outToDateLocal.setHours(outToDateLocal.getHours() - timeShift))
 
     for (let i = 0; i < outbound.length; i++) {
-        if(outFromDate <= new Date(outbound[i].arrivalDate) && outToDateLocal >= new Date(outbound[i].arrivalDate) && outbound[i].unavailable == false && outbound[i].soldOut == false){
+        if(outFromDateLocal <= new Date(outbound[i].arrivalDate) && outToDateLocal >= new Date(outbound[i].arrivalDate) && outbound[i].unavailable == false && outbound[i].soldOut == false){
             //Flight available
             //Searching for back flight
             for (let j = i + lengthMin; j <= i + lengthMax ; j++) {

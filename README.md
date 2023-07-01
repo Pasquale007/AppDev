@@ -1,37 +1,29 @@
 # Mobile App Development
 
 ## Vorraussetzungen
+## Vorraussetzungen
 Node v16.15.0
 npm 8.5.5
 
 ## Setup
 
 ### Frontend
-#### Debugging
+
 Folgender Befehl muss im frontend-Ordner ausgeführt werden, um das Fronend zu starten:
 ```
 npm start
 ```
 Daraufhin öffnet sich in der Console ein QR-Code.
-Es wird die App "expo" auf dem Testgerät (also dein Handy) benötigt, um den QR Code zu lesen. Über den AppStore oder Playstore installieren.
-#### Build
-
-Um ein Build für Android zu erstellen muss folgender Befehl eingegeben werden:
-
-```
-eas build --profile development --platform android 
-```
+Es wird die App "expo" auf dem Testgerät (also dein Handy) benötigt, um den QR Code zu lesen. Über den [AppStore](https://apps.apple.com/de/app/expo-go/id982107779) oder [Google Playstore](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) installieren.
 
 ### Backend
-Folgender Befehl muss im backend Order ausgeführt werden, um das Backend zu starten:
-```
-```
+Das Backend muss nicht extra gestartet werden, da es bereits auf einem Server läuft und sich die App automatisch mit diesem verbindet.
 
-### APK erstellen (Android)
-> Wichtig: Sollte es zu einem Authentifizierungsproblem kommen, so sollte versucht werden die "projectId" aus der app.json-Datei zu löschen.
+### Android/iOS Build erstellen
 
-Um eine APK dieser App für Android zu erstellen, muss folgendes getan werden:
+Um einen Build dieser App zu erstellen, muss folgendes getan werden:
 
+1. Folgende Dependencies müssen installiert werden:
 1. Folgende Dependencies müssen installiert werden:
 ```
 npm install @react-navigation/native
@@ -46,27 +38,33 @@ npx expo install @react-native-masked-view/masked-view
 ```
 
 2. EAS CLI installieren:
+2. EAS CLI installieren:
 ```
 npm install -g eas-cli
 ```
 3. Expo-Account auf <a href="https://expo.dev/" target="_blank">expo.dev</a> erstellen, falls noch nicht vorhanden.
 
 4. Im Terminal mit dem Expo-Account anmelden:
+4. Im Terminal mit dem Expo-Account anmelden:
 ```
 eas login
 ```
+5. Konfigurieren eines Android Projekts für EAS Build:
 5. Konfigurieren eines Android Projekts für EAS Build:
 ```
 eas build:configure
 ```
 6. Erstellen der APK:
+6. Erstellen der APK:
 ```
 eas build -p android --profile preview 
 ```
+oder
 
-Nach einem erfolgreichen Build kann die APK auf <a href="https://expo.dev/" target="_blank">expo.dev</a> heruntergeladen werden. 
+Erstellen des Apple Builds:
+```
+eas build -p ios --profile preview 
+```
 
-### Server
-Folgender Befehl muss im server Order ausgeführt werden um den Server zu starten:
-```
-```
+Nach einem erfolgreichen Build kann die App auf <a href="https://expo.dev/" target="_blank">expo.dev</a> heruntergeladen werden. 
+
